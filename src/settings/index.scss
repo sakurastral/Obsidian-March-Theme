@@ -36,6 +36,18 @@ settings:
                 label: Pure (Border)
                 value: enable-styled-embed-pure-border
     - 
+        id: heading-horizontal-rules
+        title: Horizontal-Rules
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: enable-styled-horizontal-rules
+        title: Enable Styled Horizontal-Rules
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    - 
         id: heading-callout
         title: Callout
         type: heading
