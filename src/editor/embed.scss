@@ -29,7 +29,11 @@
     }
 
     .markdown-embed-content {
-      padding: 0px 0.5rem;
+      padding: 0 0.5rem;
+
+      .callout {
+        margin: var(--p-spacing);
+      }
     }
   }
 }
@@ -66,6 +70,10 @@
 
     .markdown-embed-content {
       padding: 0px 0.5rem;
+
+      .callout {
+        margin: var(--p-spacing);
+      }
     }
   }
 }
@@ -107,6 +115,10 @@
 
     .markdown-embed-content {
       padding: 0px 0.5rem;
+
+      .callout {
+        margin: var(--p-spacing);
+      }
     }
   }
 }
@@ -146,6 +158,10 @@
 
     .markdown-embed-content {
       padding: 0px 0.5rem;
+
+      .callout {
+        margin: var(--p-spacing);
+      }
     }
   }
 }
@@ -190,6 +206,10 @@
     .markdown-embed-content {
       padding: 0px 0.5rem;
       background-color: $bg-color-accent;
+
+      .callout {
+        margin: var(--p-spacing);
+      }
     }
   }
 }

@@ -214,7 +214,10 @@ settings:
   background-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
 }
 .enable-styled-embed-pure .inline-embed .markdown-embed-content {
-  padding: 0px 0.5rem;
+  padding: 0 0.5rem;
+}
+.enable-styled-embed-pure .inline-embed .markdown-embed-content .callout {
+  margin: var(--p-spacing);
 }
 
 .enable-styled-embed-transparent {
@@ -244,6 +247,9 @@ settings:
 }
 .enable-styled-embed-transparent .inline-embed .markdown-embed-content {
   padding: 0px 0.5rem;
+}
+.enable-styled-embed-transparent .inline-embed .markdown-embed-content .callout {
+  margin: var(--p-spacing);
 }
 
 .enable-styled-embed-border {
@@ -278,6 +284,9 @@ settings:
 .enable-styled-embed-border .inline-embed .markdown-embed-content {
   padding: 0px 0.5rem;
 }
+.enable-styled-embed-border .inline-embed .markdown-embed-content .callout {
+  margin: var(--p-spacing);
+}
 
 .enable-styled-embed-pure-border {
   --embed-border-left: none;
@@ -308,6 +317,9 @@ settings:
 }
 .enable-styled-embed-pure-border .inline-embed .markdown-embed-content {
   padding: 0px 0.5rem;
+}
+.enable-styled-embed-pure-border .inline-embed .markdown-embed-content .callout {
+  margin: var(--p-spacing);
 }
 
 .enable-styled-embed-filled {
@@ -344,4 +356,7 @@ settings:
 .enable-styled-embed-filled .inline-embed .markdown-embed-content {
   padding: 0px 0.5rem;
   background-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
+}
+.enable-styled-embed-filled .inline-embed .markdown-embed-content .callout {
+  margin: var(--p-spacing);
 }
