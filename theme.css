@@ -4,6 +4,38 @@ name: SkySky Theme
 id: skysky-theme-editor
 settings:
     - 
+        id: heading-embed
+        title: Embed
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: enable-styled-embed
+        title: Choose an Embed Style
+        description: Toggle a custom style.
+        type: class-select
+        allowEmpty: false
+        default: enable-styled-embed-pure-border
+        options:
+            - 
+                label: Default
+                value: none
+            - 
+                label: Border
+                value: enable-styled-embed-border
+            - 
+                label: Filled
+                value: enable-styled-embed-filled
+            - 
+                label: Transparent
+                value: enable-styled-embed-transparent
+            - 
+                label: Pure
+                value: enable-styled-embed-pure
+            - 
+                label: Pure (Border)
+                value: enable-styled-embed-pure-border
+    - 
         id: heading-callout
         title: Callout
         type: heading
@@ -27,7 +59,7 @@ settings:
                 label: Default
                 value: none
             - 
-                label: Round Dashed  (White Bg)
+                label: Rounded Dashed Outline
                 value: callout-style-001
             - 
                 label: Rounded Outline (Filled Bg)
@@ -162,4 +194,162 @@ settings:
 .enable-styled-callout.callout-style-003 .callout .callout-content {
   padding-right: 15px;
   margin-left: -5px;
+}
+
+.enable-styled-embed-pure {
+  --embed-border-left: none;
+}
+.enable-styled-embed-pure .inline-embed {
+  padding: 0rem;
+}
+.enable-styled-embed-pure .inline-embed h1 h2 h3 h4 h5 h6 {
+  margin-top: var(--p-spacing);
+}
+.enable-styled-embed-pure .inline-embed hr {
+  padding-bottom: var(--p-spacing);
+}
+.enable-styled-embed-pure .inline-embed .embed-title {
+  display: none;
+}
+.enable-styled-embed-pure .inline-embed .markdown-embed-link {
+  padding: 0.5rem;
+  position: absolute;
+  top: 3.5px;
+  right: 4px;
+  color: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+}
+.enable-styled-embed-pure .inline-embed .markdown-embed-link:hover {
+  background-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
+}
+.enable-styled-embed-pure .inline-embed .markdown-embed-content {
+  padding: 0px 0.5rem;
+}
+
+.enable-styled-embed-transparent {
+  --embed-border-left: none;
+}
+.enable-styled-embed-transparent .inline-embed {
+  padding: 0rem;
+}
+.enable-styled-embed-transparent .inline-embed h1 h2 h3 h4 h5 h6 {
+  margin-top: var(--p-spacing);
+}
+.enable-styled-embed-transparent .inline-embed hr {
+  padding-bottom: var(--p-spacing);
+}
+.enable-styled-embed-transparent .inline-embed .embed-title {
+  padding: 0.5rem;
+}
+.enable-styled-embed-transparent .inline-embed .markdown-embed-link {
+  padding: 0.5rem;
+  position: absolute;
+  top: 3.5px;
+  right: 4px;
+  color: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+}
+.enable-styled-embed-transparent .inline-embed .markdown-embed-link:hover {
+  background-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
+}
+.enable-styled-embed-transparent .inline-embed .markdown-embed-content {
+  padding: 0px 0.5rem;
+}
+
+.enable-styled-embed-border {
+  --embed-border-left: none;
+}
+.enable-styled-embed-border .inline-embed {
+  border-radius: 10px;
+  border: 1.5px solid hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.5);
+  padding: 0rem;
+}
+.enable-styled-embed-border .inline-embed h1 h2 h3 h4 h5 h6 {
+  margin-top: var(--p-spacing);
+}
+.enable-styled-embed-border .inline-embed hr {
+  padding-bottom: var(--p-spacing);
+}
+.enable-styled-embed-border .inline-embed .embed-title {
+  border-bottom: 1.5px solid hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.5);
+  padding: 0.5rem;
+  background-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
+}
+.enable-styled-embed-border .inline-embed .markdown-embed-link {
+  padding: 0.5rem;
+  position: absolute;
+  top: 3.5px;
+  right: 4px;
+  color: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+}
+.enable-styled-embed-border .inline-embed .markdown-embed-link:hover {
+  background-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
+}
+.enable-styled-embed-border .inline-embed .markdown-embed-content {
+  padding: 0px 0.5rem;
+}
+
+.enable-styled-embed-pure-border {
+  --embed-border-left: none;
+}
+.enable-styled-embed-pure-border .inline-embed {
+  border-radius: 10px;
+  border: 1.5px solid hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.5);
+  padding: 0rem;
+}
+.enable-styled-embed-pure-border .inline-embed h1 h2 h3 h4 h5 h6 {
+  margin-top: var(--p-spacing);
+}
+.enable-styled-embed-pure-border .inline-embed hr {
+  padding-bottom: var(--p-spacing);
+}
+.enable-styled-embed-pure-border .inline-embed .embed-title {
+  display: none;
+}
+.enable-styled-embed-pure-border .inline-embed .markdown-embed-link {
+  padding: 0.3rem;
+  position: absolute;
+  top: 3.5px;
+  right: 4px;
+  color: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+}
+.enable-styled-embed-pure-border .inline-embed .markdown-embed-link:hover {
+  background-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
+}
+.enable-styled-embed-pure-border .inline-embed .markdown-embed-content {
+  padding: 0px 0.5rem;
+}
+
+.enable-styled-embed-filled {
+  --embed-border-left: none;
+}
+.enable-styled-embed-filled .inline-embed {
+  border-radius: 10px;
+  border: 0px solid transparent;
+  padding: 0rem;
+}
+.enable-styled-embed-filled .inline-embed h1 h2 h3 h4 h5 h6 {
+  margin-top: var(--p-spacing);
+}
+.enable-styled-embed-filled .inline-embed hr {
+  padding-bottom: var(--p-spacing);
+}
+.enable-styled-embed-filled .inline-embed .embed-title {
+  border-bottom: 0px solid transparent;
+  padding: 0.5rem;
+  background-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
+  border-radius: 10px 10px 0 0;
+  margin-bottom: 3px;
+}
+.enable-styled-embed-filled .inline-embed .markdown-embed-link {
+  padding: 0.5rem;
+  position: absolute;
+  top: 3.5px;
+  right: 4px;
+  color: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+}
+.enable-styled-embed-filled .inline-embed .markdown-embed-link:hover {
+  background-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
+}
+.enable-styled-embed-filled .inline-embed .markdown-embed-content {
+  padding: 0px 0.5rem;
+  background-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
 }

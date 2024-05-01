@@ -4,6 +4,38 @@ name: SkySky Theme
 id: skysky-theme-editor
 settings:
     - 
+        id: heading-embed
+        title: Embed
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: enable-styled-embed
+        title: Choose an Embed Style
+        description: Toggle a custom style.
+        type: class-select
+        allowEmpty: false
+        default: enable-styled-embed-pure-border
+        options:
+            - 
+                label: Default
+                value: none
+            - 
+                label: Border
+                value: enable-styled-embed-border
+            - 
+                label: Filled
+                value: enable-styled-embed-filled
+            - 
+                label: Transparent
+                value: enable-styled-embed-transparent
+            - 
+                label: Pure
+                value: enable-styled-embed-pure
+            - 
+                label: Pure (Border)
+                value: enable-styled-embed-pure-border
+    - 
         id: heading-callout
         title: Callout
         type: heading

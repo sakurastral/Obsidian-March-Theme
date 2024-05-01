@@ -4,5 +4,18 @@ $colors-mono-text: rgb(var(--mono-rgb-100));
 $rgb-colors-mono-bg: var(--mono-rgb-0);
 $rgb-colors-mono-text: var(--mono-rgb-100);
 
+//Accent
+$color-accent:hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+$bg-color-accent:hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
+$color-accent-50:hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.5);
+
 // Background
-$colors-bg-primary: var(--background-primary);
+$bg-color-primary: var(--background-primary);
+$bg-color-primary-alt: var(--background-primary-alt);
+$bg-color-secondary: var(--background-secondary);
+$bg-color-secondary-alt: var(--background-secondary-alt);
+
+// Border
+$color-border:var(--background-modifier-border);
+$color-border-hover:var(--background-modifier-border-hover);
+$color-border-focus:var(--background-modifier-border-focus);
