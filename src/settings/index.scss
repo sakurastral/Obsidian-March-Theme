@@ -1,1 +1,38 @@
+/* @settings
 
+name: SkySky Theme
+id: skysky-theme-editor
+settings:
+    - 
+        id: heading-callout
+        title: Callout
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: enable-styled-callout
+        title: Enable Styled Callout
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    -
+        id: enable-styled-callouts
+        title: Choose a Callout style
+        description: Toggle a custom style.
+        type: class-select
+        allowEmpty: false
+        default: callout-style-001
+        options:
+            - 
+                label: Default
+                value: none
+            - 
+                label: Rounded Dashed Outline
+                value: callout-style-001
+            - 
+                label: Rounded Outline (Filled Bg)
+                value: callout-style-002
+            - 
+                label: Rounded Outline (White Bg)
+                value: callout-style-003
+*/

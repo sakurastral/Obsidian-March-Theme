@@ -1,0 +1,167 @@
+@import '../variables/index.scss';
+
+/* ========================================================================== */
+/*                                   Callout                                  */
+/* ========================================================================== */
+
+/**
+ * callout-style-001 (Outline Filled) is inspired from 
+ *  @spacewitches/Obsidian (https://github.com/spacewitches/Obsidian/blob/e6733131f09c7ae3f37d6e11498f7ad7c00bb8d5/Minimal%20Theme/calloutsOutline.css)
+ * and
+ *  AnuPpuccin Theme (https://github.com/AnubisNekhet/AnuPpuccin) (https://www.buymeacoffee.com/anubisnekhet)
+ */
+
+.enable-styled-callout.callout-style-001 .callout {
+  --callout-border-width: 2px;
+  --callout-radius: 10px;
+  --callout-border-opacity: 0.5;
+  --callout-blend-mode: normal;
+  background-color: $colors-mono-bg;
+  padding-right: 5px;
+
+  // Add Spaces between Nested Callouts
+  .callout {
+    margin-top: 0.625rem;
+  }
+
+  // hide white space in collapsed callouts
+  &.is-collapsible.is-collapsed {
+    padding-bottom: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom: none;
+  }
+
+  // style callout title
+  .callout-title {
+    background-color: rgba(var(--callout-color), 0.1);
+    margin-top: -14px;
+    margin-left: -26px;
+    margin-right: -5px;
+    width: inherit;
+    border-bottom: 1px dashed rgb(var(--callout-color));
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 0.2rem 0.5em;
+    letter-spacing: 0.05em;
+  }
+
+  // center nested callout
+  .callout-content {
+    padding-right: 15px;
+    margin-left: -5px;
+  }
+}
+
+.enable-styled-callout.callout-style-002 .callout {
+  $callout-002-border: 2px solid rgba(var(--callout-color), var(--callout-border-opacity));
+
+  --callout-border-width: 2px;
+  --callout-radius: 10px;
+  --callout-border-opacity: 0.5;
+  --callout-blend-mode: normal;
+  background-color: rgba(var(--callout-color), 0.1);
+  padding-right: 5px;
+  padding-bottom: 0px;
+
+  // Nested Callouts
+  &.callout:has(.callout-content):not(.is-collapsed) {
+    margin-top: 0.625rem;
+    padding-bottom: 10px;
+
+    .callout-title {
+      border-bottom: $callout-002-border;
+    }
+  }
+
+  // Collapsed callouts
+  &.is-collapsible {
+    padding-bottom: 0px;
+
+    .callout-title {
+      border-bottom: $callout-002-border;
+    }
+
+    &.is-collapsed {
+      border-bottom: none;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+    }
+
+  }
+
+  // Callout title
+  .callout-title {
+    margin-top: -14px;
+    margin-left: -26px;
+    margin-right: -5px;
+    width: inherit;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 0.2rem 0.5em;
+    letter-spacing: 0.05em;
+  }
+
+  // center nested callout
+  .callout-content {
+    padding-right: 15px;
+    margin-left: -5px;
+  }
+}
+
+.enable-styled-callout.callout-style-003 .callout {
+  $callout-002-border: 2px solid rgba(var(--callout-color), var(--callout-border-opacity));
+
+  --callout-border-width: 2px;
+  --callout-radius: 10px;
+  --callout-border-opacity: 0.5;
+  --callout-blend-mode: normal;
+  background-color: rgba(var(--callout-color), 0);
+  padding-right: 5px;
+  padding-bottom: 0px;
+
+  // Nested Callouts
+  &.callout:has(.callout-content):not(.is-collapsed) {
+    margin-top: 0.625rem;
+    padding-bottom: 10px;
+
+    .callout-title {
+      border-bottom: $callout-002-border;
+    }
+  }
+
+  // Collapsed callouts
+  &.is-collapsible {
+    padding-bottom: 0px;
+
+    .callout-title {
+      border-bottom: $callout-002-border;
+    }
+
+    &.is-collapsed {
+      border-bottom: none;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+    }
+
+  }
+
+  // Callout title
+  .callout-title {
+    margin-top: -14px;
+    margin-left: -26px;
+    margin-right: -5px;
+    width: inherit;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 0.2rem 0.5em;
+    letter-spacing: 0.05em;
+    background-color: rgba(var(--callout-color), 0.1);
+  }
+
+  // center nested callout
+  .callout-content {
+    padding-right: 15px;
+    margin-left: -5px;
+  }
+}

@@ -1,34 +1,165 @@
-body {
-	--radius-s: 0px;
-	--radius-m: 0px;
-	--radius-l: 0px;
-	--input-radius: 0px;
-	--tab-radius-active: 0px;
-	--checkbox-radius: 0px;
-	--toggle-radius: 0px;
-	--toggle-thumb-radius: 0px;
-	--slider-thumb-radius: 0px;
+/* @settings
+
+name: SkySky Theme
+id: skysky-theme-editor
+settings:
+    - 
+        id: heading-callout
+        title: Callout
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: enable-styled-callout
+        title: Enable Styled Callout
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    -
+        id: enable-styled-callouts
+        title: Choose a Callout style
+        description: Toggle a custom style.
+        type: class-select
+        allowEmpty: false
+        default: callout-style-001
+        options:
+            - 
+                label: Default
+                value: none
+            - 
+                label: Round Dashed  (White Bg)
+                value: callout-style-001
+            - 
+                label: Rounded Outline (Filled Bg)
+                value: callout-style-002
+            - 
+                label: Rounded Outline (White Bg)
+                value: callout-style-003
+*/
+/* ========================================================================== */
+/*                                   Callout                                  */
+/* ========================================================================== */
+/**
+ * callout-style-001 (Outline Filled) is inspired from 
+ *  @spacewitches/Obsidian (https://github.com/spacewitches/Obsidian/blob/e6733131f09c7ae3f37d6e11498f7ad7c00bb8d5/Minimal%20Theme/calloutsOutline.css)
+ * and
+ *  AnuPpuccin Theme (https://github.com/AnubisNekhet/AnuPpuccin) (https://www.buymeacoffee.com/anubisnekhet)
+ */
+.enable-styled-callout.callout-style-001 .callout {
+  --callout-border-width: 2px;
+  --callout-radius: 10px;
+  --callout-border-opacity: 0.5;
+  --callout-blend-mode: normal;
+  background-color: rgb(var(--mono-rgb-0));
+  padding-right: 5px;
+}
+.enable-styled-callout.callout-style-001 .callout .callout {
+  margin-top: 0.625rem;
+}
+.enable-styled-callout.callout-style-001 .callout.is-collapsible.is-collapsed {
+  padding-bottom: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom: none;
+}
+.enable-styled-callout.callout-style-001 .callout .callout-title {
+  background-color: rgba(var(--callout-color), 0.1);
+  margin-top: -14px;
+  margin-left: -26px;
+  margin-right: -5px;
+  width: inherit;
+  border-bottom: 1px dashed rgb(var(--callout-color));
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 0.2rem 0.5em;
+  letter-spacing: 0.05em;
+}
+.enable-styled-callout.callout-style-001 .callout .callout-content {
+  padding-right: 15px;
+  margin-left: -5px;
 }
 
-.workspace-tab-header.is-active::before, .workspace-tab-header.is-active::after {
-	display: none;
+.enable-styled-callout.callout-style-002 .callout {
+  --callout-border-width: 2px;
+  --callout-radius: 10px;
+  --callout-border-opacity: 0.5;
+  --callout-blend-mode: normal;
+  background-color: rgba(var(--callout-color), 0.1);
+  padding-right: 5px;
+  padding-bottom: 0px;
+}
+.enable-styled-callout.callout-style-002 .callout.callout:has(.callout-content):not(.is-collapsed) {
+  margin-top: 0.625rem;
+  padding-bottom: 10px;
+}
+.enable-styled-callout.callout-style-002 .callout.callout:has(.callout-content):not(.is-collapsed) .callout-title {
+  border-bottom: 2px solid rgba(var(--callout-color), var(--callout-border-opacity));
+}
+.enable-styled-callout.callout-style-002 .callout.is-collapsible {
+  padding-bottom: 0px;
+}
+.enable-styled-callout.callout-style-002 .callout.is-collapsible .callout-title {
+  border-bottom: 2px solid rgba(var(--callout-color), var(--callout-border-opacity));
+}
+.enable-styled-callout.callout-style-002 .callout.is-collapsible.is-collapsed {
+  border-bottom: none;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.enable-styled-callout.callout-style-002 .callout .callout-title {
+  margin-top: -14px;
+  margin-left: -26px;
+  margin-right: -5px;
+  width: inherit;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 0.2rem 0.5em;
+  letter-spacing: 0.05em;
+}
+.enable-styled-callout.callout-style-002 .callout .callout-content {
+  padding-right: 15px;
+  margin-left: -5px;
 }
 
-svg * {
-	stroke-linecap: square;
-	stroke-linejoin: miter;
-	rx: 0;
-	ry: 0;
+.enable-styled-callout.callout-style-003 .callout {
+  --callout-border-width: 2px;
+  --callout-radius: 10px;
+  --callout-border-opacity: 0.5;
+  --callout-blend-mode: normal;
+  background-color: rgba(var(--callout-color), 0);
+  padding-right: 5px;
+  padding-bottom: 0px;
 }
-
-.menu {
-	padding: var(--size-2-1);
+.enable-styled-callout.callout-style-003 .callout.callout:has(.callout-content):not(.is-collapsed) {
+  margin-top: 0.625rem;
+  padding-bottom: 10px;
 }
-
-.menu-item {
-	padding: var(--size-4-1) var(--size-4-2);
+.enable-styled-callout.callout-style-003 .callout.callout:has(.callout-content):not(.is-collapsed) .callout-title {
+  border-bottom: 2px solid rgba(var(--callout-color), var(--callout-border-opacity));
 }
-
-.menu-separator {
-	margin: var(--size-2-1) calc(var(--size-2-1) * -1);
+.enable-styled-callout.callout-style-003 .callout.is-collapsible {
+  padding-bottom: 0px;
+}
+.enable-styled-callout.callout-style-003 .callout.is-collapsible .callout-title {
+  border-bottom: 2px solid rgba(var(--callout-color), var(--callout-border-opacity));
+}
+.enable-styled-callout.callout-style-003 .callout.is-collapsible.is-collapsed {
+  border-bottom: none;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.enable-styled-callout.callout-style-003 .callout .callout-title {
+  margin-top: -14px;
+  margin-left: -26px;
+  margin-right: -5px;
+  width: inherit;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 0.2rem 0.5em;
+  letter-spacing: 0.05em;
+  background-color: rgba(var(--callout-color), 0.1);
+}
+.enable-styled-callout.callout-style-003 .callout .callout-content {
+  padding-right: 15px;
+  margin-left: -5px;
 }
