@@ -84,9 +84,7 @@ settings:
   --callout-blend-mode: normal;
   background-color: rgb(var(--mono-rgb-0));
   padding-right: 5px;
-}
-.enable-styled-callout.callout-style-001 .callout .callout {
-  margin-top: 0.625rem;
+  margin: var(--p-spacing) 0;
 }
 .enable-styled-callout.callout-style-001 .callout.is-collapsible.is-collapsed {
   padding-bottom: 0px;
@@ -119,10 +117,7 @@ settings:
   background-color: rgba(var(--callout-color), 0.1);
   padding-right: 5px;
   padding-bottom: 0px;
-}
-.enable-styled-callout.callout-style-002 .callout.callout:has(.callout-content):not(.is-collapsed) {
-  margin-top: 0.625rem;
-  padding-bottom: 10px;
+  margin: var(--p-spacing) 0;
 }
 .enable-styled-callout.callout-style-002 .callout.callout:has(.callout-content):not(.is-collapsed) .callout-title {
   border-bottom: 2px solid rgba(var(--callout-color), var(--callout-border-opacity));
@@ -161,10 +156,7 @@ settings:
   background-color: rgba(var(--callout-color), 0);
   padding-right: 5px;
   padding-bottom: 0px;
-}
-.enable-styled-callout.callout-style-003 .callout.callout:has(.callout-content):not(.is-collapsed) {
-  margin-top: 0.625rem;
-  padding-bottom: 10px;
+  margin: var(--p-spacing) 0;
 }
 .enable-styled-callout.callout-style-003 .callout.callout:has(.callout-content):not(.is-collapsed) .callout-title {
   border-bottom: 2px solid rgba(var(--callout-color), var(--callout-border-opacity));

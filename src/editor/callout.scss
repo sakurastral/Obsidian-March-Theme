@@ -18,11 +18,7 @@
   --callout-blend-mode: normal;
   background-color: $colors-mono-bg;
   padding-right: 5px;
-
-  // Add Spaces between Nested Callouts
-  .callout {
-    margin-top: 0.625rem;
-  }
+  margin: var(--p-spacing) 0;
 
   // hide white space in collapsed callouts
   &.is-collapsible.is-collapsed {
@@ -63,12 +59,10 @@
   background-color: rgba(var(--callout-color), 0.1);
   padding-right: 5px;
   padding-bottom: 0px;
+  margin: var(--p-spacing) 0;
 
   // Nested Callouts
   &.callout:has(.callout-content):not(.is-collapsed) {
-    margin-top: 0.625rem;
-    padding-bottom: 10px;
-
     .callout-title {
       border-bottom: $callout-002-border;
     }
@@ -119,11 +113,10 @@
   background-color: rgba(var(--callout-color), 0);
   padding-right: 5px;
   padding-bottom: 0px;
+  margin: var(--p-spacing) 0;
 
   // Nested Callouts
   &.callout:has(.callout-content):not(.is-collapsed) {
-    margin-top: 0.625rem;
-    padding-bottom: 10px;
 
     .callout-title {
       border-bottom: $callout-002-border;
