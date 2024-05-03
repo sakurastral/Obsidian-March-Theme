@@ -4,6 +4,43 @@ name: SkySky Theme
 id: skysky-theme-editor
 settings:
     - 
+        id: heading-blockquotes
+        title: Blockquotes
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: enable-styled-blockquotes
+        title: Enable Styled Blockquotes
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    -
+        id: enable-styled-blockquotes-add-icon
+        title: Add a quotation mark
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    -
+        id: enable-styled-blockquotes-rounded-corner
+        title: Enable rounded corner
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+
+    -
+        id: enable-styled-blockquotes-transparent-bg
+        title: Disable accent background
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    -
+        id: enable-styled-blockquotes-show-left-border
+        title: Show left border
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    - 
         id: heading-embed
         title: Embed
         type: heading

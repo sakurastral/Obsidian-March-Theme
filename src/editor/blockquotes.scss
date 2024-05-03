@@ -1,0 +1,133 @@
+/* ========================================================================== */
+/*                                 Blockquotes                                */
+/* ========================================================================== */
+.enable-styled-blockquotes {
+  --blockquote-background-color: #{$bg-color-accent};
+  --blockquote-border-color : #{$color-accent};
+
+  .markdown-rendered blockquote,
+  .markdown-source-view.mod-cm6 .cm-blockquote-border:before,
+  .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:before {
+    border-left: none;
+  }
+
+  .markdown-preview-view blockquote {
+
+    :has(blockquote),
+    :last-child {
+      background: transparent;
+    }
+  }
+
+  /** Partial style(s) is(are) sourced or adapted from Blue Topaz (https://github.com/PKM-er/Blue-Topaz_Obsidian-css), and I would like to express my appreciation to WhyI (https://github.com/whyt-byte) and pkmer.cn (https://pkmer.cn). */
+  &.enable-styled-blockquotes-add-icon {
+    %blockquotes-add-icon {
+      content: '\ee81';
+      font-size: 1rem;
+      font-family: boxicons;
+      position: absolute;
+      top: -0.1rem;
+      left: -1.2rem;
+      color: var(--blockquote-border-color);
+    }
+
+    %blockquotes-no-icon-nested {
+      content: '';
+    }
+
+    .markdown-source-view.mod-cm6.is-live-preview {
+      .HyperMD-quote {
+        +.HyperMD-quote {
+          .cm-formatting.cm-formatting-quote.cm-quote {
+            &:before {
+              @extend %blockquotes-no-icon-nested
+            }
+          }
+        }
+
+        .cm-formatting.cm-formatting-quote.cm-quote {
+          &:before {
+            @extend %blockquotes-add-icon;
+          }
+        }
+      }
+    }
+
+    .markdown-preview-view.markdown-rendered blockquote {
+
+      :has(blockquote),
+      :last-child {
+        p {
+          &:first-of-type:before {
+            @extend %blockquotes-no-icon-nested;
+          }
+        }
+      }
+
+      p {
+        position: relative;
+        margin: 0em;
+        padding: 0 0 0 var(--size-4-2);
+
+        &:first-of-type:before {
+          @extend %blockquotes-add-icon;
+          font-size: var(--font-text-size);
+          top: -0rem;
+          left: -1rem;
+        }
+      }
+    }
+  }
+
+  /** Rounded Corner is inspired from @Akifyss/obsidian-border(https://github.com/Akifyss/obsidian-border). */
+  &.enable-styled-blockquotes-rounded-corner {
+    .markdown-preview-view blockquote {
+      border-radius: $blockquote-radius;
+
+      :has(blockquote),
+      :last-child {
+        border-radius: 0;
+      }
+    }
+
+    .markdown-source-view.mod-cm6.is-live-preview {
+      .HyperMD-quote {
+        border-radius: $blockquote-radius;
+
+        &:has(+.HyperMD-quote) {
+          border-radius: $blockquote-radius $blockquote-radius 0 0;
+        }
+
+        +.HyperMD-quote {
+          border-radius: 0 0 $blockquote-radius $blockquote-radius;
+
+          &:has(+.HyperMD-quote) {
+            border-radius: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &.enable-styled-blockquotes-transparent-bg {
+    --blockquote-background-color: transparent;
+  }
+
+  &.enable-styled-blockquotes-show-left-border {
+
+    .markdown-rendered blockquote,
+    // .markdown-source-view.mod-cm6 .cm-blockquote-border:before,
+    .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:before {
+      border-left: 2px solid var(--blockquote-border-color);
+      border-radius: 0;
+    }
+
+    .markdown-preview-view blockquote {
+
+      :has(blockquote),
+      :last-child {
+        border-left: none;
+      }
+    }
+  }
+}

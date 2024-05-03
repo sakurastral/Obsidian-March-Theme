@@ -1,8 +1,53 @@
+@font-face {
+  /** Partial style(s) is(are) sourced or adapted from Blue Topaz (https://github.com/PKM-er/Blue-Topaz_Obsidian-css), and I would like to express my appreciation to WhyI (https://github.com/whyt-byte) and pkmer.cn (https://pkmer.cn). */
+  font-family: "boxicons";
+  src: url("data:font/woff2;charset=utf-8;base64,d09GMgABAAAAAAUQAAwAAAAACcgAAATCAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhYGYABcEQgKizCJEgsWAAE2AiQDIAQgBYJKB20bvAfIjsK22bOwIjmQDyeRhxX00NzbvN1Nmu62nLQHQCDL9ufY3SlWLCy602dZsQLOD3n6L92cdrLTQfkrT6MySDfJpw9OaT98nP5JmH4/V2cmpe/6WhKztuSGJ/ESuA4hvX1EJEJolEji6JTI0tpue1NL4JWIHgIq4OgbhCi/3NpClyACc5XyAoCL6n70EWwlhmpONTB1FlpfjQVO/p/gZZEPIDSpXtxo4LaSYhHSHYt+SxUJhpheH+5uX9ye3VV/Gfy/gOQ3Fu8zRRlHGQfpRqmPgCzFCBUF1Uh/SQrUgH4DZhk6yeGXoC8cBhsxFq7pb0yj9ZTXp1KXLMmRQUixqcS8vOSggBJukKH1ydDZR4IPYZr5Euhg83gIFk9pP/Clx0I87acK8hy24z0qvcx2nb/0Cdoa+Ii0XgVzgN6r+iK0nkGLXR2X+z/gex7bxsateRzxFtwXn/LeVSySZJFoZH5I+4HvqJZKR+o4Dur6t87I2TrM6j9XdbrRcY44fLSlI+3ubuzuV5Hdvmmca2jI1uvoSDsmADmD6IHuGenUM5hVdZIFkpwkXs2bzaqVg5ig21xnZ9bUpK4udbC3keseVkdfg/zQ+QTxrilf2khRYnFlXQ3oFA9wOU5xw2nnctiCmtR0SRXZXYGyoKwnVewY+LjeTGHwbDzaORny7Ubx7umQd2bik2Sobg3K+RPl9l33+SOXNRX7Rzyyh3xsi93O6bABkL+k7Qg6sJdNW4lpYOrJSeqY8Y5wNiV/TaCTQbNh4pWu3ptEMLym787heHiFV1iqrfSZGuEmx6pMFUnBWUPZprrSuqbVv4VrsZIKU9XLvSABx5PYHh7sJLorocDdi5VC+fTknXoQAxapG1EZ7VJcvB7ywPCse5ZoWiXhxg3VDtXKzdUSo1yu6AlFbyjzB3Pl5lRYKqpMFQC6zlNVwVQBoO3DfBetL/3fZHyLEH875zoW9LUhTUVOcYUwA6fRgIBbTtKvA2yR+LMPYlIc5SLq732uzjZsbz84PdW809uR351YPvDkeGS/e1mcsIKQurCaoLCpnHWQjeFEVjhOEDgAvBQ5jVYIczAa5Qa864uU+J0mG9FJzq7mz8ye7ie0vQGl5woLR5VRhY1FYIfw4VmMLCL8P4DJY4JBvrso7cAWqDglK65rDHcKgpDsOnEZo+/qSKSJPI5BruiogT4dVdX60tQ816e755+W0fkD9Kn+1ymZhUg7aIxqABL9F1JVtE7bwhtlS+iC/gaPfES5EmhGRPcKfzdjw4z8RBxP5HiAThQ/8i1/7/VOSbevCeoAeBVmJ+lNFB8tT6ATuAU6O9hvowFoaKlY+maXjJ1P0vq4gXpOO6ynCtbAAgG8fQ61ZUvrtSoegKYKJ8usGcpIYLktWu4idUSgenkMV3u60AWLXDmihnGgNlQxb7mF5Q7UEQ2sWR6D18uFQ3uIogdmMPf3es536ZyNhdVX/kVvRrnAOOLfKX4a7IGgiBTiIMgklwgSSCKfdGLIgU0COeSSUjGpxRhGMIoFieY8tDhIAtqr9WPII4H4zj0Uo8XiwfKhEM12YYFBf70HGYwsVk6RYpUpiQ8eK85KthbJP5FiReyeEPPGMJafL53oZ03CnHJ0G2cA") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 /* @settings
 
 name: SkySky Theme
 id: skysky-theme-editor
 settings:
+    - 
+        id: heading-blockquotes
+        title: Blockquotes
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: enable-styled-blockquotes
+        title: Enable Styled Blockquotes
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    -
+        id: enable-styled-blockquotes-add-icon
+        title: Add a quotation mark
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    -
+        id: enable-styled-blockquotes-rounded-corner
+        title: Enable rounded corner
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+
+    -
+        id: enable-styled-blockquotes-transparent-bg
+        title: Disable accent background
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    -
+        id: enable-styled-blockquotes-show-left-border
+        title: Show left border
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
     - 
         id: heading-embed
         title: Embed
@@ -375,4 +420,77 @@ settings:
 
 .enable-styled-horizontal-rules hr {
   --hr-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.5);
+}
+
+/* ========================================================================== */
+/*                                 Blockquotes                                */
+/* ========================================================================== */
+.enable-styled-blockquotes {
+  --blockquote-background-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
+  --blockquote-border-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+  /** Partial style(s) is(are) sourced or adapted from Blue Topaz (https://github.com/PKM-er/Blue-Topaz_Obsidian-css), and I would like to express my appreciation to WhyI (https://github.com/whyt-byte) and pkmer.cn (https://pkmer.cn). */
+  /** Rounded Corner is inspired from @Akifyss/obsidian-border(https://github.com/Akifyss/obsidian-border). */
+}
+.enable-styled-blockquotes .markdown-rendered blockquote,
+.enable-styled-blockquotes .markdown-source-view.mod-cm6 .cm-blockquote-border:before,
+.enable-styled-blockquotes .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:before {
+  border-left: none;
+}
+.enable-styled-blockquotes .markdown-preview-view blockquote :has(blockquote),
+.enable-styled-blockquotes .markdown-preview-view blockquote :last-child {
+  background: transparent;
+}
+.enable-styled-blockquotes.enable-styled-blockquotes-add-icon .markdown-preview-view.markdown-rendered blockquote p:first-of-type:before, .enable-styled-blockquotes.enable-styled-blockquotes-add-icon .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote .cm-formatting.cm-formatting-quote.cm-quote:before {
+  content: "\ee81";
+  font-size: 1rem;
+  font-family: boxicons;
+  position: absolute;
+  top: -0.1rem;
+  left: -1.2rem;
+  color: var(--blockquote-border-color);
+}
+.enable-styled-blockquotes.enable-styled-blockquotes-add-icon .markdown-preview-view.markdown-rendered blockquote :has(blockquote) p:first-of-type:before,
+.enable-styled-blockquotes.enable-styled-blockquotes-add-icon .markdown-preview-view.markdown-rendered blockquote :last-child p:first-of-type:before, .enable-styled-blockquotes.enable-styled-blockquotes-add-icon .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote + .HyperMD-quote .cm-formatting.cm-formatting-quote.cm-quote:before {
+  content: "";
+}
+.enable-styled-blockquotes.enable-styled-blockquotes-add-icon .markdown-preview-view.markdown-rendered blockquote p {
+  position: relative;
+  margin: 0em;
+  padding: 0 0 0 var(--size-4-2);
+}
+.enable-styled-blockquotes.enable-styled-blockquotes-add-icon .markdown-preview-view.markdown-rendered blockquote p:first-of-type:before {
+  font-size: var(--font-text-size);
+  top: 0rem;
+  left: -1rem;
+}
+.enable-styled-blockquotes.enable-styled-blockquotes-rounded-corner .markdown-preview-view blockquote {
+  border-radius: 10px;
+}
+.enable-styled-blockquotes.enable-styled-blockquotes-rounded-corner .markdown-preview-view blockquote :has(blockquote),
+.enable-styled-blockquotes.enable-styled-blockquotes-rounded-corner .markdown-preview-view blockquote :last-child {
+  border-radius: 0;
+}
+.enable-styled-blockquotes.enable-styled-blockquotes-rounded-corner .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote {
+  border-radius: 10px;
+}
+.enable-styled-blockquotes.enable-styled-blockquotes-rounded-corner .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:has(+ .HyperMD-quote) {
+  border-radius: 10px 10px 0 0;
+}
+.enable-styled-blockquotes.enable-styled-blockquotes-rounded-corner .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote + .HyperMD-quote {
+  border-radius: 0 0 10px 10px;
+}
+.enable-styled-blockquotes.enable-styled-blockquotes-rounded-corner .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote + .HyperMD-quote:has(+ .HyperMD-quote) {
+  border-radius: 0;
+}
+.enable-styled-blockquotes.enable-styled-blockquotes-transparent-bg {
+  --blockquote-background-color: transparent;
+}
+.enable-styled-blockquotes.enable-styled-blockquotes-show-left-border .markdown-rendered blockquote,
+.enable-styled-blockquotes.enable-styled-blockquotes-show-left-border .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:before {
+  border-left: 2px solid var(--blockquote-border-color);
+  border-radius: 0;
+}
+.enable-styled-blockquotes.enable-styled-blockquotes-show-left-border .markdown-preview-view blockquote :has(blockquote),
+.enable-styled-blockquotes.enable-styled-blockquotes-show-left-border .markdown-preview-view blockquote :last-child {
+  border-left: none;
 }
