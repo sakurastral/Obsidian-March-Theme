@@ -26,14 +26,14 @@ settings:
         title: Enable rounded corner
         description: Toggle to turn on/off function.
         type: class-toggle
-        default: true
+        default: false
 
     -
         id: enable-styled-blockquotes-transparent-bg
         title: Disable accent background
         description: Toggle to turn on/off function.
         type: class-toggle
-        default: true
+        default: false
     -
         id: enable-styled-blockquotes-show-left-border
         title: Show left border

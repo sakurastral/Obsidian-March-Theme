@@ -4,11 +4,16 @@
 .enable-styled-blockquotes {
   --blockquote-background-color: #{$bg-color-accent};
   --blockquote-border-color : #{$color-accent};
+  --blockquote-icon-color : #{$color-accent};
+
+  .cm-quote {
+    padding: 0 0 0 0;
+  }
 
   .markdown-rendered blockquote,
   .markdown-source-view.mod-cm6 .cm-blockquote-border:before,
   .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:before {
-    border-left: none;
+    border-left: $border-style-none;
   }
 
   .markdown-preview-view blockquote {
@@ -23,12 +28,12 @@
   &.enable-styled-blockquotes-add-icon {
     %blockquotes-add-icon {
       content: '\ee81';
-      font-size: 1rem;
+      font-size: var(--font-text-size);
       font-family: boxicons;
       position: absolute;
-      top: -0.1rem;
-      left: -1.2rem;
-      color: var(--blockquote-border-color);
+      top: 0%;
+      left: 1%;
+      color: var(--blockquote-icon-color);
     }
 
     %blockquotes-no-icon-nested {
@@ -45,7 +50,17 @@
           }
         }
 
+        .cm-quote {
+          padding: 0 0 0 $blockquote-padding;
+
+          +.cm-quote {
+            padding: 0 0 0 $blockquote-padding;
+          }
+        }
+
         .cm-formatting.cm-formatting-quote.cm-quote {
+          padding: 0 0 0 $blockquote-padding;
+
           &:before {
             @extend %blockquotes-add-icon;
           }
@@ -67,13 +82,13 @@
       p {
         position: relative;
         margin: 0em;
-        padding: 0 0 0 var(--size-4-2);
+        padding: 0 0 0 $blockquote-padding/2;
 
         &:first-of-type:before {
           @extend %blockquotes-add-icon;
           font-size: var(--font-text-size);
-          top: -0rem;
-          left: -1rem;
+          top: 0;
+          left: -2.5%;
         }
       }
     }
@@ -118,7 +133,7 @@
     .markdown-rendered blockquote,
     // .markdown-source-view.mod-cm6 .cm-blockquote-border:before,
     .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:before {
-      border-left: 2px solid var(--blockquote-border-color);
+      border-left: $border-style-solid var(--blockquote-border-color);
       border-radius: 0;
     }
 
@@ -126,7 +141,7 @@
 
       :has(blockquote),
       :last-child {
-        border-left: none;
+        border-left: $border-style-none;
       }
     }
   }

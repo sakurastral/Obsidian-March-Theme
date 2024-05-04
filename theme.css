@@ -34,14 +34,14 @@ settings:
         title: Enable rounded corner
         description: Toggle to turn on/off function.
         type: class-toggle
-        default: true
+        default: false
 
     -
         id: enable-styled-blockquotes-transparent-bg
         title: Disable accent background
         description: Toggle to turn on/off function.
         type: class-toggle
-        default: true
+        default: false
     -
         id: enable-styled-blockquotes-show-left-border
         title: Show left border
@@ -429,8 +429,12 @@ settings:
 .enable-styled-blockquotes {
   --blockquote-background-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
   --blockquote-border-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+  --blockquote-icon-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
   /** Partial style(s) is(are) sourced or adapted from Blue Topaz (https://github.com/PKM-er/Blue-Topaz_Obsidian-css), and I would like to express my appreciation to WhyI (https://github.com/whyt-byte) and pkmer.cn (https://pkmer.cn). */
   /** Rounded Corner is inspired from @Akifyss/obsidian-border(https://github.com/Akifyss/obsidian-border). */
+}
+.enable-styled-blockquotes .cm-quote {
+  padding: 0 0 0 0;
 }
 .enable-styled-blockquotes .markdown-rendered blockquote,
 .enable-styled-blockquotes .markdown-source-view.mod-cm6 .cm-blockquote-border:before,
@@ -443,26 +447,35 @@ settings:
 }
 .enable-styled-blockquotes.enable-styled-blockquotes-add-icon .markdown-preview-view.markdown-rendered blockquote p:first-of-type:before, .enable-styled-blockquotes.enable-styled-blockquotes-add-icon .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote .cm-formatting.cm-formatting-quote.cm-quote:before {
   content: "\ee81";
-  font-size: 1rem;
+  font-size: var(--font-text-size);
   font-family: boxicons;
   position: absolute;
-  top: -0.1rem;
-  left: -1.2rem;
-  color: var(--blockquote-border-color);
+  top: 0%;
+  left: 1%;
+  color: var(--blockquote-icon-color);
 }
 .enable-styled-blockquotes.enable-styled-blockquotes-add-icon .markdown-preview-view.markdown-rendered blockquote :has(blockquote) p:first-of-type:before,
 .enable-styled-blockquotes.enable-styled-blockquotes-add-icon .markdown-preview-view.markdown-rendered blockquote :last-child p:first-of-type:before, .enable-styled-blockquotes.enable-styled-blockquotes-add-icon .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote + .HyperMD-quote .cm-formatting.cm-formatting-quote.cm-quote:before {
   content: "";
 }
+.enable-styled-blockquotes.enable-styled-blockquotes-add-icon .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote .cm-quote {
+  padding: 0 0 0 10px;
+}
+.enable-styled-blockquotes.enable-styled-blockquotes-add-icon .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote .cm-quote + .cm-quote {
+  padding: 0 0 0 10px;
+}
+.enable-styled-blockquotes.enable-styled-blockquotes-add-icon .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote .cm-formatting.cm-formatting-quote.cm-quote {
+  padding: 0 0 0 10px;
+}
 .enable-styled-blockquotes.enable-styled-blockquotes-add-icon .markdown-preview-view.markdown-rendered blockquote p {
   position: relative;
   margin: 0em;
-  padding: 0 0 0 var(--size-4-2);
+  padding: 0 0 0 5px;
 }
 .enable-styled-blockquotes.enable-styled-blockquotes-add-icon .markdown-preview-view.markdown-rendered blockquote p:first-of-type:before {
   font-size: var(--font-text-size);
-  top: 0rem;
-  left: -1rem;
+  top: 0;
+  left: -2.5%;
 }
 .enable-styled-blockquotes.enable-styled-blockquotes-rounded-corner .markdown-preview-view blockquote {
   border-radius: 10px;
