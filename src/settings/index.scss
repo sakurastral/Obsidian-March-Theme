@@ -4,6 +4,24 @@ name: SkySky Theme
 id: skysky-theme-editor
 settings:
     - 
+        id: heading-checkbox
+        title: Checkbox
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: enable-styled-checkbox-rounded 
+        title: Enable rounded checkbox
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    -
+        id: enable-styled-checkbox-custom 
+        title: Enable custom checkbox
+        description: Toggle to turn on/off function. add cancel, and others.
+        type: class-toggle
+        default: true
+    - 
         id: heading-codeblock
         title: Codeblock
         type: heading

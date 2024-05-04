@@ -5,9 +5,9 @@ $rgb-colors-mono-bg: var(--mono-rgb-0);
 $rgb-colors-mono-text: var(--mono-rgb-100);
 
 //Accent
-$color-accent:hsl(var(--accent-h), var(--accent-s), var(--accent-l));
-$bg-color-accent:hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
-$color-accent-50:hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.5);
+$color-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+$bg-color-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
+$color-accent-50: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.5);
 
 // Background
 $bg-color-primary: var(--background-primary);
@@ -16,6 +16,24 @@ $bg-color-secondary: var(--background-secondary);
 $bg-color-secondary-alt: var(--background-secondary-alt);
 
 // Border
-$color-border:var(--background-modifier-border);
-$color-border-hover:var(--background-modifier-border-hover);
-$color-border-focus:var(--background-modifier-border-focus);
+$color-border: var(--background-modifier-border);
+$color-border-hover: var(--background-modifier-border-hover);
+$color-border-focus: var(--background-modifier-border-focus);
+
+// Extend
+$colors-extend-color-red: var(--color-red); //#e93147 #fb464c
+$colors-extend-color-orange: var(--color-orange); //#ec7500 #e9973f
+$colors-extend-color-yellow: var(--color-yellow); //#e0ac00 #e0de71
+$colors-extend-color-green: var(--color-green); //#08b94e #44cf6e
+$colors-extend-color-cyan: var(--color-cyan); //#00bfbc #53dfdd
+$colors-extend-color-blue: var(--color-blue); //#086ddd #027aff
+$colors-extend-color-purple: var(--color-purple); //#7852ee #a882ff
+$colors-extend-color-pink: var(--color-pink); //#d53984 #fa99cd
+$rgb-colors-extend-color-red: var(--color-red-rgb); // (233, 49, 71)(251, 70, 76)
+$rgb-colors-extend-color-orange: var(--color-orange-rgb); // (236, 117, 0)(233, 151, 63)
+$rgb-colors-extend-color-yellow: var(--color-yellow-rgb); // (224, 172, 0)(224, 222, 113)
+$rgb-colors-extend-color-green: var(--color-green-rgb); // (8, 185, 78)(68, 207, 110)
+$rgb-colors-extend-color-cyan: var(--color-cyan-rgb); // (0, 191, 188)(83, 223, 221)
+$rgb-colors-extend-color-blue: var(--color-blue-rgb); // (8, 109, 221)(2, 122, 255)
+$rgb-colors-extend-color-purple: var(--color-purple-rgb); // (120, 82, 238)(168, 130, 255)
+$rgb-colors-extend-color-pink: var(--color-pink-rgb); // (213, 57, 132)(250, 153, 205)
