@@ -126,14 +126,9 @@ settings:
                 value: callout-style-003
 */
 /* ========================================================================== */
-/*                                   Callout                                  */
+/*                              Editor - Callout                              */
 /* ========================================================================== */
-/**
- * callout-style-001 (Outline Filled) is inspired from 
- *  @spacewitches/Obsidian (https://github.com/spacewitches/Obsidian/blob/e6733131f09c7ae3f37d6e11498f7ad7c00bb8d5/Minimal%20Theme/calloutsOutline.css)
- * and
- *  AnuPpuccin Theme (https://github.com/AnubisNekhet/AnuPpuccin) (https://www.buymeacoffee.com/anubisnekhet)
- */
+/** callout-style-001 (Outline Filled) is inspired from @spacewitches/Obsidian (https://github.com/spacewitches/Obsidian/blob/e6733131f09c7ae3f37d6e11498f7ad7c00bb8d5/Minimal%20Theme/calloutsOutline.css) and AnuPpuccin Theme (https://github.com/AnubisNekhet/AnuPpuccin) (https://www.buymeacoffee.com/anubisnekhet) */
 .enable-styled-callout.callout-style-001 .callout {
   --callout-border-width: 2px;
   --callout-radius: 10px;
@@ -245,6 +240,9 @@ settings:
   margin-left: -5px;
 }
 
+/* ========================================================================== */
+/*                               Editor - Embed                               */
+/* ========================================================================== */
 .enable-styled-embed-pure {
   --embed-border-left: none;
 }
@@ -418,12 +416,15 @@ settings:
   margin: var(--p-spacing);
 }
 
+/* ========================================================================== */
+/*                          Editor - Horizontal Rules                         */
+/* ========================================================================== */
 .enable-styled-horizontal-rules hr {
   --hr-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.5);
 }
 
 /* ========================================================================== */
-/*                                 Blockquotes                                */
+/*                             Editor - Blockquote                            */
 /* ========================================================================== */
 .enable-styled-blockquotes {
   --blockquote-background-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
