@@ -4,6 +4,24 @@ name: SkySky Theme
 id: skysky-theme-editor
 settings:
     - 
+        id: heading-codeblock
+        title: Codeblock
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: enable-codeblock-line-numbers 
+        title: Enable line numbers in code blocks (Editing Mode)
+        description: Toggle to turn on/off function, and this only works in Editing Mode.
+        type: class-toggle
+        default: true
+    -
+        id: codeblock-hide-indent-lines 
+        title: Hide indent lines in code blocks (Editing Mode)
+        description: Toggle to turn on/off function, and this only works in Editing Mode.
+        type: class-toggle
+        default: true
+    - 
         id: heading-blockquotes
         title: Blockquotes
         type: heading

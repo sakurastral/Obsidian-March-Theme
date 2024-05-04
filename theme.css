@@ -12,6 +12,24 @@ name: SkySky Theme
 id: skysky-theme-editor
 settings:
     - 
+        id: heading-codeblock
+        title: Codeblock
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: enable-codeblock-line-numbers 
+        title: Enable line numbers in code blocks (Editing Mode)
+        description: Toggle to turn on/off function, and this only works in Editing Mode.
+        type: class-toggle
+        default: true
+    -
+        id: codeblock-hide-indent-lines 
+        title: Hide indent lines in code blocks (Editing Mode)
+        description: Toggle to turn on/off function, and this only works in Editing Mode.
+        type: class-toggle
+        default: true
+    - 
         id: heading-blockquotes
         title: Blockquotes
         type: heading
@@ -507,4 +525,47 @@ settings:
 .enable-styled-blockquotes.enable-styled-blockquotes-show-left-border .markdown-preview-view blockquote :has(blockquote),
 .enable-styled-blockquotes.enable-styled-blockquotes-show-left-border .markdown-preview-view blockquote :last-child {
   border-left: none;
+}
+
+/* ========================================================================== */
+/*                             Editor - Codeblock                             */
+/* ========================================================================== */
+/** Adding line numbers in code blocks is inspired from @AnubisNekhet/AnuPpuccin (https://github.com/AnubisNekhet/AnuPpuccin) (https://www.buymeacoffee.com/anubisnekhet) */
+.enable-codeblock-line-numbers .HyperMD-codeblock-begin {
+  counter-reset: line-numbers;
+}
+
+.enable-codeblock-line-numbers .HyperMD-codeblock.cm-line:not(.HyperMD-codeblock-begin):not(.HyperMD-codeblock-end) {
+  padding-left: 3rem;
+  position: relative;
+}
+
+.enable-codeblock-line-numbers .HyperMD-codeblock.cm-line:not(.HyperMD-codeblock-begin):not(.HyperMD-codeblock-end)::before {
+  align-items: flex-end;
+  border-right: 1px solid var(--background-modifier-border);
+  color: var(--text-faint);
+  content: counter(line-numbers);
+  counter-increment: line-numbers;
+  display: table-caption;
+  font-size: 0.8em;
+  height: 100%;
+  justify-content: flex-end;
+  left: 0;
+  padding-right: 0.5em;
+  padding-top: 1px;
+  position: absolute;
+  text-align: right;
+  width: 3em;
+}
+
+.enable-codeblock-line-numbers.codeblock-hide-indent-lines .markdown-source-view.mod-cm6 .HyperMD-codeblock .cm-indent::before {
+  border-right: none;
+}
+
+.enable-codeblock-line-numbers .HyperMD-codeblock.cm-line.cm-active:not(.HyperMD-codeblock-begin):not(.HyperMD-codeblock-end)::before {
+  color: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+}
+
+.enable-codeblock-line-numbers .HyperMD-codeblock .cm-foldPlaceholder::before {
+  display: none;
 }
