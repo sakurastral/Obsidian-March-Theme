@@ -13,6 +13,18 @@ name: SkySky Theme
 id: skysky-theme-editor
 settings:
     - 
+        id: heading-links
+        title: Links
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: enable-styled-links
+        title: Enable Styled Links
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    - 
         id: heading-checkbox
         title: Checkbox
         type: heading
@@ -487,19 +499,13 @@ settings:
   font-size: var(--font-text-size);
   font-family: boxicons;
   position: absolute;
-  top: 0%;
-  left: 1%;
+  top: -0.2%;
+  left: 0.3%;
   color: var(--blockquote-icon-color);
 }
 .enable-styled-blockquotes.enable-styled-blockquotes-add-icon .markdown-preview-view.markdown-rendered blockquote :has(blockquote) p:first-of-type:before,
 .enable-styled-blockquotes.enable-styled-blockquotes-add-icon .markdown-preview-view.markdown-rendered blockquote :last-child p:first-of-type:before, .enable-styled-blockquotes.enable-styled-blockquotes-add-icon .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote + .HyperMD-quote .cm-formatting.cm-formatting-quote.cm-quote:before {
   content: "";
-}
-.enable-styled-blockquotes.enable-styled-blockquotes-add-icon .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote .cm-quote {
-  padding: 0 0 0 10px;
-}
-.enable-styled-blockquotes.enable-styled-blockquotes-add-icon .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote .cm-quote + .cm-quote {
-  padding: 0 0 0 10px;
 }
 .enable-styled-blockquotes.enable-styled-blockquotes-add-icon .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote .cm-formatting.cm-formatting-quote.cm-quote {
   padding: 0 0 0 10px;
@@ -1357,4 +1363,92 @@ settings:
   -webkit-mask-position-x: 52%;
   -webkit-mask-position-y: 52%;
   background-color: var(--color-yellow);
+}
+
+/* ========================================================================== */
+/*                               Editor - Links                               */
+/* ========================================================================== */
+/** Styled links is inspired from @subframe7536/obsidian-theme-maple (https://github.com/subframe7536/obsidian-theme-maple) and @kepano/obsidian-minimal(https://github.com/kepano/obsidian-minimal) */
+.enable-styled-links {
+  --link-color-rgb: var(--color-cyan-rgb);
+  --link-color: rgb(var(--link-color-rgb));
+  --link-color-hover: rgb(var(--link-color-rgb), 0.5);
+  --link-decoration: none;
+  --link-decoration-thickness: 1px;
+  --link-internal-decoration: dashed;
+  --link-unresolved-opacity: 0.7;
+  --link-unresolved-decoration-style: dashed;
+  --link-external-color-rgb: var(--color-blue-rgb);
+  --link-external-color: rgb(var(--link-external-color-rgb));
+  --link-external-color-hover: rgb(var(--link-external-color-rgb), 0.7);
+  --link-external-decoration: dashed;
+  --link-footnote-color: rgb(var(--color-purple-rgb));
+  /* ============================ Style - External ============================ */
+  /* ============================ Style - Internal ============================ */
+}
+.enable-styled-links :is(:is(.markdown-source-view, .markdown-preview-view) a.external-link:not(.is-resolved), :is(.cm-link:not(.cm-hmd-footnote, .cm-escape), .cm-url) > .cm-underline):not(.cm-escape + .cm-link .cm-underline) {
+  color: var(--link-external-color);
+  border-radius: var(--radius-s);
+  text-decoration: none;
+}
+.enable-styled-links :hover:is(:is(.markdown-source-view, .markdown-preview-view) a.external-link:not(.is-resolved), :is(.cm-link:not(.cm-hmd-footnote, .cm-escape), .cm-url) > .cm-underline):not(.cm-escape + .cm-link .cm-underline) {
+  color: var(--link-external-color);
+  text-decoration: var(--link-decoration) var(--link-decoration-thickness) var(--link-external-decoration) var(--link-external-color);
+  text-underline-offset: var(--size-2-1);
+  background-color: rgba(var(--link-external-color-rgb), 0.07);
+}
+.enable-styled-links :is(:is(.markdown-source-view, .markdown-preview-view) a.external-link:not(.is-resolved), :is(.cm-link:not(.cm-hmd-footnote, .cm-escape), .cm-url) > .cm-underline):not(.cm-escape + .cm-link .cm-underline) {
+  background-image: none;
+}
+.enable-styled-links :is(:is(.markdown-source-view, .markdown-preview-view) a.external-link:not(.is-resolved), :is(.cm-link:not(.cm-hmd-footnote, .cm-escape), .cm-url) > .cm-underline):not(.cm-escape + .cm-link .cm-underline)::before {
+  content: "";
+  display: inline-block;
+  width: calc(var(--font-text-size) - var(--size-2-1));
+  height: calc(var(--font-text-size) - var(--size-2-1));
+  margin-left: var(--size-2-1);
+  margin-right: var(--size-2-1);
+  background-color: var(--link-external-color);
+  background-image: none;
+  -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>');
+  mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>');
+}
+.enable-styled-links span.cm-link:hover,
+.enable-styled-links .cm-url:not(.cm-string):hover {
+  text-decoration: none;
+}
+.enable-styled-links .external-link {
+  background-image: none;
+  padding-right: 0;
+}
+.enable-styled-links span.external-link {
+  display: none;
+}
+.enable-styled-links :is(:is(.markdown-source-view, .markdown-preview-view) a.internal-link:not(.is-unresolved), .cm-hmd-internal-link > .cm-underline) {
+  color: var(--link-color);
+  border-radius: var(--radius-s);
+  text-decoration: none;
+}
+.enable-styled-links :hover:is(:is(.markdown-source-view, .markdown-preview-view) a.internal-link:not(.is-unresolved), .cm-hmd-internal-link > .cm-underline) {
+  color: var(--link-color);
+  background-color: rgba(var(--link-color-rgb), 0.07);
+  text-decoration: var(--link-decoration) var(--link-decoration-thickness) var(--link-internal-decoration) var(--link-color);
+  text-underline-offset: var(--size-2-1);
+}
+.enable-styled-links :is(:is(.markdown-source-view, .markdown-preview-view) a.internal-link:not(.is-unresolved), .cm-hmd-internal-link > .cm-underline)::before {
+  content: "";
+  display: inline-block;
+  width: calc(var(--font-text-size) - var(--size-2-1));
+  height: calc(var(--font-text-size) - var(--size-2-1));
+  margin-left: var(--size-2-1);
+  margin-right: var(--size-2-1);
+  background-color: var(--link-color);
+  -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scroll-text"><path d="M15 12h-5"/><path d="M15 8h-5"/><path d="M19 17V5a2 2 0 0 0-2-2H4"/><path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3"/></svg>');
+  mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scroll-text"><path d="M15 12h-5"/><path d="M15 8h-5"/><path d="M19 17V5a2 2 0 0 0-2-2H4"/><path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3"/></svg>');
+}
+.enable-styled-links .markdown-source-view.mod-cm6 .is-unresolved {
+  background-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
+  color: var(--link-unresolved-color);
+}
+.enable-styled-links span.cm-hmd-internal-link:hover {
+  text-decoration: none;
 }

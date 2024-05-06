@@ -1,3 +1,6 @@
 // Blockquote
 $blockquote-radius: 10px;
 $blockquote-padding: 10px;
+
+// Links
+$links-icon-size: calc(var(--font-text-size) - var(--size-2-1));

@@ -4,6 +4,18 @@ name: SkySky Theme
 id: skysky-theme-editor
 settings:
     - 
+        id: heading-links
+        title: Links
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: enable-styled-links
+        title: Enable Styled Links
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    - 
         id: heading-checkbox
         title: Checkbox
         type: heading
