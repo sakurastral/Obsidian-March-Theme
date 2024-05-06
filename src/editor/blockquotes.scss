@@ -3,8 +3,8 @@
 /* ========================================================================== */
 .enable-styled-blockquotes {
   --blockquote-background-color: #{$bg-color-accent};
-  --blockquote-border-color : #{$color-accent};
-  --blockquote-icon-color : #{$color-accent};
+  --blockquote-border-color: #{$color-accent};
+  --blockquote-icon-color: #{$color-accent};
 
   .cm-quote {
     padding: 0 0 0 0;
@@ -17,7 +17,6 @@
   }
 
   .markdown-preview-view blockquote {
-
     :has(blockquote),
     :last-child {
       background: transparent;
@@ -31,8 +30,8 @@
       font-size: var(--font-text-size);
       font-family: boxicons;
       position: absolute;
-      top: 0%;
-      left: 1%;
+      top: -0.2%;
+      left: 0.3%;
       color: var(--blockquote-icon-color);
     }
 
@@ -42,25 +41,16 @@
 
     .markdown-source-view.mod-cm6.is-live-preview {
       .HyperMD-quote {
-        +.HyperMD-quote {
+        + .HyperMD-quote {
           .cm-formatting.cm-formatting-quote.cm-quote {
             &:before {
-              @extend %blockquotes-no-icon-nested
+              @extend %blockquotes-no-icon-nested;
             }
-          }
-        }
-
-        .cm-quote {
-          padding: 0 0 0 $blockquote-padding;
-
-          +.cm-quote {
-            padding: 0 0 0 $blockquote-padding;
           }
         }
 
         .cm-formatting.cm-formatting-quote.cm-quote {
           padding: 0 0 0 $blockquote-padding;
-
           &:before {
             @extend %blockquotes-add-icon;
           }
@@ -69,7 +59,6 @@
     }
 
     .markdown-preview-view.markdown-rendered blockquote {
-
       :has(blockquote),
       :last-child {
         p {
@@ -109,14 +98,14 @@
       .HyperMD-quote {
         border-radius: $blockquote-radius;
 
-        &:has(+.HyperMD-quote) {
+        &:has(+ .HyperMD-quote) {
           border-radius: $blockquote-radius $blockquote-radius 0 0;
         }
 
-        +.HyperMD-quote {
+        + .HyperMD-quote {
           border-radius: 0 0 $blockquote-radius $blockquote-radius;
 
-          &:has(+.HyperMD-quote) {
+          &:has(+ .HyperMD-quote) {
             border-radius: 0;
           }
         }
@@ -129,7 +118,6 @@
   }
 
   &.enable-styled-blockquotes-show-left-border {
-
     .markdown-rendered blockquote,
     // .markdown-source-view.mod-cm6 .cm-blockquote-border:before,
     .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:before {
@@ -138,7 +126,6 @@
     }
 
     .markdown-preview-view blockquote {
-
       :has(blockquote),
       :last-child {
         border-left: $border-style-none;
