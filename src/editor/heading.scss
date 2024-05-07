@@ -1,0 +1,45 @@
+/* ========================================================================== */
+/*                              Editor - Headings                             */
+/* ========================================================================== */
+.enable-styled-headings {
+  &.styled-headings-rainbow {
+    --h1-color: #{$colors-extend-color-red};
+    --h2-color: #{$colors-extend-color-orange};
+    --h3-color: #{$colors-extend-color-green};
+    --h4-color: #{$colors-extend-color-cyan};
+    --h5-color: #{$colors-extend-color-blue};
+    --h6-color: #{$colors-extend-color-purple};
+  }
+  /** styled-headings-indicator is inspired from @deathau/obsidian-snippets (https://github.com/deathau/obsidian-snippets/blob/main/clutter-free-headings.css) */
+  &.styled-headings-indicator {
+    .HyperMD-header:not(.cm-active) span.cm-header::before {
+      $heading-indicator-font-size: 0.6rem;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: none;
+      width: 0;
+      overflow: visible;
+      font-size: $heading-indicator-font-size;
+      color: var(--text-muted);
+      padding-right: $heading-indicator-font-size * 1.7;
+    }
+    .HyperMD-header:not(.cm-active) span.cm-header-1::before {
+      content: 'H1';
+    }
+    .HyperMD-header:not(.cm-active) span.cm-header-2::before {
+      content: 'H2';
+    }
+    .HyperMD-header:not(.cm-active) span.cm-header-3::before {
+      content: 'H3';
+    }
+    .HyperMD-header:not(.cm-active) span.cm-header-4::before {
+      content: 'H4';
+    }
+    .HyperMD-header:not(.cm-active) span.cm-header-5::before {
+      content: 'H5';
+    }
+    .HyperMD-header:not(.cm-active) span.cm-header-6::before {
+      content: 'H6';
+    }
+  }
+}

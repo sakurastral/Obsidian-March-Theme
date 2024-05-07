@@ -4,6 +4,36 @@ name: SkySky Theme
 id: skysky-theme-editor
 settings:
     - 
+        id: heading-headings
+        title: Headings
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: enable-styled-headings
+        title: Enable Styled Headings
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    - 
+        id: heading-headings
+        title: Headings Feature
+        type: heading
+        level: 3
+        collapsed: true
+    -
+        id: styled-headings-rainbow
+        title: Enable Rainbow Colors
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    -
+        id: styled-headings-indicator
+        title: Enable h1 indicators when is not active line
+        description: Toggle to turn on/off function, and this only works in Editing Mode.
+        type: class-toggle
+        default: true
+    - 
         id: heading-links
         title: Links
         type: heading

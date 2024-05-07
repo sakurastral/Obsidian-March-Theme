@@ -13,6 +13,36 @@ name: SkySky Theme
 id: skysky-theme-editor
 settings:
     - 
+        id: heading-headings
+        title: Headings
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: enable-styled-headings
+        title: Enable Styled Headings
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    - 
+        id: heading-headings
+        title: Headings Feature
+        type: heading
+        level: 3
+        collapsed: true
+    -
+        id: styled-headings-rainbow
+        title: Enable Rainbow Colors
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    -
+        id: styled-headings-indicator
+        title: Enable h1 indicators when is not active line
+        description: Toggle to turn on/off function, and this only works in Editing Mode.
+        type: class-toggle
+        default: true
+    - 
         id: heading-links
         title: Links
         type: heading
@@ -1511,4 +1541,46 @@ settings:
 }
 .enable-styled-links.styled-link-internal-style span.cm-hmd-internal-link:hover {
   text-decoration: none;
+}
+/* ========================================================================== */
+/*                              Editor - Headings                             */
+/* ========================================================================== */
+.enable-styled-headings {
+  /** styled-headings-indicator is inspired from @deathau/obsidian-snippets (https://github.com/deathau/obsidian-snippets/blob/main/clutter-free-headings.css) */
+}
+.enable-styled-headings.styled-headings-rainbow {
+  --h1-color: var(--color-red);
+  --h2-color: var(--color-orange);
+  --h3-color: var(--color-green);
+  --h4-color: var(--color-cyan);
+  --h5-color: var(--color-blue);
+  --h6-color: var(--color-purple);
+}
+.enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active) span.cm-header::before {
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: none;
+  width: 0;
+  overflow: visible;
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  padding-right: 1.02rem;
+}
+.enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active) span.cm-header-1::before {
+  content: "H1";
+}
+.enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active) span.cm-header-2::before {
+  content: "H2";
+}
+.enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active) span.cm-header-3::before {
+  content: "H3";
+}
+.enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active) span.cm-header-4::before {
+  content: "H4";
+}
+.enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active) span.cm-header-5::before {
+  content: "H5";
+}
+.enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active) span.cm-header-6::before {
+  content: "H6";
 }
