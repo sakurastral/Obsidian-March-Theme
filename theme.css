@@ -25,6 +25,42 @@ settings:
         type: class-toggle
         default: true
     - 
+        id: heading-links-external
+        title: External Link
+        type: heading
+        level: 3
+        collapsed: true
+    -
+        id: styled-link-external-style
+        title: Enable Color Style
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    -
+        id: styled-link-add-external-icon
+        title: Enable Styled Icon
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    - 
+        id: heading-links-internal
+        title: Internal Link
+        type: heading
+        level: 3
+        collapsed: true
+    -
+        id: styled-link-internal-style
+        title: Enable Color Style
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    -
+        id: styled-link-add-internal-icon
+        title: Enable Styled Icon
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    - 
         id: heading-checkbox
         title: Checkbox
         type: heading
@@ -1370,37 +1406,49 @@ settings:
 /* ========================================================================== */
 /** Styled links is inspired from @subframe7536/obsidian-theme-maple (https://github.com/subframe7536/obsidian-theme-maple) and @kepano/obsidian-minimal(https://github.com/kepano/obsidian-minimal) */
 .enable-styled-links {
-  --link-color-rgb: var(--color-cyan-rgb);
-  --link-color: rgb(var(--link-color-rgb));
-  --link-color-hover: rgb(var(--link-color-rgb), 0.5);
-  --link-decoration: none;
+  --link-decoration: underline;
   --link-decoration-thickness: 1px;
-  --link-internal-decoration: dashed;
-  --link-unresolved-opacity: 0.7;
-  --link-unresolved-decoration-style: dashed;
-  --link-external-color-rgb: var(--color-blue-rgb);
-  --link-external-color: rgb(var(--link-external-color-rgb));
-  --link-external-color-hover: rgb(var(--link-external-color-rgb), 0.7);
-  --link-external-decoration: dashed;
+  --link-internal-color: var(--link-color);
+  --link-internal-color-hover-bg: white;
   --link-footnote-color: rgb(var(--color-purple-rgb));
   /* ============================ Style - External ============================ */
   /* ============================ Style - Internal ============================ */
 }
-.enable-styled-links :is(:is(.markdown-source-view, .markdown-preview-view) a.external-link:not(.is-resolved), :is(.cm-link:not(.cm-hmd-footnote, .cm-escape), .cm-url) > .cm-underline):not(.cm-escape + .cm-link .cm-underline) {
+.enable-styled-links.styled-link-internal-style {
+  --link-internal-decoration: dashed;
+  --link-internal-color-rgb: var(--color-cyan-rgb);
+  --link-internal-color: rgb(var(--link-internal-color-rgb));
+  --link-internal-color-hover-bg: rgb(var(--link-internal-color-rgb), $link-hover-opacity);
+  --link-unresolved-opacity: 0.7;
+  --link-unresolved-decoration-style: dashed;
+}
+.enable-styled-links.styled-link-external-style {
+  --link-external-color-rgb: var(--color-blue-rgb);
+  --link-external-color: rgb(var(--link-external-color-rgb));
+  --link-external-color-hover: rgb(var(--link-external-color-rgb));
+  --link-external-decoration: dashed;
+}
+.enable-styled-links.styled-link-external-style :is(.markdown-source-view, .markdown-preview-view, .metadata-content) a.external-link:not(.cm-escape + .cm-link .cm-underline),
+.enable-styled-links.styled-link-external-style :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .external-link:not(.cm-escape + .cm-link .cm-underline),
+.enable-styled-links.styled-link-external-style :is(.markdown-source-view, .markdown-preview-view, .metadata-content) :is(.cm-link:not(.cm-hmd-footnote, .cm-escape), .cm-url) > .cm-underline:not(.cm-escape + .cm-link .cm-underline) {
   color: var(--link-external-color);
   border-radius: var(--radius-s);
   text-decoration: none;
 }
-.enable-styled-links :hover:is(:is(.markdown-source-view, .markdown-preview-view) a.external-link:not(.is-resolved), :is(.cm-link:not(.cm-hmd-footnote, .cm-escape), .cm-url) > .cm-underline):not(.cm-escape + .cm-link .cm-underline) {
+.enable-styled-links.styled-link-external-style :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .external-link:hover:not(.cm-escape + .cm-link .cm-underline),
+.enable-styled-links.styled-link-external-style :is(.markdown-source-view, .markdown-preview-view, .metadata-content) :is(.cm-link:not(.cm-hmd-footnote, .cm-escape), .cm-url) > .cm-underline:hover:not(.cm-escape + .cm-link .cm-underline) {
   color: var(--link-external-color);
   text-decoration: var(--link-decoration) var(--link-decoration-thickness) var(--link-external-decoration) var(--link-external-color);
   text-underline-offset: var(--size-2-1);
   background-color: rgba(var(--link-external-color-rgb), 0.07);
 }
-.enable-styled-links :is(:is(.markdown-source-view, .markdown-preview-view) a.external-link:not(.is-resolved), :is(.cm-link:not(.cm-hmd-footnote, .cm-escape), .cm-url) > .cm-underline):not(.cm-escape + .cm-link .cm-underline) {
+.enable-styled-links.styled-link-add-external-icon :is(.markdown-source-view, .markdown-preview-view, .metadata-content) a.external-link:not(.cm-escape + .cm-link .cm-underline),
+.enable-styled-links.styled-link-add-external-icon :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .external-link:not(.cm-escape + .cm-link .cm-underline),
+.enable-styled-links.styled-link-add-external-icon :is(.markdown-source-view, .markdown-preview-view, .metadata-content) :is(.cm-link:not(.cm-hmd-footnote, .cm-escape), .cm-url) > .cm-underline:not(.cm-escape + .cm-link .cm-underline) {
   background-image: none;
 }
-.enable-styled-links :is(:is(.markdown-source-view, .markdown-preview-view) a.external-link:not(.is-resolved), :is(.cm-link:not(.cm-hmd-footnote, .cm-escape), .cm-url) > .cm-underline):not(.cm-escape + .cm-link .cm-underline)::before {
+.enable-styled-links.styled-link-add-external-icon :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .external-link:not(.cm-escape + .cm-link .cm-underline)::before,
+.enable-styled-links.styled-link-add-external-icon :is(.markdown-source-view, .markdown-preview-view, .metadata-content) :is(.cm-link:not(.cm-hmd-footnote, .cm-escape), .cm-url) > .cm-underline:not(.cm-escape + .cm-link .cm-underline)::before {
   content: "";
   display: inline-block;
   width: calc(var(--font-text-size) - var(--size-2-1));
@@ -1423,32 +1471,44 @@ settings:
 .enable-styled-links span.external-link {
   display: none;
 }
-.enable-styled-links :is(:is(.markdown-source-view, .markdown-preview-view) a.internal-link:not(.is-unresolved), .cm-hmd-internal-link > .cm-underline) {
-  color: var(--link-color);
+.enable-styled-links.styled-link-internal-style :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .internal-link,
+.enable-styled-links.styled-link-internal-style :is(.markdown-source-view, .markdown-preview-view, .metadata-content) a.internal-link:not(.is-unresolved),
+.enable-styled-links.styled-link-internal-style :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .cm-hmd-internal-link > .cm-underline {
+  color: var(--link-internal-color);
   border-radius: var(--radius-s);
   text-decoration: none;
 }
-.enable-styled-links :hover:is(:is(.markdown-source-view, .markdown-preview-view) a.internal-link:not(.is-unresolved), .cm-hmd-internal-link > .cm-underline) {
-  color: var(--link-color);
-  background-color: rgba(var(--link-color-rgb), 0.07);
-  text-decoration: var(--link-decoration) var(--link-decoration-thickness) var(--link-internal-decoration) var(--link-color);
+.enable-styled-links.styled-link-internal-style :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .internal-link:hover,
+.enable-styled-links.styled-link-internal-style :is(.markdown-source-view, .markdown-preview-view, .metadata-content) a.internal-link:hover:not(.is-unresolved),
+.enable-styled-links.styled-link-internal-style :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .cm-hmd-internal-link > .cm-underline:hover {
+  color: var(--link-internal-color);
+  background-color: rgb(var(--link-internal-color-rgb), 0.07);
+  text-decoration: var(--link-decoration) var(--link-decoration-thickness) var(--link-internal-decoration) var(--link-internal-color);
   text-underline-offset: var(--size-2-1);
 }
-.enable-styled-links :is(:is(.markdown-source-view, .markdown-preview-view) a.internal-link:not(.is-unresolved), .cm-hmd-internal-link > .cm-underline)::before {
+.enable-styled-links.styled-link-add-internal-icon .markdown-source-view .internal-link::before,
+.enable-styled-links.styled-link-add-internal-icon .markdown-source-view a.internal-link:not(.is-unresolved)::before,
+.enable-styled-links.styled-link-add-internal-icon .markdown-source-view .cm-hmd-internal-link > .cm-underline::before,
+.enable-styled-links.styled-link-add-internal-icon .markdown-preview-view .internal-link::before,
+.enable-styled-links.styled-link-add-internal-icon .markdown-preview-view a.internal-link:not(.is-unresolved)::before,
+.enable-styled-links.styled-link-add-internal-icon .markdown-preview-view .cm-hmd-internal-link > .cm-underline::before,
+.enable-styled-links.styled-link-add-internal-icon .metadata-content .internal-link::before,
+.enable-styled-links.styled-link-add-internal-icon .metadata-content a.internal-link:not(.is-unresolved)::before,
+.enable-styled-links.styled-link-add-internal-icon .metadata-content .cm-hmd-internal-link > .cm-underline::before {
   content: "";
   display: inline-block;
   width: calc(var(--font-text-size) - var(--size-2-1));
   height: calc(var(--font-text-size) - var(--size-2-1));
   margin-left: var(--size-2-1);
   margin-right: var(--size-2-1);
-  background-color: var(--link-color);
+  background-color: var(--link-internal-color);
   -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scroll-text"><path d="M15 12h-5"/><path d="M15 8h-5"/><path d="M19 17V5a2 2 0 0 0-2-2H4"/><path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3"/></svg>');
   mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scroll-text"><path d="M15 12h-5"/><path d="M15 8h-5"/><path d="M19 17V5a2 2 0 0 0-2-2H4"/><path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3"/></svg>');
 }
-.enable-styled-links .markdown-source-view.mod-cm6 .is-unresolved {
+.enable-styled-links.styled-link-internal-style .markdown-source-view.mod-cm6 .is-unresolved {
   background-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
   color: var(--link-unresolved-color);
 }
-.enable-styled-links span.cm-hmd-internal-link:hover {
+.enable-styled-links.styled-link-internal-style span.cm-hmd-internal-link:hover {
   text-decoration: none;
 }

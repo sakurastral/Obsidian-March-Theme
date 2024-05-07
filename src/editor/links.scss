@@ -3,29 +3,39 @@
 /* ========================================================================== */
 /** Styled links is inspired from @subframe7536/obsidian-theme-maple (https://github.com/subframe7536/obsidian-theme-maple) and @kepano/obsidian-minimal(https://github.com/kepano/obsidian-minimal) */
 .enable-styled-links {
-  --link-color-rgb: #{$rgb-colors-extend-color-cyan};
-  --link-color: rgb(var(--link-color-rgb)); // Resolved link text color
-  --link-color-hover: rgb(var(--link-color-rgb), 0.5); // Resolved link text color (hover)
-  --link-decoration: none; // Resolved link text decoration
+  $link-hover-opacity: 0.07;
+  --link-decoration: underline; // Resolved link text decoration
   // --link-decoration-hover: underline; // Resolved link text decoration (hover)
   --link-decoration-thickness: 1px; // Resolved link text decoration thickness
-  --link-internal-decoration: dashed;
-
-  // --link-unresolved-color: $hex-color-accent; // Unresolved link text color
-  --link-unresolved-opacity: 0.7; // Unresolved link opacity
-  // --link-unresolved-filter: none; // Unresolved link filter, e.g. hue-rotate
-  --link-unresolved-decoration-style: dashed; // Unresolved link text decoration style
-  // --link-unresolved-decoration-color: $color-accent; // Unresolved link text decoration color
-
-  --link-external-color-rgb: #{$rgb-colors-extend-color-blue};
-  --link-external-color: rgb(var(--link-external-color-rgb)); // External link text color
-  --link-external-color-hover: rgb(var(--link-external-color-rgb), 0.7); // External link text color (hover)
-  --link-external-decoration: dashed; // External link text decoration
-  // --link-external-decoration-hover: ; // External link text decoration (hover)
-  --link-footnote-color: rgb(var(--color-purple-rgb));
 
   $link-unresolved-bg-color: $bg-color-accent;
-  $link-hover-opacity: 0.07;
+  --link-internal-color: var(--link-color);
+  --link-internal-color-hover-bg: white;
+  &.styled-link-internal-style {
+    // --link-color-rgb: #{$rgb-colors-extend-color-cyan};
+    // --link-color: rgb(var(--link-color-rgb)); // Resolved link text color
+    // --link-color-hover: rgb(var(--link-color-rgb), 0.5); // Resolved link text color (hover)
+    --link-internal-decoration: dashed;
+    --link-internal-color-rgb: #{$rgb-colors-extend-color-cyan};
+    --link-internal-color: rgb(var(--link-internal-color-rgb));
+    --link-internal-color-hover-bg: rgb(var(--link-internal-color-rgb), $link-hover-opacity);
+    // --link-unresolved-color: $hex-color-accent; // Unresolved link text color
+    --link-unresolved-opacity: 0.7; // Unresolved link opacity
+    // --link-unresolved-filter: none; // Unresolved link filter, e.g. hue-rotate
+    --link-unresolved-decoration-style: dashed; // Unresolved link text decoration style
+    // --link-unresolved-decoration-color: $color-accent; // Unresolved link text decoration color
+  }
+
+  &.styled-link-external-style {
+    --link-external-color-rgb: #{$rgb-colors-extend-color-blue};
+    --link-external-color: rgb(var(--link-external-color-rgb)); // External link text color
+    --link-external-color-hover: rgb(var(--link-external-color-rgb)); // External link text color (hover)
+    --link-external-decoration: dashed; // External link text decoration
+    // --link-external-decoration-hover: ; // External link text decoration (hover)
+  }
+
+  --link-footnote-color: rgb(var(--color-purple-rgb));
+
   /* ============================ Style - External ============================ */
   %link-style-external {
     color: var(--link-external-color);
@@ -67,19 +77,37 @@
   span.external-link {
     display: none;
   }
-  :is(:is(.markdown-source-view, .markdown-preview-view) a.external-link:not(.is-resolved), :is(.cm-link:not(.cm-hmd-footnote, .cm-escape), .cm-url) > .cm-underline):not(.cm-escape + .cm-link .cm-underline) {
-    @extend %link-style-external;
-    @extend %link-icon-external;
+  &.styled-link-add-external-icon {
+    :is(.markdown-source-view, .markdown-preview-view, .metadata-content) {
+      a.external-link,
+      .external-link,
+      :is(.cm-link:not(.cm-hmd-footnote, .cm-escape), .cm-url) > .cm-underline {
+        &:not(.cm-escape + .cm-link .cm-underline) {
+          @extend %link-icon-external;
+        }
+      }
+    }
+  }
+  &.styled-link-external-style {
+    :is(.markdown-source-view, .markdown-preview-view, .metadata-content) {
+      a.external-link,
+      .external-link,
+      :is(.cm-link:not(.cm-hmd-footnote, .cm-escape), .cm-url) > .cm-underline {
+        &:not(.cm-escape + .cm-link .cm-underline) {
+          @extend %link-style-external;
+        }
+      }
+    }
   }
   /* ============================ Style - Internal ============================ */
   %link-style-internal {
-    color: var(--link-color);
+    color: var(--link-internal-color);
     border-radius: var(--radius-s);
     text-decoration: none;
     &:hover {
-      color: var(--link-color);
-      background-color: rgba(var(--link-color-rgb), $link-hover-opacity);
-      text-decoration: var(--link-decoration) var(--link-decoration-thickness) var(--link-internal-decoration) var(--link-color);
+      color: var(--link-internal-color);
+      background-color: rgb(var(--link-internal-color-rgb), $link-hover-opacity);
+      text-decoration: var(--link-decoration) var(--link-decoration-thickness) var(--link-internal-decoration) var(--link-internal-color);
       text-underline-offset: var(--size-2-1);
     }
   }
@@ -91,23 +119,39 @@
       height: $links-icon-size;
       margin-left: var(--size-2-1);
       margin-right: var(--size-2-1);
-      background-color: var(--link-color);
+      background-color: var(--link-internal-color);
       -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scroll-text"><path d="M15 12h-5"/><path d="M15 8h-5"/><path d="M19 17V5a2 2 0 0 0-2-2H4"/><path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3"/></svg>');
       mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scroll-text"><path d="M15 12h-5"/><path d="M15 8h-5"/><path d="M19 17V5a2 2 0 0 0-2-2H4"/><path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3"/></svg>');
     }
   }
-  .markdown-source-view.mod-cm6 .is-unresolved {
-    background-color: $link-unresolved-bg-color;
-    color: var(--link-unresolved-color);
-  }
-  :is(:is(.markdown-source-view, .markdown-preview-view) a.internal-link:not(.is-unresolved), .cm-hmd-internal-link > .cm-underline) {
-    @extend %link-style-internal;
-    @extend %link-icon-internal;
-  }
+  &.styled-link-internal-style {
+    .markdown-source-view.mod-cm6 .is-unresolved {
+      background-color: $link-unresolved-bg-color;
+      color: var(--link-unresolved-color);
+    }
+    :is(.markdown-source-view, .markdown-preview-view, .metadata-content) {
+      .internal-link,
+      a.internal-link:not(.is-unresolved),
+      .cm-hmd-internal-link > .cm-underline {
+        @extend %link-style-internal;
+      }
+    }
 
-  span.cm-hmd-internal-link {
-    &:hover {
-      text-decoration: none;
+    span.cm-hmd-internal-link {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  &.styled-link-add-internal-icon {
+    .markdown-source-view,
+    .markdown-preview-view,
+    .metadata-content {
+      .internal-link,
+      a.internal-link:not(.is-unresolved),
+      .cm-hmd-internal-link > .cm-underline {
+        @extend %link-icon-internal;
+      }
     }
   }
 }

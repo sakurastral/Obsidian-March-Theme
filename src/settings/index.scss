@@ -16,6 +16,42 @@ settings:
         type: class-toggle
         default: true
     - 
+        id: heading-links-external
+        title: External Link
+        type: heading
+        level: 3
+        collapsed: true
+    -
+        id: styled-link-external-style
+        title: Enable Color Style
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    -
+        id: styled-link-add-external-icon
+        title: Enable Styled Icon
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    - 
+        id: heading-links-internal
+        title: Internal Link
+        type: heading
+        level: 3
+        collapsed: true
+    -
+        id: styled-link-internal-style
+        title: Enable Color Style
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    -
+        id: styled-link-add-internal-icon
+        title: Enable Styled Icon
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    - 
         id: heading-checkbox
         title: Checkbox
         type: heading
