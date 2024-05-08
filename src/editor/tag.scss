@@ -1,0 +1,7 @@
+/* ========================================================================== */
+/*                                Editor - Tag                                */
+/* ========================================================================== */
+/** enable-tag-click-to-edit is inspired from @subframe7536/obsidian-theme-maple (https://github.com/subframe7536/obsidian-theme-maple). */
+.enable-tag-click-to-edit .cm-line span.cm-hashtag:not(.cm-formatting) {
+  pointer-events: none;
+}

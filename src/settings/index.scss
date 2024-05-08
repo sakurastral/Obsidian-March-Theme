@@ -100,6 +100,18 @@ settings:
         type: class-toggle
         default: true
     - 
+        id: heading-tags
+        title: Tags
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: enable-tag-click-to-edit
+        title: Enable directly click tag to edit
+        description: Toggle to turn on/off function. Click hash icon can do the default action.
+        type: class-toggle
+        default: true
+    - 
         id: heading-checkbox
         title: Checkbox
         type: heading

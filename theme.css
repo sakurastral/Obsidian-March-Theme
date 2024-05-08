@@ -109,6 +109,18 @@ settings:
         type: class-toggle
         default: true
     - 
+        id: heading-tags
+        title: Tags
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: enable-tag-click-to-edit
+        title: Enable directly click tag to edit
+        description: Toggle to turn on/off function. Click hash icon can do the default action.
+        type: class-toggle
+        default: true
+    - 
         id: heading-checkbox
         title: Checkbox
         type: heading
@@ -1670,4 +1682,12 @@ settings:
 .enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active):not(.cm-link) span.cm-header-6::before {
   content: "H6";
   margin-left: 5px;
+}
+
+/* ========================================================================== */
+/*                                Editor - Tag                                */
+/* ========================================================================== */
+/** enable-tag-click-to-edit is inspired from @subframe7536/obsidian-theme-maple (https://github.com/subframe7536/obsidian-theme-maple). */
+.enable-tag-click-to-edit .cm-line span.cm-hashtag:not(.cm-formatting) {
+  pointer-events: none;
 }
