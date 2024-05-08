@@ -37,6 +37,24 @@ settings:
         type: class-toggle
         default: true
     -
+        id: styled-headings-bg
+        title: Enable Background
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    -
+        id: styled-headings-rounded
+        title: Enable rounded Corners
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: false
+    -
+        id: styled-headings-underline
+        title: Enable dashed underline
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    -
         id: styled-headings-indicator
         title: Enable h1 indicators when is not active line
         description: Toggle to turn on/off function, and this only works in Editing Mode.
@@ -1549,12 +1567,51 @@ settings:
   /** styled-headings-indicator is inspired from @deathau/obsidian-snippets (https://github.com/deathau/obsidian-snippets/blob/main/clutter-free-headings.css) */
 }
 .enable-styled-headings.styled-headings-rainbow {
-  --h1-color: var(--color-red);
-  --h2-color: var(--color-orange);
-  --h3-color: var(--color-green);
-  --h4-color: var(--color-cyan);
-  --h5-color: var(--color-blue);
-  --h6-color: var(--color-purple);
+  --h1-color-rgb: var(--color-red-rgb);
+  --h2-color-rgb: var(--color-orange-rgb);
+  --h3-color-rgb: var(--color-green-rgb);
+  --h4-color-rgb: var(--color-cyan-rgb);
+  --h5-color-rgb: var(--color-blue-rgb);
+  --h6-color-rgb: var(--color-purple-rgb);
+  --h1-color: rgb(var(--h1-color-rgb));
+  --h2-color: rgb(var(--h2-color-rgb));
+  --h3-color: rgb(var(--h3-color-rgb));
+  --h4-color: rgb(var(--h4-color-rgb));
+  --h5-color: rgb(var(--h5-color-rgb));
+  --h6-color: rgb(var(--h6-color-rgb));
+}
+.enable-styled-headings.styled-headings-bg :is(.markdown-source-view, .markdown-preview-view, .metadata-content) h1,
+.enable-styled-headings.styled-headings-bg :is(.markdown-source-view, .markdown-preview-view, .metadata-content) h2,
+.enable-styled-headings.styled-headings-bg :is(.markdown-source-view, .markdown-preview-view, .metadata-content) h3,
+.enable-styled-headings.styled-headings-bg :is(.markdown-source-view, .markdown-preview-view, .metadata-content) h4,
+.enable-styled-headings.styled-headings-bg :is(.markdown-source-view, .markdown-preview-view, .metadata-content) h5,
+.enable-styled-headings.styled-headings-bg :is(.markdown-source-view, .markdown-preview-view, .metadata-content) h6,
+.enable-styled-headings.styled-headings-bg :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .HyperMD-header {
+  background-color: color-mix(in srgb, currentColor 10%, transparent);
+}
+.enable-styled-headings.styled-headings-bg .cm-s-obsidian .cm-line.HyperMD-header {
+  padding-top: 0;
+}
+.enable-styled-headings.styled-headings-rounded :is(.markdown-source-view, .markdown-preview-view, .metadata-content) h1,
+.enable-styled-headings.styled-headings-rounded :is(.markdown-source-view, .markdown-preview-view, .metadata-content) h2,
+.enable-styled-headings.styled-headings-rounded :is(.markdown-source-view, .markdown-preview-view, .metadata-content) h3,
+.enable-styled-headings.styled-headings-rounded :is(.markdown-source-view, .markdown-preview-view, .metadata-content) h4,
+.enable-styled-headings.styled-headings-rounded :is(.markdown-source-view, .markdown-preview-view, .metadata-content) h5,
+.enable-styled-headings.styled-headings-rounded :is(.markdown-source-view, .markdown-preview-view, .metadata-content) h6,
+.enable-styled-headings.styled-headings-rounded :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .HyperMD-header {
+  border-radius: var(--radius-m);
+}
+.enable-styled-headings.styled-headings-underline :is(.markdown-source-view, .markdown-preview-view, .metadata-content) h1,
+.enable-styled-headings.styled-headings-underline :is(.markdown-source-view, .markdown-preview-view, .metadata-content) h2,
+.enable-styled-headings.styled-headings-underline :is(.markdown-source-view, .markdown-preview-view, .metadata-content) h3,
+.enable-styled-headings.styled-headings-underline :is(.markdown-source-view, .markdown-preview-view, .metadata-content) h4,
+.enable-styled-headings.styled-headings-underline :is(.markdown-source-view, .markdown-preview-view, .metadata-content) h5,
+.enable-styled-headings.styled-headings-underline :is(.markdown-source-view, .markdown-preview-view, .metadata-content) h6,
+.enable-styled-headings.styled-headings-underline :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .HyperMD-header {
+  border-bottom: 2px solid currentColor;
+}
+.enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active) span.cm-header ~ span.cm-header::before, .enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active) span.cm-header.cm-link::before, .enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active) span.cm-header.cm-hmd-internal-link::before {
+  padding-right: 0;
 }
 .enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active) span.cm-header::before {
   display: inline-block;
@@ -1563,24 +1620,54 @@ settings:
   width: 0;
   overflow: visible;
   font-size: 0.6rem;
-  color: var(--text-muted);
+  color: currentColor;
   padding-right: 1.02rem;
 }
-.enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active) span.cm-header-1::before {
+.enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active):not(.cm-link) span.cm-header-1 ~ span.cm-header-1::before, .enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active):not(.cm-link) span.cm-header-1.cm-link::before, .enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active):not(.cm-link) span.cm-header-1.cm-hmd-internal-link::before {
+  content: "";
+  margin-left: 0px;
+}
+.enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active):not(.cm-link) span.cm-header-1::before {
   content: "H1";
+  margin-left: 5px;
 }
-.enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active) span.cm-header-2::before {
+.enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active):not(.cm-link) span.cm-header-2 ~ span.cm-header-2::before, .enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active):not(.cm-link) span.cm-header-2.cm-link::before, .enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active):not(.cm-link) span.cm-header-2.cm-hmd-internal-link::before {
+  content: "";
+  margin-left: 0px;
+}
+.enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active):not(.cm-link) span.cm-header-2::before {
   content: "H2";
+  margin-left: 5px;
 }
-.enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active) span.cm-header-3::before {
+.enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active):not(.cm-link) span.cm-header-3 ~ span.cm-header-3::before, .enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active):not(.cm-link) span.cm-header-3.cm-link::before, .enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active):not(.cm-link) span.cm-header-3.cm-hmd-internal-link::before {
+  content: "";
+  margin-left: 0px;
+}
+.enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active):not(.cm-link) span.cm-header-3::before {
   content: "H3";
+  margin-left: 5px;
 }
-.enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active) span.cm-header-4::before {
+.enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active):not(.cm-link) span.cm-header-4 ~ span.cm-header-4::before, .enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active):not(.cm-link) span.cm-header-4.cm-link::before, .enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active):not(.cm-link) span.cm-header-4.cm-hmd-internal-link::before {
+  content: "";
+  margin-left: 0px;
+}
+.enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active):not(.cm-link) span.cm-header-4::before {
   content: "H4";
+  margin-left: 5px;
 }
-.enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active) span.cm-header-5::before {
+.enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active):not(.cm-link) span.cm-header-5 ~ span.cm-header-5::before, .enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active):not(.cm-link) span.cm-header-5.cm-link::before, .enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active):not(.cm-link) span.cm-header-5.cm-hmd-internal-link::before {
+  content: "";
+  margin-left: 0px;
+}
+.enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active):not(.cm-link) span.cm-header-5::before {
   content: "H5";
+  margin-left: 5px;
 }
-.enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active) span.cm-header-6::before {
+.enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active):not(.cm-link) span.cm-header-6 ~ span.cm-header-6::before, .enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active):not(.cm-link) span.cm-header-6.cm-link::before, .enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active):not(.cm-link) span.cm-header-6.cm-hmd-internal-link::before {
+  content: "";
+  margin-left: 0px;
+}
+.enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active):not(.cm-link) span.cm-header-6::before {
   content: "H6";
+  margin-left: 5px;
 }

@@ -3,43 +3,168 @@
 /* ========================================================================== */
 .enable-styled-headings {
   &.styled-headings-rainbow {
-    --h1-color: #{$colors-extend-color-red};
-    --h2-color: #{$colors-extend-color-orange};
-    --h3-color: #{$colors-extend-color-green};
-    --h4-color: #{$colors-extend-color-cyan};
-    --h5-color: #{$colors-extend-color-blue};
-    --h6-color: #{$colors-extend-color-purple};
+    --h1-color-rgb: #{$rgb-colors-extend-color-red};
+    --h2-color-rgb: #{$rgb-colors-extend-color-orange};
+    --h3-color-rgb: #{$rgb-colors-extend-color-green};
+    --h4-color-rgb: #{$rgb-colors-extend-color-cyan};
+    --h5-color-rgb: #{$rgb-colors-extend-color-blue};
+    --h6-color-rgb: #{$rgb-colors-extend-color-purple};
+    --h1-color: rgb(var(--h1-color-rgb));
+    --h2-color: rgb(var(--h2-color-rgb));
+    --h3-color: rgb(var(--h3-color-rgb));
+    --h4-color: rgb(var(--h4-color-rgb));
+    --h5-color: rgb(var(--h5-color-rgb));
+    --h6-color: rgb(var(--h6-color-rgb));
+  }
+  &.styled-headings-bg {
+    :is(.markdown-source-view, .markdown-preview-view, .metadata-content) {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      .HyperMD-header {
+        background-color: color-mix(in srgb, currentColor 10%, transparent);
+      }
+    }
+    .cm-s-obsidian .cm-line.HyperMD-header {
+      padding-top: 0;
+    }
+  }
+  &.styled-headings-rounded {
+    :is(.markdown-source-view, .markdown-preview-view, .metadata-content) {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      .HyperMD-header {
+        border-radius: var(--radius-m);
+      }
+    }
+  }
+  &.styled-headings-underline {
+    :is(.markdown-source-view, .markdown-preview-view, .metadata-content) {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      .HyperMD-header {
+        border-bottom: 2px solid currentColor;
+      }
+    }
   }
   /** styled-headings-indicator is inspired from @deathau/obsidian-snippets (https://github.com/deathau/obsidian-snippets/blob/main/clutter-free-headings.css) */
   &.styled-headings-indicator {
-    .HyperMD-header:not(.cm-active) span.cm-header::before {
-      $heading-indicator-font-size: 0.6rem;
-      display: inline-block;
-      white-space: nowrap;
-      word-wrap: none;
-      width: 0;
-      overflow: visible;
-      font-size: $heading-indicator-font-size;
-      color: var(--text-muted);
-      padding-right: $heading-indicator-font-size * 1.7;
+    .HyperMD-header:not(.cm-active) span.cm-header {
+      & ~ span.cm-header,
+      &.cm-link,
+      &.cm-hmd-internal-link {
+        &::before {
+          padding-right: 0;
+        }
+      }
+      &::before {
+        $heading-indicator-font-size: 0.6rem;
+        display: inline-block;
+        white-space: nowrap;
+        word-wrap: none;
+        width: 0;
+        overflow: visible;
+        font-size: $heading-indicator-font-size;
+        color: currentColor;
+        padding-right: $heading-indicator-font-size * 1.7;
+      }
     }
-    .HyperMD-header:not(.cm-active) span.cm-header-1::before {
-      content: 'H1';
-    }
-    .HyperMD-header:not(.cm-active) span.cm-header-2::before {
-      content: 'H2';
-    }
-    .HyperMD-header:not(.cm-active) span.cm-header-3::before {
-      content: 'H3';
-    }
-    .HyperMD-header:not(.cm-active) span.cm-header-4::before {
-      content: 'H4';
-    }
-    .HyperMD-header:not(.cm-active) span.cm-header-5::before {
-      content: 'H5';
-    }
-    .HyperMD-header:not(.cm-active) span.cm-header-6::before {
-      content: 'H6';
+    .HyperMD-header:not(.cm-active):not(.cm-link) {
+      span.cm-header-1 {
+        ~ span.cm-header-1,
+        &.cm-link,
+        &.cm-hmd-internal-link {
+          &::before {
+            content: '';
+            margin-left: 0px;
+          }
+        }
+        &::before {
+          content: 'H1';
+          margin-left: 5px;
+        }
+      }
+      span.cm-header-2 {
+        ~ span.cm-header-2,
+        &.cm-link,
+        &.cm-hmd-internal-link {
+          &::before {
+            content: '';
+            margin-left: 0px;
+          }
+        }
+        &::before {
+          content: 'H2';
+          margin-left: 5px;
+        }
+      }
+      span.cm-header-3 {
+        ~ span.cm-header-3,
+        &.cm-link,
+        &.cm-hmd-internal-link {
+          &::before {
+            content: '';
+            margin-left: 0px;
+          }
+        }
+        &::before {
+          content: 'H3';
+          margin-left: 5px;
+        }
+      }
+      span.cm-header-4 {
+        ~ span.cm-header-4,
+        &.cm-link,
+        &.cm-hmd-internal-link {
+          &::before {
+            content: '';
+            margin-left: 0px;
+          }
+        }
+        &::before {
+          content: 'H4';
+          margin-left: 5px;
+        }
+      }
+      span.cm-header-5 {
+        ~ span.cm-header-5,
+        &.cm-link,
+        &.cm-hmd-internal-link {
+          &::before {
+            content: '';
+            margin-left: 0px;
+          }
+        }
+        &::before {
+          content: 'H5';
+          margin-left: 5px;
+        }
+      }
+      span.cm-header-6 {
+        ~ span.cm-header-6,
+        &.cm-link,
+        &.cm-hmd-internal-link {
+          &::before {
+            content: '';
+            margin-left: 0px;
+          }
+        }
+        &::before {
+          content: 'H6';
+          margin-left: 5px;
+        }
+      }
     }
   }
 }
