@@ -73,6 +73,18 @@ settings:
         type: class-toggle
         default: true
     - 
+        id: heading-links-feature
+        title: Feature
+        type: heading
+        level: 3
+        collapsed: true
+    -
+        id: disable-styled-links-in-headings
+        title: Disable Link Style in Headings
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    - 
         id: heading-links-external
         title: External Link
         type: heading
@@ -108,6 +120,7 @@ settings:
         description: Toggle to turn on/off function.
         type: class-toggle
         default: true
+
     - 
         id: heading-tags
         title: Tags
@@ -1572,6 +1585,169 @@ settings:
 .enable-styled-links.styled-link-internal-style span.cm-hmd-internal-link:hover {
   text-decoration: none;
 }
+.enable-styled-links.disable-styled-links-in-headings .markdown-source-view span.cm-header-1,
+.enable-styled-links.disable-styled-links-in-headings .markdown-preview-view span.cm-header-1 {
+  --link-internal-color: var(--h1-color);
+  --link-external-color: var(--h1-color);
+  --link-internal-color-rgb: (255, 255, 255);
+  --link-external-color-rgb: (255, 255, 255);
+}
+.enable-styled-links.disable-styled-links-in-headings .markdown-source-view span.cm-header-1.cm-hmd-internal-link > .cm-underline::before, .enable-styled-links.disable-styled-links-in-headings .markdown-source-view span.cm-header-1:is(.cm-link:not(.cm-hmd-footnote, .cm-escape), .cm-url) > .cm-underline:not(.cm-escape + .cm-link .cm-underline)::before,
+.enable-styled-links.disable-styled-links-in-headings .markdown-preview-view span.cm-header-1.cm-hmd-internal-link > .cm-underline::before,
+.enable-styled-links.disable-styled-links-in-headings .markdown-preview-view span.cm-header-1:is(.cm-link:not(.cm-hmd-footnote, .cm-escape), .cm-url) > .cm-underline:not(.cm-escape + .cm-link .cm-underline)::before {
+  display: none;
+}
+.enable-styled-links.disable-styled-links-in-headings .markdown-source-view h1,
+.enable-styled-links.disable-styled-links-in-headings .markdown-preview-view h1 {
+  --link-internal-color: var(--h1-color);
+  --link-external-color: var(--h1-color);
+  --link-internal-color-rgb: (255, 255, 255);
+  --link-external-color-rgb: (255, 255, 255);
+}
+.enable-styled-links.disable-styled-links-in-headings .markdown-source-view h1 a.internal-link:not(.is-unresolved)::before,
+.enable-styled-links.disable-styled-links-in-headings .markdown-source-view h1 a.internal-link.is-unresolved::before,
+.enable-styled-links.disable-styled-links-in-headings .markdown-source-view h1 a.external-link:not(.cm-escape + .cm-link .cm-underline)::before,
+.enable-styled-links.disable-styled-links-in-headings .markdown-preview-view h1 a.internal-link:not(.is-unresolved)::before,
+.enable-styled-links.disable-styled-links-in-headings .markdown-preview-view h1 a.internal-link.is-unresolved::before,
+.enable-styled-links.disable-styled-links-in-headings .markdown-preview-view h1 a.external-link:not(.cm-escape + .cm-link .cm-underline)::before {
+  display: none;
+}
+.enable-styled-links.disable-styled-links-in-headings .markdown-source-view span.cm-header-2,
+.enable-styled-links.disable-styled-links-in-headings .markdown-preview-view span.cm-header-2 {
+  --link-internal-color: var(--h2-color);
+  --link-external-color: var(--h2-color);
+  --link-internal-color-rgb: (255, 255, 255);
+  --link-external-color-rgb: (255, 255, 255);
+}
+.enable-styled-links.disable-styled-links-in-headings .markdown-source-view span.cm-header-2.cm-hmd-internal-link > .cm-underline::before, .enable-styled-links.disable-styled-links-in-headings .markdown-source-view span.cm-header-2:is(.cm-link:not(.cm-hmd-footnote, .cm-escape), .cm-url) > .cm-underline:not(.cm-escape + .cm-link .cm-underline)::before,
+.enable-styled-links.disable-styled-links-in-headings .markdown-preview-view span.cm-header-2.cm-hmd-internal-link > .cm-underline::before,
+.enable-styled-links.disable-styled-links-in-headings .markdown-preview-view span.cm-header-2:is(.cm-link:not(.cm-hmd-footnote, .cm-escape), .cm-url) > .cm-underline:not(.cm-escape + .cm-link .cm-underline)::before {
+  display: none;
+}
+.enable-styled-links.disable-styled-links-in-headings .markdown-source-view h2,
+.enable-styled-links.disable-styled-links-in-headings .markdown-preview-view h2 {
+  --link-internal-color: var(--h2-color);
+  --link-external-color: var(--h2-color);
+  --link-internal-color-rgb: (255, 255, 255);
+  --link-external-color-rgb: (255, 255, 255);
+}
+.enable-styled-links.disable-styled-links-in-headings .markdown-source-view h2 a.internal-link:not(.is-unresolved)::before,
+.enable-styled-links.disable-styled-links-in-headings .markdown-source-view h2 a.internal-link.is-unresolved::before,
+.enable-styled-links.disable-styled-links-in-headings .markdown-source-view h2 a.external-link:not(.cm-escape + .cm-link .cm-underline)::before,
+.enable-styled-links.disable-styled-links-in-headings .markdown-preview-view h2 a.internal-link:not(.is-unresolved)::before,
+.enable-styled-links.disable-styled-links-in-headings .markdown-preview-view h2 a.internal-link.is-unresolved::before,
+.enable-styled-links.disable-styled-links-in-headings .markdown-preview-view h2 a.external-link:not(.cm-escape + .cm-link .cm-underline)::before {
+  display: none;
+}
+.enable-styled-links.disable-styled-links-in-headings .markdown-source-view span.cm-header-3,
+.enable-styled-links.disable-styled-links-in-headings .markdown-preview-view span.cm-header-3 {
+  --link-internal-color: var(--h3-color);
+  --link-external-color: var(--h3-color);
+  --link-internal-color-rgb: (255, 255, 255);
+  --link-external-color-rgb: (255, 255, 255);
+}
+.enable-styled-links.disable-styled-links-in-headings .markdown-source-view span.cm-header-3.cm-hmd-internal-link > .cm-underline::before, .enable-styled-links.disable-styled-links-in-headings .markdown-source-view span.cm-header-3:is(.cm-link:not(.cm-hmd-footnote, .cm-escape), .cm-url) > .cm-underline:not(.cm-escape + .cm-link .cm-underline)::before,
+.enable-styled-links.disable-styled-links-in-headings .markdown-preview-view span.cm-header-3.cm-hmd-internal-link > .cm-underline::before,
+.enable-styled-links.disable-styled-links-in-headings .markdown-preview-view span.cm-header-3:is(.cm-link:not(.cm-hmd-footnote, .cm-escape), .cm-url) > .cm-underline:not(.cm-escape + .cm-link .cm-underline)::before {
+  display: none;
+}
+.enable-styled-links.disable-styled-links-in-headings .markdown-source-view h3,
+.enable-styled-links.disable-styled-links-in-headings .markdown-preview-view h3 {
+  --link-internal-color: var(--h3-color);
+  --link-external-color: var(--h3-color);
+  --link-internal-color-rgb: (255, 255, 255);
+  --link-external-color-rgb: (255, 255, 255);
+}
+.enable-styled-links.disable-styled-links-in-headings .markdown-source-view h3 a.internal-link:not(.is-unresolved)::before,
+.enable-styled-links.disable-styled-links-in-headings .markdown-source-view h3 a.internal-link.is-unresolved::before,
+.enable-styled-links.disable-styled-links-in-headings .markdown-source-view h3 a.external-link:not(.cm-escape + .cm-link .cm-underline)::before,
+.enable-styled-links.disable-styled-links-in-headings .markdown-preview-view h3 a.internal-link:not(.is-unresolved)::before,
+.enable-styled-links.disable-styled-links-in-headings .markdown-preview-view h3 a.internal-link.is-unresolved::before,
+.enable-styled-links.disable-styled-links-in-headings .markdown-preview-view h3 a.external-link:not(.cm-escape + .cm-link .cm-underline)::before {
+  display: none;
+}
+.enable-styled-links.disable-styled-links-in-headings .markdown-source-view span.cm-header-4,
+.enable-styled-links.disable-styled-links-in-headings .markdown-preview-view span.cm-header-4 {
+  --link-internal-color: var(--h4-color);
+  --link-external-color: var(--h4-color);
+  --link-internal-color-rgb: (255, 255, 255);
+  --link-external-color-rgb: (255, 255, 255);
+}
+.enable-styled-links.disable-styled-links-in-headings .markdown-source-view span.cm-header-4.cm-hmd-internal-link > .cm-underline::before, .enable-styled-links.disable-styled-links-in-headings .markdown-source-view span.cm-header-4:is(.cm-link:not(.cm-hmd-footnote, .cm-escape), .cm-url) > .cm-underline:not(.cm-escape + .cm-link .cm-underline)::before,
+.enable-styled-links.disable-styled-links-in-headings .markdown-preview-view span.cm-header-4.cm-hmd-internal-link > .cm-underline::before,
+.enable-styled-links.disable-styled-links-in-headings .markdown-preview-view span.cm-header-4:is(.cm-link:not(.cm-hmd-footnote, .cm-escape), .cm-url) > .cm-underline:not(.cm-escape + .cm-link .cm-underline)::before {
+  display: none;
+}
+.enable-styled-links.disable-styled-links-in-headings .markdown-source-view h4,
+.enable-styled-links.disable-styled-links-in-headings .markdown-preview-view h4 {
+  --link-internal-color: var(--h4-color);
+  --link-external-color: var(--h4-color);
+  --link-internal-color-rgb: (255, 255, 255);
+  --link-external-color-rgb: (255, 255, 255);
+}
+.enable-styled-links.disable-styled-links-in-headings .markdown-source-view h4 a.internal-link:not(.is-unresolved)::before,
+.enable-styled-links.disable-styled-links-in-headings .markdown-source-view h4 a.internal-link.is-unresolved::before,
+.enable-styled-links.disable-styled-links-in-headings .markdown-source-view h4 a.external-link:not(.cm-escape + .cm-link .cm-underline)::before,
+.enable-styled-links.disable-styled-links-in-headings .markdown-preview-view h4 a.internal-link:not(.is-unresolved)::before,
+.enable-styled-links.disable-styled-links-in-headings .markdown-preview-view h4 a.internal-link.is-unresolved::before,
+.enable-styled-links.disable-styled-links-in-headings .markdown-preview-view h4 a.external-link:not(.cm-escape + .cm-link .cm-underline)::before {
+  display: none;
+}
+.enable-styled-links.disable-styled-links-in-headings .markdown-source-view span.cm-header-5,
+.enable-styled-links.disable-styled-links-in-headings .markdown-preview-view span.cm-header-5 {
+  --link-internal-color: var(--h5-color);
+  --link-external-color: var(--h5-color);
+  --link-internal-color-rgb: (255, 255, 255);
+  --link-external-color-rgb: (255, 255, 255);
+}
+.enable-styled-links.disable-styled-links-in-headings .markdown-source-view span.cm-header-5.cm-hmd-internal-link > .cm-underline::before, .enable-styled-links.disable-styled-links-in-headings .markdown-source-view span.cm-header-5:is(.cm-link:not(.cm-hmd-footnote, .cm-escape), .cm-url) > .cm-underline:not(.cm-escape + .cm-link .cm-underline)::before,
+.enable-styled-links.disable-styled-links-in-headings .markdown-preview-view span.cm-header-5.cm-hmd-internal-link > .cm-underline::before,
+.enable-styled-links.disable-styled-links-in-headings .markdown-preview-view span.cm-header-5:is(.cm-link:not(.cm-hmd-footnote, .cm-escape), .cm-url) > .cm-underline:not(.cm-escape + .cm-link .cm-underline)::before {
+  display: none;
+}
+.enable-styled-links.disable-styled-links-in-headings .markdown-source-view h5,
+.enable-styled-links.disable-styled-links-in-headings .markdown-preview-view h5 {
+  --link-internal-color: var(--h5-color);
+  --link-external-color: var(--h5-color);
+  --link-internal-color-rgb: (255, 255, 255);
+  --link-external-color-rgb: (255, 255, 255);
+}
+.enable-styled-links.disable-styled-links-in-headings .markdown-source-view h5 a.internal-link:not(.is-unresolved)::before,
+.enable-styled-links.disable-styled-links-in-headings .markdown-source-view h5 a.internal-link.is-unresolved::before,
+.enable-styled-links.disable-styled-links-in-headings .markdown-source-view h5 a.external-link:not(.cm-escape + .cm-link .cm-underline)::before,
+.enable-styled-links.disable-styled-links-in-headings .markdown-preview-view h5 a.internal-link:not(.is-unresolved)::before,
+.enable-styled-links.disable-styled-links-in-headings .markdown-preview-view h5 a.internal-link.is-unresolved::before,
+.enable-styled-links.disable-styled-links-in-headings .markdown-preview-view h5 a.external-link:not(.cm-escape + .cm-link .cm-underline)::before {
+  display: none;
+}
+.enable-styled-links.disable-styled-links-in-headings .markdown-source-view span.cm-header-6,
+.enable-styled-links.disable-styled-links-in-headings .markdown-preview-view span.cm-header-6 {
+  --link-internal-color: var(--h6-color);
+  --link-external-color: var(--h6-color);
+  --link-internal-color-rgb: (255, 255, 255);
+  --link-external-color-rgb: (255, 255, 255);
+}
+.enable-styled-links.disable-styled-links-in-headings .markdown-source-view span.cm-header-6.cm-hmd-internal-link > .cm-underline::before, .enable-styled-links.disable-styled-links-in-headings .markdown-source-view span.cm-header-6:is(.cm-link:not(.cm-hmd-footnote, .cm-escape), .cm-url) > .cm-underline:not(.cm-escape + .cm-link .cm-underline)::before,
+.enable-styled-links.disable-styled-links-in-headings .markdown-preview-view span.cm-header-6.cm-hmd-internal-link > .cm-underline::before,
+.enable-styled-links.disable-styled-links-in-headings .markdown-preview-view span.cm-header-6:is(.cm-link:not(.cm-hmd-footnote, .cm-escape), .cm-url) > .cm-underline:not(.cm-escape + .cm-link .cm-underline)::before {
+  display: none;
+}
+.enable-styled-links.disable-styled-links-in-headings .markdown-source-view h6,
+.enable-styled-links.disable-styled-links-in-headings .markdown-preview-view h6 {
+  --link-internal-color: var(--h6-color);
+  --link-external-color: var(--h6-color);
+  --link-internal-color-rgb: (255, 255, 255);
+  --link-external-color-rgb: (255, 255, 255);
+}
+.enable-styled-links.disable-styled-links-in-headings .markdown-source-view h6 a.internal-link:not(.is-unresolved)::before,
+.enable-styled-links.disable-styled-links-in-headings .markdown-source-view h6 a.internal-link.is-unresolved::before,
+.enable-styled-links.disable-styled-links-in-headings .markdown-source-view h6 a.external-link:not(.cm-escape + .cm-link .cm-underline)::before,
+.enable-styled-links.disable-styled-links-in-headings .markdown-preview-view h6 a.internal-link:not(.is-unresolved)::before,
+.enable-styled-links.disable-styled-links-in-headings .markdown-preview-view h6 a.internal-link.is-unresolved::before,
+.enable-styled-links.disable-styled-links-in-headings .markdown-preview-view h6 a.external-link:not(.cm-escape + .cm-link .cm-underline)::before {
+  display: none;
+}
+
 /* ========================================================================== */
 /*                              Editor - Headings                             */
 /* ========================================================================== */

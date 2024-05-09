@@ -3,6 +3,7 @@
 /* ========================================================================== */
 /** Styled links is inspired from @subframe7536/obsidian-theme-maple (https://github.com/subframe7536/obsidian-theme-maple) and @kepano/obsidian-minimal(https://github.com/kepano/obsidian-minimal) */
 .enable-styled-links {
+  $links-icon-size: calc(var(--font-text-size) - var(--size-2-1));
   $link-hover-opacity: 0.07;
   --link-decoration: underline; // Resolved link text decoration
   // --link-decoration-hover: underline; // Resolved link text decoration (hover)
@@ -151,6 +152,39 @@
       a.internal-link:not(.is-unresolved),
       .cm-hmd-internal-link > .cm-underline {
         @extend %link-icon-internal;
+      }
+    }
+  }
+  &.disable-styled-links-in-headings {
+    $list: (1, 2, 3, 4, 5, 6);
+    @each $item in $list {
+      .markdown-source-view,
+      .markdown-preview-view {
+        span.cm-header-#{$item} {
+          --link-internal-color: var(--h#{$item}-color);
+          --link-external-color: var(--h#{$item}-color);
+          --link-internal-color-rgb: (255, 255, 255);
+          --link-external-color-rgb: (255, 255, 255);
+          &.cm-hmd-internal-link > .cm-underline,
+          &:is(.cm-link:not(.cm-hmd-footnote, .cm-escape), .cm-url) > .cm-underline:not(.cm-escape + .cm-link .cm-underline) {
+            &::before {
+              display: none;
+            }
+          }
+        }
+        h#{$item} {
+          --link-internal-color: var(--h#{$item}-color);
+          --link-external-color: var(--h#{$item}-color);
+          --link-internal-color-rgb: (255, 255, 255);
+          --link-external-color-rgb: (255, 255, 255);
+          a.internal-link:not(.is-unresolved),
+          a.internal-link.is-unresolved,
+          a.external-link:not(.cm-escape + .cm-link .cm-underline) {
+            &::before {
+              display: none;
+            }
+          }
+        }
       }
     }
   }
