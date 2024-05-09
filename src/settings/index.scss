@@ -242,6 +242,24 @@ settings:
         type: class-toggle
         default: true
     - 
+        id: heading-table
+        title: Table
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: enable-styled-table
+        title: Enable Styled Table
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    -
+        id: styled-table-rounded
+        title: Enable Rounded Corners
+        description: Toggle to turn on/off function. Only works if "Enable Styled Table" is enabled.
+        type: class-toggle
+        default: true
+    - 
         id: heading-callout
         title: Callout
         type: heading

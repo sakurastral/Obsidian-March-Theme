@@ -1,0 +1,35 @@
+/* ========================================================================== */
+/*                               Editor - Table                               */
+/* ========================================================================== */
+.enable-styled-table {
+  --table-background: #{$bg-color-accent};
+  --table-column-alt-background: transparent;
+  --table-border-color: --table-column-alt-background;
+  --table-header-background: #{$bg-color-accent};
+  --table-header-background-hover: #{$bg-color-accent};
+  --table-header-color: #{$color-accent};
+  .markdown-rendered {
+    th,
+    td {
+      border: var(--table-border-width) solid $colors-mono-bg;
+      &:hover {
+        background-color: $colors-mono-bg;
+      }
+    }
+  }
+}
+/** Rounded Corner is inspired from FireIsGood (https://discord.com/channels/686053708261228577/702656734631821413/1112164539975340032) */
+.styled-table-rounded {
+  .markdown-rendered th:first-of-type {
+    border-top-left-radius: 8px;
+  }
+  .markdown-rendered th:last-of-type {
+    border-top-right-radius: 8px;
+  }
+  .markdown-rendered tr:last-of-type td:first-of-type {
+    border-bottom-left-radius: 8px;
+  }
+  .markdown-rendered tr:last-of-type td:last-of-type {
+    border-bottom-right-radius: 8px;
+  }
+}

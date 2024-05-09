@@ -251,6 +251,24 @@ settings:
         type: class-toggle
         default: true
     - 
+        id: heading-table
+        title: Table
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: enable-styled-table
+        title: Enable Styled Table
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    -
+        id: styled-table-rounded
+        title: Enable Rounded Corners
+        description: Toggle to turn on/off function. Only works if "Enable Styled Table" is enabled.
+        type: class-toggle
+        default: true
+    - 
         id: heading-callout
         title: Callout
         type: heading
@@ -1866,4 +1884,38 @@ settings:
 /** enable-tag-click-to-edit is inspired from @subframe7536/obsidian-theme-maple (https://github.com/subframe7536/obsidian-theme-maple). */
 .enable-tag-click-to-edit .cm-line span.cm-hashtag:not(.cm-formatting) {
   pointer-events: none;
+}
+
+/* ========================================================================== */
+/*                               Editor - Table                               */
+/* ========================================================================== */
+.enable-styled-table {
+  --table-background: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
+  --table-column-alt-background: transparent;
+  --table-border-color: --table-column-alt-background;
+  --table-header-background: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
+  --table-header-background-hover: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
+  --table-header-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+}
+.enable-styled-table .markdown-rendered th,
+.enable-styled-table .markdown-rendered td {
+  border: var(--table-border-width) solid rgb(var(--mono-rgb-0));
+}
+.enable-styled-table .markdown-rendered th:hover,
+.enable-styled-table .markdown-rendered td:hover {
+  background-color: rgb(var(--mono-rgb-0));
+}
+
+/** Rounded Corner is inspired from FireIsGood (https://discord.com/channels/686053708261228577/702656734631821413/1112164539975340032) */
+.styled-table-rounded .markdown-rendered th:first-of-type {
+  border-top-left-radius: 8px;
+}
+.styled-table-rounded .markdown-rendered th:last-of-type {
+  border-top-right-radius: 8px;
+}
+.styled-table-rounded .markdown-rendered tr:last-of-type td:first-of-type {
+  border-bottom-left-radius: 8px;
+}
+.styled-table-rounded .markdown-rendered tr:last-of-type td:last-of-type {
+  border-bottom-right-radius: 8px;
 }
