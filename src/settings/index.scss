@@ -1,8 +1,14 @@
 /* @settings
 
-name: SkySky Theme
+name: ⭐️ SkySky Theme
 id: skysky-theme-editor
 settings:
+    - 
+        id: heading-Editor
+        title: Editor
+        type: heading
+        level: 1
+        collapsed: true
     - 
         id: heading-headings
         title: Headings
@@ -35,20 +41,20 @@ settings:
         default: true
     -
         id: styled-headings-rounded
-        title: Enable rounded Corners
+        title: Enable Rounded Corners
         description: Toggle to turn on/off function.
         type: class-toggle
         default: false
     -
         id: styled-headings-underline
-        title: Enable dashed underline
+        title: Enable Dashed Underline
         description: Toggle to turn on/off function.
         type: class-toggle
         default: true
     -
         id: styled-headings-indicator
-        title: Enable h1 indicators when is not active line
-        description: Toggle to turn on/off function, and this only works in Editing Mode.
+        title: Enable H1 Indicators on Unactive Lines
+        description: Toggle to turn on/off function.
         type: class-toggle
         default: true
     - 
@@ -120,8 +126,8 @@ settings:
         collapsed: true
     -
         id: enable-tag-click-to-edit
-        title: Enable directly click tag to edit
-        description: Toggle to turn on/off function. Click hash icon can do the default action.
+        title: Enable Directly Click Tag to Edit
+        description: Toggle to turn on/off function. Click hash icon can do the default action (search tag).
         type: class-toggle
         default: true
     - 
@@ -132,14 +138,14 @@ settings:
         collapsed: true
     -
         id: enable-styled-checkbox-rounded 
-        title: Enable rounded checkbox
+        title: Enable Rounded Checkbox
         description: Toggle to turn on/off function.
         type: class-toggle
         default: true
     -
         id: enable-styled-checkbox-custom 
-        title: Enable custom checkbox
-        description: Toggle to turn on/off function. add cancel, and others.
+        title: Enable Additional Custom Status
+        description: Toggle to turn on/off function.
         type: class-toggle
         default: true
     - 
@@ -150,13 +156,13 @@ settings:
         collapsed: true
     -
         id: enable-codeblock-line-numbers 
-        title: Enable line numbers in code blocks (Editing Mode)
+        title: Enable Line Numbers (Editing Mode)
         description: Toggle to turn on/off function, and this only works in Editing Mode.
         type: class-toggle
         default: true
     -
         id: codeblock-hide-indent-lines 
-        title: Hide indent lines in code blocks (Editing Mode)
+        title: Hide Indent Lines (Editing Mode)
         description: Toggle to turn on/off function, and this only works in Editing Mode.
         type: class-toggle
         default: true
@@ -168,32 +174,32 @@ settings:
         collapsed: true
     -
         id: enable-styled-blockquotes
-        title: Enable Styled Blockquotes
+        title: Enable Style
         description: Toggle to turn on/off function.
         type: class-toggle
         default: true
     -
         id: enable-styled-blockquotes-add-icon
-        title: Add a quotation mark
+        title: Add a Quotation Mark
         description: Toggle to turn on/off function.
         type: class-toggle
         default: true
     -
         id: enable-styled-blockquotes-rounded-corner
-        title: Enable rounded corner
+        title: Enable Rounded Corner
         description: Toggle to turn on/off function.
         type: class-toggle
         default: false
 
     -
         id: enable-styled-blockquotes-transparent-bg
-        title: Disable accent background
+        title: Disable Accent Background
         description: Toggle to turn on/off function.
         type: class-toggle
         default: false
     -
         id: enable-styled-blockquotes-show-left-border
-        title: Show left border
+        title: Show Left Border
         description: Toggle to turn on/off function.
         type: class-toggle
         default: true
@@ -237,7 +243,7 @@ settings:
         collapsed: true
     -
         id: enable-styled-horizontal-rules
-        title: Enable Styled Horizontal-Rules
+        title: Enable Style
         description: Toggle to turn on/off function.
         type: class-toggle
         default: true
@@ -249,14 +255,14 @@ settings:
         collapsed: true
     -
         id: enable-styled-table
-        title: Enable Styled Table
+        title: Enable Style
         description: Toggle to turn on/off function.
         type: class-toggle
         default: true
     -
         id: styled-table-rounded
         title: Enable Rounded Corners
-        description: Toggle to turn on/off function. Only works if "Enable Styled Table" is enabled.
+        description: Toggle to turn on/off function. Only works if the above option "Enable Style" is enabled.
         type: class-toggle
         default: true
     - 
@@ -267,7 +273,7 @@ settings:
         collapsed: true
     -
         id: enable-styled-callout
-        title: Enable Styled Callout
+        title: Enable Style
         description: Toggle to turn on/off function.
         type: class-toggle
         default: true
