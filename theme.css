@@ -1816,10 +1816,7 @@ settings:
 .enable-styled-headings.styled-headings-underline :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .HyperMD-header {
   border-bottom: 2px solid currentColor;
 }
-.enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active) span.cm-header ~ span.cm-header::before, .enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active) span.cm-header.cm-link::before, .enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active) span.cm-header.cm-hmd-internal-link::before {
-  padding-right: 0;
-}
-.enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active) span.cm-header::before {
+.enable-styled-headings.styled-headings-indicator h6::before, .enable-styled-headings.styled-headings-indicator h5::before, .enable-styled-headings.styled-headings-indicator h4::before, .enable-styled-headings.styled-headings-indicator h3::before, .enable-styled-headings.styled-headings-indicator h2::before, .enable-styled-headings.styled-headings-indicator h1::before, .enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active) span.cm-header::before {
   display: inline-block;
   white-space: nowrap;
   word-wrap: none;
@@ -1828,6 +1825,9 @@ settings:
   font-size: 0.6rem;
   color: currentColor;
   padding-right: 1.02rem;
+}
+.enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active) span.cm-header ~ span.cm-header::before, .enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active) span.cm-header.cm-link::before, .enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active) span.cm-header.cm-hmd-internal-link::before {
+  padding-right: 0;
 }
 .enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active):not(.cm-link) span.cm-header-1 ~ span.cm-header-1::before, .enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active):not(.cm-link) span.cm-header-1.cm-link::before, .enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active):not(.cm-link) span.cm-header-1.cm-hmd-internal-link::before {
   content: "";
@@ -1874,6 +1874,30 @@ settings:
   margin-left: 0px;
 }
 .enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active):not(.cm-link) span.cm-header-6::before {
+  content: "H6";
+  margin-left: 5px;
+}
+.enable-styled-headings.styled-headings-indicator h1::before {
+  content: "H1";
+  margin-left: 5px;
+}
+.enable-styled-headings.styled-headings-indicator h2::before {
+  content: "H2";
+  margin-left: 5px;
+}
+.enable-styled-headings.styled-headings-indicator h3::before {
+  content: "H3";
+  margin-left: 5px;
+}
+.enable-styled-headings.styled-headings-indicator h4::before {
+  content: "H4";
+  margin-left: 5px;
+}
+.enable-styled-headings.styled-headings-indicator h5::before {
+  content: "H5";
+  margin-left: 5px;
+}
+.enable-styled-headings.styled-headings-indicator h6::before {
   content: "H6";
   margin-left: 5px;
 }

@@ -59,6 +59,17 @@
     }
   }
   /** styled-headings-indicator is inspired from @deathau/obsidian-snippets (https://github.com/deathau/obsidian-snippets/blob/main/clutter-free-headings.css) */
+  %styled-headings-indicator-size {
+    $heading-indicator-font-size: 0.6rem;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: none;
+    width: 0;
+    overflow: visible;
+    font-size: $heading-indicator-font-size;
+    color: currentColor;
+    padding-right: $heading-indicator-font-size * 1.7;
+  }
   &.styled-headings-indicator {
     .HyperMD-header:not(.cm-active) span.cm-header {
       & ~ span.cm-header,
@@ -69,100 +80,35 @@
         }
       }
       &::before {
-        $heading-indicator-font-size: 0.6rem;
-        display: inline-block;
-        white-space: nowrap;
-        word-wrap: none;
-        width: 0;
-        overflow: visible;
-        font-size: $heading-indicator-font-size;
-        color: currentColor;
-        padding-right: $heading-indicator-font-size * 1.7;
+        @extend %styled-headings-indicator-size;
       }
     }
     .HyperMD-header:not(.cm-active):not(.cm-link) {
-      span.cm-header-1 {
-        ~ span.cm-header-1,
-        &.cm-link,
-        &.cm-hmd-internal-link {
-          &::before {
-            content: '';
-            margin-left: 0px;
+      $list: (1, 2, 3, 4, 5, 6);
+      @each $item in $list {
+        span.cm-header-#{$item} {
+          ~ span.cm-header-#{$item},
+          &.cm-link,
+          &.cm-hmd-internal-link {
+            &::before {
+              content: '';
+              margin-left: 0px;
+            }
           }
-        }
-        &::before {
-          content: 'H1';
-          margin-left: 5px;
+          &::before {
+            content: 'H#{$item}';
+            margin-left: 5px;
+          }
         }
       }
-      span.cm-header-2 {
-        ~ span.cm-header-2,
-        &.cm-link,
-        &.cm-hmd-internal-link {
-          &::before {
-            content: '';
-            margin-left: 0px;
-          }
-        }
+    }
+    $list: (1, 2, 3, 4, 5, 6);
+    @each $item in $list {
+      h#{$item} {
         &::before {
-          content: 'H2';
+          content: 'H#{$item}';
           margin-left: 5px;
-        }
-      }
-      span.cm-header-3 {
-        ~ span.cm-header-3,
-        &.cm-link,
-        &.cm-hmd-internal-link {
-          &::before {
-            content: '';
-            margin-left: 0px;
-          }
-        }
-        &::before {
-          content: 'H3';
-          margin-left: 5px;
-        }
-      }
-      span.cm-header-4 {
-        ~ span.cm-header-4,
-        &.cm-link,
-        &.cm-hmd-internal-link {
-          &::before {
-            content: '';
-            margin-left: 0px;
-          }
-        }
-        &::before {
-          content: 'H4';
-          margin-left: 5px;
-        }
-      }
-      span.cm-header-5 {
-        ~ span.cm-header-5,
-        &.cm-link,
-        &.cm-hmd-internal-link {
-          &::before {
-            content: '';
-            margin-left: 0px;
-          }
-        }
-        &::before {
-          content: 'H5';
-          margin-left: 5px;
-        }
-      }
-      span.cm-header-6 {
-        ~ span.cm-header-6,
-        &.cm-link,
-        &.cm-hmd-internal-link {
-          &::before {
-            content: '';
-            margin-left: 0px;
-          }
-        }
-        &::before {
-          content: 'H6';
-          margin-left: 5px;
+          @extend %styled-headings-indicator-size;
         }
       }
     }
