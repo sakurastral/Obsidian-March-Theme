@@ -8,3 +8,15 @@
 @import 'heading.scss';
 @import 'tag.scss';
 @import 'table.scss';
+
+/* ========================================================================== */
+/*                             Hover & Active Line                            */
+/* ========================================================================== */
+.cm-line {
+  &:hover {
+    background-color: $bg-color-accent;
+  }
+  &.cm-active {
+    background-color: $bg-color-accent;
+  }
+}
