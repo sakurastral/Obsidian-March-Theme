@@ -297,4 +297,93 @@ settings:
             - 
                 label: Rounded Outline (White Bg)
                 value: callout-style-003
+    - 
+        id: heading-Plugin
+        title: Plugins
+        type: heading
+        level: 1
+        collapsed: true
+    - 
+        id: heading-file-explorer
+        title: File Explorer
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: enable-styled-file-explorer
+        title: Enable Style
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    - 
+        id: heading-file-explorer-feature
+        title: Feature
+        type: heading
+        level: 3
+        collapsed: true
+    -
+        id: styled-file-explorer-vault-name-position
+        title: Enable Sticky Vault Name and Navbar
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    -
+        id: styled-file-explorer-folder-icon
+        title: Enable Custom Indicators for Folders
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    -
+        id: styled-file-explorer-file-icon
+        title: Enable Custom Icons for Files
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    -
+        id: styled-file-explorer-rainbow
+        title: Enable Rainbow Colors
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    - 
+        id: heading-file-explorer-feature-rainbow
+        title: Rainbow Colors
+        type: heading
+        level: 4
+        collapsed: true
+    -
+        id: styled-file-explorer-rainbow-subfolders
+        title: Inherit Colors (Subfolders
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    -
+        id: styled-file-explorer-rainbow-folder-name-icon
+        title: Color Folder Name and Icon
+        description: Toggle to turn on/off function. Also Bold Folder Name.
+        type: class-toggle
+        default: true
+    -
+        id: styled-file-explorer-rainbow-folder-indent-line
+        title: Color Indent Line
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    -
+        id: styled-file-explorer-rainbow-bg
+        title: Color Folder Background
+        description: Toggle to turn on/off function.
+        type: class-select
+        allowEmpty: false
+        default: none
+        options:
+            - 
+                label: Default
+                value: none
+            - 
+                label: Rounded
+                value: styled-file-explorer-rainbow-bg1
+            - 
+                label: Solid
+                value: styled-file-explorer-rainbow-bg2
 */

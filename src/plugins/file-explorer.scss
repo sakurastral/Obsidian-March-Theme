@@ -1,0 +1,186 @@
+/* ========================================================================== */
+/*                           Plugins - File Explorer                          */
+/* ========================================================================== */
+.enable-styled-file-explorer {
+  &.styled-file-explorer-vault-name-position {
+    .nav-buttons-container {
+      margin: auto;
+      display: flex;
+      justify-content: end;
+    }
+    .nav-folder.mod-root > .nav-folder-title {
+      position: fixed;
+      top: 10px;
+      left: 0;
+    }
+  }
+  /** Folder and File Icons is inspired from @AnubisNekhet/AnuPpuccin (https://github.com/AnubisNekhet/AnuPpuccin) (https://www.buymeacoffee.com/anubisnekhet) */
+  @mixin file-explorer-icon($icon) {
+    -webkit-mask-image: url('data:image/svg+xml,#{$icon}');
+    mask-image: url('data:image/svg+xml,#{$icon}');
+    -webkit-mask-repeat: no-repeat;
+    background-color: currentColor;
+  }
+
+  &.styled-file-explorer-folder-icon {
+    .workspace-leaf-content:not([data-type='tag'], [data-type='outline']) .nav-folder.mod-root .nav-folder > .nav-folder-children :is(.nav-file, .nav-folder) {
+      margin-left: var(--size-2-1);
+    }
+
+    .workspace-leaf-content:not([data-type='tag'], [data-type='outline']) .tree-item .nav-folder-title {
+      align-items: center;
+    }
+
+    .workspace-leaf-content:not([data-type='tag'], [data-type='outline']) .tree-item .collapse-icon {
+      @include file-explorer-icon("%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 27 24' fill='none' stroke='currentColor' stroke-linejoin='round' stroke-linecap='round' stroke-width='2'%3E%3Cpath d='M6 14l1.45-2.9A2 2 0 0 1 9.24 10H22a2 2 0 0 1 1.94 2.5l-1.55 6a2 2 0 0 1-1.94 1.5H4a2 2 0 0 1-2-2V5c0-1.1.9-2 2-2h3.93a2 2 0 0 1 1.66.9l.82 1.2a2 2 0 0 0 1.66.9H20a2 2 0 0 1 2 2v2'/%3E%3C/svg%3E%0A");
+      background-color: currentColor;
+      display: flex;
+      flex-basis: 100%;
+      height: 16px;
+      width: 17px;
+    }
+
+    .workspace-leaf-content:not([data-type='tag'], [data-type='outline']) .tree-item.is-collapsed .collapse-icon {
+      @include file-explorer-icon("%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='SVGRepo_bgCarrier' stroke-width='0'%3E%3C/g%3E%3Cg id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round'%3E%3C/g%3E%3Cg id='SVGRepo_iconCarrier'%3E%3Cpath d='M21 8.27273C21 7.36899 20.2674 6.63636 19.3636 6.63636H12.0015C12.0343 6.63619 12.0239 6.6235 11.9519 6.53598C11.9342 6.51449 11.9129 6.48848 11.8875 6.45703C11.8624 6.42596 11.7923 6.33563 11.7306 6.2561C11.6869 6.1998 11.6472 6.14858 11.631 6.12815C11.0451 5.38901 10.4618 5 9.54545 5H4.63636C3.73262 5 3 5.73262 3 6.63636V18.0909C3 18.9946 3.73262 19.7273 4.63636 19.7273H19.3636C20.2674 19.7273 21 18.9946 21 18.0909V8.27273Z' fill='%23000000'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .workspace-leaf-content:not([data-type='tag'], [data-type='outline']) .tree-item .collapse-icon svg {
+      display: none;
+    }
+  }
+  &.styled-file-explorer-file-icon {
+    .nav-file .nav-file-title[data-path] {
+      align-items: center;
+    }
+
+    .nav-file .nav-file-title[data-path]::before {
+      @include file-explorer-icon("%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='SVGRepo_bgCarrier' stroke-width='0'%3E%3C/g%3E%3Cg id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round'%3E%3C/g%3E%3Cg id='SVGRepo_iconCarrier'%3E%3Ccircle cx='12' cy='12' r='2' fill='%23000000'%3E%3C/circle%3E%3C/g%3E%3C/svg%3E");
+      background-color: var(--icon-color);
+      content: '';
+      display: flex;
+      flex-shrink: 0;
+      height: var(--size-4-4);
+      margin-left: calc(-1 * var(--size-4-5));
+      opacity: var(--icon-opacity);
+      position: absolute;
+      width: var(--size-4-4);
+    }
+
+    .nav-file .nav-file-title[data-path$='.md']::before {
+      @include file-explorer-icon("%3Csvg role='img' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Ctitle%3EMarkdown%3C/title%3E%3Cpath d='M22.27 19.385H1.73A1.73 1.73 0 010 17.655V6.345a1.73 1.73 0 011.73-1.73h20.54A1.73 1.73 0 0124 6.345v11.308a1.73 1.73 0 01-1.73 1.731zM5.769 15.923v-4.5l2.308 2.885 2.307-2.885v4.5h2.308V8.078h-2.308l-2.307 2.885-2.308-2.885H3.46v7.847zM21.232 12h-2.309V8.077h-2.307V12h-2.308l3.461 4.039z'/%3E%3C/svg%3E");
+    }
+
+    .nav-file .nav-file-title[data-path$='.canvas']::before {
+      @include file-explorer-icon("%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 3h7v9H3zm11 0h7v5h-7zm0 9h7v9h-7zM3 16h7v5H3z'/%3E%3C/svg%3E");
+    }
+
+    .nav-file .nav-file-title[data-path$='.svg']::before,
+    .nav-file .nav-file-title[data-path$='.bmp']::before,
+    .nav-file .nav-file-title[data-path$='.jpg']::before,
+    .nav-file .nav-file-title[data-path$='.gif']::before,
+    .nav-file .nav-file-title[data-path$='.webp']::before,
+    .nav-file .nav-file-title[data-path$='.jpeg']::before,
+    .nav-file .nav-file-title[data-path$='.png']::before {
+      @include file-explorer-icon("%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z'/%3E%3Cpath d='M14 2v6h6'/%3E%3Ccircle cx='10' cy='13' r='2'/%3E%3Cpath d='m20 17-1.09-1.09a2 2 0 0 0-2.82 0L10 22'/%3E%3C/svg%3E%0A");
+    }
+
+    .nav-file .nav-file-title[data-path$='.mp3']::before,
+    .nav-file .nav-file-title[data-path$='.wav']::before,
+    .nav-file .nav-file-title[data-path$='.m4a']::before,
+    .nav-file .nav-file-title[data-path$='.ogg']::before,
+    .nav-file .nav-file-title[data-path$='.flac']::before,
+    .nav-file .nav-file-title[data-path$='.3gp']::before {
+      @include file-explorer-icon("%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 18V5l12-2v13M9 9l12-2'/%3E%3Ccircle cx='6' cy='18' r='3'/%3E%3Ccircle cx='18' cy='16' r='3'/%3E%3C/svg%3E");
+    }
+
+    .nav-file .nav-file-title[data-path$='.webm']::before {
+      @include file-explorer-icon("%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M10 8l6 4-6 4V8z'/%3E%3C/svg%3E");
+    }
+
+    .nav-file .nav-file-title[data-path$='.mp4']::before,
+    .nav-file .nav-file-title[data-path$='.ogv']::before,
+    .nav-file .nav-file-title[data-path$='.mov']::before,
+    .nav-file .nav-file-title[data-path$='.mkv']::before {
+      @include file-explorer-icon("%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 11v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8H4Z'/%3E%3Cpath d='m4 11-.88-2.87a2 2 0 0 1 1.33-2.5l11.48-3.5a2 2 0 0 1 2.5 1.32l.87 2.87L4 11.01Z'/%3E%3Cpath d='M6.6 4.99l3.38 4.2m1.88-5.81l3.38 4.2'/%3E%3C/svg%3E");
+    }
+  }
+  /** Rainbow Folder is inspired from AnuPpuccin Theme (https://github.com/AnubisNekhet/AnuPpuccin) (https://www.buymeacoffee.com/anubisnekhet) an a discussion from forum (https://forum.obsidian.md/t/minimalist-colored-folders/54032) and a discussion from forum (https://forum.obsidian.md/t/snippet-to-change-the-little-v-collapse-icon-on-folders-anuppuccin-rainbow-folders-mode/59342) and a discussion from forum (https://forum.obsidian.md/t/a-better-sidebar-with-folders-icons/52469/3) */
+  &.styled-file-explorer-rainbow {
+    --theme-color-red: var(--color-red-rgb);
+    --theme-color-orange: var(--color-orange-rgb);
+    --theme-color-yellow: var(--color-yellow-rgb);
+    --theme-color-green: var(--color-green-rgb);
+    --theme-color-cyan: var(--color-cyan-rgb);
+    --theme-color-blue: var(--color-blue-rgb);
+    --theme-color-purple: var(--color-purple-rgb);
+    --theme-color-pink: var(--color-pink-rgb);
+    --theme-color-accent: var(--accent-h), var(--accent-s), var(--accent-l);
+
+    $array: (
+      2: red,
+      3: orange,
+      4: yellow,
+      5: green,
+      6: cyan,
+      7: blue,
+      8: purple,
+      9: pink,
+      //10:accent,
+    );
+    @each $key, $value in $array {
+      .nav-folder-children > .nav-folder:nth-child(8n + #{$key}),
+      [data-type='bookmarks'] .tree-item:nth-child(8n + #{$key}) {
+        --rainbow-folder-color: var(--theme-color-#{$value});
+        --icon-color: var(--theme-color-#{$value});
+      }
+    }
+    // sub folders also inherit colors
+    &.styled-file-explorer-rainbow-subfolders {
+      .nav-folder.mod-root .nav-folder.nav-folder .nav-folder,
+      [data-type='bookmarks'] .tree-item .tree-item {
+        --rainbow-folder-color: inherit;
+      }
+    }
+
+    &.styled-file-explorer-rainbow-folder-name-icon {
+      .nav-folder.mod-root > .nav-folder-children > .nav-folder .nav-folder-title,
+      [data-type='bookmarks'] .tree-item .tree-item-inner {
+        transition: color 0.2s;
+        color: rgba(var(--rainbow-folder-color), var(--text-opacity, 1));
+        font-weight: 700;
+        --nav-item-background-hover: rgba(var(--rainbow-folder-color), 0.1);
+        --nav-item-background-active: rgba(var(--rainbow-folder-color), 0.1);
+      }
+      .tree-item.nav-folder .collapse-icon svg.svg-icon {
+        color: rgba(var(--rainbow-folder-color), 1);
+      }
+    }
+    &.styled-file-explorer-rainbow-folder-indent-line {
+      .nav-folder-children {
+        --nav-indentation-guide-color: rgba(var(--rainbow-folder-color), 1);
+      }
+    }
+    &.styled-file-explorer-rainbow-bg1 {
+      .nav-folder.mod-root > .nav-folder-children > .nav-folder,
+      [data-type='bookmarks'] :not(.tree-item *) {
+        background-color: rgb(var(--rainbow-folder-color), var(--bg-opacity, 0.1));
+        border-radius: 5px;
+        padding-top: var(--size-2-1);
+        padding-bottom: var(--size-2-1);
+        margin-top: var(--size-2-1);
+        margin-bottom: var(--size-2-1);
+      }
+    }
+    &.styled-file-explorer-rainbow-bg2 {
+      .nav-folder.mod-root > .nav-folder-children > .nav-folder,
+      [data-type='bookmarks'] :not(.tree-item *) {
+        background-color: rgb(var(--rainbow-folder-color), var(--bg-opacity, 0.1));
+        padding-top: var(--size-2-1);
+        padding-bottom: var(--size-2-1);
+        margin-top: var(--size-2-1);
+        margin-bottom: var(--size-2-1);
+        border-left: 1px solid rgb(var(--rainbow-folder-color), var(--text-opacity, 1));
+      }
+    }
+  }
+}

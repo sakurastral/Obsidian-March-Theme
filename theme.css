@@ -1,17 +1,15 @@
 @charset "UTF-8";
-@font-face {
-  /** Partial style(s) is(are) sourced or adapted from Blue Topaz (https://github.com/PKM-er/Blue-Topaz_Obsidian-css), and I would like to express my appreciation to WhyI (https://github.com/whyt-byte) and pkmer.cn (https://pkmer.cn). */
-  font-family: "boxicons";
-  src: url("data:font/woff2;charset=utf-8;base64,d09GMgABAAAAAAUQAAwAAAAACcgAAATCAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhYGYABcEQgKizCJEgsWAAE2AiQDIAQgBYJKB20bvAfIjsK22bOwIjmQDyeRhxX00NzbvN1Nmu62nLQHQCDL9ufY3SlWLCy602dZsQLOD3n6L92cdrLTQfkrT6MySDfJpw9OaT98nP5JmH4/V2cmpe/6WhKztuSGJ/ESuA4hvX1EJEJolEji6JTI0tpue1NL4JWIHgIq4OgbhCi/3NpClyACc5XyAoCL6n70EWwlhmpONTB1FlpfjQVO/p/gZZEPIDSpXtxo4LaSYhHSHYt+SxUJhpheH+5uX9ye3VV/Gfy/gOQ3Fu8zRRlHGQfpRqmPgCzFCBUF1Uh/SQrUgH4DZhk6yeGXoC8cBhsxFq7pb0yj9ZTXp1KXLMmRQUixqcS8vOSggBJukKH1ydDZR4IPYZr5Euhg83gIFk9pP/Clx0I87acK8hy24z0qvcx2nb/0Cdoa+Ii0XgVzgN6r+iK0nkGLXR2X+z/gex7bxsateRzxFtwXn/LeVSySZJFoZH5I+4HvqJZKR+o4Dur6t87I2TrM6j9XdbrRcY44fLSlI+3ubuzuV5Hdvmmca2jI1uvoSDsmADmD6IHuGenUM5hVdZIFkpwkXs2bzaqVg5ig21xnZ9bUpK4udbC3keseVkdfg/zQ+QTxrilf2khRYnFlXQ3oFA9wOU5xw2nnctiCmtR0SRXZXYGyoKwnVewY+LjeTGHwbDzaORny7Ubx7umQd2bik2Sobg3K+RPl9l33+SOXNRX7Rzyyh3xsi93O6bABkL+k7Qg6sJdNW4lpYOrJSeqY8Y5wNiV/TaCTQbNh4pWu3ptEMLym787heHiFV1iqrfSZGuEmx6pMFUnBWUPZprrSuqbVv4VrsZIKU9XLvSABx5PYHh7sJLorocDdi5VC+fTknXoQAxapG1EZ7VJcvB7ywPCse5ZoWiXhxg3VDtXKzdUSo1yu6AlFbyjzB3Pl5lRYKqpMFQC6zlNVwVQBoO3DfBetL/3fZHyLEH875zoW9LUhTUVOcYUwA6fRgIBbTtKvA2yR+LMPYlIc5SLq732uzjZsbz84PdW809uR351YPvDkeGS/e1mcsIKQurCaoLCpnHWQjeFEVjhOEDgAvBQ5jVYIczAa5Qa864uU+J0mG9FJzq7mz8ye7ie0vQGl5woLR5VRhY1FYIfw4VmMLCL8P4DJY4JBvrso7cAWqDglK65rDHcKgpDsOnEZo+/qSKSJPI5BruiogT4dVdX60tQ816e755+W0fkD9Kn+1ymZhUg7aIxqABL9F1JVtE7bwhtlS+iC/gaPfES5EmhGRPcKfzdjw4z8RBxP5HiAThQ/8i1/7/VOSbevCeoAeBVmJ+lNFB8tT6ATuAU6O9hvowFoaKlY+maXjJ1P0vq4gXpOO6ynCtbAAgG8fQ61ZUvrtSoegKYKJ8usGcpIYLktWu4idUSgenkMV3u60AWLXDmihnGgNlQxb7mF5Q7UEQ2sWR6D18uFQ3uIogdmMPf3es536ZyNhdVX/kVvRrnAOOLfKX4a7IGgiBTiIMgklwgSSCKfdGLIgU0COeSSUjGpxRhGMIoFieY8tDhIAtqr9WPII4H4zj0Uo8XiwfKhEM12YYFBf70HGYwsVk6RYpUpiQ8eK85KthbJP5FiReyeEPPGMJafL53oZ03CnHJ0G2cA") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
 /* @settings
 
-name: SkySky Theme
+name: ⭐️ SkySky Theme
 id: skysky-theme-editor
 settings:
+    - 
+        id: heading-Editor
+        title: Editor
+        type: heading
+        level: 1
+        collapsed: true
     - 
         id: heading-headings
         title: Headings
@@ -44,20 +42,20 @@ settings:
         default: true
     -
         id: styled-headings-rounded
-        title: Enable rounded Corners
+        title: Enable Rounded Corners
         description: Toggle to turn on/off function.
         type: class-toggle
         default: false
     -
         id: styled-headings-underline
-        title: Enable dashed underline
+        title: Enable Dashed Underline
         description: Toggle to turn on/off function.
         type: class-toggle
         default: true
     -
         id: styled-headings-indicator
-        title: Enable h1 indicators when is not active line
-        description: Toggle to turn on/off function, and this only works in Editing Mode.
+        title: Enable H1 Indicators on Unactive Lines
+        description: Toggle to turn on/off function.
         type: class-toggle
         default: true
     - 
@@ -129,8 +127,8 @@ settings:
         collapsed: true
     -
         id: enable-tag-click-to-edit
-        title: Enable directly click tag to edit
-        description: Toggle to turn on/off function. Click hash icon can do the default action.
+        title: Enable Directly Click Tag to Edit
+        description: Toggle to turn on/off function. Click hash icon can do the default action (search tag).
         type: class-toggle
         default: true
     - 
@@ -141,14 +139,14 @@ settings:
         collapsed: true
     -
         id: enable-styled-checkbox-rounded 
-        title: Enable rounded checkbox
+        title: Enable Rounded Checkbox
         description: Toggle to turn on/off function.
         type: class-toggle
         default: true
     -
         id: enable-styled-checkbox-custom 
-        title: Enable custom checkbox
-        description: Toggle to turn on/off function. add cancel, and others.
+        title: Enable Additional Custom Status
+        description: Toggle to turn on/off function.
         type: class-toggle
         default: true
     - 
@@ -159,13 +157,13 @@ settings:
         collapsed: true
     -
         id: enable-codeblock-line-numbers 
-        title: Enable line numbers in code blocks (Editing Mode)
+        title: Enable Line Numbers (Editing Mode)
         description: Toggle to turn on/off function, and this only works in Editing Mode.
         type: class-toggle
         default: true
     -
         id: codeblock-hide-indent-lines 
-        title: Hide indent lines in code blocks (Editing Mode)
+        title: Hide Indent Lines (Editing Mode)
         description: Toggle to turn on/off function, and this only works in Editing Mode.
         type: class-toggle
         default: true
@@ -177,32 +175,32 @@ settings:
         collapsed: true
     -
         id: enable-styled-blockquotes
-        title: Enable Styled Blockquotes
+        title: Enable Style
         description: Toggle to turn on/off function.
         type: class-toggle
         default: true
     -
         id: enable-styled-blockquotes-add-icon
-        title: Add a quotation mark
+        title: Add a Quotation Mark
         description: Toggle to turn on/off function.
         type: class-toggle
         default: true
     -
         id: enable-styled-blockquotes-rounded-corner
-        title: Enable rounded corner
+        title: Enable Rounded Corner
         description: Toggle to turn on/off function.
         type: class-toggle
         default: false
 
     -
         id: enable-styled-blockquotes-transparent-bg
-        title: Disable accent background
+        title: Disable Accent Background
         description: Toggle to turn on/off function.
         type: class-toggle
         default: false
     -
         id: enable-styled-blockquotes-show-left-border
-        title: Show left border
+        title: Show Left Border
         description: Toggle to turn on/off function.
         type: class-toggle
         default: true
@@ -246,7 +244,7 @@ settings:
         collapsed: true
     -
         id: enable-styled-horizontal-rules
-        title: Enable Styled Horizontal-Rules
+        title: Enable Style
         description: Toggle to turn on/off function.
         type: class-toggle
         default: true
@@ -258,14 +256,14 @@ settings:
         collapsed: true
     -
         id: enable-styled-table
-        title: Enable Styled Table
+        title: Enable Style
         description: Toggle to turn on/off function.
         type: class-toggle
         default: true
     -
         id: styled-table-rounded
         title: Enable Rounded Corners
-        description: Toggle to turn on/off function. Only works if "Enable Styled Table" is enabled.
+        description: Toggle to turn on/off function. Only works if the above option "Enable Style" is enabled.
         type: class-toggle
         default: true
     - 
@@ -276,7 +274,7 @@ settings:
         collapsed: true
     -
         id: enable-styled-callout
-        title: Enable Styled Callout
+        title: Enable Style
         description: Toggle to turn on/off function.
         type: class-toggle
         default: true
@@ -300,7 +298,107 @@ settings:
             - 
                 label: Rounded Outline (White Bg)
                 value: callout-style-003
+    - 
+        id: heading-Plugin
+        title: Plugins
+        type: heading
+        level: 1
+        collapsed: true
+    - 
+        id: heading-file-explorer
+        title: File Explorer
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: enable-styled-file-explorer
+        title: Enable Style
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    - 
+        id: heading-file-explorer-feature
+        title: Feature
+        type: heading
+        level: 3
+        collapsed: true
+    -
+        id: styled-file-explorer-vault-name-position
+        title: Enable Sticky Vault Name and Navbar
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    -
+        id: styled-file-explorer-folder-icon
+        title: Enable Custom Indicators for Folders
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    -
+        id: styled-file-explorer-file-icon
+        title: Enable Custom Icons for Files
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    -
+        id: styled-file-explorer-rainbow
+        title: Enable Rainbow Colors
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    - 
+        id: heading-file-explorer-feature-rainbow
+        title: Rainbow Colors
+        type: heading
+        level: 4
+        collapsed: true
+    -
+        id: styled-file-explorer-rainbow-subfolders
+        title: Inherit Colors (Subfolders
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    -
+        id: styled-file-explorer-rainbow-folder-name-icon
+        title: Color Folder Name and Icon
+        description: Toggle to turn on/off function. Also Bold Folder Name.
+        type: class-toggle
+        default: true
+    -
+        id: styled-file-explorer-rainbow-folder-indent-line
+        title: Color Indent Line
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    -
+        id: styled-file-explorer-rainbow-bg
+        title: Color Folder Background
+        description: Toggle to turn on/off function.
+        type: class-select
+        allowEmpty: false
+        default: none
+        options:
+            - 
+                label: Default
+                value: none
+            - 
+                label: Rounded
+                value: styled-file-explorer-rainbow-bg1
+            - 
+                label: Solid
+                value: styled-file-explorer-rainbow-bg2
 */
+/* ========================================================================== */
+/*                              Variables - Font                              */
+/* ========================================================================== */
+@font-face {
+  /** Partial style(s) is(are) sourced or adapted from Blue Topaz (https://github.com/PKM-er/Blue-Topaz_Obsidian-css), and I would like to express my appreciation to WhyI (https://github.com/whyt-byte) and pkmer.cn (https://pkmer.cn). */
+  font-family: "boxicons";
+  src: url("data:font/woff2;charset=utf-8;base64,d09GMgABAAAAAAUQAAwAAAAACcgAAATCAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhYGYABcEQgKizCJEgsWAAE2AiQDIAQgBYJKB20bvAfIjsK22bOwIjmQDyeRhxX00NzbvN1Nmu62nLQHQCDL9ufY3SlWLCy602dZsQLOD3n6L92cdrLTQfkrT6MySDfJpw9OaT98nP5JmH4/V2cmpe/6WhKztuSGJ/ESuA4hvX1EJEJolEji6JTI0tpue1NL4JWIHgIq4OgbhCi/3NpClyACc5XyAoCL6n70EWwlhmpONTB1FlpfjQVO/p/gZZEPIDSpXtxo4LaSYhHSHYt+SxUJhpheH+5uX9ye3VV/Gfy/gOQ3Fu8zRRlHGQfpRqmPgCzFCBUF1Uh/SQrUgH4DZhk6yeGXoC8cBhsxFq7pb0yj9ZTXp1KXLMmRQUixqcS8vOSggBJukKH1ydDZR4IPYZr5Euhg83gIFk9pP/Clx0I87acK8hy24z0qvcx2nb/0Cdoa+Ii0XgVzgN6r+iK0nkGLXR2X+z/gex7bxsateRzxFtwXn/LeVSySZJFoZH5I+4HvqJZKR+o4Dur6t87I2TrM6j9XdbrRcY44fLSlI+3ubuzuV5Hdvmmca2jI1uvoSDsmADmD6IHuGenUM5hVdZIFkpwkXs2bzaqVg5ig21xnZ9bUpK4udbC3keseVkdfg/zQ+QTxrilf2khRYnFlXQ3oFA9wOU5xw2nnctiCmtR0SRXZXYGyoKwnVewY+LjeTGHwbDzaORny7Ubx7umQd2bik2Sobg3K+RPl9l33+SOXNRX7Rzyyh3xsi93O6bABkL+k7Qg6sJdNW4lpYOrJSeqY8Y5wNiV/TaCTQbNh4pWu3ptEMLym787heHiFV1iqrfSZGuEmx6pMFUnBWUPZprrSuqbVv4VrsZIKU9XLvSABx5PYHh7sJLorocDdi5VC+fTknXoQAxapG1EZ7VJcvB7ywPCse5ZoWiXhxg3VDtXKzdUSo1yu6AlFbyjzB3Pl5lRYKqpMFQC6zlNVwVQBoO3DfBetL/3fZHyLEH875zoW9LUhTUVOcYUwA6fRgIBbTtKvA2yR+LMPYlIc5SLq732uzjZsbz84PdW809uR351YPvDkeGS/e1mcsIKQurCaoLCpnHWQjeFEVjhOEDgAvBQ5jVYIczAa5Qa864uU+J0mG9FJzq7mz8ye7ie0vQGl5woLR5VRhY1FYIfw4VmMLCL8P4DJY4JBvrso7cAWqDglK65rDHcKgpDsOnEZo+/qSKSJPI5BruiogT4dVdX60tQ816e755+W0fkD9Kn+1ymZhUg7aIxqABL9F1JVtE7bwhtlS+iC/gaPfES5EmhGRPcKfzdjw4z8RBxP5HiAThQ/8i1/7/VOSbevCeoAeBVmJ+lNFB8tT6ATuAU6O9hvowFoaKlY+maXjJ1P0vq4gXpOO6ynCtbAAgG8fQ61ZUvrtSoegKYKJ8usGcpIYLktWu4idUSgenkMV3u60AWLXDmihnGgNlQxb7mF5Q7UEQ2sWR6D18uFQ3uIogdmMPf3es536ZyNhdVX/kVvRrnAOOLfKX4a7IGgiBTiIMgklwgSSCKfdGLIgU0COeSSUjGpxRhGMIoFieY8tDhIAtqr9WPII4H4zj0Uo8XiwfKhEM12YYFBf70HGYwsVk6RYpUpiQ8eK85KthbJP5FiReyeEPPGMJafL53oZ03CnHJ0G2cA") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 /* ========================================================================== */
 /*                              Editor - Callout                              */
 /* ========================================================================== */
@@ -1816,7 +1914,13 @@ settings:
 .enable-styled-headings.styled-headings-underline :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .HyperMD-header {
   border-bottom: 2px solid currentColor;
 }
-.enable-styled-headings.styled-headings-indicator h6::before, .enable-styled-headings.styled-headings-indicator h5::before, .enable-styled-headings.styled-headings-indicator h4::before, .enable-styled-headings.styled-headings-indicator h3::before, .enable-styled-headings.styled-headings-indicator h2::before, .enable-styled-headings.styled-headings-indicator h1::before, .enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active) span.cm-header::before {
+.enable-styled-headings.styled-headings-indicator .markdown-source-view h6::before,
+.enable-styled-headings.styled-headings-indicator .markdown-preview-view h6::before, .enable-styled-headings.styled-headings-indicator .markdown-source-view h5::before,
+.enable-styled-headings.styled-headings-indicator .markdown-preview-view h5::before, .enable-styled-headings.styled-headings-indicator .markdown-source-view h4::before,
+.enable-styled-headings.styled-headings-indicator .markdown-preview-view h4::before, .enable-styled-headings.styled-headings-indicator .markdown-source-view h3::before,
+.enable-styled-headings.styled-headings-indicator .markdown-preview-view h3::before, .enable-styled-headings.styled-headings-indicator .markdown-source-view h2::before,
+.enable-styled-headings.styled-headings-indicator .markdown-preview-view h2::before, .enable-styled-headings.styled-headings-indicator .markdown-source-view h1::before,
+.enable-styled-headings.styled-headings-indicator .markdown-preview-view h1::before, .enable-styled-headings.styled-headings-indicator .HyperMD-header:not(.cm-active) span.cm-header::before {
   display: inline-block;
   white-space: nowrap;
   word-wrap: none;
@@ -1877,27 +1981,33 @@ settings:
   content: "H6";
   margin-left: 5px;
 }
-.enable-styled-headings.styled-headings-indicator h1::before {
+.enable-styled-headings.styled-headings-indicator .markdown-source-view h1::before,
+.enable-styled-headings.styled-headings-indicator .markdown-preview-view h1::before {
   content: "H1";
   margin-left: 5px;
 }
-.enable-styled-headings.styled-headings-indicator h2::before {
+.enable-styled-headings.styled-headings-indicator .markdown-source-view h2::before,
+.enable-styled-headings.styled-headings-indicator .markdown-preview-view h2::before {
   content: "H2";
   margin-left: 5px;
 }
-.enable-styled-headings.styled-headings-indicator h3::before {
+.enable-styled-headings.styled-headings-indicator .markdown-source-view h3::before,
+.enable-styled-headings.styled-headings-indicator .markdown-preview-view h3::before {
   content: "H3";
   margin-left: 5px;
 }
-.enable-styled-headings.styled-headings-indicator h4::before {
+.enable-styled-headings.styled-headings-indicator .markdown-source-view h4::before,
+.enable-styled-headings.styled-headings-indicator .markdown-preview-view h4::before {
   content: "H4";
   margin-left: 5px;
 }
-.enable-styled-headings.styled-headings-indicator h5::before {
+.enable-styled-headings.styled-headings-indicator .markdown-source-view h5::before,
+.enable-styled-headings.styled-headings-indicator .markdown-preview-view h5::before {
   content: "H5";
   margin-left: 5px;
 }
-.enable-styled-headings.styled-headings-indicator h6::before {
+.enable-styled-headings.styled-headings-indicator .markdown-source-view h6::before,
+.enable-styled-headings.styled-headings-indicator .markdown-preview-view h6::before {
   content: "H6";
   margin-left: 5px;
 }
@@ -1942,4 +2052,213 @@ settings:
 }
 .styled-table-rounded .markdown-rendered tr:last-of-type td:last-of-type {
   border-bottom-right-radius: 8px;
+}
+
+/* ========================================================================== */
+/*                             Hover & Active Line                            */
+/* ========================================================================== */
+.cm-line:hover {
+  background-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
+}
+.cm-line.cm-active {
+  background-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
+}
+
+/* ========================================================================== */
+/*                           Plugins - File Explorer                          */
+/* ========================================================================== */
+.enable-styled-file-explorer {
+  /** Folder and File Icons is inspired from @AnubisNekhet/AnuPpuccin (https://github.com/AnubisNekhet/AnuPpuccin) (https://www.buymeacoffee.com/anubisnekhet) */
+  /** Rainbow Folder is inspired from AnuPpuccin Theme (https://github.com/AnubisNekhet/AnuPpuccin) (https://www.buymeacoffee.com/anubisnekhet) an a discussion from forum (https://forum.obsidian.md/t/minimalist-colored-folders/54032) and a discussion from forum (https://forum.obsidian.md/t/snippet-to-change-the-little-v-collapse-icon-on-folders-anuppuccin-rainbow-folders-mode/59342) and a discussion from forum (https://forum.obsidian.md/t/a-better-sidebar-with-folders-icons/52469/3) */
+}
+.enable-styled-file-explorer.styled-file-explorer-vault-name-position .nav-buttons-container {
+  margin: auto;
+  display: flex;
+  justify-content: end;
+}
+.enable-styled-file-explorer.styled-file-explorer-vault-name-position .nav-folder.mod-root > .nav-folder-title {
+  position: fixed;
+  top: 10px;
+  left: 0;
+}
+.enable-styled-file-explorer.styled-file-explorer-folder-icon .workspace-leaf-content:not([data-type=tag], [data-type=outline]) .nav-folder.mod-root .nav-folder > .nav-folder-children :is(.nav-file, .nav-folder) {
+  margin-left: var(--size-2-1);
+}
+.enable-styled-file-explorer.styled-file-explorer-folder-icon .workspace-leaf-content:not([data-type=tag], [data-type=outline]) .tree-item .nav-folder-title {
+  align-items: center;
+}
+.enable-styled-file-explorer.styled-file-explorer-folder-icon .workspace-leaf-content:not([data-type=tag], [data-type=outline]) .tree-item .collapse-icon {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 27 24' fill='none' stroke='currentColor' stroke-linejoin='round' stroke-linecap='round' stroke-width='2'%3E%3Cpath d='M6 14l1.45-2.9A2 2 0 0 1 9.24 10H22a2 2 0 0 1 1.94 2.5l-1.55 6a2 2 0 0 1-1.94 1.5H4a2 2 0 0 1-2-2V5c0-1.1.9-2 2-2h3.93a2 2 0 0 1 1.66.9l.82 1.2a2 2 0 0 0 1.66.9H20a2 2 0 0 1 2 2v2'/%3E%3C/svg%3E%0A");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 27 24' fill='none' stroke='currentColor' stroke-linejoin='round' stroke-linecap='round' stroke-width='2'%3E%3Cpath d='M6 14l1.45-2.9A2 2 0 0 1 9.24 10H22a2 2 0 0 1 1.94 2.5l-1.55 6a2 2 0 0 1-1.94 1.5H4a2 2 0 0 1-2-2V5c0-1.1.9-2 2-2h3.93a2 2 0 0 1 1.66.9l.82 1.2a2 2 0 0 0 1.66.9H20a2 2 0 0 1 2 2v2'/%3E%3C/svg%3E%0A");
+  -webkit-mask-repeat: no-repeat;
+  background-color: currentColor;
+  background-color: currentColor;
+  display: flex;
+  flex-basis: 100%;
+  height: 16px;
+  width: 17px;
+}
+.enable-styled-file-explorer.styled-file-explorer-folder-icon .workspace-leaf-content:not([data-type=tag], [data-type=outline]) .tree-item.is-collapsed .collapse-icon {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='SVGRepo_bgCarrier' stroke-width='0'%3E%3C/g%3E%3Cg id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round'%3E%3C/g%3E%3Cg id='SVGRepo_iconCarrier'%3E%3Cpath d='M21 8.27273C21 7.36899 20.2674 6.63636 19.3636 6.63636H12.0015C12.0343 6.63619 12.0239 6.6235 11.9519 6.53598C11.9342 6.51449 11.9129 6.48848 11.8875 6.45703C11.8624 6.42596 11.7923 6.33563 11.7306 6.2561C11.6869 6.1998 11.6472 6.14858 11.631 6.12815C11.0451 5.38901 10.4618 5 9.54545 5H4.63636C3.73262 5 3 5.73262 3 6.63636V18.0909C3 18.9946 3.73262 19.7273 4.63636 19.7273H19.3636C20.2674 19.7273 21 18.9946 21 18.0909V8.27273Z' fill='%23000000'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='SVGRepo_bgCarrier' stroke-width='0'%3E%3C/g%3E%3Cg id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round'%3E%3C/g%3E%3Cg id='SVGRepo_iconCarrier'%3E%3Cpath d='M21 8.27273C21 7.36899 20.2674 6.63636 19.3636 6.63636H12.0015C12.0343 6.63619 12.0239 6.6235 11.9519 6.53598C11.9342 6.51449 11.9129 6.48848 11.8875 6.45703C11.8624 6.42596 11.7923 6.33563 11.7306 6.2561C11.6869 6.1998 11.6472 6.14858 11.631 6.12815C11.0451 5.38901 10.4618 5 9.54545 5H4.63636C3.73262 5 3 5.73262 3 6.63636V18.0909C3 18.9946 3.73262 19.7273 4.63636 19.7273H19.3636C20.2674 19.7273 21 18.9946 21 18.0909V8.27273Z' fill='%23000000'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+  -webkit-mask-repeat: no-repeat;
+  background-color: currentColor;
+}
+.enable-styled-file-explorer.styled-file-explorer-folder-icon .workspace-leaf-content:not([data-type=tag], [data-type=outline]) .tree-item .collapse-icon svg {
+  display: none;
+}
+.enable-styled-file-explorer.styled-file-explorer-file-icon .nav-file .nav-file-title[data-path] {
+  align-items: center;
+}
+.enable-styled-file-explorer.styled-file-explorer-file-icon .nav-file .nav-file-title[data-path]::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='SVGRepo_bgCarrier' stroke-width='0'%3E%3C/g%3E%3Cg id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round'%3E%3C/g%3E%3Cg id='SVGRepo_iconCarrier'%3E%3Ccircle cx='12' cy='12' r='2' fill='%23000000'%3E%3C/circle%3E%3C/g%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='SVGRepo_bgCarrier' stroke-width='0'%3E%3C/g%3E%3Cg id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round'%3E%3C/g%3E%3Cg id='SVGRepo_iconCarrier'%3E%3Ccircle cx='12' cy='12' r='2' fill='%23000000'%3E%3C/circle%3E%3C/g%3E%3C/svg%3E");
+  -webkit-mask-repeat: no-repeat;
+  background-color: currentColor;
+  background-color: var(--icon-color);
+  content: "";
+  display: flex;
+  flex-shrink: 0;
+  height: var(--size-4-4);
+  margin-left: calc(-1 * var(--size-4-5));
+  opacity: var(--icon-opacity);
+  position: absolute;
+  width: var(--size-4-4);
+}
+.enable-styled-file-explorer.styled-file-explorer-file-icon .nav-file .nav-file-title[data-path$=".md"]::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg role='img' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Ctitle%3EMarkdown%3C/title%3E%3Cpath d='M22.27 19.385H1.73A1.73 1.73 0 010 17.655V6.345a1.73 1.73 0 011.73-1.73h20.54A1.73 1.73 0 0124 6.345v11.308a1.73 1.73 0 01-1.73 1.731zM5.769 15.923v-4.5l2.308 2.885 2.307-2.885v4.5h2.308V8.078h-2.308l-2.307 2.885-2.308-2.885H3.46v7.847zM21.232 12h-2.309V8.077h-2.307V12h-2.308l3.461 4.039z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg role='img' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Ctitle%3EMarkdown%3C/title%3E%3Cpath d='M22.27 19.385H1.73A1.73 1.73 0 010 17.655V6.345a1.73 1.73 0 011.73-1.73h20.54A1.73 1.73 0 0124 6.345v11.308a1.73 1.73 0 01-1.73 1.731zM5.769 15.923v-4.5l2.308 2.885 2.307-2.885v4.5h2.308V8.078h-2.308l-2.307 2.885-2.308-2.885H3.46v7.847zM21.232 12h-2.309V8.077h-2.307V12h-2.308l3.461 4.039z'/%3E%3C/svg%3E");
+  -webkit-mask-repeat: no-repeat;
+  background-color: currentColor;
+}
+.enable-styled-file-explorer.styled-file-explorer-file-icon .nav-file .nav-file-title[data-path$=".canvas"]::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 3h7v9H3zm11 0h7v5h-7zm0 9h7v9h-7zM3 16h7v5H3z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 3h7v9H3zm11 0h7v5h-7zm0 9h7v9h-7zM3 16h7v5H3z'/%3E%3C/svg%3E");
+  -webkit-mask-repeat: no-repeat;
+  background-color: currentColor;
+}
+.enable-styled-file-explorer.styled-file-explorer-file-icon .nav-file .nav-file-title[data-path$=".svg"]::before,
+.enable-styled-file-explorer.styled-file-explorer-file-icon .nav-file .nav-file-title[data-path$=".bmp"]::before,
+.enable-styled-file-explorer.styled-file-explorer-file-icon .nav-file .nav-file-title[data-path$=".jpg"]::before,
+.enable-styled-file-explorer.styled-file-explorer-file-icon .nav-file .nav-file-title[data-path$=".gif"]::before,
+.enable-styled-file-explorer.styled-file-explorer-file-icon .nav-file .nav-file-title[data-path$=".webp"]::before,
+.enable-styled-file-explorer.styled-file-explorer-file-icon .nav-file .nav-file-title[data-path$=".jpeg"]::before,
+.enable-styled-file-explorer.styled-file-explorer-file-icon .nav-file .nav-file-title[data-path$=".png"]::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z'/%3E%3Cpath d='M14 2v6h6'/%3E%3Ccircle cx='10' cy='13' r='2'/%3E%3Cpath d='m20 17-1.09-1.09a2 2 0 0 0-2.82 0L10 22'/%3E%3C/svg%3E%0A");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z'/%3E%3Cpath d='M14 2v6h6'/%3E%3Ccircle cx='10' cy='13' r='2'/%3E%3Cpath d='m20 17-1.09-1.09a2 2 0 0 0-2.82 0L10 22'/%3E%3C/svg%3E%0A");
+  -webkit-mask-repeat: no-repeat;
+  background-color: currentColor;
+}
+.enable-styled-file-explorer.styled-file-explorer-file-icon .nav-file .nav-file-title[data-path$=".mp3"]::before,
+.enable-styled-file-explorer.styled-file-explorer-file-icon .nav-file .nav-file-title[data-path$=".wav"]::before,
+.enable-styled-file-explorer.styled-file-explorer-file-icon .nav-file .nav-file-title[data-path$=".m4a"]::before,
+.enable-styled-file-explorer.styled-file-explorer-file-icon .nav-file .nav-file-title[data-path$=".ogg"]::before,
+.enable-styled-file-explorer.styled-file-explorer-file-icon .nav-file .nav-file-title[data-path$=".flac"]::before,
+.enable-styled-file-explorer.styled-file-explorer-file-icon .nav-file .nav-file-title[data-path$=".3gp"]::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 18V5l12-2v13M9 9l12-2'/%3E%3Ccircle cx='6' cy='18' r='3'/%3E%3Ccircle cx='18' cy='16' r='3'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 18V5l12-2v13M9 9l12-2'/%3E%3Ccircle cx='6' cy='18' r='3'/%3E%3Ccircle cx='18' cy='16' r='3'/%3E%3C/svg%3E");
+  -webkit-mask-repeat: no-repeat;
+  background-color: currentColor;
+}
+.enable-styled-file-explorer.styled-file-explorer-file-icon .nav-file .nav-file-title[data-path$=".webm"]::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M10 8l6 4-6 4V8z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M10 8l6 4-6 4V8z'/%3E%3C/svg%3E");
+  -webkit-mask-repeat: no-repeat;
+  background-color: currentColor;
+}
+.enable-styled-file-explorer.styled-file-explorer-file-icon .nav-file .nav-file-title[data-path$=".mp4"]::before,
+.enable-styled-file-explorer.styled-file-explorer-file-icon .nav-file .nav-file-title[data-path$=".ogv"]::before,
+.enable-styled-file-explorer.styled-file-explorer-file-icon .nav-file .nav-file-title[data-path$=".mov"]::before,
+.enable-styled-file-explorer.styled-file-explorer-file-icon .nav-file .nav-file-title[data-path$=".mkv"]::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 11v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8H4Z'/%3E%3Cpath d='m4 11-.88-2.87a2 2 0 0 1 1.33-2.5l11.48-3.5a2 2 0 0 1 2.5 1.32l.87 2.87L4 11.01Z'/%3E%3Cpath d='M6.6 4.99l3.38 4.2m1.88-5.81l3.38 4.2'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 11v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8H4Z'/%3E%3Cpath d='m4 11-.88-2.87a2 2 0 0 1 1.33-2.5l11.48-3.5a2 2 0 0 1 2.5 1.32l.87 2.87L4 11.01Z'/%3E%3Cpath d='M6.6 4.99l3.38 4.2m1.88-5.81l3.38 4.2'/%3E%3C/svg%3E");
+  -webkit-mask-repeat: no-repeat;
+  background-color: currentColor;
+}
+.enable-styled-file-explorer.styled-file-explorer-rainbow {
+  --theme-color-red: var(--color-red-rgb);
+  --theme-color-orange: var(--color-orange-rgb);
+  --theme-color-yellow: var(--color-yellow-rgb);
+  --theme-color-green: var(--color-green-rgb);
+  --theme-color-cyan: var(--color-cyan-rgb);
+  --theme-color-blue: var(--color-blue-rgb);
+  --theme-color-purple: var(--color-purple-rgb);
+  --theme-color-pink: var(--color-pink-rgb);
+  --theme-color-accent: var(--accent-h), var(--accent-s), var(--accent-l);
+}
+.enable-styled-file-explorer.styled-file-explorer-rainbow .nav-folder-children > .nav-folder:nth-child(8n+2),
+.enable-styled-file-explorer.styled-file-explorer-rainbow [data-type=bookmarks] .tree-item:nth-child(8n+2) {
+  --rainbow-folder-color: var(--theme-color-red);
+  --icon-color: var(--theme-color-red);
+}
+.enable-styled-file-explorer.styled-file-explorer-rainbow .nav-folder-children > .nav-folder:nth-child(8n+3),
+.enable-styled-file-explorer.styled-file-explorer-rainbow [data-type=bookmarks] .tree-item:nth-child(8n+3) {
+  --rainbow-folder-color: var(--theme-color-orange);
+  --icon-color: var(--theme-color-orange);
+}
+.enable-styled-file-explorer.styled-file-explorer-rainbow .nav-folder-children > .nav-folder:nth-child(8n+4),
+.enable-styled-file-explorer.styled-file-explorer-rainbow [data-type=bookmarks] .tree-item:nth-child(8n+4) {
+  --rainbow-folder-color: var(--theme-color-yellow);
+  --icon-color: var(--theme-color-yellow);
+}
+.enable-styled-file-explorer.styled-file-explorer-rainbow .nav-folder-children > .nav-folder:nth-child(8n+5),
+.enable-styled-file-explorer.styled-file-explorer-rainbow [data-type=bookmarks] .tree-item:nth-child(8n+5) {
+  --rainbow-folder-color: var(--theme-color-green);
+  --icon-color: var(--theme-color-green);
+}
+.enable-styled-file-explorer.styled-file-explorer-rainbow .nav-folder-children > .nav-folder:nth-child(8n+6),
+.enable-styled-file-explorer.styled-file-explorer-rainbow [data-type=bookmarks] .tree-item:nth-child(8n+6) {
+  --rainbow-folder-color: var(--theme-color-cyan);
+  --icon-color: var(--theme-color-cyan);
+}
+.enable-styled-file-explorer.styled-file-explorer-rainbow .nav-folder-children > .nav-folder:nth-child(8n+7),
+.enable-styled-file-explorer.styled-file-explorer-rainbow [data-type=bookmarks] .tree-item:nth-child(8n+7) {
+  --rainbow-folder-color: var(--theme-color-blue);
+  --icon-color: var(--theme-color-blue);
+}
+.enable-styled-file-explorer.styled-file-explorer-rainbow .nav-folder-children > .nav-folder:nth-child(8n+8),
+.enable-styled-file-explorer.styled-file-explorer-rainbow [data-type=bookmarks] .tree-item:nth-child(8n+8) {
+  --rainbow-folder-color: var(--theme-color-purple);
+  --icon-color: var(--theme-color-purple);
+}
+.enable-styled-file-explorer.styled-file-explorer-rainbow .nav-folder-children > .nav-folder:nth-child(8n+9),
+.enable-styled-file-explorer.styled-file-explorer-rainbow [data-type=bookmarks] .tree-item:nth-child(8n+9) {
+  --rainbow-folder-color: var(--theme-color-pink);
+  --icon-color: var(--theme-color-pink);
+}
+.enable-styled-file-explorer.styled-file-explorer-rainbow.styled-file-explorer-rainbow-subfolders .nav-folder.mod-root .nav-folder.nav-folder .nav-folder,
+.enable-styled-file-explorer.styled-file-explorer-rainbow.styled-file-explorer-rainbow-subfolders [data-type=bookmarks] .tree-item .tree-item {
+  --rainbow-folder-color: inherit;
+}
+.enable-styled-file-explorer.styled-file-explorer-rainbow.styled-file-explorer-rainbow-folder-name-icon .nav-folder.mod-root > .nav-folder-children > .nav-folder .nav-folder-title,
+.enable-styled-file-explorer.styled-file-explorer-rainbow.styled-file-explorer-rainbow-folder-name-icon [data-type=bookmarks] .tree-item .tree-item-inner {
+  transition: color 0.2s;
+  color: rgba(var(--rainbow-folder-color), var(--text-opacity, 1));
+  font-weight: 700;
+  --nav-item-background-hover: rgba(var(--rainbow-folder-color), 0.1);
+  --nav-item-background-active: rgba(var(--rainbow-folder-color), 0.1);
+}
+.enable-styled-file-explorer.styled-file-explorer-rainbow.styled-file-explorer-rainbow-folder-name-icon .tree-item.nav-folder .collapse-icon svg.svg-icon {
+  color: rgba(var(--rainbow-folder-color), 1);
+}
+.enable-styled-file-explorer.styled-file-explorer-rainbow.styled-file-explorer-rainbow-folder-indent-line .nav-folder-children {
+  --nav-indentation-guide-color: rgba(var(--rainbow-folder-color), 1);
+}
+.enable-styled-file-explorer.styled-file-explorer-rainbow.styled-file-explorer-rainbow-bg1 .nav-folder.mod-root > .nav-folder-children > .nav-folder,
+.enable-styled-file-explorer.styled-file-explorer-rainbow.styled-file-explorer-rainbow-bg1 [data-type=bookmarks] :not(.tree-item *) {
+  background-color: rgb(var(--rainbow-folder-color), var(--bg-opacity, 0.1));
+  border-radius: 5px;
+  padding-top: var(--size-2-1);
+  padding-bottom: var(--size-2-1);
+  margin-top: var(--size-2-1);
+  margin-bottom: var(--size-2-1);
+}
+.enable-styled-file-explorer.styled-file-explorer-rainbow.styled-file-explorer-rainbow-bg2 .nav-folder.mod-root > .nav-folder-children > .nav-folder,
+.enable-styled-file-explorer.styled-file-explorer-rainbow.styled-file-explorer-rainbow-bg2 [data-type=bookmarks] :not(.tree-item *) {
+  background-color: rgb(var(--rainbow-folder-color), var(--bg-opacity, 0.1));
+  padding-top: var(--size-2-1);
+  padding-bottom: var(--size-2-1);
+  margin-top: var(--size-2-1);
+  margin-bottom: var(--size-2-1);
+  border-left: 1px solid rgb(var(--rainbow-folder-color), var(--text-opacity, 1));
 }
