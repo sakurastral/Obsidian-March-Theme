@@ -4,6 +4,35 @@ name: ⭐️ SkySky Theme
 id: skysky-theme-editor
 settings:
     - 
+        id: heading-layout
+        title: Layout
+        type: heading
+        level: 1
+        collapsed: true
+    - 
+        id: heading-color-scheme
+        title: Color Scheme
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: enable-color-scheme
+        title: Choose an Style
+        description: Toggle a custom style.
+        type: class-select
+        allowEmpty: false
+        default: none
+        options:
+            - 
+                label: Default
+                value: none
+            - 
+                label: Nord
+                value: color-scheme-nord
+            - 
+                label: Palette1
+                value: color-scheme-palette1
+    - 
         id: heading-Editor
         title: Editor
         type: heading

@@ -5,6 +5,35 @@ name: ⭐️ SkySky Theme
 id: skysky-theme-editor
 settings:
     - 
+        id: heading-layout
+        title: Layout
+        type: heading
+        level: 1
+        collapsed: true
+    - 
+        id: heading-color-scheme
+        title: Color Scheme
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: enable-color-scheme
+        title: Choose an Style
+        description: Toggle a custom style.
+        type: class-select
+        allowEmpty: false
+        default: none
+        options:
+            - 
+                label: Default
+                value: none
+            - 
+                label: Nord
+                value: color-scheme-nord
+            - 
+                label: Palette1
+                value: color-scheme-palette1
+    - 
         id: heading-Editor
         title: Editor
         type: heading
@@ -399,6 +428,51 @@ settings:
   font-style: normal;
   font-display: swap;
 }
+/* ========================================================================== */
+/*                                   Layout                                   */
+/* ========================================================================== */
+/* ========================================================================== */
+/*                            Layout - Color Scheme                           */
+/* ========================================================================== */
+/** Nord Colors comes from https://www.nordtheme.com/docs/colors-and-palettes */
+.theme-light.color-scheme-nord,
+.theme-dark.color-scheme-nord {
+  --accent-h: 210;
+  --accent-s: 34%;
+  --accent-l: 63%;
+  --color-red-rgb: 191, 97, 106;
+  --color-orange-rgb: 208, 135, 112;
+  --color-yellow-rgb: 235, 203, 139;
+  --color-green-rgb: 163, 190, 140;
+  --color-cyan-rgb: 136, 192, 208;
+  --color-blue-rgb: 94, 129, 172;
+  --color-purple-rgb: 180, 142, 173;
+  --color-pink-rgb: 191, 97, 106;
+  --color-red: #bf616a;
+  --color-orange: #d08770;
+  --color-yellow: #ebcb8b;
+  --color-green: #a3be8c;
+  --color-cyan: #88c0d0;
+  --color-blue: #5e81ac;
+  --color-purple: #b48ead;
+  --color-pink: #bf616a;
+}
+.theme-light.color-scheme-palette1,
+.theme-dark.color-scheme-palette1 {
+  --color-red: #ff595e;
+  --color-orange: #ff924c;
+  --color-yellow: #ffca3a;
+  --color-green: #8ac926;
+  --color-blue: #1982c4;
+  --color-purple: #8b5bce;
+  --color-red-rgb: 255, 89, 94;
+  --color-orange-rgb: 255, 146, 76;
+  --color-yellow-rgb: 255, 202, 58;
+  --color-green-rgb: 138, 201, 38;
+  --color-blue-rgb: 25, 130, 196;
+  --color-purple-rgb: 139, 91, 206;
+}
+
 /* ========================================================================== */
 /*                              Editor - Callout                              */
 /* ========================================================================== */

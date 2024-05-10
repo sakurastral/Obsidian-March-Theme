@@ -1,0 +1,78 @@
+/* ========================================================================== */
+/*                            Layout - Color Scheme                           */
+/* ========================================================================== */
+/** Nord Colors comes from https://www.nordtheme.com/docs/colors-and-palettes */
+.theme-light,
+.theme-dark {
+  &.color-scheme-nord {
+    --accent-h: 210;
+    --accent-s: 34%;
+    --accent-l: 63%;
+
+    --color-red-rgb: 191, 97, 106;
+    --color-orange-rgb: 208, 135, 112;
+    --color-yellow-rgb: 235, 203, 139;
+    --color-green-rgb: 163, 190, 140;
+    --color-cyan-rgb: 136, 192, 208;
+    --color-blue-rgb: 94, 129, 172;
+    --color-purple-rgb: 180, 142, 173;
+    --color-pink-rgb: 191, 97, 106;
+
+    --color-red: #bf616a;
+    --color-orange: #d08770;
+    --color-yellow: #ebcb8b;
+    --color-green: #a3be8c;
+    --color-cyan: #88c0d0;
+    --color-blue: #5e81ac;
+    --color-purple: #b48ead;
+    --color-pink: #bf616a;
+  }
+  &.color-scheme-palette1 {
+    $list-hex: (
+      red: #ff595e,
+      orange: #ff924c,
+      yellow: #ffca3a,
+      green: #8ac926,
+      blue: #1982c4,
+      purple: #8b5bce
+    );
+    @each $key, $value in $list-hex {
+      --color-#{$key}: #{$value};
+    }
+    $list-rgb: (
+      red: (
+        255,
+        89,
+        94
+      ),
+      orange: (
+        255,
+        146,
+        76
+      ),
+      yellow: (
+        255,
+        202,
+        58
+      ),
+      green: (
+        138,
+        201,
+        38
+      ),
+      blue: (
+        25,
+        130,
+        196
+      ),
+      purple: (
+        139,
+        91,
+        206
+      )
+    );
+    @each $key, $value in $list-rgb {
+      --color-#{$key}-rgb: #{$value};
+    }
+  }
+}
