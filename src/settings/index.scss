@@ -10,6 +10,29 @@ settings:
         level: 1
         collapsed: true
     - 
+        id: heading-custom-layout
+        title: Custom Layout
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: enable-custom-layout
+        title: Choose an Style
+        description: Toggle a custom style.
+        type: class-select
+        allowEmpty: false
+        default: enable-custom-layout-colorful-frame
+        options:
+            - 
+                label: Default
+                value: none
+            - 
+                label: Colorful Frame
+                value: enable-custom-layout-colorful-frame
+            - 
+                label: Card (WIP)
+                value: enable-custom-layout-card
+    - 
         id: heading-color-scheme
         title: Color Scheme
         type: heading
@@ -32,6 +55,24 @@ settings:
             - 
                 label: Palette1
                 value: color-scheme-palette1
+    - 
+        id: heading-status-bar
+        title: Status Bar
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: enable-styled-status-bar
+        title: Enable Style
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    -
+        id: styled-status-bar-show-hover
+        title: Enable Status Bar Only Show on Hover
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
     - 
         id: heading-Editor
         title: Editor
@@ -73,13 +114,13 @@ settings:
         title: Enable Rounded Corners
         description: Toggle to turn on/off function.
         type: class-toggle
-        default: false
+        default: true
     -
         id: styled-headings-underline
-        title: Enable Dashed Underline
+        title: Enable Underline
         description: Toggle to turn on/off function.
         type: class-toggle
-        default: true
+        default: false
     -
         id: styled-headings-indicator
         title: Enable H1 Indicators on Unactive Lines

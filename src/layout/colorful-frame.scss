@@ -1,0 +1,34 @@
+/* ========================================================================== */
+/*                           Layout - Colorful Frame                          */
+/* ========================================================================== */
+.enable-custom-layout-colorful-frame {
+  --background-secondary: #{$bg-color-accent};
+  --tab-outline-color: transparent;
+  --tab-text-color-focused-highlighted: var(--text-accent);
+  --tab-text-color-focused-active-current: var(--text-accent);
+  .workspace-ribbon {
+    --ribbon-background: var(--background-secondary);
+    border-right: none;
+    &::before {
+      background-color: var(--background-secondary);
+    }
+  }
+  .workspace-tab-header-container {
+    --tab-container-background: var(--background-secondary);
+  }
+  .workspace-leaf-resize-handle {
+    --divider-color: transparent;
+  }
+  .workspace-tab-header {
+    &.is-active.mod-active {
+      background-color: var(--background-primary);
+      color: var(--text-accent);
+    }
+  }
+  .sidebar-toggle-button.mod-right {
+    --tab-container-background: transparent;
+  }
+  .view-header {
+    border-bottom: 2px dashed var(--background-secondary);
+  }
+}

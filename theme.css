@@ -11,6 +11,29 @@ settings:
         level: 1
         collapsed: true
     - 
+        id: heading-custom-layout
+        title: Custom Layout
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: enable-custom-layout
+        title: Choose an Style
+        description: Toggle a custom style.
+        type: class-select
+        allowEmpty: false
+        default: enable-custom-layout-colorful-frame
+        options:
+            - 
+                label: Default
+                value: none
+            - 
+                label: Colorful Frame
+                value: enable-custom-layout-colorful-frame
+            - 
+                label: Card (WIP)
+                value: enable-custom-layout-card
+    - 
         id: heading-color-scheme
         title: Color Scheme
         type: heading
@@ -33,6 +56,24 @@ settings:
             - 
                 label: Palette1
                 value: color-scheme-palette1
+    - 
+        id: heading-status-bar
+        title: Status Bar
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: enable-styled-status-bar
+        title: Enable Style
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    -
+        id: styled-status-bar-show-hover
+        title: Enable Status Bar Only Show on Hover
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
     - 
         id: heading-Editor
         title: Editor
@@ -74,13 +115,13 @@ settings:
         title: Enable Rounded Corners
         description: Toggle to turn on/off function.
         type: class-toggle
-        default: false
+        default: true
     -
         id: styled-headings-underline
-        title: Enable Dashed Underline
+        title: Enable Underline
         description: Toggle to turn on/off function.
         type: class-toggle
-        default: true
+        default: false
     -
         id: styled-headings-indicator
         title: Enable H1 Indicators on Unactive Lines
@@ -471,6 +512,71 @@ settings:
   --color-green-rgb: 138, 201, 38;
   --color-blue-rgb: 25, 130, 196;
   --color-purple-rgb: 139, 91, 206;
+}
+
+/* ========================================================================== */
+/*                           Layout - Colorful Frame                          */
+/* ========================================================================== */
+.enable-custom-layout-colorful-frame {
+  --background-secondary: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
+  --tab-outline-color: transparent;
+  --tab-text-color-focused-highlighted: var(--text-accent);
+  --tab-text-color-focused-active-current: var(--text-accent);
+}
+.enable-custom-layout-colorful-frame .workspace-ribbon {
+  --ribbon-background: var(--background-secondary);
+  border-right: none;
+}
+.enable-custom-layout-colorful-frame .workspace-ribbon::before {
+  background-color: var(--background-secondary);
+}
+.enable-custom-layout-colorful-frame .workspace-tab-header-container {
+  --tab-container-background: var(--background-secondary);
+}
+.enable-custom-layout-colorful-frame .workspace-leaf-resize-handle {
+  --divider-color: transparent;
+}
+.enable-custom-layout-colorful-frame .workspace-tab-header.is-active.mod-active {
+  background-color: var(--background-primary);
+  color: var(--text-accent);
+}
+.enable-custom-layout-colorful-frame .sidebar-toggle-button.mod-right {
+  --tab-container-background: transparent;
+}
+.enable-custom-layout-colorful-frame .view-header {
+  border-bottom: 2px dashed var(--background-secondary);
+}
+
+/* ========================================================================== */
+/*                                Layout - Card                               */
+/* ========================================================================== */
+.enable-custom-layout-card {
+  --background-secondary: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
+}
+
+/* ========================================================================== */
+/*                             Layout - Status Bar                            */
+/* ========================================================================== */
+.enable-styled-status-bar {
+  /** status-bar-show-hover is inspired from @subframe7536/obsidian-theme-maple (https://github.com/subframe7536/obsidian-theme-maple). */
+}
+.enable-styled-status-bar .status-bar {
+  --status-bar-background: var(--background-primary);
+  --status-bar-border-color: var(--background-secondary);
+  bottom: 10px;
+  right: 10px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+.enable-styled-status-bar.styled-status-bar-show-hover .status-bar {
+  padding-left: calc(var(--size-4-1) + var(--size-4-1));
+  transform: translateX(calc(100% - var(--size-4-1)));
+  transition-delay: var(--animation-delay);
+}
+.enable-styled-status-bar.styled-status-bar-show-hover .status-bar:hover {
+  transform: translateX(0);
+  transition-delay: 0s;
+  padding-left: var(--size-4-1);
 }
 
 /* ========================================================================== */

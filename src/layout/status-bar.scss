@@ -1,0 +1,26 @@
+/* ========================================================================== */
+/*                             Layout - Status Bar                            */
+/* ========================================================================== */
+.enable-styled-status-bar {
+  .status-bar {
+    --status-bar-background: var(--background-primary);
+    --status-bar-border-color: var(--background-secondary);
+    bottom: 10px;
+    right: 10px;
+    border-radius: 10px;
+    font-weight: 600;
+  }
+  /** status-bar-show-hover is inspired from @subframe7536/obsidian-theme-maple (https://github.com/subframe7536/obsidian-theme-maple). */
+  &.styled-status-bar-show-hover {
+    .status-bar {
+      padding-left: calc(var(--size-4-1) + var(--size-4-1));
+      transform: translateX(calc(100% - var(--size-4-1)));
+      transition-delay: var(--animation-delay);
+      &:hover {
+        transform: translateX(0);
+        transition-delay: 0s;
+        padding-left: var(--size-4-1);
+      }
+    }
+  }
+}
