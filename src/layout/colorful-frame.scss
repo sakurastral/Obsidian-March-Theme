@@ -28,7 +28,13 @@
   .sidebar-toggle-button.mod-right {
     --tab-container-background: transparent;
   }
-  .view-header {
-    border-bottom: 2px dashed var(--background-secondary);
+  .workspace-tab-container .view-header {
+    border-bottom: $cf-border;
+  }
+  .workspace-split.mod-right-split {
+    .workspace-leaf-content {
+      background-color: var(--background-primary);
+      border-left: $cf-border;
+    }
   }
 }
