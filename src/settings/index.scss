@@ -468,4 +468,102 @@ settings:
         description: Toggle to turn on/off function.
         type: class-toggle
         default: true
+    - 
+        id: heading-calendar
+        title: Calendar
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: enable-custom-calendar-plugin
+        title: Enable Style
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    - 
+        id: info-text-setting
+        title: Calendar Plugin
+        description: "Calendar Plugin v1.5.10 https://github.com/liamcain/obsidian-calendar-plugin"
+        type: info-text
+        markdown: true
+    - 
+        id: heading-calendar-style
+        title: Style
+        type: heading
+        level: 3
+        collapsed: true
+    -
+        id: calendar-plugin-hide-tab
+        title: Hide Sidebar's Calendar Tab 
+        description: Toggle to turn on/off function. This will hide all tabs in the same section.
+        type: class-toggle
+        default: false
+    -
+        id: calendar-plugin-hide-dots
+        title: Hide Dots
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    -
+        id: calendar-plugin-enable-weekend-bg
+        title: Show Weekend/Holiday Backgrounds
+        description: Toggle to turn on/off function. 
+        type: class-toggle
+        default: false
+    -
+        id: calendar-plugin-enable-weekend-text
+        title: Show Weekend/Holiday Bold and Colored Red
+        description: Toggle to turn on/off function. 
+        type: class-toggle
+        default: true
+    -
+        id: calendar-plugin-enable-border
+        title: Toggle Border 
+        description: Toggle to turn on/off function. 
+        type: class-select
+        allowEmpty: false
+        default: calendar-plugin-enable-border-02
+        options:
+            - 
+                label: Default
+                value: none
+            - 
+                label: Type-01
+                value: calendar-plugin-enable-border-01
+            - 
+                label: Type-02
+                value: calendar-plugin-enable-border-02
+            - 
+                label: Type-03
+                value: calendar-plugin-enable-border-03
+    -
+        id: calendar-plugin-enable-primary-bg
+        title: Enable Primary Background
+        description: Toggle to turn on/off function. 
+        type: class-toggle
+        default: true
+    - 
+        id: heading-calendar-tags
+        title: Tag Settings
+        type: heading
+        level: 3
+        collapsed: true
+    -
+        id: calendar-plugin-enable-holiday-tag
+        title: Enable Appearence of calendar-is-holiday tag
+        description: Toggle to turn on/off function. If daily notes's properties include tags named `calendar-is-holiday`, color of the date on calendar will change if that day is originally not a holiday.
+        type: class-toggle
+        default: true
+    -
+        id: calendar-plugin-enable-work-tag
+        title: Enable Appearence of calendar-is-work tag
+        description: Toggle to turn on/off function. If daily notes's properties include tags named `calendar-is-work`, color of the date on calendar will change if that day is originally a holiday.
+        type: class-toggle
+        default: true
+    -
+        id: calendar-plugin-enable-emoji-tag
+        title: Enable Appearence of emoji tag
+        description: Toggle to turn on/off function. If daily notes's properties include tags starts with emoji, an emoji icon will appear on calendar (If you have more than one emoji tags, only the first one works). The emoji need to be at the start of the tag.
+        type: class-toggle
+        default: true
 */

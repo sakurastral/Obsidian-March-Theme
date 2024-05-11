@@ -469,6 +469,104 @@ settings:
         description: Toggle to turn on/off function.
         type: class-toggle
         default: true
+    - 
+        id: heading-calendar
+        title: Calendar
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: enable-custom-calendar-plugin
+        title: Enable Style
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    - 
+        id: info-text-setting
+        title: Calendar Plugin
+        description: "Calendar Plugin v1.5.10 https://github.com/liamcain/obsidian-calendar-plugin"
+        type: info-text
+        markdown: true
+    - 
+        id: heading-calendar-style
+        title: Style
+        type: heading
+        level: 3
+        collapsed: true
+    -
+        id: calendar-plugin-hide-tab
+        title: Hide Sidebar's Calendar Tab 
+        description: Toggle to turn on/off function. This will hide all tabs in the same section.
+        type: class-toggle
+        default: false
+    -
+        id: calendar-plugin-hide-dots
+        title: Hide Dots
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    -
+        id: calendar-plugin-enable-weekend-bg
+        title: Show Weekend/Holiday Backgrounds
+        description: Toggle to turn on/off function. 
+        type: class-toggle
+        default: false
+    -
+        id: calendar-plugin-enable-weekend-text
+        title: Show Weekend/Holiday Bold and Colored Red
+        description: Toggle to turn on/off function. 
+        type: class-toggle
+        default: true
+    -
+        id: calendar-plugin-enable-border
+        title: Toggle Border 
+        description: Toggle to turn on/off function. 
+        type: class-select
+        allowEmpty: false
+        default: calendar-plugin-enable-border-02
+        options:
+            - 
+                label: Default
+                value: none
+            - 
+                label: Type-01
+                value: calendar-plugin-enable-border-01
+            - 
+                label: Type-02
+                value: calendar-plugin-enable-border-02
+            - 
+                label: Type-03
+                value: calendar-plugin-enable-border-03
+    -
+        id: calendar-plugin-enable-primary-bg
+        title: Enable Primary Background
+        description: Toggle to turn on/off function. 
+        type: class-toggle
+        default: true
+    - 
+        id: heading-calendar-tags
+        title: Tag Settings
+        type: heading
+        level: 3
+        collapsed: true
+    -
+        id: calendar-plugin-enable-holiday-tag
+        title: Enable Appearence of calendar-is-holiday tag
+        description: Toggle to turn on/off function. If daily notes's properties include tags named `calendar-is-holiday`, color of the date on calendar will change if that day is originally not a holiday.
+        type: class-toggle
+        default: true
+    -
+        id: calendar-plugin-enable-work-tag
+        title: Enable Appearence of calendar-is-work tag
+        description: Toggle to turn on/off function. If daily notes's properties include tags named `calendar-is-work`, color of the date on calendar will change if that day is originally a holiday.
+        type: class-toggle
+        default: true
+    -
+        id: calendar-plugin-enable-emoji-tag
+        title: Enable Appearence of emoji tag
+        description: Toggle to turn on/off function. If daily notes's properties include tags starts with emoji, an emoji icon will appear on calendar (If you have more than one emoji tags, only the first one works). The emoji need to be at the start of the tag.
+        type: class-toggle
+        default: true
 */
 /* ========================================================================== */
 /*                              Variables - Font                              */
@@ -555,8 +653,12 @@ settings:
 .enable-custom-layout-colorful-frame .sidebar-toggle-button.mod-right {
   --tab-container-background: transparent;
 }
-.enable-custom-layout-colorful-frame .view-header {
+.enable-custom-layout-colorful-frame .workspace-tab-container .view-header {
   border-bottom: 2px dashed var(--background-secondary);
+}
+.enable-custom-layout-colorful-frame .workspace-split.mod-right-split .workspace-leaf-content {
+  background-color: var(--background-primary);
+  border-left: 2px dashed var(--background-secondary);
 }
 
 /* ========================================================================== */
@@ -2564,4 +2666,109 @@ settings:
   padding-left: 28px !important;
   margin-left: 0 !important;
   border-left: none;
+}
+
+/* ========================================================================== */
+/*                              Plugin - Calendar                             */
+/* ========================================================================== */
+.enable-custom-calendar-plugin {
+  /** calendar-plugin-hide-tab is inspired from @Kyren223 (https://discord.com/channels/686053708261228577/702656734631821413/1194028078603714620) */
+}
+.enable-custom-calendar-plugin .calendar {
+  --color-background-heading: transparent;
+  --color-background-day: transparent;
+  --color-background-weeknum: transparent;
+  --color-background-weekend: transparent;
+  --color-dot: var(--text-muted);
+  --color-arrow: var(--text-muted);
+  --color-button: var(--text-muted);
+  --color-text-title: var(--text-normal);
+  --color-text-heading: var(--text-normal);
+  --color-text-day: var(--text-normal);
+  --color-text-today: var(--interactive-accent);
+  --color-text-weeknum: var(--text-normal);
+  --calendar-color-workday-text: var(--text-normal);
+  --calendar-color-workday-bg: transparent;
+  --calendar-color-holiday-text: rgb(var(--color-red-rgb));
+  --calendar-color-holiday-bg: hsla(var(--interactive-accent-hsl), 0.1);
+  --calendar-color-accent-text: var(--text-accent);
+  --calendar-color-hover-text: var(--text-normal);
+  --calendar-color-hover-bg: var(--background-primary);
+}
+.enable-custom-calendar-plugin.calendar-plugin-enable-primary-bg .workspace-tabs .workspace-leaf-content .view-content:has(#calendar-container) {
+  background-color: var(--background-primary);
+}
+.enable-custom-calendar-plugin.calendar-plugin-enable-border-01 .calendar thead {
+  border-top: 1px solid var(--background-modifier-border);
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+.enable-custom-calendar-plugin.calendar-plugin-enable-border-02 .calendar thead {
+  border-top: 1px solid var(--background-modifier-border);
+  border-bottom: 1px solid var(--background-modifier-border);
+  border-radius: 10px;
+}
+.enable-custom-calendar-plugin.calendar-plugin-enable-border-02 .calendar tr {
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+.enable-custom-calendar-plugin.calendar-plugin-enable-border-03 .calendar th,
+.enable-custom-calendar-plugin.calendar-plugin-enable-border-03 .calendar td {
+  border: 1px solid var(--background-modifier-border);
+}
+.enable-custom-calendar-plugin.calendar-plugin-hide-tab .workspace-tab-header-container:has([data-type=calendar]) {
+  display: none;
+}
+.enable-custom-calendar-plugin.calendar-plugin-hide-dots .calendar .day .dot-container {
+  display: none;
+}
+.enable-custom-calendar-plugin.calendar-plugin-enable-weekend-bg:not(.calendar-plugin-enable-work-tag) #calendar-container > table > tbody td:nth-child(6) .day,
+.enable-custom-calendar-plugin.calendar-plugin-enable-weekend-bg:not(.calendar-plugin-enable-work-tag) #calendar-container > table > tbody td:nth-child(7) .day {
+  background-color: var(--calendar-color-holiday-bg);
+}
+.enable-custom-calendar-plugin.calendar-plugin-enable-weekend-bg:not(.calendar-plugin-enable-work-tag) #calendar-container > table > tbody td:nth-child(6) .day:hover,
+.enable-custom-calendar-plugin.calendar-plugin-enable-weekend-bg:not(.calendar-plugin-enable-work-tag) #calendar-container > table > tbody td:nth-child(7) .day:hover {
+  background-color: var(--calendar-color-hover-bg);
+  color: var(--calendar-color-hover-text);
+}
+.enable-custom-calendar-plugin.calendar-plugin-enable-weekend-bg #calendar-container > table > tbody td:nth-child(6) .day:not([data-tags~=calendar-is-work]),
+.enable-custom-calendar-plugin.calendar-plugin-enable-weekend-bg #calendar-container > table > tbody td:nth-child(7) .day:not([data-tags~=calendar-is-work]) {
+  background-color: var(--calendar-color-holiday-bg);
+}
+.enable-custom-calendar-plugin.calendar-plugin-enable-weekend-bg #calendar-container > table > tbody td:nth-child(6) .day:not([data-tags~=calendar-is-work]):hover,
+.enable-custom-calendar-plugin.calendar-plugin-enable-weekend-bg #calendar-container > table > tbody td:nth-child(7) .day:not([data-tags~=calendar-is-work]):hover {
+  background-color: var(--calendar-color-hover-bg);
+  color: var(--calendar-color-hover-text);
+}
+.enable-custom-calendar-plugin.calendar-plugin-enable-weekend-text.calendar-plugin-enable-work-tag #calendar-container > table > tbody td:nth-child(6) .day:not([data-tags~=calendar-is-work]), .enable-custom-calendar-plugin.calendar-plugin-enable-weekend-text.calendar-plugin-enable-work-tag #calendar-container > table > tbody td:nth-child(7) .day:not([data-tags~=calendar-is-work]), .enable-custom-calendar-plugin.calendar-plugin-enable-weekend-text:not(.calendar-plugin-enable-work-tag) #calendar-container > table > tbody td:nth-child(6) .day, .enable-custom-calendar-plugin.calendar-plugin-enable-weekend-text:not(.calendar-plugin-enable-work-tag) #calendar-container > table > tbody td:nth-child(7) .day {
+  color: var(--calendar-color-holiday-text);
+  font-weight: 600;
+}
+.enable-custom-calendar-plugin.calendar-plugin-enable-holiday-tag.calendar-plugin-enable-weekend-bg #calendar-container [data-tags~=calendar-is-holiday]:not(.active, :hover) {
+  background-color: var(--calendar-color-holiday-bg);
+}
+.enable-custom-calendar-plugin.calendar-plugin-enable-holiday-tag.calendar-plugin-enable-weekend-text #calendar-container [data-tags~=calendar-is-holiday]:not(.active, :hover) {
+  color: var(--calendar-color-holiday-text);
+  font-weight: 600;
+}
+.enable-custom-calendar-plugin.calendar-plugin-enable-work-tag #calendar-container [data-tags~=calendar-is-work]:not(.active, :hover) {
+  background-color: var(--calendar-color-workday-bg);
+}
+.enable-custom-calendar-plugin.calendar-plugin-enable-work-tag #calendar-container [data-tags~=calendar-is-work]:not(.active, :hover) {
+  color: var(--calendar-color-workday-text);
+}
+.enable-custom-calendar-plugin.calendar-plugin-enable-emoji-tag #calendar-container [data-emoji-tag]::after {
+  content: attr(data-emoji-tag);
+  color: var(--calendar-color-accent-text);
+  background-color: transparent;
+  border-radius: var(--radius-m);
+  border: 0.1px solid transparent;
+  position: absolute;
+  top: -5%;
+  right: 0%;
+  font-size: 12px;
+  height: 16px;
+  width: 16px;
+  overflow: hidden;
+}
+.enable-custom-calendar-plugin.calendar-plugin-enable-emoji-tag #calendar-container [data-emoji-tag]:is(.active):after {
+  color: var(--color-text-day);
 }

@@ -1,0 +1,147 @@
+/* ========================================================================== */
+/*                              Plugin - Calendar                             */
+/* ========================================================================== */
+.enable-custom-calendar-plugin {
+  .calendar {
+    --color-background-heading: transparent;
+    --color-background-day: transparent;
+    --color-background-weeknum: transparent;
+    --color-background-weekend: transparent;
+
+    --color-dot: var(--text-muted);
+    --color-arrow: var(--text-muted);
+    --color-button: var(--text-muted);
+
+    --color-text-title: var(--text-normal);
+    --color-text-heading: var(--text-normal);
+    --color-text-day: var(--text-normal);
+    --color-text-today: var(--interactive-accent);
+    --color-text-weeknum: var(--text-normal);
+
+    --calendar-color-workday-text: var(--text-normal);
+    --calendar-color-workday-bg: transparent;
+    --calendar-color-holiday-text: rgb(var(--color-red-rgb));
+    --calendar-color-holiday-bg: hsla(var(--interactive-accent-hsl), 0.1);
+    --calendar-color-accent-text: var(--text-accent);
+    --calendar-color-hover-text: var(--text-normal);
+    --calendar-color-hover-bg: var(--background-primary);
+  }
+  &.calendar-plugin-enable-primary-bg {
+    .workspace-tabs {
+      .workspace-leaf-content {
+        .view-content:has(#calendar-container) {
+          background-color: var(--background-primary);
+        }
+      }
+    }
+  }
+  &.calendar-plugin-enable-border-01 {
+    .calendar {
+      thead {
+        border-top: 1px solid var(--background-modifier-border);
+        border-bottom: 1px solid var(--background-modifier-border);
+      }
+    }
+  }
+  &.calendar-plugin-enable-border-02 {
+    .calendar {
+      thead {
+        border-top: 1px solid var(--background-modifier-border);
+        border-bottom: 1px solid var(--background-modifier-border);
+        border-radius: $blockquote-radius;
+      }
+      tr {
+        border-bottom: 1px solid var(--background-modifier-border);
+      }
+    }
+  }
+  &.calendar-plugin-enable-border-03 {
+    .calendar {
+      th,
+      td {
+        border: 1px solid var(--background-modifier-border);
+      }
+    }
+  }
+  /** calendar-plugin-hide-tab is inspired from @Kyren223 (https://discord.com/channels/686053708261228577/702656734631821413/1194028078603714620) */
+  &.calendar-plugin-hide-tab .workspace-tab-header-container:has([data-type='calendar']) {
+    display: none;
+  }
+
+  &.calendar-plugin-hide-dots .calendar .day .dot-container {
+    display: none;
+  }
+
+  &.calendar-plugin-enable-weekend-bg {
+    &:not(.calendar-plugin-enable-work-tag) {
+      #calendar-container > table > tbody {
+        td:nth-child(6),
+        td:nth-child(7) {
+          .day {
+            background-color: var(--calendar-color-holiday-bg);
+            &:hover {
+              background-color: var(--calendar-color-hover-bg);
+              color: var(--calendar-color-hover-text);
+            }
+          }
+        }
+      }
+    }
+    #calendar-container > table > tbody {
+      td:nth-child(6),
+      td:nth-child(7) {
+        .day:not([data-tags~='calendar-is-work']) {
+          background-color: var(--calendar-color-holiday-bg);
+          &:hover {
+            background-color: var(--calendar-color-hover-bg);
+            color: var(--calendar-color-hover-text);
+          }
+        }
+      }
+    }
+  }
+
+  &.calendar-plugin-enable-weekend-text.calendar-plugin-enable-work-tag #calendar-container > table > tbody td:nth-child(6) .day:not([data-tags~='calendar-is-work']),
+  &.calendar-plugin-enable-weekend-text.calendar-plugin-enable-work-tag #calendar-container > table > tbody td:nth-child(7) .day:not([data-tags~='calendar-is-work']),
+  &.calendar-plugin-enable-weekend-text:not(.calendar-plugin-enable-work-tag) #calendar-container > table > tbody td:nth-child(6) .day,
+  &.calendar-plugin-enable-weekend-text:not(.calendar-plugin-enable-work-tag) #calendar-container > table > tbody td:nth-child(7) .day {
+    color: var(--calendar-color-holiday-text);
+    font-weight: 600;
+  }
+
+  &.calendar-plugin-enable-holiday-tag.calendar-plugin-enable-weekend-bg #calendar-container [data-tags~='calendar-is-holiday']:not(.active, :hover) {
+    background-color: var(--calendar-color-holiday-bg);
+  }
+
+  &.calendar-plugin-enable-holiday-tag.calendar-plugin-enable-weekend-text #calendar-container [data-tags~='calendar-is-holiday']:not(.active, :hover) {
+    color: var(--calendar-color-holiday-text);
+    font-weight: 600;
+  }
+
+  &.calendar-plugin-enable-work-tag #calendar-container [data-tags~='calendar-is-work']:not(.active, :hover) {
+    background-color: var(--calendar-color-workday-bg);
+  }
+
+  &.calendar-plugin-enable-work-tag #calendar-container [data-tags~='calendar-is-work']:not(.active, :hover) {
+    color: var(--calendar-color-workday-text);
+  }
+
+  &.calendar-plugin-enable-emoji-tag #calendar-container [data-emoji-tag]::after {
+    content: attr(data-emoji-tag);
+    color: var(--calendar-color-accent-text);
+    background-color: transparent;
+    border-radius: var(--radius-m);
+    border: 0.1px solid transparent;
+    position: absolute;
+    top: -5%;
+    right: 0%;
+    font-size: 12px;
+    height: 16px;
+    width: 16px;
+    overflow: hidden;
+  }
+
+  &.calendar-plugin-enable-emoji-tag #calendar-container [data-emoji-tag]:is(.active):after {
+    color: var(--color-text-day);
+  }
+}
