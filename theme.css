@@ -75,6 +75,18 @@ settings:
         type: class-toggle
         default: true
     - 
+        id: heading-scrollbar
+        title: Scroll Bar
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: layout-scrollbar-hide
+        title: Hide Scroll Bar
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
+    - 
         id: heading-Editor
         title: Editor
         type: heading
@@ -691,6 +703,13 @@ settings:
   transform: translateX(0);
   transition-delay: 0s;
   padding-left: var(--size-4-1);
+}
+
+/* ========================================================================== */
+/*                             Layout - Scrollbar                             */
+/* ========================================================================== */
+.layout-scrollbar-hide ::-webkit-scrollbar {
+  width: 0px;
 }
 
 /* ========================================================================== */
