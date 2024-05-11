@@ -423,7 +423,7 @@ settings:
         collapsed: true
     -
         id: styled-file-explorer-rainbow-subfolders
-        title: Inherit Colors (Subfolders
+        title: Inherit Colors (Subfolders)
         description: Toggle to turn on/off function.
         type: class-toggle
         default: true
@@ -456,4 +456,16 @@ settings:
             - 
                 label: Solid
                 value: styled-file-explorer-rainbow-bg2
+    - 
+        id: heading-outline
+        title: Outline
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: enable-styled-outline-maple-outline
+        title: Enable Outline Style from Maple Theme
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
 */

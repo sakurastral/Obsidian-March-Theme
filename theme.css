@@ -424,7 +424,7 @@ settings:
         collapsed: true
     -
         id: styled-file-explorer-rainbow-subfolders
-        title: Inherit Colors (Subfolders
+        title: Inherit Colors (Subfolders)
         description: Toggle to turn on/off function.
         type: class-toggle
         default: true
@@ -457,6 +457,18 @@ settings:
             - 
                 label: Solid
                 value: styled-file-explorer-rainbow-bg2
+    - 
+        id: heading-outline
+        title: Outline
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: enable-styled-outline-maple-outline
+        title: Enable Outline Style from Maple Theme
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
 */
 /* ========================================================================== */
 /*                              Variables - Font                              */
@@ -2441,4 +2453,115 @@ settings:
   margin-top: var(--size-2-1);
   margin-bottom: var(--size-2-1);
   border-left: 1px solid rgb(var(--rainbow-folder-color), var(--text-opacity, 1));
+}
+
+/* ========================================================================== */
+/*                              Plugin - Outline                              */
+/* ========================================================================== */
+/** enable-styled-outline-maple-outline is inspired and adapted from @subframe7536/obsidian-theme-maple (https://github.com/subframe7536/obsidian-theme-maple) */
+.enable-styled-outline-maple-outline {
+  --outline-guideline-width: var(--size-2-1);
+  --outline-guideline-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+  --outline-guideline-color-alt: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+  --outline-item-height: calc(var(--nav-item-size) * 1.8);
+}
+.enable-styled-outline-maple-outline .workspace-leaf-content[data-type=outline] .tree-item-inner {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  height: var(--outline-item-height);
+  line-height: var(--outline-item-height);
+}
+.enable-styled-outline-maple-outline .workspace-leaf-content[data-type=outline] .tree-item-self.is-active > .tree-item-inner {
+  color: var(--text-accent);
+}
+.enable-styled-outline-maple-outline .workspace-leaf-content[data-type=outline] .tree-item {
+  position: relative;
+}
+.enable-styled-outline-maple-outline .workspace-leaf-content[data-type=outline] .tree-item-self {
+  position: relative;
+  margin-bottom: 0;
+  white-space: nowrap;
+  margin-top: -1px;
+}
+.enable-styled-outline-maple-outline .workspace-leaf-content[data-type=outline] .tree-item-self .tree-item-inner {
+  padding-left: var(--size-4-1);
+}
+.enable-styled-outline-maple-outline .workspace-leaf-content[data-type=outline] .tree-item-self .tree-item-inner::before {
+  content: "";
+  width: calc(var(--size-4-1) * 1.2);
+  height: calc(var(--size-4-1) * 1.2);
+  border: var(--size-2-1) solid var(--outline-guideline-color-alt);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(calc(-1 * var(--size-4-5)), -50%);
+}
+.enable-styled-outline-maple-outline .workspace-leaf-content[data-type=outline] .tree-item-self.is-active .tree-item-inner::before {
+  border-color: var(--outline-guideline-color);
+}
+.enable-styled-outline-maple-outline .workspace-leaf-content[data-type=outline] .tree-item-self .tree-item-icon ~ .tree-item-inner {
+  padding-left: var(--size-4-1);
+}
+.enable-styled-outline-maple-outline .workspace-leaf-content[data-type=outline] .tree-item-self .tree-item-icon ~ .tree-item-inner::before {
+  content: none;
+}
+.enable-styled-outline-maple-outline .workspace-leaf-content[data-type=outline] .tree-item.is-collapsed .tree-item-icon::before {
+  box-shadow: 0 0 0 var(--size-4-1) var(--background-modifier-hover);
+}
+.enable-styled-outline-maple-outline .workspace-leaf-content[data-type=outline] .tree-item::after {
+  content: "";
+  width: var(--outline-guideline-width);
+  position: absolute;
+  background-color: transparent;
+  top: calc(var(--outline-item-height) / 2 * -1);
+  left: -14px;
+  height: calc(100% - var(--outline-item-height) + var(--size-4-8));
+}
+.enable-styled-outline-maple-outline .workspace-leaf-content[data-type=outline] .tree-item-icon {
+  cursor: pointer;
+  transform: translateY(8px);
+}
+.enable-styled-outline-maple-outline .workspace-leaf-content[data-type=outline] .tree-item-icon::before {
+  width: var(--size-4-2);
+  height: var(--size-4-2);
+  background-color: var(--outline-guideline-color-alt);
+  border-radius: 50%;
+  position: absolute;
+  left: 3px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+.enable-styled-outline-maple-outline .workspace-leaf-content[data-type=outline] .tree-item-icon svg path {
+  display: none;
+}
+.enable-styled-outline-maple-outline .workspace-leaf-content[data-type=outline] .tree-item-self.is-active .tree-item-icon::before {
+  background-color: var(--outline-guideline-color);
+}
+.enable-styled-outline-maple-outline .workspace-leaf-content[data-type=outline] .tree-item:hover > .tree-item-children > .tree-item::after {
+  background-color: var(--outline-guideline-color);
+}
+.enable-styled-outline-maple-outline .workspace-leaf-content[data-type=outline] .tree-item:hover > .tree-item-self:hover + .tree-item-children .tree-item::after {
+  background-color: transparent;
+}
+.enable-styled-outline-maple-outline .workspace-leaf-content[data-type=outline] .tree-item:hover > .tree-item-children > .tree-item:hover::after, .enable-styled-outline-maple-outline .workspace-leaf-content[data-type=outline] .tree-item:hover > .tree-item-children > .tree-item:hover ~ .tree-item::after {
+  background-color: transparent;
+}
+.enable-styled-outline-maple-outline .workspace-leaf-content[data-type=outline] .tree-item:hover > .tree-item-children > .tree-item:hover::before {
+  content: "";
+  position: absolute;
+  top: calc(var(--outline-item-height) / 2 * -1);
+  left: -14px;
+  bottom: calc(100% - (var(--outline-item-height) + var(--size-4-2)) / 2 - 1px);
+  width: var(--size-4-6);
+  border-bottom-left-radius: var(--radius-m);
+  border-bottom: var(--outline-guideline-width) solid var(--outline-guideline-color);
+  border-left: var(--outline-guideline-width) solid var(--outline-guideline-color);
+  z-index: 9;
+}
+.enable-styled-outline-maple-outline .workspace-leaf-content[data-type=outline] :is(.tree-item-children, .tree-item-self) {
+  padding-left: 28px !important;
+  margin-left: 0 !important;
+  border-left: none;
 }
