@@ -12,6 +12,18 @@
     &::before {
       background-color: var(--background-secondary);
     }
+    .side-dock-actions,
+    .side-dock-settings {
+      background: var(--background-primary);
+      padding: 5px 0 5px 0;
+      border-radius: 10px;
+    }
+    .clickable-icon {
+      color: $color-accent-dark;
+      &:hover {
+        background-color: var(--background-secondary);
+      }
+    }
   }
   .workspace-tab-header-container {
     --tab-container-background: var(--background-secondary);
@@ -19,10 +31,67 @@
   .workspace-leaf-resize-handle {
     --divider-color: transparent;
   }
-  .workspace-tab-header {
-    &.is-active.mod-active {
+  .mod-root .workspace-tab-header {
+    --tab-divider-color: transparent;
+    &:hover {
+      background-color: transparent;
+    }
+    &:not(.is-active) {
+      .workspace-tab-header-inner {
+        background-color: var(--background-primary);
+        border: $border-style-solid var(--background-secondary);
+        &:hover {
+          background-color: transparent;
+        }
+      }
+    }
+    color: $color-accent-dark;
+
+    .workspace-tab-header-inner-icon {
+      color: $color-accent-dark;
+    }
+    &::before,
+    &::after,
+    .workspace-tab-header-inner::after {
+      display: none;
+    }
+    &.is-active {
       background-color: var(--background-primary);
-      color: var(--text-accent);
+      .workspace-tab-header-inner-icon {
+        color: var(--text-accent);
+      }
+      &.workspace-tab-header-inner:hover {
+        background-color: transparent;
+      }
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+  .mod-sidedock .workspace-tab-header {
+    &:not(.is-active) {
+      .workspace-tab-header-inner {
+        &:hover {
+          background-color: var(--background-secondary);
+        }
+      }
+    }
+    color: $color-accent-dark;
+
+    .workspace-tab-header-inner-icon {
+      color: $color-accent-dark;
+    }
+    &.is-active {
+      background-color: var(--background-primary);
+      .workspace-tab-header-inner-icon {
+        color: var(--text-accent);
+      }
+      &.workspace-tab-header-inner:hover {
+        background-color: transparent;
+      }
+      &:hover {
+        background-color: transparent;
+      }
     }
   }
   .sidebar-toggle-button.mod-right {
@@ -35,6 +104,38 @@
     .workspace-leaf-content {
       background-color: var(--background-primary);
       border-left: $cf-border;
+      border-top-right-radius: 10px;
+    }
+  }
+  .workspace-split.mod-left-split {
+    .workspace-leaf-content {
+      background-color: var(--background-primary);
+      border-right: $cf-border;
+      border-top-left-radius: 10px;
+    }
+  }
+  .inline-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: $color-accent;
+    background-color: var(--background-secondary);
+  }
+  .menu {
+    backdrop-filter: blur(10px);
+    border: none;
+  }
+  .tooltip {
+    background: $color-accent-dark;
+  }
+  .tooltip-arrow {
+    border-bottom: 5px solid $color-accent-dark;
+  }
+  .clickable-icon {
+    color: $color-accent-dark;
+    &:hover {
+      background-color: var(--background-secondary);
     }
   }
 }
