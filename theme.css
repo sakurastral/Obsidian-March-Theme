@@ -640,10 +640,22 @@ settings:
 /*                           Layout - Colorful Frame                          */
 /* ========================================================================== */
 .enable-custom-layout-colorful-frame {
-  --background-secondary: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
+  --normal-color: var(--text-accent);
+  --unfocused-color: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 30%));
+  --background-secondary: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 30%));
   --tab-outline-color: transparent;
   --tab-text-color-focused-highlighted: var(--text-accent);
   --tab-text-color-focused-active-current: var(--text-accent);
+}
+.enable-custom-layout-colorful-frame.theme-light {
+  --normal-color: var(--text-accent);
+  --unfocused-color: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 30%));
+  --background-secondary: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 20%));
+}
+.enable-custom-layout-colorful-frame.theme-dark {
+  --normal-color: var(--text-accent);
+  --unfocused-color: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 30%));
+  --background-secondary: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 80%));
 }
 .enable-custom-layout-colorful-frame .workspace-ribbon {
   --ribbon-background: var(--background-secondary);
@@ -659,10 +671,11 @@ settings:
   border-radius: 10px;
 }
 .enable-custom-layout-colorful-frame .workspace-ribbon .clickable-icon {
-  color: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 30%));
+  color: var(--unfocused-color);
 }
 .enable-custom-layout-colorful-frame .workspace-ribbon .clickable-icon:hover {
   background-color: var(--background-secondary);
+  color: var(--normal-color);
 }
 .enable-custom-layout-colorful-frame .workspace-tab-header-container {
   --tab-container-background: var(--background-secondary);
@@ -672,7 +685,7 @@ settings:
 }
 .enable-custom-layout-colorful-frame .mod-root .workspace-tab-header {
   --tab-divider-color: transparent;
-  color: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 30%));
+  color: var(--unfocused-color);
 }
 .enable-custom-layout-colorful-frame .mod-root .workspace-tab-header:hover {
   background-color: transparent;
@@ -680,12 +693,14 @@ settings:
 .enable-custom-layout-colorful-frame .mod-root .workspace-tab-header:not(.is-active) .workspace-tab-header-inner {
   background-color: var(--background-primary);
   border: 2px solid var(--background-secondary);
+  border-radius: 20px;
 }
 .enable-custom-layout-colorful-frame .mod-root .workspace-tab-header:not(.is-active) .workspace-tab-header-inner:hover {
   background-color: transparent;
+  color: var(--normal-color);
 }
 .enable-custom-layout-colorful-frame .mod-root .workspace-tab-header .workspace-tab-header-inner-icon {
-  color: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 30%));
+  color: var(--unfocused-color);
 }
 .enable-custom-layout-colorful-frame .mod-root .workspace-tab-header::before, .enable-custom-layout-colorful-frame .mod-root .workspace-tab-header::after,
 .enable-custom-layout-colorful-frame .mod-root .workspace-tab-header .workspace-tab-header-inner::after {
@@ -704,13 +719,13 @@ settings:
   background-color: transparent;
 }
 .enable-custom-layout-colorful-frame .mod-sidedock .workspace-tab-header {
-  color: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 30%));
+  color: var(--unfocused-color);
 }
 .enable-custom-layout-colorful-frame .mod-sidedock .workspace-tab-header:not(.is-active) .workspace-tab-header-inner:hover {
   background-color: var(--background-secondary);
 }
 .enable-custom-layout-colorful-frame .mod-sidedock .workspace-tab-header .workspace-tab-header-inner-icon {
-  color: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 30%));
+  color: var(--unfocused-color);
 }
 .enable-custom-layout-colorful-frame .mod-sidedock .workspace-tab-header.is-active {
   background-color: var(--background-primary);
@@ -740,29 +755,33 @@ settings:
   border-right: 2px dashed var(--background-secondary);
   border-top-left-radius: 10px;
 }
+.enable-custom-layout-colorful-frame .nav-header {
+  border-bottom: 2px dashed var(--background-secondary);
+}
 .enable-custom-layout-colorful-frame .inline-title {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
-  color: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
-  background-color: var(--background-secondary);
+  color: var(--normal-color);
 }
 .enable-custom-layout-colorful-frame .menu {
   backdrop-filter: blur(10px);
   border: none;
 }
 .enable-custom-layout-colorful-frame .tooltip {
-  background: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 30%));
+  background: var(--background-secondary);
+  color: var(--unfocused-color);
 }
 .enable-custom-layout-colorful-frame .tooltip-arrow {
-  border-bottom: 5px solid hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 30%));
+  display: none;
 }
 .enable-custom-layout-colorful-frame .clickable-icon {
-  color: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 30%));
+  color: var(--unfocused-color);
 }
 .enable-custom-layout-colorful-frame .clickable-icon:hover {
   background-color: var(--background-secondary);
+  color: var(--normal-color);
 }
 
 /* ========================================================================== */

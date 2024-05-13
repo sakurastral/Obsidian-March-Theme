@@ -2,7 +2,19 @@
 /*                           Layout - Colorful Frame                          */
 /* ========================================================================== */
 .enable-custom-layout-colorful-frame {
-  --background-secondary: #{$bg-color-accent};
+  &.theme-light {
+    --normal-color: var(--text-accent);
+    --unfocused-color: #{$color-accent-dark};
+    --background-secondary: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 20%));
+  }
+  &.theme-dark {
+    --normal-color: var(--text-accent);
+    --unfocused-color: #{$color-accent-light};
+    --background-secondary: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 80%));
+  }
+  --normal-color: var(--text-accent);
+  --unfocused-color: #{$color-accent-dark};
+  --background-secondary: #{$color-accent-light};
   --tab-outline-color: transparent;
   --tab-text-color-focused-highlighted: var(--text-accent);
   --tab-text-color-focused-active-current: var(--text-accent);
@@ -19,9 +31,10 @@
       border-radius: 10px;
     }
     .clickable-icon {
-      color: $color-accent-dark;
+      color: var(--unfocused-color);
       &:hover {
         background-color: var(--background-secondary);
+        color: var(--normal-color);
       }
     }
   }
@@ -40,15 +53,17 @@
       .workspace-tab-header-inner {
         background-color: var(--background-primary);
         border: $border-style-solid var(--background-secondary);
+        border-radius: 20px;
         &:hover {
           background-color: transparent;
+          color: var(--normal-color);
         }
       }
     }
-    color: $color-accent-dark;
+    color: var(--unfocused-color);
 
     .workspace-tab-header-inner-icon {
-      color: $color-accent-dark;
+      color: var(--unfocused-color);
     }
     &::before,
     &::after,
@@ -76,10 +91,10 @@
         }
       }
     }
-    color: $color-accent-dark;
+    color: var(--unfocused-color);
 
     .workspace-tab-header-inner-icon {
-      color: $color-accent-dark;
+      color: var(--unfocused-color);
     }
     &.is-active {
       background-color: var(--background-primary);
@@ -114,28 +129,32 @@
       border-top-left-radius: 10px;
     }
   }
+  .nav-header {
+    border-bottom: $cf-border;
+  }
   .inline-title {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    color: $color-accent;
-    background-color: var(--background-secondary);
+    color: var(--normal-color);
   }
   .menu {
     backdrop-filter: blur(10px);
     border: none;
   }
   .tooltip {
-    background: $color-accent-dark;
+    background: var(--background-secondary);
+    color: var(--unfocused-color);
   }
   .tooltip-arrow {
-    border-bottom: 5px solid $color-accent-dark;
+    display: none;
   }
   .clickable-icon {
-    color: $color-accent-dark;
+    color: var(--unfocused-color);
     &:hover {
       background-color: var(--background-secondary);
+      color: var(--normal-color);
     }
   }
 }
