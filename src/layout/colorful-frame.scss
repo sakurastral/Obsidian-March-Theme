@@ -18,6 +18,10 @@
   --tab-outline-color: transparent;
   --tab-text-color-focused-highlighted: var(--text-accent);
   --tab-text-color-focused-active-current: var(--text-accent);
+
+  .workspace {
+    background-color: var(--background-secondary);
+  }
   .workspace-ribbon {
     --ribbon-background: var(--background-secondary);
     border-right: none;
@@ -115,18 +119,26 @@
   .workspace-tab-container .view-header {
     border-bottom: $cf-border;
   }
+  .workspace-split.mod-root {
+    padding: 0 0 20px 0;
+    background-color: var(--background-secondary);
+  }
   .workspace-split.mod-right-split {
+    padding: 0 10px 20px 0;
     .workspace-leaf-content {
       background-color: var(--background-primary);
       border-left: $cf-border;
       border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
     }
   }
   .workspace-split.mod-left-split {
+    padding: 0 0 20px 5px;
     .workspace-leaf-content {
       background-color: var(--background-primary);
       border-right: $cf-border;
       border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
     }
   }
   .nav-header {
