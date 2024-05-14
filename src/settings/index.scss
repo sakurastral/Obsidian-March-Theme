@@ -212,6 +212,12 @@ settings:
         description: Toggle to turn on/off function. Click hash icon can do the default action (search tag).
         type: class-toggle
         default: true
+    -
+        id: enable-tag-rainbow-color
+        title: Enable Rainbow Color
+        description: Toggle to turn on/off function. 
+        type: class-toggle
+        default: true
     - 
         id: heading-checkbox
         title: Checkbox

@@ -213,6 +213,12 @@ settings:
         description: Toggle to turn on/off function. Click hash icon can do the default action (search tag).
         type: class-toggle
         default: true
+    -
+        id: enable-tag-rainbow-color
+        title: Enable Rainbow Color
+        description: Toggle to turn on/off function. 
+        type: class-toggle
+        default: true
     - 
         id: heading-checkbox
         title: Checkbox
@@ -2442,6 +2448,106 @@ settings:
 /** enable-tag-click-to-edit is inspired from @subframe7536/obsidian-theme-maple (https://github.com/subframe7536/obsidian-theme-maple). */
 .enable-tag-click-to-edit .cm-line span.cm-hashtag:not(.cm-formatting) {
   pointer-events: none;
+}
+
+/** enable-tag-rainbow-color is inspired from @pfrankov/obsidian-colored-tags (https://github.com/pfrankov/obsidian-colored-tags) and @raisabelatrix/rainbow-tags.css (https://gist.github.com/raisabelatrix/eb383f7e19b59f951430c2f3c6ed80b0) */
+.enable-tag-rainbow-color .metadata-property[data-property-key=tags] .multi-select-pill:nth-child(7n+1) {
+  color: var(--color-red);
+  background-color: rgb(var(--color-red-rgb), 0.1);
+}
+.enable-tag-rainbow-color .metadata-property[data-property-key=tags] .multi-select-pill:nth-child(7n+1) .multi-select-pill-remove-button {
+  background-color: transparent;
+  color: var(--color-red);
+}
+.enable-tag-rainbow-color .markdown-reading-view .tag:nth-child(7n+1),
+.enable-tag-rainbow-color .cm-contentContainer .cm-hashtag-begin:nth-child(7n+0),
+.enable-tag-rainbow-color .cm-contentContainer .cm-hashtag-end:nth-child(7n+1) {
+  color: var(--color-red);
+  background-color: rgb(var(--color-red-rgb), 0.1);
+}
+.enable-tag-rainbow-color .metadata-property[data-property-key=tags] .multi-select-pill:nth-child(7n+2) {
+  color: var(--color-orange);
+  background-color: rgb(var(--color-orange-rgb), 0.1);
+}
+.enable-tag-rainbow-color .metadata-property[data-property-key=tags] .multi-select-pill:nth-child(7n+2) .multi-select-pill-remove-button {
+  background-color: transparent;
+  color: var(--color-orange);
+}
+.enable-tag-rainbow-color .markdown-reading-view .tag:nth-child(7n+2),
+.enable-tag-rainbow-color .cm-contentContainer .cm-hashtag-begin:nth-child(7n+1),
+.enable-tag-rainbow-color .cm-contentContainer .cm-hashtag-end:nth-child(7n+2) {
+  color: var(--color-orange);
+  background-color: rgb(var(--color-orange-rgb), 0.1);
+}
+.enable-tag-rainbow-color .metadata-property[data-property-key=tags] .multi-select-pill:nth-child(7n+3) {
+  color: var(--color-yellow);
+  background-color: rgb(var(--color-yellow-rgb), 0.1);
+}
+.enable-tag-rainbow-color .metadata-property[data-property-key=tags] .multi-select-pill:nth-child(7n+3) .multi-select-pill-remove-button {
+  background-color: transparent;
+  color: var(--color-yellow);
+}
+.enable-tag-rainbow-color .markdown-reading-view .tag:nth-child(7n+3),
+.enable-tag-rainbow-color .cm-contentContainer .cm-hashtag-begin:nth-child(7n+2),
+.enable-tag-rainbow-color .cm-contentContainer .cm-hashtag-end:nth-child(7n+3) {
+  color: var(--color-yellow);
+  background-color: rgb(var(--color-yellow-rgb), 0.1);
+}
+.enable-tag-rainbow-color .metadata-property[data-property-key=tags] .multi-select-pill:nth-child(7n+4) {
+  color: var(--color-green);
+  background-color: rgb(var(--color-green-rgb), 0.1);
+}
+.enable-tag-rainbow-color .metadata-property[data-property-key=tags] .multi-select-pill:nth-child(7n+4) .multi-select-pill-remove-button {
+  background-color: transparent;
+  color: var(--color-green);
+}
+.enable-tag-rainbow-color .markdown-reading-view .tag:nth-child(7n+4),
+.enable-tag-rainbow-color .cm-contentContainer .cm-hashtag-begin:nth-child(7n+3),
+.enable-tag-rainbow-color .cm-contentContainer .cm-hashtag-end:nth-child(7n+4) {
+  color: var(--color-green);
+  background-color: rgb(var(--color-green-rgb), 0.1);
+}
+.enable-tag-rainbow-color .metadata-property[data-property-key=tags] .multi-select-pill:nth-child(7n+5) {
+  color: var(--color-cyan);
+  background-color: rgb(var(--color-cyan-rgb), 0.1);
+}
+.enable-tag-rainbow-color .metadata-property[data-property-key=tags] .multi-select-pill:nth-child(7n+5) .multi-select-pill-remove-button {
+  background-color: transparent;
+  color: var(--color-cyan);
+}
+.enable-tag-rainbow-color .markdown-reading-view .tag:nth-child(7n+5),
+.enable-tag-rainbow-color .cm-contentContainer .cm-hashtag-begin:nth-child(7n+4),
+.enable-tag-rainbow-color .cm-contentContainer .cm-hashtag-end:nth-child(7n+5) {
+  color: var(--color-cyan);
+  background-color: rgb(var(--color-cyan-rgb), 0.1);
+}
+.enable-tag-rainbow-color .metadata-property[data-property-key=tags] .multi-select-pill:nth-child(7n+6) {
+  color: var(--color-blue);
+  background-color: rgb(var(--color-blue-rgb), 0.1);
+}
+.enable-tag-rainbow-color .metadata-property[data-property-key=tags] .multi-select-pill:nth-child(7n+6) .multi-select-pill-remove-button {
+  background-color: transparent;
+  color: var(--color-blue);
+}
+.enable-tag-rainbow-color .markdown-reading-view .tag:nth-child(7n+6),
+.enable-tag-rainbow-color .cm-contentContainer .cm-hashtag-begin:nth-child(7n+5),
+.enable-tag-rainbow-color .cm-contentContainer .cm-hashtag-end:nth-child(7n+6) {
+  color: var(--color-blue);
+  background-color: rgb(var(--color-blue-rgb), 0.1);
+}
+.enable-tag-rainbow-color .metadata-property[data-property-key=tags] .multi-select-pill:nth-child(7n+7) {
+  color: var(--color-purple);
+  background-color: rgb(var(--color-purple-rgb), 0.1);
+}
+.enable-tag-rainbow-color .metadata-property[data-property-key=tags] .multi-select-pill:nth-child(7n+7) .multi-select-pill-remove-button {
+  background-color: transparent;
+  color: var(--color-purple);
+}
+.enable-tag-rainbow-color .markdown-reading-view .tag:nth-child(7n+7),
+.enable-tag-rainbow-color .cm-contentContainer .cm-hashtag-begin:nth-child(7n+6),
+.enable-tag-rainbow-color .cm-contentContainer .cm-hashtag-end:nth-child(7n+7) {
+  color: var(--color-purple);
+  background-color: rgb(var(--color-purple-rgb), 0.1);
 }
 
 /* ========================================================================== */

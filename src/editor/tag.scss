@@ -5,3 +5,32 @@
 .enable-tag-click-to-edit .cm-line span.cm-hashtag:not(.cm-formatting) {
   pointer-events: none;
 }
+
+/** enable-tag-rainbow-color is inspired from @pfrankov/obsidian-colored-tags (https://github.com/pfrankov/obsidian-colored-tags) and @raisabelatrix/rainbow-tags.css (https://gist.github.com/raisabelatrix/eb383f7e19b59f951430c2f3c6ed80b0) */
+.enable-tag-rainbow-color {
+  $list: (
+    1: red,
+    2: orange,
+    3: yellow,
+    4: green,
+    5: cyan,
+    6: blue,
+    7: purple
+  );
+  @each $key, $value in $list {
+    .metadata-property[data-property-key='tags'] .multi-select-pill:nth-child(7n + #{$key}) {
+      color: var(--color-#{$value});
+      background-color: rgb(var(--color-#{$value}-rgb), 0.1);
+      .multi-select-pill-remove-button {
+        background-color: transparent;
+        color: var(--color-#{$value});
+      }
+    }
+    .markdown-reading-view .tag:nth-child(7n + #{$key}),
+    .cm-contentContainer .cm-hashtag-begin:nth-child(7n + #{$key - 1}),
+    .cm-contentContainer .cm-hashtag-end:nth-child(7n + #{($key)}) {
+      color: var(--color-#{$value});
+      background-color: rgb(var(--color-#{$value}-rgb), 0.1);
+    }
+  }
+}
