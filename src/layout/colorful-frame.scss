@@ -48,45 +48,6 @@
   .workspace-leaf-resize-handle {
     --divider-color: transparent;
   }
-  .mod-root .workspace-tab-header {
-    --tab-divider-color: transparent;
-    &:hover {
-      background-color: transparent;
-    }
-    &:not(.is-active) {
-      .workspace-tab-header-inner {
-        background-color: var(--background-primary);
-        border: $border-style-solid var(--background-secondary);
-        border-radius: 20px;
-        &:hover {
-          background-color: transparent;
-          color: var(--normal-color);
-        }
-      }
-    }
-    color: var(--unfocused-color);
-
-    .workspace-tab-header-inner-icon {
-      color: var(--unfocused-color);
-    }
-    &::before,
-    &::after,
-    .workspace-tab-header-inner::after {
-      display: none;
-    }
-    &.is-active {
-      background-color: var(--background-primary);
-      .workspace-tab-header-inner-icon {
-        color: var(--text-accent);
-      }
-      &.workspace-tab-header-inner:hover {
-        background-color: transparent;
-      }
-      &:hover {
-        background-color: transparent;
-      }
-    }
-  }
   .mod-sidedock .workspace-tab-header {
     &:not(.is-active) {
       .workspace-tab-header-inner {

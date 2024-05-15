@@ -87,6 +87,32 @@ settings:
         type: class-toggle
         default: true
     - 
+        id: heading-tab
+        title: Tab
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: enable-tab-style
+        title: Enable Styled Tab
+        description: Toggle to turn on/off function.
+        type: class-select
+        allowEmpty: false
+        default: enable-tab-style1
+        options:
+            - 
+                label: Default
+                value: none
+            - 
+                label: Style 01
+                value: enable-tab-style1
+    -
+        id: enable-tab-shrink-pinned-tab 
+        title: Shrink Pinned Tab
+        description: Shows the pin icon and note's icon if you set one from Iconize Plugin.
+        type: class-toggle
+        default: true
+    - 
         id: heading-Editor
         title: Editor
         type: heading
@@ -692,41 +718,6 @@ settings:
 .enable-custom-layout-colorful-frame .workspace-leaf-resize-handle {
   --divider-color: transparent;
 }
-.enable-custom-layout-colorful-frame .mod-root .workspace-tab-header {
-  --tab-divider-color: transparent;
-  color: var(--unfocused-color);
-}
-.enable-custom-layout-colorful-frame .mod-root .workspace-tab-header:hover {
-  background-color: transparent;
-}
-.enable-custom-layout-colorful-frame .mod-root .workspace-tab-header:not(.is-active) .workspace-tab-header-inner {
-  background-color: var(--background-primary);
-  border: 2px solid var(--background-secondary);
-  border-radius: 20px;
-}
-.enable-custom-layout-colorful-frame .mod-root .workspace-tab-header:not(.is-active) .workspace-tab-header-inner:hover {
-  background-color: transparent;
-  color: var(--normal-color);
-}
-.enable-custom-layout-colorful-frame .mod-root .workspace-tab-header .workspace-tab-header-inner-icon {
-  color: var(--unfocused-color);
-}
-.enable-custom-layout-colorful-frame .mod-root .workspace-tab-header::before, .enable-custom-layout-colorful-frame .mod-root .workspace-tab-header::after,
-.enable-custom-layout-colorful-frame .mod-root .workspace-tab-header .workspace-tab-header-inner::after {
-  display: none;
-}
-.enable-custom-layout-colorful-frame .mod-root .workspace-tab-header.is-active {
-  background-color: var(--background-primary);
-}
-.enable-custom-layout-colorful-frame .mod-root .workspace-tab-header.is-active .workspace-tab-header-inner-icon {
-  color: var(--text-accent);
-}
-.enable-custom-layout-colorful-frame .mod-root .workspace-tab-header.is-active.workspace-tab-header-inner:hover {
-  background-color: transparent;
-}
-.enable-custom-layout-colorful-frame .mod-root .workspace-tab-header.is-active:hover {
-  background-color: transparent;
-}
 .enable-custom-layout-colorful-frame .mod-sidedock .workspace-tab-header {
   color: var(--unfocused-color);
 }
@@ -842,6 +833,94 @@ settings:
 /* ========================================================================== */
 .layout-scrollbar-hide ::-webkit-scrollbar {
   width: 0px;
+}
+
+/* ========================================================================== */
+/*                                Layout - Tab                                */
+/* ========================================================================== */
+.enable-tab-style1 {
+  --tab-accent: var(--text-accent);
+  --tab-accent-hover: var(--background-primary);
+  --tab-accent-bg: var(--background-primary);
+  --tab-accent-bg-hover: var(--background-secondary);
+  --tab-accent-bg: var(--background-primary);
+  --tab-accent-active: var(--text-accent);
+  --tab-accent-active-hover: var(--background-secondary);
+  --tab-accent-active-bg: var(--background-secondary);
+  --tab-accent-active-bg-hover: var(--background-primary);
+  --tab-accent-border: var(--background-primary);
+}
+.enable-tab-style1:not(.enable-custom-layout-colorful-frame) {
+  --tab-accent: var(--text-muted);
+  --tab-accent-bg-hover: var(--text-faint);
+  --tab-accent-active-bg: var(--background-primary);
+  --tab-accent-active-bg-hover: var(--text-accent);
+  --tab-accent-border: var(--background-secondary);
+}
+.enable-tab-style1 .mod-root .workspace-tab-header::before, .enable-tab-style1 .mod-root .workspace-tab-header::after,
+.enable-tab-style1 .mod-root .workspace-tab-header .workspace-tab-header-inner::after {
+  display: none;
+}
+.enable-tab-style1 .mod-root .workspace-tab-header:not(.is-active) .workspace-tab-header-inner {
+  background-color: var(--tab-accent-bg);
+  color: var(--tab-accent);
+}
+.enable-tab-style1 .mod-root .workspace-tab-header:not(.is-active) .workspace-tab-header-inner:hover {
+  background-color: transparent;
+  color: var(--tab-accent-hover);
+}
+.enable-tab-style1 .mod-root .workspace-tab-header:not(.is-active) .workspace-tab-header-inner:hover .workspace-tab-header-inner-icon,
+.enable-tab-style1 .mod-root .workspace-tab-header:not(.is-active) .workspace-tab-header-inner:hover .workspace-tab-header-inner-close-button {
+  background-color: var(--tab-accent-bg-hover);
+  color: var(--tab-accent-hover);
+}
+.enable-tab-style1 .mod-root .workspace-tab-header:not(.is-active) .workspace-tab-header-inner .workspace-tab-header-inner-icon,
+.enable-tab-style1 .mod-root .workspace-tab-header:not(.is-active) .workspace-tab-header-inner .workspace-tab-header-inner-close-button {
+  background-color: transparent;
+  color: var(--tab-accent);
+}
+.enable-tab-style1 .mod-root .workspace-tab-header:not(.is-active) .workspace-tab-header-inner {
+  border-radius: 20px;
+  border: 2px solid var(--tab-accent-border);
+}
+.enable-tab-style1 .mod-root .workspace-tab-header:not(.is-active) .workspace-tab-header-inner:hover {
+  background-color: var(--tab-accent-bg-hover);
+  border: 2px solid var(--tab-accent-border);
+}
+.enable-tab-style1 .mod-root .workspace-tab-header.is-active {
+  border: 2px solid var(--tab-accent-border);
+  border-radius: 20px;
+  margin-bottom: 3px;
+  background-color: var(--tab-accent-active-bg);
+  color: var(--tab-accent-active);
+}
+.enable-tab-style1 .mod-root .workspace-tab-header.is-active .workspace-tab-header-inner-icon,
+.enable-tab-style1 .mod-root .workspace-tab-header.is-active .workspace-tab-header-inner-close-button {
+  background-color: transparent;
+  color: var(--tab-accent-active);
+}
+.enable-tab-style1 .mod-root .workspace-tab-header.is-active .workspace-tab-header-inner-title {
+  color: var(--tab-accent-active);
+}
+.enable-tab-style1 .mod-root .workspace-tab-header.is-active:hover {
+  background-color: var(--tab-accent-active-bg-hover);
+  color: var(--tab-accent-active-hover);
+}
+.enable-tab-style1 .mod-root .workspace-tab-header.is-active:hover .workspace-tab-header-inner-icon,
+.enable-tab-style1 .mod-root .workspace-tab-header.is-active:hover .workspace-tab-header-inner-close-button {
+  background-color: transparent;
+  color: var(--tab-accent-active-hover);
+}
+.enable-tab-style1 .mod-root .workspace-tab-header.is-active:hover .workspace-tab-header-inner-title {
+  color: var(--tab-accent-active-hover);
+}
+
+/** enable-tab-shrink-pinned-tab is inspired from https://forum.obsidian.md/t/shrink-the-size-of-pinned-tabs/71914 */
+.enable-tab-shrink-pinned-tab .workspace-tab-header:has(.mod-pinned) {
+  max-width: 60px !important;
+}
+.enable-tab-shrink-pinned-tab .workspace-tab-header:has(.mod-pinned) .workspace-tab-header-inner-title {
+  display: none;
 }
 
 /* ========================================================================== */

@@ -1,0 +1,95 @@
+/* ========================================================================== */
+/*                                Layout - Tab                                */
+/* ========================================================================== */
+.enable-tab-style1 {
+  --tab-accent: var(--text-accent);
+  --tab-accent-hover: var(--background-primary);
+  --tab-accent-bg: var(--background-primary);
+  --tab-accent-bg-hover: var(--background-secondary);
+  --tab-accent-bg: var(--background-primary);
+  --tab-accent-active: var(--text-accent);
+  --tab-accent-active-hover: var(--background-secondary);
+  --tab-accent-active-bg: var(--background-secondary);
+  --tab-accent-active-bg-hover: var(--background-primary);
+  --tab-accent-border: var(--background-primary);
+  &:not(.enable-custom-layout-colorful-frame) {
+    --tab-accent: var(--text-muted);
+    --tab-accent-bg-hover: var(--text-faint);
+    --tab-accent-active-bg: var(--background-primary);
+    --tab-accent-active-bg-hover: var(--text-accent);
+    --tab-accent-border: var(--background-secondary);
+  }
+  .mod-root .workspace-tab-header {
+    &::before,
+    &::after,
+    .workspace-tab-header-inner::after {
+      display: none;
+    }
+    &:not(.is-active) {
+      .workspace-tab-header-inner {
+        background-color: var(--tab-accent-bg);
+        color: var(--tab-accent);
+        &:hover {
+          background-color: transparent;
+          color: var(--tab-accent-hover);
+          .workspace-tab-header-inner-icon,
+          .workspace-tab-header-inner-close-button {
+            background-color: var(--tab-accent-bg-hover);
+            color: var(--tab-accent-hover);
+          }
+        }
+        .workspace-tab-header-inner-icon,
+        .workspace-tab-header-inner-close-button {
+          background-color: transparent;
+          color: var(--tab-accent);
+        }
+      }
+      .workspace-tab-header-inner {
+        border-radius: 20px;
+        border: $border-style-solid var(--tab-accent-border);
+        &:hover {
+          background-color: var(--tab-accent-bg-hover);
+          border: $border-style-solid var(--tab-accent-border);
+        }
+      }
+    }
+
+    &.is-active {
+      border: $border-style-solid var(--tab-accent-border);
+      border-radius: 20px;
+      margin-bottom: 3px;
+
+      background-color: var(--tab-accent-active-bg);
+      color: var(--tab-accent-active);
+      .workspace-tab-header-inner-icon,
+      .workspace-tab-header-inner-close-button {
+        background-color: transparent;
+        color: var(--tab-accent-active);
+      }
+      .workspace-tab-header-inner-title {
+        color: var(--tab-accent-active);
+      }
+      &:hover {
+        background-color: var(--tab-accent-active-bg-hover);
+        color: var(--tab-accent-active-hover);
+        .workspace-tab-header-inner-icon,
+        .workspace-tab-header-inner-close-button {
+          background-color: transparent;
+          color: var(--tab-accent-active-hover);
+        }
+        .workspace-tab-header-inner-title {
+          color: var(--tab-accent-active-hover);
+        }
+      }
+    }
+  }
+}
+
+/** enable-tab-shrink-pinned-tab is inspired from https://forum.obsidian.md/t/shrink-the-size-of-pinned-tabs/71914 */
+.enable-tab-shrink-pinned-tab .workspace-tab-header:has(.mod-pinned) {
+  max-width: 60px !important;
+
+  & .workspace-tab-header-inner-title {
+    display: none;
+  }
+}

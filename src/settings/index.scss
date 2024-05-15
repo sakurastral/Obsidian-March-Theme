@@ -86,6 +86,32 @@ settings:
         type: class-toggle
         default: true
     - 
+        id: heading-tab
+        title: Tab
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: enable-tab-style
+        title: Enable Styled Tab
+        description: Toggle to turn on/off function.
+        type: class-select
+        allowEmpty: false
+        default: enable-tab-style1
+        options:
+            - 
+                label: Default
+                value: none
+            - 
+                label: Style 01
+                value: enable-tab-style1
+    -
+        id: enable-tab-shrink-pinned-tab 
+        title: Shrink Pinned Tab
+        description: Shows the pin icon and note's icon if you set one from Iconize Plugin.
+        type: class-toggle
+        default: true
+    - 
         id: heading-Editor
         title: Editor
         type: heading
