@@ -1,12 +1,10 @@
 // Black and white
 $colors-mono-bg: rgb(var(--mono-rgb-0));
 $colors-mono-text: rgb(var(--mono-rgb-100));
-$rgb-colors-mono-bg: var(--mono-rgb-0);
-$rgb-colors-mono-text: var(--mono-rgb-100);
 
 //Accent
 $color-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
-$bg-color-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
+$color-accent-10: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
 $color-accent-50: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.5);
 $hex-color-accent: var(--text-accent);
 $color-accent-dark: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 30%));

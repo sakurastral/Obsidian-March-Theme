@@ -27,7 +27,7 @@
       color: $color-accent;
 
       &:hover {
-        background-color: $bg-color-accent;
+        background-color: $color-accent-10;
       }
     }
 
@@ -67,7 +67,7 @@
       color: $color-accent;
 
       &:hover {
-        background-color: $bg-color-accent;
+        background-color: $color-accent-10;
       }
     }
 
@@ -101,7 +101,7 @@
     .embed-title {
       border-bottom: $embed-style-border-border;
       padding: 0.5rem;
-      background-color: $bg-color-accent;
+      background-color: $color-accent-10;
     }
 
     .markdown-embed-link {
@@ -112,7 +112,7 @@
       color: $color-accent;
 
       &:hover {
-        background-color: $bg-color-accent;
+        background-color: $color-accent-10;
       }
     }
 
@@ -155,7 +155,7 @@
       color: $color-accent;
 
       &:hover {
-        background-color: $bg-color-accent;
+        background-color: $color-accent-10;
       }
     }
 
@@ -189,7 +189,7 @@
     .embed-title {
       border-bottom: $embed-style-filled-border;
       padding: 0.5rem;
-      background-color: $bg-color-accent;
+      background-color: $color-accent-10;
       border-radius: 10px 10px 0 0;
       margin-bottom: 3px;
     }
@@ -202,13 +202,13 @@
       color: $color-accent;
 
       &:hover {
-        background-color: $bg-color-accent;
+        background-color: $color-accent-10;
       }
     }
 
     .markdown-embed-content {
       padding: 0px 0.5rem;
-      background-color: $bg-color-accent;
+      background-color: $color-accent-10;
 
       .callout {
         margin: var(--p-spacing);

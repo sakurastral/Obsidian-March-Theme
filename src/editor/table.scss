@@ -2,11 +2,11 @@
 /*                               Editor - Table                               */
 /* ========================================================================== */
 .enable-styled-table {
-  --table-background: #{$bg-color-accent};
+  --table-background: #{$color-accent-10};
   --table-column-alt-background: transparent;
   --table-border-color: --table-column-alt-background;
-  --table-header-background: #{$bg-color-accent};
-  --table-header-background-hover: #{$bg-color-accent};
+  --table-header-background: #{$color-accent-10};
+  --table-header-background-hover: #{$color-accent-10};
   --table-header-color: #{$color-accent};
   .markdown-rendered {
     th,
