@@ -128,7 +128,7 @@
       //10:accent,
     );
     @each $key, $value in $array {
-      .nav-folder-children > .nav-folder:nth-child(8n + #{$key}),
+      .nav-files-container .nav-folder:nth-child(8n + #{$key}),
       [data-type='bookmarks'] .tree-item:nth-child(8n + #{$key}) {
         --rainbow-folder-color: var(--theme-color-#{$value});
         --icon-color: var(--theme-color-#{$value});
@@ -136,14 +136,19 @@
     }
     // sub folders also inherit colors
     &.styled-file-explorer-rainbow-subfolders {
-      .nav-folder.mod-root .nav-folder.nav-folder .nav-folder,
+      .nav-folder .nav-folder-children .nav-folder,
       [data-type='bookmarks'] .tree-item .tree-item {
         --rainbow-folder-color: inherit;
       }
     }
 
+    .nav-files-container {
+      background: var(--background-primary);
+      border-radius: 10px;
+    }
+
     &.styled-file-explorer-rainbow-folder-name-icon {
-      .nav-folder.mod-root > .nav-folder-children > .nav-folder .nav-folder-title,
+      .nav-folder .nav-folder-title,
       [data-type='bookmarks'] .tree-item .tree-item-inner {
         transition: color 0.2s;
         color: rgba(var(--rainbow-folder-color), var(--text-opacity, 1));
@@ -161,7 +166,7 @@
       }
     }
     &.styled-file-explorer-rainbow-bg1 {
-      .nav-folder.mod-root > .nav-folder-children > .nav-folder,
+      .nav-folder:not(.nav-folder-children .nav-folder),
       [data-type='bookmarks'] :not(.tree-item *) {
         background-color: rgb(var(--rainbow-folder-color), var(--bg-opacity, 0.1));
         border-radius: 5px;
@@ -172,7 +177,7 @@
       }
     }
     &.styled-file-explorer-rainbow-bg2 {
-      .nav-folder.mod-root > .nav-folder-children > .nav-folder,
+      .nav-folder,
       [data-type='bookmarks'] :not(.tree-item *) {
         background-color: rgb(var(--rainbow-folder-color), var(--bg-opacity, 0.1));
         padding-top: var(--size-2-1);

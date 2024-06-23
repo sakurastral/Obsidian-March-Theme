@@ -2808,51 +2808,55 @@ settings:
   --theme-color-pink: var(--color-pink-rgb);
   --theme-color-accent: var(--accent-h), var(--accent-s), var(--accent-l);
 }
-.enable-styled-file-explorer.styled-file-explorer-rainbow .nav-folder-children > .nav-folder:nth-child(8n+2),
+.enable-styled-file-explorer.styled-file-explorer-rainbow .nav-files-container .nav-folder:nth-child(8n+2),
 .enable-styled-file-explorer.styled-file-explorer-rainbow [data-type=bookmarks] .tree-item:nth-child(8n+2) {
   --rainbow-folder-color: var(--theme-color-red);
   --icon-color: var(--theme-color-red);
 }
-.enable-styled-file-explorer.styled-file-explorer-rainbow .nav-folder-children > .nav-folder:nth-child(8n+3),
+.enable-styled-file-explorer.styled-file-explorer-rainbow .nav-files-container .nav-folder:nth-child(8n+3),
 .enable-styled-file-explorer.styled-file-explorer-rainbow [data-type=bookmarks] .tree-item:nth-child(8n+3) {
   --rainbow-folder-color: var(--theme-color-orange);
   --icon-color: var(--theme-color-orange);
 }
-.enable-styled-file-explorer.styled-file-explorer-rainbow .nav-folder-children > .nav-folder:nth-child(8n+4),
+.enable-styled-file-explorer.styled-file-explorer-rainbow .nav-files-container .nav-folder:nth-child(8n+4),
 .enable-styled-file-explorer.styled-file-explorer-rainbow [data-type=bookmarks] .tree-item:nth-child(8n+4) {
   --rainbow-folder-color: var(--theme-color-yellow);
   --icon-color: var(--theme-color-yellow);
 }
-.enable-styled-file-explorer.styled-file-explorer-rainbow .nav-folder-children > .nav-folder:nth-child(8n+5),
+.enable-styled-file-explorer.styled-file-explorer-rainbow .nav-files-container .nav-folder:nth-child(8n+5),
 .enable-styled-file-explorer.styled-file-explorer-rainbow [data-type=bookmarks] .tree-item:nth-child(8n+5) {
   --rainbow-folder-color: var(--theme-color-green);
   --icon-color: var(--theme-color-green);
 }
-.enable-styled-file-explorer.styled-file-explorer-rainbow .nav-folder-children > .nav-folder:nth-child(8n+6),
+.enable-styled-file-explorer.styled-file-explorer-rainbow .nav-files-container .nav-folder:nth-child(8n+6),
 .enable-styled-file-explorer.styled-file-explorer-rainbow [data-type=bookmarks] .tree-item:nth-child(8n+6) {
   --rainbow-folder-color: var(--theme-color-cyan);
   --icon-color: var(--theme-color-cyan);
 }
-.enable-styled-file-explorer.styled-file-explorer-rainbow .nav-folder-children > .nav-folder:nth-child(8n+7),
+.enable-styled-file-explorer.styled-file-explorer-rainbow .nav-files-container .nav-folder:nth-child(8n+7),
 .enable-styled-file-explorer.styled-file-explorer-rainbow [data-type=bookmarks] .tree-item:nth-child(8n+7) {
   --rainbow-folder-color: var(--theme-color-blue);
   --icon-color: var(--theme-color-blue);
 }
-.enable-styled-file-explorer.styled-file-explorer-rainbow .nav-folder-children > .nav-folder:nth-child(8n+8),
+.enable-styled-file-explorer.styled-file-explorer-rainbow .nav-files-container .nav-folder:nth-child(8n+8),
 .enable-styled-file-explorer.styled-file-explorer-rainbow [data-type=bookmarks] .tree-item:nth-child(8n+8) {
   --rainbow-folder-color: var(--theme-color-purple);
   --icon-color: var(--theme-color-purple);
 }
-.enable-styled-file-explorer.styled-file-explorer-rainbow .nav-folder-children > .nav-folder:nth-child(8n+9),
+.enable-styled-file-explorer.styled-file-explorer-rainbow .nav-files-container .nav-folder:nth-child(8n+9),
 .enable-styled-file-explorer.styled-file-explorer-rainbow [data-type=bookmarks] .tree-item:nth-child(8n+9) {
   --rainbow-folder-color: var(--theme-color-pink);
   --icon-color: var(--theme-color-pink);
 }
-.enable-styled-file-explorer.styled-file-explorer-rainbow.styled-file-explorer-rainbow-subfolders .nav-folder.mod-root .nav-folder.nav-folder .nav-folder,
+.enable-styled-file-explorer.styled-file-explorer-rainbow.styled-file-explorer-rainbow-subfolders .nav-folder .nav-folder-children .nav-folder,
 .enable-styled-file-explorer.styled-file-explorer-rainbow.styled-file-explorer-rainbow-subfolders [data-type=bookmarks] .tree-item .tree-item {
   --rainbow-folder-color: inherit;
 }
-.enable-styled-file-explorer.styled-file-explorer-rainbow.styled-file-explorer-rainbow-folder-name-icon .nav-folder.mod-root > .nav-folder-children > .nav-folder .nav-folder-title,
+.enable-styled-file-explorer.styled-file-explorer-rainbow .nav-files-container {
+  background: var(--background-primary);
+  border-radius: 10px;
+}
+.enable-styled-file-explorer.styled-file-explorer-rainbow.styled-file-explorer-rainbow-folder-name-icon .nav-folder .nav-folder-title,
 .enable-styled-file-explorer.styled-file-explorer-rainbow.styled-file-explorer-rainbow-folder-name-icon [data-type=bookmarks] .tree-item .tree-item-inner {
   transition: color 0.2s;
   color: rgba(var(--rainbow-folder-color), var(--text-opacity, 1));
@@ -2866,7 +2870,7 @@ settings:
 .enable-styled-file-explorer.styled-file-explorer-rainbow.styled-file-explorer-rainbow-folder-indent-line .nav-folder-children {
   --nav-indentation-guide-color: rgba(var(--rainbow-folder-color), 1);
 }
-.enable-styled-file-explorer.styled-file-explorer-rainbow.styled-file-explorer-rainbow-bg1 .nav-folder.mod-root > .nav-folder-children > .nav-folder,
+.enable-styled-file-explorer.styled-file-explorer-rainbow.styled-file-explorer-rainbow-bg1 .nav-folder:not(.nav-folder-children .nav-folder),
 .enable-styled-file-explorer.styled-file-explorer-rainbow.styled-file-explorer-rainbow-bg1 [data-type=bookmarks] :not(.tree-item *) {
   background-color: rgb(var(--rainbow-folder-color), var(--bg-opacity, 0.1));
   border-radius: 5px;
@@ -2875,7 +2879,7 @@ settings:
   margin-top: var(--size-2-1);
   margin-bottom: var(--size-2-1);
 }
-.enable-styled-file-explorer.styled-file-explorer-rainbow.styled-file-explorer-rainbow-bg2 .nav-folder.mod-root > .nav-folder-children > .nav-folder,
+.enable-styled-file-explorer.styled-file-explorer-rainbow.styled-file-explorer-rainbow-bg2 .nav-folder,
 .enable-styled-file-explorer.styled-file-explorer-rainbow.styled-file-explorer-rainbow-bg2 [data-type=bookmarks] :not(.tree-item *) {
   background-color: rgb(var(--rainbow-folder-color), var(--bg-opacity, 0.1));
   padding-top: var(--size-2-1);
