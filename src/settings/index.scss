@@ -16,22 +16,33 @@ settings:
         level: 2
         collapsed: true
     -
-        id: enable-custom-layout
+        id: enable-layout
         title: Choose an Style
         description: Toggle a custom style.
         type: class-select
         allowEmpty: false
-        default: enable-custom-layout-colorful-frame
+        default: enable-custom-layout-style-01
         options:
             - 
                 label: Default
                 value: none
             - 
-                label: Colorful Frame
-                value: enable-custom-layout-colorful-frame
+                label: Round 01
+                value: enable-custom-layout-style-01
+    -
+        id: enable-inline-title
+        title: Choose an Style
+        description: Toggle a custom style.
+        type: class-select
+        allowEmpty: false
+        default: enable-inline-title-center
+        options:
             - 
-                label: Card (WIP)
-                value: enable-custom-layout-card
+                label: Default
+                value: none
+            - 
+                label: Center
+                value: enable-inline-title-center
     - 
         id: heading-color-scheme
         title: Color Scheme
@@ -44,7 +55,7 @@ settings:
         description: Toggle a custom style.
         type: class-select
         allowEmpty: false
-        default: none
+        default: color-scheme-nord
         options:
             - 
                 label: Default
@@ -111,6 +122,23 @@ settings:
         description: Shows the pin icon and note's icon if you set one from Iconize Plugin.
         type: class-toggle
         default: true
+    -
+        id: enable-tab-show-full-title
+        title: Show Full Title
+        description: Toggle to turn on/off function.
+        type: class-select
+        allowEmpty: false
+        default: enable-tab-always-show-full-title
+        options:
+            - 
+                label: None
+                value: none
+            - 
+                label: on Hover
+                value: enable-tab-hover-show-full-title
+            -
+                label: Always
+                value: enable-tab-always-show-full-title
     - 
         id: heading-Editor
         title: Editor

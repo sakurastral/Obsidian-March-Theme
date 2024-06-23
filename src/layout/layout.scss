@@ -1,0 +1,76 @@
+/* ========================================================================== */
+/*                           Layout - Colorful Frame                          */
+/* ========================================================================== */
+.enable-inline-title-center {
+  & .inline-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-accent);
+  }
+}
+.enable-custom-layout-style-01 {
+  --titlebar-background-focused: var(--background-secondary);
+  .workspace-ribbon {
+    --ribbon-background: var(--background-secondary);
+    border-right: none;
+    & .sidebar-toggle-button {
+      & .clickable-icon {
+        background-color: var(--background-primary);
+        border-radius: 5px;
+        padding: 10px 5px;
+      }
+    }
+    & .side-dock-actions {
+      background: var(--background-primary);
+      padding: 5px 0;
+      border-radius: 5px;
+      width: fit-content;
+      margin: 0 0 0 5px;
+      & .clickable-icon {
+        &:hover {
+          background-color: var(--background-secondary);
+        }
+      }
+    }
+  }
+  .workspace-leaf-resize-handle {
+    --divider-color: transparent;
+  }
+  .mod-sidedock .workspace-tab-header {
+    &:not(.is-active) {
+      .workspace-tab-header-inner {
+        &:hover {
+          background-color: var(--background-primary);
+        }
+      }
+    }
+    &.is-active {
+      background-color: var(--background-primary);
+      .workspace-tab-header-inner-icon {
+        color: var(--text-accent);
+      }
+      &.workspace-tab-header-inner:hover {
+        background-color: transparent;
+      }
+      &:hover {
+        background-color: var(--text-accent);
+        .workspace-tab-header-inner-icon {
+          color: var(--background-primary);
+        }
+      }
+    }
+  }
+  .workspace-tabs.mod-top .workspace-leaf-content {
+    padding: 0 2.5px;
+  }
+  .view-header {
+    border-radius: 10px 10px 0 0;
+    border-bottom: $cf-border;
+    margin-top: 5px;
+  }
+  .workspace-leaf-content {
+    background: var(--background-secondary);
+  }
+}

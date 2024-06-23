@@ -17,22 +17,33 @@ settings:
         level: 2
         collapsed: true
     -
-        id: enable-custom-layout
+        id: enable-layout
         title: Choose an Style
         description: Toggle a custom style.
         type: class-select
         allowEmpty: false
-        default: enable-custom-layout-colorful-frame
+        default: enable-custom-layout-style-01
         options:
             - 
                 label: Default
                 value: none
             - 
-                label: Colorful Frame
-                value: enable-custom-layout-colorful-frame
+                label: Round 01
+                value: enable-custom-layout-style-01
+    -
+        id: enable-inline-title
+        title: Choose an Style
+        description: Toggle a custom style.
+        type: class-select
+        allowEmpty: false
+        default: enable-inline-title-center
+        options:
             - 
-                label: Card (WIP)
-                value: enable-custom-layout-card
+                label: Default
+                value: none
+            - 
+                label: Center
+                value: enable-inline-title-center
     - 
         id: heading-color-scheme
         title: Color Scheme
@@ -45,7 +56,7 @@ settings:
         description: Toggle a custom style.
         type: class-select
         allowEmpty: false
-        default: none
+        default: color-scheme-nord
         options:
             - 
                 label: Default
@@ -112,6 +123,23 @@ settings:
         description: Shows the pin icon and note's icon if you set one from Iconize Plugin.
         type: class-toggle
         default: true
+    -
+        id: enable-tab-show-full-title
+        title: Show Full Title
+        description: Toggle to turn on/off function.
+        type: class-select
+        allowEmpty: false
+        default: enable-tab-always-show-full-title
+        options:
+            - 
+                label: None
+                value: none
+            - 
+                label: on Hover
+                value: enable-tab-hover-show-full-title
+            -
+                label: Always
+                value: enable-tab-always-show-full-title
     - 
         id: heading-Editor
         title: Editor
@@ -652,6 +680,21 @@ settings:
   --color-purple: #b48ead;
   --color-pink: #bf616a;
 }
+.theme-light.theme-light.color-scheme-nord,
+.theme-dark.theme-light.color-scheme-nord {
+  --background-primary: rgb(255, 255, 255);
+  --background-primary-alt: #eceff4;
+  --background-secondary: #d8dee9;
+  --background-secondary-alt: #eceff4;
+}
+.theme-light.theme-dark.color-scheme-nord,
+.theme-dark.theme-dark.color-scheme-nord {
+  --background-primary: #2e3440;
+  --background-primary-alt: #3b4252;
+  --background-secondary: #2e3440;
+  --background-secondary-alt: #4c566a;
+  --background-modifier-border: #4c566a;
+}
 .theme-light.color-scheme-palette1,
 .theme-dark.color-scheme-palette1 {
   --color-red: #ff595e;
@@ -671,136 +714,67 @@ settings:
 /* ========================================================================== */
 /*                           Layout - Colorful Frame                          */
 /* ========================================================================== */
-.enable-custom-layout-colorful-frame {
-  --normal-color: var(--text-accent);
-  --unfocused-color: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 30%));
-  --background-secondary: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 30%));
-  --tab-outline-color: transparent;
-  --tab-text-color-focused-highlighted: var(--text-accent);
-  --tab-text-color-focused-active-current: var(--text-accent);
-}
-.enable-custom-layout-colorful-frame.theme-light {
-  --normal-color: var(--text-accent);
-  --unfocused-color: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 30%));
-  --background-secondary: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 20%));
-}
-.enable-custom-layout-colorful-frame.theme-dark {
-  --normal-color: var(--text-accent);
-  --unfocused-color: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 30%));
-  --background-secondary: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 80%));
-}
-.enable-custom-layout-colorful-frame .workspace {
-  background-color: var(--background-secondary);
-}
-.enable-custom-layout-colorful-frame .workspace-ribbon {
-  --ribbon-background: var(--background-secondary);
-  border-right: none;
-}
-.enable-custom-layout-colorful-frame .workspace-ribbon::before {
-  background-color: var(--background-secondary);
-}
-.enable-custom-layout-colorful-frame .workspace-ribbon .side-dock-actions,
-.enable-custom-layout-colorful-frame .workspace-ribbon .side-dock-settings {
-  background: var(--background-primary);
-  padding: 5px 0 5px 0;
-  border-radius: 10px;
-}
-.enable-custom-layout-colorful-frame .workspace-ribbon .clickable-icon {
-  color: var(--unfocused-color);
-}
-.enable-custom-layout-colorful-frame .workspace-ribbon .clickable-icon:hover {
-  background-color: var(--background-secondary);
-  color: var(--normal-color);
-}
-.enable-custom-layout-colorful-frame .workspace-tab-header-container {
-  --tab-container-background: var(--background-secondary);
-}
-.enable-custom-layout-colorful-frame .workspace-leaf-resize-handle {
-  --divider-color: transparent;
-}
-.enable-custom-layout-colorful-frame .mod-sidedock .workspace-tab-header {
-  color: var(--unfocused-color);
-}
-.enable-custom-layout-colorful-frame .mod-sidedock .workspace-tab-header:not(.is-active) .workspace-tab-header-inner:hover {
-  background-color: var(--background-secondary);
-}
-.enable-custom-layout-colorful-frame .mod-sidedock .workspace-tab-header .workspace-tab-header-inner-icon {
-  color: var(--unfocused-color);
-}
-.enable-custom-layout-colorful-frame .mod-sidedock .workspace-tab-header.is-active {
-  background-color: var(--background-primary);
-}
-.enable-custom-layout-colorful-frame .mod-sidedock .workspace-tab-header.is-active .workspace-tab-header-inner-icon {
-  color: var(--text-accent);
-}
-.enable-custom-layout-colorful-frame .mod-sidedock .workspace-tab-header.is-active.workspace-tab-header-inner:hover {
-  background-color: transparent;
-}
-.enable-custom-layout-colorful-frame .mod-sidedock .workspace-tab-header.is-active:hover {
-  background-color: transparent;
-}
-.enable-custom-layout-colorful-frame .sidebar-toggle-button.mod-right {
-  --tab-container-background: transparent;
-}
-.enable-custom-layout-colorful-frame .workspace-tab-container .view-header {
-  border-bottom: 2px dashed var(--background-secondary);
-}
-.enable-custom-layout-colorful-frame .workspace-split.mod-root {
-  padding: 0 0 20px 0;
-  background-color: var(--background-secondary);
-}
-.enable-custom-layout-colorful-frame .workspace-split.mod-right-split {
-  padding: 0 10px 20px 0;
-}
-.enable-custom-layout-colorful-frame .workspace-split.mod-right-split .workspace-leaf-content {
-  background-color: var(--background-primary);
-  border-left: 2px dashed var(--background-secondary);
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-}
-.enable-custom-layout-colorful-frame .workspace-split.mod-left-split {
-  padding: 0 0 20px 5px;
-}
-.enable-custom-layout-colorful-frame .workspace-split.mod-left-split .workspace-leaf-content {
-  background-color: var(--background-primary);
-  border-right: 2px dashed var(--background-secondary);
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-}
-.enable-custom-layout-colorful-frame .nav-header {
-  border-bottom: 2px dashed var(--background-secondary);
-}
-.enable-custom-layout-colorful-frame .inline-title {
+.enable-inline-title-center .inline-title {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
-  color: var(--normal-color);
-}
-.enable-custom-layout-colorful-frame .menu {
-  backdrop-filter: blur(10px);
-  border: none;
-}
-.enable-custom-layout-colorful-frame .tooltip {
-  background: var(--background-secondary);
-  color: var(--unfocused-color);
-}
-.enable-custom-layout-colorful-frame .tooltip-arrow {
-  display: none;
-}
-.enable-custom-layout-colorful-frame .clickable-icon {
-  color: var(--unfocused-color);
-}
-.enable-custom-layout-colorful-frame .clickable-icon:hover {
-  background-color: var(--background-secondary);
-  color: var(--normal-color);
+  color: var(--text-accent);
 }
 
-/* ========================================================================== */
-/*                                Layout - Card                               */
-/* ========================================================================== */
-.enable-custom-layout-card {
-  --background-secondary: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
+.enable-custom-layout-style-01 {
+  --titlebar-background-focused: var(--background-secondary);
+}
+.enable-custom-layout-style-01 .workspace-ribbon {
+  --ribbon-background: var(--background-secondary);
+  border-right: none;
+}
+.enable-custom-layout-style-01 .workspace-ribbon .sidebar-toggle-button .clickable-icon {
+  background-color: var(--background-primary);
+  border-radius: 5px;
+  padding: 10px 5px;
+}
+.enable-custom-layout-style-01 .workspace-ribbon .side-dock-actions {
+  background: var(--background-primary);
+  padding: 5px 0;
+  border-radius: 5px;
+  width: fit-content;
+  margin: 0 0 0 5px;
+}
+.enable-custom-layout-style-01 .workspace-ribbon .side-dock-actions .clickable-icon:hover {
+  background-color: var(--background-secondary);
+}
+.enable-custom-layout-style-01 .workspace-leaf-resize-handle {
+  --divider-color: transparent;
+}
+.enable-custom-layout-style-01 .mod-sidedock .workspace-tab-header:not(.is-active) .workspace-tab-header-inner:hover {
+  background-color: var(--background-primary);
+}
+.enable-custom-layout-style-01 .mod-sidedock .workspace-tab-header.is-active {
+  background-color: var(--background-primary);
+}
+.enable-custom-layout-style-01 .mod-sidedock .workspace-tab-header.is-active .workspace-tab-header-inner-icon {
+  color: var(--text-accent);
+}
+.enable-custom-layout-style-01 .mod-sidedock .workspace-tab-header.is-active.workspace-tab-header-inner:hover {
+  background-color: transparent;
+}
+.enable-custom-layout-style-01 .mod-sidedock .workspace-tab-header.is-active:hover {
+  background-color: var(--text-accent);
+}
+.enable-custom-layout-style-01 .mod-sidedock .workspace-tab-header.is-active:hover .workspace-tab-header-inner-icon {
+  color: var(--background-primary);
+}
+.enable-custom-layout-style-01 .workspace-tabs.mod-top .workspace-leaf-content {
+  padding: 0 2.5px;
+}
+.enable-custom-layout-style-01 .view-header {
+  border-radius: 10px 10px 0 0;
+  border-bottom: 2px dashed var(--background-secondary);
+  margin-top: 5px;
+}
+.enable-custom-layout-style-01 .workspace-leaf-content {
+  background: var(--background-secondary);
 }
 
 /* ========================================================================== */
@@ -839,23 +813,16 @@ settings:
 /*                                Layout - Tab                                */
 /* ========================================================================== */
 .enable-tab-style1 {
-  --tab-accent: var(--text-accent);
-  --tab-accent-hover: var(--background-primary);
+  --tab-accent: var(--text-muted);
+  --tab-accent-hover: var(--text-accent);
   --tab-accent-bg: var(--background-primary);
   --tab-accent-bg-hover: var(--background-secondary);
-  --tab-accent-bg: var(--background-primary);
+  --tab-accent-border: var(--background-primary-alt);
   --tab-accent-active: var(--text-accent);
-  --tab-accent-active-hover: var(--background-secondary);
-  --tab-accent-active-bg: var(--background-secondary);
-  --tab-accent-active-bg-hover: var(--background-primary);
-  --tab-accent-border: var(--background-primary);
-}
-.enable-tab-style1:not(.enable-custom-layout-colorful-frame) {
-  --tab-accent: var(--text-muted);
-  --tab-accent-bg-hover: var(--text-faint);
+  --tab-accent-active-hover: var(--text-accent);
   --tab-accent-active-bg: var(--background-primary);
-  --tab-accent-active-bg-hover: var(--text-accent);
-  --tab-accent-border: var(--background-secondary);
+  --tab-accent-active-bg-hover: var(--background-secondary);
+  --tab-accent-border-active: var(--background-primary-alt);
 }
 .enable-tab-style1 .mod-root .workspace-tab-header::before, .enable-tab-style1 .mod-root .workspace-tab-header::after,
 .enable-tab-style1 .mod-root .workspace-tab-header .workspace-tab-header-inner::after {
@@ -880,7 +847,7 @@ settings:
   color: var(--tab-accent);
 }
 .enable-tab-style1 .mod-root .workspace-tab-header:not(.is-active) .workspace-tab-header-inner {
-  border-radius: 20px;
+  border-radius: 10px;
   border: 2px solid var(--tab-accent-border);
 }
 .enable-tab-style1 .mod-root .workspace-tab-header:not(.is-active) .workspace-tab-header-inner:hover {
@@ -888,9 +855,10 @@ settings:
   border: 2px solid var(--tab-accent-border);
 }
 .enable-tab-style1 .mod-root .workspace-tab-header.is-active {
-  border: 2px solid var(--tab-accent-border);
-  border-radius: 20px;
+  border: 2px solid var(--tab-accent-border-active);
+  border-radius: 10px;
   margin-bottom: 3px;
+  box-shadow: none;
   background-color: var(--tab-accent-active-bg);
   color: var(--tab-accent-active);
 }
@@ -905,6 +873,7 @@ settings:
 .enable-tab-style1 .mod-root .workspace-tab-header.is-active:hover {
   background-color: var(--tab-accent-active-bg-hover);
   color: var(--tab-accent-active-hover);
+  border: 2px solid var(--tab-accent-active);
 }
 .enable-tab-style1 .mod-root .workspace-tab-header.is-active:hover .workspace-tab-header-inner-icon,
 .enable-tab-style1 .mod-root .workspace-tab-header.is-active:hover .workspace-tab-header-inner-close-button {
@@ -917,10 +886,41 @@ settings:
 
 /** enable-tab-shrink-pinned-tab is inspired from https://forum.obsidian.md/t/shrink-the-size-of-pinned-tabs/71914 */
 .enable-tab-shrink-pinned-tab .workspace-tab-header:has(.mod-pinned) {
-  max-width: 60px !important;
+  max-width: 45px !important;
+  --tab-accent: var(--tab-accent-active);
 }
 .enable-tab-shrink-pinned-tab .workspace-tab-header:has(.mod-pinned) .workspace-tab-header-inner-title {
   display: none;
+}
+.enable-tab-shrink-pinned-tab .workspace-tab-header:has(.mod-pinned) .mod-pinned {
+  display: none;
+}
+.enable-tab-shrink-pinned-tab .workspace-tab-header:has(.mod-pinned):hover .mod-pinned {
+  display: flex;
+  flex-direction: column;
+}
+
+.enable-tab-hover-show-full-title {
+  --hover-show-title: max-content;
+}
+.enable-tab-hover-show-full-title .workspace-tab-header:hover {
+  min-width: var(--hover-show-title) !important;
+}
+.enable-tab-hover-show-full-title .workspace-tab-header:hover .workspace-tab-header-inner-title {
+  display: flex;
+}
+.enable-tab-hover-show-full-title .workspace-tab-header-new-tab {
+  margin-inline-start: var(--size-4-3);
+}
+
+.enable-tab-always-show-full-title .workspace-tab-header {
+  min-width: max-content !important;
+}
+.enable-tab-always-show-full-title .workspace-tab-header .workspace-tab-header-inner-title {
+  margin-right: 10px;
+}
+.enable-tab-always-show-full-title .workspace-tab-header-new-tab {
+  margin-inline-start: var(--size-4-3);
 }
 
 /* ========================================================================== */
@@ -3024,7 +3024,7 @@ settings:
   --calendar-color-hover-bg: var(--background-primary);
 }
 .enable-custom-calendar-plugin.calendar-plugin-enable-primary-bg .workspace-tabs .workspace-leaf-content .view-content:has(#calendar-container) {
-  background-color: var(--background-primary);
+  background-color: var(--background-secondary);
 }
 .enable-custom-calendar-plugin.calendar-plugin-enable-border-01 .calendar thead {
   border-top: 1px solid var(--background-modifier-border);
