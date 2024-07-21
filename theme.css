@@ -693,16 +693,15 @@ settings:
   --background-primary-alt: #3b4252;
   --background-secondary: #2e3440;
   --background-secondary-alt: #4c566a;
-  --background-modifier-border: #4c566a;
 }
 .theme-light.color-scheme-palette1,
 .theme-dark.color-scheme-palette1 {
-  --color-red: #ff595e;
-  --color-orange: #ff924c;
-  --color-yellow: #ffca3a;
-  --color-green: #8ac926;
-  --color-blue: #1982c4;
-  --color-purple: #8b5bce;
+  --color-""+$key: #ff595e;
+  --color-""+$key: #ff924c;
+  --color-""+$key: #ffca3a;
+  --color-""+$key: #8ac926;
+  --color-""+$key: #1982c4;
+  --color-""+$key: #8b5bce;
   --color-red-rgb: 255, 89, 94;
   --color-orange-rgb: 255, 146, 76;
   --color-yellow-rgb: 255, 202, 58;
