@@ -71,7 +71,7 @@
       p {
         position: relative;
         margin: 0em;
-        padding: 0 0 0 $blockquote-padding/2;
+        padding: 0 0 0 calc($blockquote-padding/2);
 
         &:first-of-type:before {
           @extend %blockquotes-add-icon;
