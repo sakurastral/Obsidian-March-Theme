@@ -6,31 +6,24 @@
   $links-icon-size: calc(var(--font-text-size) - var(--size-2-1));
   $link-hover-opacity: 0.07;
   --link-decoration: underline; // Resolved link text decoration
-  // --link-decoration-hover: underline; // Resolved link text decoration (hover)
   --link-decoration-thickness: 1px; // Resolved link text decoration thickness
 
   $link-unresolved-bg-color: $color-accent-light;
   --link-internal-color: var(--link-color);
-  --link-internal-color-hover-bg: white;
+  --link-internal-color-hover-bg: transparent;
+
   &.styled-link-internal-style {
-    // --link-color-rgb: #{$rgb-colors-extend-color-cyan};
-    // --link-color: rgb(var(--link-color-rgb)); // Resolved link text color
-    // --link-color-hover: rgb(var(--link-color-rgb), 0.5); // Resolved link text color (hover)
     --link-internal-decoration: dashed;
     --link-internal-color: #{$color-accent};
     --link-internal-color-hover-bg: #{$color-accent-light};
-    // --link-unresolved-color: $hex-color-accent; // Unresolved link text color
-    --link-unresolved-opacity: 0.7; // Unresolved link opacity
-    // --link-unresolved-filter: none; // Unresolved link filter, e.g. hue-rotate
+    --link-unresolved-opacity: 0.3; // Unresolved link opacity
     --link-unresolved-decoration-style: dashed; // Unresolved link text decoration style
-    // --link-unresolved-decoration-color: $color-accent; // Unresolved link text decoration color
   }
 
   &.styled-link-external-style {
     --link-external-color: #{$color-accent}; // External link text color
     --link-external-color-hover: #{$color-accent-light}; // External link text color (hover)
     --link-external-decoration: dashed; // External link text decoration
-    // --link-external-decoration-hover: ; // External link text decoration (hover)
   }
 
   --link-footnote-color: rgb(var(--color-purple-rgb));
@@ -44,7 +37,6 @@
       color: var(--link-external-color);
       text-decoration: var(--link-decoration) var(--link-decoration-thickness) var(--link-external-decoration) var(--link-external-color);
       text-underline-offset: var(--size-2-1);
-      background-color: var(--link-external-color-hover);
     }
   }
   %link-icon-external {
@@ -105,7 +97,6 @@
     text-decoration: none;
     &:hover {
       color: var(--link-internal-color);
-      background-color: var(--link-internal-color-hover-bg);
       text-decoration: var(--link-decoration) var(--link-decoration-thickness) var(--link-internal-decoration) var(--link-internal-color);
       text-underline-offset: var(--size-2-1);
     }
@@ -125,8 +116,12 @@
   }
   &.styled-link-internal-style {
     .markdown-source-view.mod-cm6 .is-unresolved {
-      background-color: $link-unresolved-bg-color;
       color: var(--link-unresolved-color);
+      opacity: var(--link-unresolved-opacity);
+      &:hover {
+        text-decoration: var(--link-decoration) var(--link-decoration-thickness) var(--link-internal-decoration) var(--link-internal-color);
+        text-underline-offset: var(--size-2-1);
+      }
     }
     :is(.markdown-source-view, .markdown-preview-view, .metadata-content) {
       .internal-link,
