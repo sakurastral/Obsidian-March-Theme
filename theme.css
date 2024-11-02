@@ -2121,7 +2121,7 @@ settings:
   --link-decoration: underline;
   --link-decoration-thickness: 1px;
   --link-internal-color: var(--link-color);
-  --link-internal-color-hover-bg: white;
+  --link-internal-color-hover-bg: transparent;
   --link-footnote-color: rgb(var(--color-purple-rgb));
   /* ============================ Style - External ============================ */
   /* ============================ Style - Internal ============================ */
@@ -2130,7 +2130,7 @@ settings:
   --link-internal-decoration: dashed;
   --link-internal-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
   --link-internal-color-hover-bg: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 30%));
-  --link-unresolved-opacity: 0.7;
+  --link-unresolved-opacity: 0.3;
   --link-unresolved-decoration-style: dashed;
 }
 .enable-styled-links.styled-link-external-style {
@@ -2150,7 +2150,6 @@ settings:
   color: var(--link-external-color);
   text-decoration: var(--link-decoration) var(--link-decoration-thickness) var(--link-external-decoration) var(--link-external-color);
   text-underline-offset: var(--size-2-1);
-  background-color: var(--link-external-color-hover);
 }
 .enable-styled-links.styled-link-add-external-icon :is(.markdown-source-view, .markdown-preview-view, .metadata-content) a.external-link:not(.cm-escape + .cm-link .cm-underline),
 .enable-styled-links.styled-link-add-external-icon :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .external-link:not(.cm-escape + .cm-link .cm-underline),
@@ -2192,7 +2191,6 @@ settings:
 .enable-styled-links.styled-link-internal-style :is(.markdown-source-view, .markdown-preview-view, .metadata-content) a.internal-link:hover:not(.is-unresolved),
 .enable-styled-links.styled-link-internal-style :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .cm-hmd-internal-link > .cm-underline:hover {
   color: var(--link-internal-color);
-  background-color: var(--link-internal-color-hover-bg);
   text-decoration: var(--link-decoration) var(--link-decoration-thickness) var(--link-internal-decoration) var(--link-internal-color);
   text-underline-offset: var(--size-2-1);
 }
@@ -2216,8 +2214,12 @@ settings:
   mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scroll-text"><path d="M15 12h-5"/><path d="M15 8h-5"/><path d="M19 17V5a2 2 0 0 0-2-2H4"/><path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3"/></svg>');
 }
 .enable-styled-links.styled-link-internal-style .markdown-source-view.mod-cm6 .is-unresolved {
-  background-color: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 30%));
   color: var(--link-unresolved-color);
+  opacity: var(--link-unresolved-opacity);
+}
+.enable-styled-links.styled-link-internal-style .markdown-source-view.mod-cm6 .is-unresolved:hover {
+  text-decoration: var(--link-decoration) var(--link-decoration-thickness) var(--link-internal-decoration) var(--link-internal-color);
+  text-underline-offset: var(--size-2-1);
 }
 .enable-styled-links.styled-link-internal-style span.cm-hmd-internal-link:hover {
   text-decoration: none;
