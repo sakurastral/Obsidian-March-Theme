@@ -6,6 +6,11 @@
   --blockquote-border-color: #{$color-accent};
   --blockquote-icon-color: #{$color-accent};
 
+  --blockquote-padding: 0.625rem;
+  --blockquote-radius: 0.625rem;
+
+  --blockquote-border-style: 2px solid;
+
   .cm-quote {
     padding: 0 0 0 0;
   }
@@ -23,6 +28,11 @@
     }
   }
 
+  .markdown-source-view .HyperMD-quote,
+  .markdown-preview-view.markdown-rendered blockquote {
+    padding: var(--blockquote-padding);
+  }
+
   /** Partial style(s) is(are) sourced or adapted from Blue Topaz (https://github.com/PKM-er/Blue-Topaz_Obsidian-css), and I would like to express my appreciation to WhyI (https://github.com/whyt-byte) and pkmer.cn (https://pkmer.cn). */
   &.enable-styled-blockquotes-add-icon {
     %blockquotes-add-icon {
@@ -30,13 +40,17 @@
       font-size: var(--font-text-size);
       font-family: boxicons;
       position: absolute;
-      top: -0.2%;
-      left: 0.3%;
+
       color: var(--blockquote-icon-color);
     }
 
     %blockquotes-no-icon-nested {
       content: '';
+    }
+
+    .markdown-source-view .HyperMD-quote,
+    .markdown-preview-view.markdown-rendered blockquote {
+      padding: calc(var(--blockquote-padding) * 2) var(--blockquote-padding);
     }
 
     .markdown-source-view.mod-cm6.is-live-preview {
@@ -50,9 +64,11 @@
         }
 
         .cm-formatting.cm-formatting-quote.cm-quote {
-          padding: 0 0 0 $blockquote-padding;
+          padding: 0 0 0 var(--blockquote-padding);
           &:before {
             @extend %blockquotes-add-icon;
+            top: -0.05rem;
+            left: 0.2rem;
           }
         }
       }
@@ -71,13 +87,13 @@
       p {
         position: relative;
         margin: 0em;
-        padding: 0 0 0 calc($blockquote-padding/2);
+        padding: 0 0 0 calc(var(--blockquote-padding) / 2);
 
         &:first-of-type:before {
           @extend %blockquotes-add-icon;
           font-size: var(--font-text-size);
-          top: 0;
-          left: -2.5%;
+          top: -1.2rem;
+          left: -0.1rem;
         }
       }
     }
@@ -86,7 +102,7 @@
   /** Rounded Corner is inspired from @Akifyss/obsidian-border(https://github.com/Akifyss/obsidian-border). */
   &.enable-styled-blockquotes-rounded-corner {
     .markdown-preview-view blockquote {
-      border-radius: $blockquote-radius;
+      border-radius: var(--blockquote-radius);
 
       :has(blockquote),
       :last-child {
@@ -94,16 +110,20 @@
       }
     }
 
+    .markdown-rendered blockquote {
+      border-radius: var(--blockquote-radius);
+    }
+
     .markdown-source-view.mod-cm6.is-live-preview {
       .HyperMD-quote {
-        border-radius: $blockquote-radius;
+        border-radius: var(--blockquote-radius);
 
         &:has(+ .HyperMD-quote) {
-          border-radius: $blockquote-radius $blockquote-radius 0 0;
+          border-radius: var(--blockquote-radius) var(--blockquote-radius) 0 0;
         }
 
         + .HyperMD-quote {
-          border-radius: 0 0 $blockquote-radius $blockquote-radius;
+          border-radius: 0 0 var(--blockquote-radius) var(--blockquote-radius);
 
           &:has(+ .HyperMD-quote) {
             border-radius: 0;
@@ -118,11 +138,16 @@
   }
 
   &.enable-styled-blockquotes-show-left-border {
+    &.enable-styled-blockquotes-rounded-corner {
+      .markdown-rendered blockquote,
+      .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:before {
+        border-radius: 0 var(--blockquote-radius) var(--blockquote-radius) 0;
+      }
+    }
+
     .markdown-rendered blockquote,
-    // .markdown-source-view.mod-cm6 .cm-blockquote-border:before,
     .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:before {
-      border-left: $border-style-solid var(--blockquote-border-color);
-      border-radius: 0;
+      border-left: var(--blockquote-border-style) var(--blockquote-border-color);
     }
 
     .markdown-preview-view blockquote {
