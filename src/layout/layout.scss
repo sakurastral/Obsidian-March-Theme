@@ -67,7 +67,7 @@
   }
   .view-header {
     border-radius: 10px 10px 0 0;
-    border-bottom: $cf-border;
+    border-bottom: 2px dashed var(--background-secondary);
     margin-top: 5px;
   }
   .workspace-leaf-content {

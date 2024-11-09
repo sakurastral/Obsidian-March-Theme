@@ -1,8 +1,8 @@
 @charset "UTF-8";
 /* @settings
 
-name: ⭐️ SkySky Theme
-id: skysky-theme-editor
+name: ⭐️ March Theme
+id: march-theme-editor
 settings:
     - 
         id: heading-layout
@@ -1074,7 +1074,7 @@ settings:
   background-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
 }
 .enable-styled-embed-pure .inline-embed .markdown-embed-content {
-  padding: 0 0.5rem;
+  padding: 1rem 0.5rem;
 }
 .enable-styled-embed-pure .inline-embed .markdown-embed-content .callout {
   margin: var(--p-spacing);
@@ -1106,7 +1106,7 @@ settings:
   background-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
 }
 .enable-styled-embed-transparent .inline-embed .markdown-embed-content {
-  padding: 0px 0.5rem;
+  padding: 1rem 0.5rem;
 }
 .enable-styled-embed-transparent .inline-embed .markdown-embed-content .callout {
   margin: var(--p-spacing);
@@ -1142,7 +1142,7 @@ settings:
   background-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
 }
 .enable-styled-embed-border .inline-embed .markdown-embed-content {
-  padding: 0px 0.5rem;
+  padding: 1rem 0.5rem;
 }
 .enable-styled-embed-border .inline-embed .markdown-embed-content .callout {
   margin: var(--p-spacing);
@@ -1176,7 +1176,7 @@ settings:
   background-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
 }
 .enable-styled-embed-pure-border .inline-embed .markdown-embed-content {
-  padding: 0px 0.5rem;
+  padding: 1rem 0.5rem;
 }
 .enable-styled-embed-pure-border .inline-embed .markdown-embed-content .callout {
   margin: var(--p-spacing);
@@ -1214,7 +1214,7 @@ settings:
   background-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
 }
 .enable-styled-embed-filled .inline-embed .markdown-embed-content {
-  padding: 0px 0.5rem;
+  padding: 1rem 0.5rem;
   background-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
 }
 .enable-styled-embed-filled .inline-embed .markdown-embed-content .callout {
@@ -3057,7 +3057,7 @@ settings:
 .enable-custom-calendar-plugin.calendar-plugin-enable-border-02 .calendar thead {
   border-top: 1px solid var(--background-modifier-border);
   border-bottom: 1px solid var(--background-modifier-border);
-  border-radius: 10px;
+  border-radius: 0.625rem;
 }
 .enable-custom-calendar-plugin.calendar-plugin-enable-border-02 .calendar tr {
   border-bottom: 1px solid var(--background-modifier-border);

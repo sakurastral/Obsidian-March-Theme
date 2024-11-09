@@ -39,16 +39,16 @@
       }
       .workspace-tab-header-inner {
         border-radius: 10px;
-        border: $border-style-solid var(--tab-accent-border);
+        border: 2px solid var(--tab-accent-border);
         &:hover {
           background-color: var(--tab-accent-bg-hover);
-          border: $border-style-solid var(--tab-accent-border);
+          border: 2px solid var(--tab-accent-border);
         }
       }
     }
 
     &.is-active {
-      border: $border-style-solid var(--tab-accent-border-active);
+      border: 2px solid var(--tab-accent-border-active);
       border-radius: 10px;
       margin-bottom: 3px;
       box-shadow: none;
@@ -66,7 +66,7 @@
       &:hover {
         background-color: var(--tab-accent-active-bg-hover);
         color: var(--tab-accent-active-hover);
-        border: $border-style-solid var(--tab-accent-active);
+        border: 2px solid var(--tab-accent-active);
         .workspace-tab-header-inner-icon,
         .workspace-tab-header-inner-close-button {
           background-color: transparent;
