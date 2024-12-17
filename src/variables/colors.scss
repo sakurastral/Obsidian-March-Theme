@@ -6,7 +6,6 @@ $colors-mono-text: rgb(var(--mono-rgb-100));
 $color-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
 $color-accent-10: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
 $color-accent-50: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.5);
-$hex-color-accent: var(--text-accent);
 $color-accent-dark: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 30%));
 $color-accent-light: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 30%));
 
