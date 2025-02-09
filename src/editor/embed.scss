@@ -24,10 +24,10 @@
       position: absolute;
       top: 3.5px;
       right: 4px;
-      color: $color-accent;
+      color: var(--march-accent);
 
       &:hover {
-        background-color: $color-accent-10;
+        background-color: var(--march-bg-accent);
       }
     }
 
@@ -64,10 +64,10 @@
       position: absolute;
       top: 3.5px;
       right: 4px;
-      color: $color-accent;
+      color: var(--march-accent);
 
       &:hover {
-        background-color: $color-accent-10;
+        background-color: var(--march-bg-accent);
       }
     }
 
@@ -83,7 +83,7 @@
 
 .enable-styled-embed-border {
   --embed-border-left: none;
-  $embed-style-border-border: 1.5px solid $color-accent-50;
+  $embed-style-border-border: 1.5px solid var(--march-50-accent);
 
   .inline-embed {
     border-radius: 10px;
@@ -101,7 +101,7 @@
     .embed-title {
       border-bottom: $embed-style-border-border;
       padding: 0.5rem;
-      background-color: $color-accent-10;
+      background-color: var(--march-bg-accent);
     }
 
     .markdown-embed-link {
@@ -109,10 +109,10 @@
       position: absolute;
       top: 3.5px;
       right: 4px;
-      color: $color-accent;
+      color: var(--march-accent);
 
       &:hover {
-        background-color: $color-accent-10;
+        background-color: var(--march-bg-accent);
       }
     }
 
@@ -128,7 +128,7 @@
 
 .enable-styled-embed-pure-border {
   --embed-border-left: none;
-  $embed-style-border-border: 1.5px solid $color-accent-50;
+  $embed-style-border-border: 1.5px solid var(--march-50-accent);
 
   .inline-embed {
     border-radius: 10px;
@@ -152,10 +152,10 @@
       position: absolute;
       top: 3.5px;
       right: 4px;
-      color: $color-accent;
+      color: var(--march-accent);
 
       &:hover {
-        background-color: $color-accent-10;
+        background-color: var(--march-bg-accent);
       }
     }
 
@@ -189,7 +189,7 @@
     .embed-title {
       border-bottom: $embed-style-filled-border;
       padding: 0.5rem;
-      background-color: $color-accent-10;
+      background-color: var(--march-bg-accent);
       border-radius: 10px 10px 0 0;
       margin-bottom: 3px;
     }
@@ -199,16 +199,16 @@
       position: absolute;
       top: 3.5px;
       right: 4px;
-      color: $color-accent;
+      color: var(--march-accent);
 
       &:hover {
-        background-color: $color-accent-10;
+        background-color: var(--march-bg-accent);
       }
     }
 
     .markdown-embed-content {
       padding: 1rem 0.5rem;
-      background-color: $color-accent-10;
+      background-color: var(--march-bg-accent);
 
       .callout {
         margin: var(--p-spacing);

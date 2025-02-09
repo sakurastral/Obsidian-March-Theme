@@ -4,8 +4,8 @@
 /** enable-styled-outline-maple-outline is inspired and adapted from @subframe7536/obsidian-theme-maple (https://github.com/subframe7536/obsidian-theme-maple) */
 .enable-styled-outline-maple-outline {
   --outline-guideline-width: var(--size-2-1);
-  --outline-guideline-color: #{$color-accent};
-  --outline-guideline-color-alt: #{$color-accent};
+  --outline-guideline-color: var(--march-accent);
+  --outline-guideline-color-alt: var(--march-accent);
   --outline-item-height: calc(var(--nav-item-size) * 1.8);
 
   .workspace-leaf-content[data-type='outline'] {

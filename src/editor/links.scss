@@ -8,21 +8,21 @@
   --link-decoration: underline; // Resolved link text decoration
   --link-decoration-thickness: 1px; // Resolved link text decoration thickness
 
-  $link-unresolved-bg-color: $color-accent-light;
+  $link-unresolved-bg-color: var(--march-light-accent);
   --link-internal-color: var(--link-color);
   --link-internal-color-hover-bg: transparent;
 
   &.styled-link-internal-style {
     --link-internal-decoration: dashed;
-    --link-internal-color: #{$color-accent};
-    --link-internal-color-hover-bg: #{$color-accent-light};
+    --link-internal-color: var(--march-accent);
+    --link-internal-color-hover-bg: var(--march-light-accent);
     --link-unresolved-opacity: 0.3; // Unresolved link opacity
     --link-unresolved-decoration-style: dashed; // Unresolved link text decoration style
   }
 
   &.styled-link-external-style {
-    --link-external-color: #{$color-accent}; // External link text color
-    --link-external-color-hover: #{$color-accent-light}; // External link text color (hover)
+    --link-external-color: var(--march-accent); // External link text color
+    --link-external-color-hover: var(--march-light-accent); // External link text color (hover)
     --link-external-decoration: dashed; // External link text decoration
   }
 

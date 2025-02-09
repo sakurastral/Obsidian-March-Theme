@@ -13,7 +13,7 @@
 
 .enable-codeblock-line-numbers .HyperMD-codeblock.cm-line:not(.HyperMD-codeblock-begin):not(.HyperMD-codeblock-end)::before {
   align-items: flex-end;
-  border-right: 1px solid $color-border;
+  border-right: 1px solid var(--background-modifier-border);
   color: var(--text-faint);
   content: counter(line-numbers);
   counter-increment: line-numbers;
@@ -34,7 +34,7 @@
 }
 
 .enable-codeblock-line-numbers .HyperMD-codeblock.cm-line.cm-active:not(.HyperMD-codeblock-begin):not(.HyperMD-codeblock-end)::before {
-  color: $color-accent;
+  color: var(--march-accent);
 }
 
 .enable-codeblock-line-numbers .HyperMD-codeblock .cm-foldPlaceholder::before {

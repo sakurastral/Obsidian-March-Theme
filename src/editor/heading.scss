@@ -3,12 +3,12 @@
 /* ========================================================================== */
 .enable-styled-headings {
   &.styled-headings-rainbow {
-    --h1-color-rgb: #{$rgb-colors-extend-color-red};
-    --h2-color-rgb: #{$rgb-colors-extend-color-orange};
-    --h3-color-rgb: #{$rgb-colors-extend-color-green};
-    --h4-color-rgb: #{$rgb-colors-extend-color-cyan};
-    --h5-color-rgb: #{$rgb-colors-extend-color-blue};
-    --h6-color-rgb: #{$rgb-colors-extend-color-purple};
+    --h1-color-rgb: var(-color-red-rgb);
+    --h2-color-rgb: var(-color-orange-rgb);
+    --h3-color-rgb: var(-color-green-rgb);
+    --h4-color-rgb: var(-color-cyan-rgb);
+    --h5-color-rgb: var(-color-blue-rgb);
+    --h6-color-rgb: var(-color-purple-rgb);
     --h1-color: rgb(var(--h1-color-rgb));
     --h2-color: rgb(var(--h2-color-rgb));
     --h3-color: rgb(var(--h3-color-rgb));

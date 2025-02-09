@@ -2,9 +2,9 @@
 /*                             Editor - Blockquote                            */
 /* ========================================================================== */
 .enable-styled-blockquotes {
-  --blockquote-background-color: #{$color-accent-10};
-  --blockquote-border-color: #{$color-accent};
-  --blockquote-icon-color: #{$color-accent};
+  --blockquote-background-color: var(--march-bg-accent);
+  --blockquote-border-color: var(--march-accent);
+  --blockquote-icon-color: var(--march-accent);
 
   --blockquote-padding: 0.625rem;
   --blockquote-radius: 0.625rem;

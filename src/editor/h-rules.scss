@@ -2,5 +2,5 @@
 /*                          Editor - Horizontal Rules                         */
 /* ========================================================================== */
 .enable-styled-horizontal-rules hr {
-  --hr-color: #{$color-accent-50};
+  --hr-color: var(--march-50-accent);
 }

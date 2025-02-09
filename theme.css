@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* @settings
 
-name: ⭐️ March Theme
+name: ⭐️ March Theme ⭐️
 id: march-theme-editor
 settings:
     - 
@@ -651,9 +651,14 @@ settings:
   font-style: normal;
   font-display: swap;
 }
-/* ========================================================================== */
-/*                                   Layout                                   */
-/* ========================================================================== */
+.theme-light,
+.theme-dark {
+  --march-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+  --march-bg-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
+  --march-50-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.5);
+  --march-light-accent: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 30%));
+}
+
 /* ========================================================================== */
 /*                            Layout - Color Scheme                           */
 /* ========================================================================== */
@@ -774,6 +779,12 @@ settings:
 }
 .enable-custom-layout-style-01 .workspace-leaf-content {
   background: var(--background-secondary);
+}
+.enable-custom-layout-style-01 .cm-line:hover {
+  background-color: var(--march-bg-accent);
+}
+.enable-custom-layout-style-01 .cm-line.cm-active {
+  background-color: var(--march-bg-accent);
 }
 
 /* ========================================================================== */
@@ -1068,10 +1079,10 @@ settings:
   position: absolute;
   top: 3.5px;
   right: 4px;
-  color: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+  color: var(--march-accent);
 }
 .enable-styled-embed-pure .inline-embed .markdown-embed-link:hover {
-  background-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
+  background-color: var(--march-bg-accent);
 }
 .enable-styled-embed-pure .inline-embed .markdown-embed-content {
   padding: 1rem 0.5rem;
@@ -1100,10 +1111,10 @@ settings:
   position: absolute;
   top: 3.5px;
   right: 4px;
-  color: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+  color: var(--march-accent);
 }
 .enable-styled-embed-transparent .inline-embed .markdown-embed-link:hover {
-  background-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
+  background-color: var(--march-bg-accent);
 }
 .enable-styled-embed-transparent .inline-embed .markdown-embed-content {
   padding: 1rem 0.5rem;
@@ -1117,7 +1128,7 @@ settings:
 }
 .enable-styled-embed-border .inline-embed {
   border-radius: 10px;
-  border: 1.5px solid hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.5);
+  border: 1.5px solid var(--march-50-accent);
   padding: 0rem;
 }
 .enable-styled-embed-border .inline-embed h1 h2 h3 h4 h5 h6 {
@@ -1127,19 +1138,19 @@ settings:
   padding-bottom: var(--p-spacing);
 }
 .enable-styled-embed-border .inline-embed .embed-title {
-  border-bottom: 1.5px solid hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.5);
+  border-bottom: 1.5px solid var(--march-50-accent);
   padding: 0.5rem;
-  background-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
+  background-color: var(--march-bg-accent);
 }
 .enable-styled-embed-border .inline-embed .markdown-embed-link {
   padding: 0.5rem;
   position: absolute;
   top: 3.5px;
   right: 4px;
-  color: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+  color: var(--march-accent);
 }
 .enable-styled-embed-border .inline-embed .markdown-embed-link:hover {
-  background-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
+  background-color: var(--march-bg-accent);
 }
 .enable-styled-embed-border .inline-embed .markdown-embed-content {
   padding: 1rem 0.5rem;
@@ -1153,7 +1164,7 @@ settings:
 }
 .enable-styled-embed-pure-border .inline-embed {
   border-radius: 10px;
-  border: 1.5px solid hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.5);
+  border: 1.5px solid var(--march-50-accent);
   padding: 0rem;
 }
 .enable-styled-embed-pure-border .inline-embed h1 h2 h3 h4 h5 h6 {
@@ -1170,10 +1181,10 @@ settings:
   position: absolute;
   top: 3.5px;
   right: 4px;
-  color: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+  color: var(--march-accent);
 }
 .enable-styled-embed-pure-border .inline-embed .markdown-embed-link:hover {
-  background-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
+  background-color: var(--march-bg-accent);
 }
 .enable-styled-embed-pure-border .inline-embed .markdown-embed-content {
   padding: 1rem 0.5rem;
@@ -1199,7 +1210,7 @@ settings:
 .enable-styled-embed-filled .inline-embed .embed-title {
   border-bottom: 0px solid transparent;
   padding: 0.5rem;
-  background-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
+  background-color: var(--march-bg-accent);
   border-radius: 10px 10px 0 0;
   margin-bottom: 3px;
 }
@@ -1208,14 +1219,14 @@ settings:
   position: absolute;
   top: 3.5px;
   right: 4px;
-  color: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+  color: var(--march-accent);
 }
 .enable-styled-embed-filled .inline-embed .markdown-embed-link:hover {
-  background-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
+  background-color: var(--march-bg-accent);
 }
 .enable-styled-embed-filled .inline-embed .markdown-embed-content {
   padding: 1rem 0.5rem;
-  background-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
+  background-color: var(--march-bg-accent);
 }
 .enable-styled-embed-filled .inline-embed .markdown-embed-content .callout {
   margin: var(--p-spacing);
@@ -1225,16 +1236,16 @@ settings:
 /*                          Editor - Horizontal Rules                         */
 /* ========================================================================== */
 .enable-styled-horizontal-rules hr {
-  --hr-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.5);
+  --hr-color: var(--march-50-accent);
 }
 
 /* ========================================================================== */
 /*                             Editor - Blockquote                            */
 /* ========================================================================== */
 .enable-styled-blockquotes {
-  --blockquote-background-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
-  --blockquote-border-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
-  --blockquote-icon-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+  --blockquote-background-color: var(--march-bg-accent);
+  --blockquote-border-color: var(--march-accent);
+  --blockquote-icon-color: var(--march-accent);
   --blockquote-padding: 0.625rem;
   --blockquote-radius: 0.625rem;
   --blockquote-border-style: 2px solid;
@@ -1355,7 +1366,7 @@ settings:
 }
 
 .enable-codeblock-line-numbers .HyperMD-codeblock.cm-line.cm-active:not(.HyperMD-codeblock-begin):not(.HyperMD-codeblock-end)::before {
-  color: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+  color: var(--march-accent);
 }
 
 .enable-codeblock-line-numbers .HyperMD-codeblock .cm-foldPlaceholder::before {
@@ -1372,8 +1383,8 @@ settings:
 
 .enable-styled-checkbox-custom {
   /* [x] Done */
-  --checklist-done-decoration: line-through solid hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.5) 1px;
-  --checklist-done-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.5);
+  --checklist-done-decoration: line-through solid var(--march-50-accent) 1px;
+  --checklist-done-color: var(--march-50-accent);
   /* [-] Canceled */
   /* [/] Incomplete */
   /* [!] Important */
@@ -1511,7 +1522,7 @@ settings:
   -webkit-mask-repeat-y: no-repeat;
   -webkit-mask-position-x: 52%;
   -webkit-mask-position-y: 52%;
-  background-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+  background-color: var(--march-accent);
 }
 .enable-styled-checkbox-custom input[data-task="!"]:checked,
 .enable-styled-checkbox-custom li[data-task="!"] > input:checked,
@@ -1868,7 +1879,7 @@ settings:
   -webkit-mask-repeat-y: no-repeat;
   -webkit-mask-position-x: 52%;
   -webkit-mask-position-y: 52%;
-  background-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+  background-color: var(--march-accent);
 }
 .enable-styled-checkbox-custom input[data-task=p]:checked,
 .enable-styled-checkbox-custom li[data-task=p] > input:checked,
@@ -2147,14 +2158,14 @@ settings:
 }
 .enable-styled-links.styled-link-internal-style {
   --link-internal-decoration: dashed;
-  --link-internal-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
-  --link-internal-color-hover-bg: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 30%));
+  --link-internal-color: var(--march-accent);
+  --link-internal-color-hover-bg: var(--march-light-accent);
   --link-unresolved-opacity: 0.3;
   --link-unresolved-decoration-style: dashed;
 }
 .enable-styled-links.styled-link-external-style {
-  --link-external-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
-  --link-external-color-hover: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 30%));
+  --link-external-color: var(--march-accent);
+  --link-external-color-hover: var(--march-light-accent);
   --link-external-decoration: dashed;
 }
 .enable-styled-links.styled-link-external-style :is(.markdown-source-view, .markdown-preview-view, .metadata-content) a.external-link:not(.cm-escape + .cm-link .cm-underline),
@@ -2413,12 +2424,12 @@ settings:
   /** styled-headings-indicator is inspired from @deathau/obsidian-snippets (https://github.com/deathau/obsidian-snippets/blob/main/clutter-free-headings.css) */
 }
 .enable-styled-headings.styled-headings-rainbow {
-  --h1-color-rgb: var(--color-red-rgb);
-  --h2-color-rgb: var(--color-orange-rgb);
-  --h3-color-rgb: var(--color-green-rgb);
-  --h4-color-rgb: var(--color-cyan-rgb);
-  --h5-color-rgb: var(--color-blue-rgb);
-  --h6-color-rgb: var(--color-purple-rgb);
+  --h1-color-rgb: var(-color-red-rgb);
+  --h2-color-rgb: var(-color-orange-rgb);
+  --h3-color-rgb: var(-color-green-rgb);
+  --h4-color-rgb: var(-color-cyan-rgb);
+  --h5-color-rgb: var(-color-blue-rgb);
+  --h6-color-rgb: var(-color-purple-rgb);
   --h1-color: rgb(var(--h1-color-rgb));
   --h2-color: rgb(var(--h2-color-rgb));
   --h3-color: rgb(var(--h3-color-rgb));
@@ -2666,20 +2677,20 @@ settings:
 /*                               Editor - Table                               */
 /* ========================================================================== */
 .enable-styled-table {
-  --table-background: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
+  --table-background: var(--march-bg-accent);
   --table-column-alt-background: transparent;
   --table-border-color: --table-column-alt-background;
-  --table-header-background: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
-  --table-header-background-hover: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
-  --table-header-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+  --table-header-background: var(--march-bg-accent);
+  --table-header-background-hover: var(--march-bg-accent);
+  --table-header-color: var(--march-accent);
 }
 .enable-styled-table .markdown-rendered th,
 .enable-styled-table .markdown-rendered td {
-  border: var(--table-border-width) solid rgb(var(--mono-rgb-0));
+  border: var(--table-border-width) solid var(--background-primary);
 }
 .enable-styled-table .markdown-rendered th:hover,
 .enable-styled-table .markdown-rendered td:hover {
-  background-color: rgb(var(--mono-rgb-0));
+  background-color: var(--background-primary);
 }
 
 /** Rounded Corner is inspired from FireIsGood (https://discord.com/channels/686053708261228577/702656734631821413/1112164539975340032) */
@@ -2694,16 +2705,6 @@ settings:
 }
 .styled-table-rounded .markdown-rendered tr:last-of-type td:last-of-type {
   border-bottom-right-radius: 8px;
-}
-
-/* ========================================================================== */
-/*                             Hover & Active Line                            */
-/* ========================================================================== */
-.cm-line:hover {
-  background-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
-}
-.cm-line.cm-active {
-  background-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
 }
 
 /* ========================================================================== */
@@ -2826,7 +2827,6 @@ settings:
   --theme-color-blue: var(--color-blue-rgb);
   --theme-color-purple: var(--color-purple-rgb);
   --theme-color-pink: var(--color-pink-rgb);
-  --theme-color-accent: var(--accent-h), var(--accent-s), var(--accent-l);
 }
 .enable-styled-file-explorer.styled-file-explorer-rainbow .nav-files-container .nav-folder:nth-child(8n+2),
 .enable-styled-file-explorer.styled-file-explorer-rainbow [data-type=bookmarks] .tree-item:nth-child(8n+2) {
@@ -2915,8 +2915,8 @@ settings:
 /** enable-styled-outline-maple-outline is inspired and adapted from @subframe7536/obsidian-theme-maple (https://github.com/subframe7536/obsidian-theme-maple) */
 .enable-styled-outline-maple-outline {
   --outline-guideline-width: var(--size-2-1);
-  --outline-guideline-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
-  --outline-guideline-color-alt: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+  --outline-guideline-color: var(--march-accent);
+  --outline-guideline-color-alt: var(--march-accent);
   --outline-item-height: calc(var(--nav-item-size) * 1.8);
 }
 .enable-styled-outline-maple-outline .workspace-leaf-content[data-type=outline] .tree-item-inner {

@@ -114,7 +114,6 @@
     --theme-color-blue: var(--color-blue-rgb);
     --theme-color-purple: var(--color-purple-rgb);
     --theme-color-pink: var(--color-pink-rgb);
-    --theme-color-accent: var(--accent-h), var(--accent-s), var(--accent-l);
 
     $array: (
       2: red,
@@ -124,8 +123,7 @@
       6: cyan,
       7: blue,
       8: purple,
-      9: pink,
-      //10:accent,
+      9: pink
     );
     @each $key, $value in $array {
       .nav-files-container .nav-folder:nth-child(8n + #{$key}),

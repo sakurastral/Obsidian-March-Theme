@@ -1,5 +1,25 @@
-@import 'settings/index.scss';
-@import 'variables/index.scss';
-@import 'layout/index.scss';
-@import 'editor/index.scss';
-@import 'plugins/index.scss';
+@use 'settings/main.scss';
+
+@use 'variables/icons.scss';
+@use 'variables/colors.scss';
+
+@use 'layout/color-scheme.scss';
+@use 'layout/layout.scss';
+@use 'layout/status-bar.scss';
+@use 'layout/scrollbar.scss';
+@use 'layout/tab.scss';
+
+@use 'editor/callout.scss';
+@use 'editor/embed.scss';
+@use 'editor/h-rules.scss';
+@use 'editor/blockquotes.scss';
+@use 'editor/codeblock.scss';
+@use 'editor/checkbox.scss';
+@use 'editor/links.scss';
+@use 'editor/heading.scss';
+@use 'editor/tag.scss';
+@use 'editor/table.scss';
+
+@use 'plugins/file-explorer.scss';
+@use 'plugins/outline.scss';
+@use 'plugins/calendar.scss';

@@ -73,4 +73,13 @@
   .workspace-leaf-content {
     background: var(--background-secondary);
   }
+  // Hover & Active Line
+  .cm-line {
+    &:hover {
+      background-color: var(--march-bg-accent);
+    }
+    &.cm-active {
+      background-color: var(--march-bg-accent);
+    }
+  }
 }
