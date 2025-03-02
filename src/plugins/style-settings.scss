@@ -1,0 +1,20 @@
+.enable-style-setting-surface-style {
+  .style-settings-heading {
+    &[data-level='0'] {
+      border: 2px double var(--text-accent);
+      border-radius: 0.5rem;
+      padding: 0.3125rem;
+      margin-bottom: 0.5rem;
+    }
+    &:not([data-level='0']) {
+      border-bottom: 1px dashed var(--text-accent);
+      margin-left: 1rem;
+    }
+  }
+  //Adapted from https://github.com/subframe7536/obsidian-theme-maple/blob/6c60162be9a8ae4ca61652cf96698abf582a5e10/src/style-settings/_index.scss
+  :is(.style-settings-heading[data-level='0'] + .style-settings-container, .style-settings-container) {
+    padding-left: var(--size-2-1);
+    margin-left: var(--size-4-4);
+    margin-top: 0;
+  }
+}

@@ -9,24 +9,23 @@
 .enable-codeblock-line-numbers .HyperMD-codeblock.cm-line:not(.HyperMD-codeblock-begin):not(.HyperMD-codeblock-end) {
   padding-left: 3rem;
   position: relative;
-}
-
-.enable-codeblock-line-numbers .HyperMD-codeblock.cm-line:not(.HyperMD-codeblock-begin):not(.HyperMD-codeblock-end)::before {
-  align-items: flex-end;
-  border-right: 1px solid var(--background-modifier-border);
-  color: var(--text-faint);
-  content: counter(line-numbers);
-  counter-increment: line-numbers;
-  display: table-caption;
-  font-size: 0.8em;
-  height: 100%;
-  justify-content: flex-end;
-  left: 0;
-  padding-right: 0.5em;
-  padding-top: 1px;
-  position: absolute;
-  text-align: right;
-  width: 3em;
+  &::before {
+    align-items: flex-end;
+    border-right: 1px solid var(--background-modifier-border);
+    color: var(--text-faint);
+    content: counter(line-numbers);
+    counter-increment: line-numbers;
+    display: table-caption;
+    font-size: 0.8em;
+    height: 100%;
+    justify-content: flex-end;
+    left: 0;
+    padding-right: 0.5em;
+    padding-top: 1px;
+    position: absolute;
+    text-align: right;
+    width: 3em;
+  }
 }
 
 .enable-codeblock-line-numbers.codeblock-hide-indent-lines .markdown-source-view.mod-cm6 .HyperMD-codeblock .cm-indent::before {
@@ -39,4 +38,17 @@
 
 .enable-codeblock-line-numbers .HyperMD-codeblock .cm-foldPlaceholder::before {
   display: none;
+}
+
+/** Dot Background is adapted from https://forum.obsidian.md/t/style-grid-background-and-dotted-background/90681 */
+.enable-codeblock-bg {
+  & .HyperMD-codeblock.cm-line {
+    --codeblock-dot-color: var(--background-secondary);
+    background-image: radial-gradient(circle, var(--codeblock-dot-color) 1px, var(--background-primary) 1px);
+    background-size: 6px 6px;
+    background-position: center center;
+    &:hover {
+      border: 2px solid var(--text-accent);
+    }
+  }
 }

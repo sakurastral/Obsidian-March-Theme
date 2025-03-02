@@ -6,12 +6,12 @@
   --tab-accent-hover: var(--text-accent);
   --tab-accent-bg: var(--background-primary);
   --tab-accent-bg-hover: var(--background-primary);
-  --tab-accent-border: var(--background-primary-alt);
+  --tab-accent-border: transparent;
   --tab-accent-active: var(--text-accent);
   --tab-accent-active-hover: var(--text-accent);
   --tab-accent-active-bg: var(--background-primary);
   --tab-accent-active-bg-hover: var(--background-primary);
-  --tab-accent-border-active: var(--background-primary-alt);
+  --tab-accent-border-active: var(--text-accent);
   .mod-root .workspace-tab-header {
     &::before,
     &::after,
@@ -33,8 +33,8 @@
         }
         .workspace-tab-header-inner-icon,
         .workspace-tab-header-inner-close-button {
-          background-color: transparent;
           color: var(--tab-accent);
+          display: block;
         }
       }
       .workspace-tab-header-inner {

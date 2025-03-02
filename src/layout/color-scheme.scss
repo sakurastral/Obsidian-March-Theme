@@ -1,96 +1,103 @@
 /* ========================================================================== */
 /*                            Layout - Color Scheme                           */
 /* ========================================================================== */
-/** Nord Colors comes from https://www.nordtheme.com/docs/colors-and-palettes */
-.theme-light,
-.theme-dark {
-  &.color-scheme-nord {
-    --accent-h: 210;
-    --accent-s: 34%;
-    --accent-l: 63%;
 
-    --color-red-rgb: 191, 97, 106;
-    --color-orange-rgb: 208, 135, 112;
-    --color-yellow-rgb: 235, 203, 139;
-    --color-green-rgb: 163, 190, 140;
-    --color-cyan-rgb: 136, 192, 208;
-    --color-blue-rgb: 94, 129, 172;
-    --color-purple-rgb: 180, 142, 173;
-    --color-pink-rgb: 191, 97, 106;
+/** Nord comes from https://www.nordtheme.com/docs/colors-and-palettes */
+.color-scheme-nord {
+  --accent-h: 210;
+  --accent-s: 34%;
+  --accent-l: 63%;
 
-    --color-red: #bf616a;
-    --color-orange: #d08770;
-    --color-yellow: #ebcb8b;
-    --color-green: #a3be8c;
-    --color-cyan: #88c0d0;
-    --color-blue: #5e81ac;
-    --color-purple: #b48ead;
-    --color-pink: #bf616a;
-  }
+  --color-red-rgb: 191, 97, 106;
+  --color-orange-rgb: 208, 135, 112;
+  --color-yellow-rgb: 235, 203, 139;
+  --color-green-rgb: 163, 190, 140;
+  --color-cyan-rgb: 136, 192, 208;
+  --color-blue-rgb: 94, 129, 172;
+  --color-purple-rgb: 180, 142, 173;
+  --color-pink-rgb: 191, 97, 106;
+
+  --color-red: #bf616a;
+  --color-orange: #d08770;
+  --color-yellow: #ebcb8b;
+  --color-green: #a3be8c;
+  --color-cyan: #88c0d0;
+  --color-blue: #5e81ac;
+  --color-purple: #b48ead;
+  --color-pink: #bf616a;
+
   &.theme-light {
-    &.color-scheme-nord {
-      --background-primary: rgb(255, 255, 255);
-      --background-primary-alt: #eceff4;
-      --background-secondary: #d8dee9;
-      --background-secondary-alt: #eceff4;
-    }
-  }
-  &.theme-dark {
-    &.color-scheme-nord {
-      --background-primary: #2e3440;
-      --background-primary-alt: #3b4252;
-      --background-secondary: #2e3440;
-      --background-secondary-alt: #4c566a;
-      //--background-modifier-border: #4c566a;
-    }
+    --background-primary: rgb(255, 255, 255);
+    --background-primary-alt: #eceff4;
+    --background-secondary: #eceff4;
+    --background-secondary-alt: #e5e9f0;
+    --background-modifier-border: #d8dee9;
   }
 
-  &.color-scheme-palette1 {
-    $list-hex: (
-      red: #ff595e,
-      orange: #ff924c,
-      yellow: #ffca3a,
-      green: #8ac926,
-      blue: #1982c4,
-      purple: #8b5bce
-    );
-    @each $key, $value in $list-hex {
-      --color-#{"" + $key}: #{$value};
-    }
-    $list-rgb: (
-      red: (
-        255,
-        89,
-        94
-      ),
-      orange: (
-        255,
-        146,
-        76
-      ),
-      yellow: (
-        255,
-        202,
-        58
-      ),
-      green: (
-        138,
-        201,
-        38
-      ),
-      blue: (
-        25,
-        130,
-        196
-      ),
-      purple: (
-        139,
-        91,
-        206
-      )
-    );
-    @each $key, $value in $list-rgb {
-      --color-#{"" + $key}-rgb: #{$value};
-    }
+  &.theme-dark {
+    --background-primary: #2e3440;
+    --background-primary-alt: #2e3440;
+    --background-secondary: #3b4252;
+    --background-secondary-alt: #3b4252;
+    --background-modifier-border: #4c566a;
+  }
+}
+
+/** Catppuccin Mocha & Latte comes from https://catppuccin.com/palette/ */
+.color-scheme-catppuccin {
+  --accent-h: 231;
+  --accent-s: 97%;
+  --accent-l: 72%;
+
+  &.theme-light {
+    --color-red-rgb: 210, 15, 57;
+    --color-orange-rgb: 254, 100, 11;
+    --color-yellow-rgb: 223, 142, 29;
+    --color-green-rgb: 64, 160, 43;
+    --color-cyan-rgb: 4, 165, 229;
+    --color-blue-rgb: 30, 102, 245;
+    --color-purple-rgb: 136, 57, 239;
+    --color-pink-rgb: 234, 118, 203;
+
+    --color-red: #d20f39;
+    --color-orange: #fe640b;
+    --color-yellow: #df8e1d;
+    --color-green: #40a02b;
+    --color-cyan: #04a5e5;
+    --color-blue: #1e66f5;
+    --color-purple: #8839ef;
+    --color-pink: #ea76cb;
+
+    --background-primary: #eff1f5;
+    --background-primary-alt: #ccd0da;
+    --background-secondary: #e6e9ef;
+    --background-secondary-alt: #bcc0cc;
+    --background-modifier-border: #acb0be;
+  }
+
+  &.theme-dark {
+    --color-red-rgb: 243, 139, 168;
+    --color-orange-rgb: 250, 179, 135;
+    --color-yellow-rgb: 249, 226, 175;
+    --color-green-rgb: 166, 227, 161;
+    --color-cyan-rgb: 137, 220, 235;
+    --color-blue-rgb: 137, 180, 250;
+    --color-purple-rgb: 203, 166, 247;
+    --color-pink-rgb: 245, 194, 231;
+
+    --color-red: #f38ba8;
+    --color-orange: #fab387;
+    --color-yellow: #f9e2af;
+    --color-green: #a6e3a1;
+    --color-cyan: #89dceb;
+    --color-blue: #89b4fa;
+    --color-purple: #cba6f7;
+    --color-pink: #f5c2e7;
+
+    --background-primary: #11111b;
+    --background-primary-alt: #313244;
+    --background-secondary: #1e1e2e;
+    --background-secondary-alt: #45475a;
+    --background-modifier-border: #11111b;
   }
 }

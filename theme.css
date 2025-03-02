@@ -32,7 +32,7 @@ settings:
                 value: enable-custom-layout-style-01
     -
         id: enable-inline-title
-        title: Choose an Style
+        title: Choose an Style for Inline Title
         description: Toggle a custom style.
         type: class-select
         allowEmpty: false
@@ -44,6 +44,20 @@ settings:
             - 
                 label: Center
                 value: enable-inline-title-center
+    -
+        id: enable-active-hover-line
+        title: Choose an Active (Hover) Line Style
+        description: Toggle a custom style.
+        type: class-select
+        allowEmpty: false
+        default: none
+        options:
+            - 
+                label: Default
+                value: none
+            - 
+                label: Colored Background
+                value: enable-active-hover-line-bg
     - 
         id: heading-color-scheme
         title: Color Scheme
@@ -56,7 +70,7 @@ settings:
         description: Toggle a custom style.
         type: class-select
         allowEmpty: false
-        default: color-scheme-nord
+        default: color-scheme-catppuccin
         options:
             - 
                 label: Default
@@ -65,8 +79,8 @@ settings:
                 label: Nord
                 value: color-scheme-nord
             - 
-                label: Palette1
-                value: color-scheme-palette1
+                label: Catppuccin Latte & Mocha
+                value: color-scheme-catppuccin
     - 
         id: heading-status-bar
         title: Status Bar
@@ -300,6 +314,12 @@ settings:
     -
         id: enable-codeblock-line-numbers 
         title: Enable Line Numbers (Editing Mode)
+        description: Toggle to turn on/off function, and this only works in Editing Mode.
+        type: class-toggle
+        default: true
+    -
+        id: enable-codeblock-bg
+        title: Enable Dot Background (Editing Mode)
         description: Toggle to turn on/off function, and this only works in Editing Mode.
         type: class-toggle
         default: true
@@ -639,6 +659,18 @@ settings:
         description: Toggle to turn on/off function. If daily notes's properties include tags starts with emoji, an emoji icon will appear on calendar (If you have more than one emoji tags, only the first one works). The emoji need to be at the start of the tag.
         type: class-toggle
         default: true
+    - 
+        id: heading-style-settings
+        title: Style Settings
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: enable-style-setting-surface-style
+        title: Enable Style for Style Settings
+        description: Toggle to turn on/off function.
+        type: class-toggle
+        default: true
 */
 /* ========================================================================== */
 /*                              Variables - Font                              */
@@ -662,9 +694,8 @@ settings:
 /* ========================================================================== */
 /*                            Layout - Color Scheme                           */
 /* ========================================================================== */
-/** Nord Colors comes from https://www.nordtheme.com/docs/colors-and-palettes */
-.theme-light.color-scheme-nord,
-.theme-dark.color-scheme-nord {
+/** Nord comes from https://www.nordtheme.com/docs/colors-and-palettes */
+.color-scheme-nord {
   --accent-h: 210;
   --accent-s: 34%;
   --accent-l: 63%;
@@ -685,34 +716,72 @@ settings:
   --color-purple: #b48ead;
   --color-pink: #bf616a;
 }
-.theme-light.theme-light.color-scheme-nord,
-.theme-dark.theme-light.color-scheme-nord {
+.color-scheme-nord.theme-light {
   --background-primary: rgb(255, 255, 255);
   --background-primary-alt: #eceff4;
-  --background-secondary: #d8dee9;
-  --background-secondary-alt: #eceff4;
+  --background-secondary: #eceff4;
+  --background-secondary-alt: #e5e9f0;
+  --background-modifier-border: #d8dee9;
 }
-.theme-light.theme-dark.color-scheme-nord,
-.theme-dark.theme-dark.color-scheme-nord {
+.color-scheme-nord.theme-dark {
   --background-primary: #2e3440;
-  --background-primary-alt: #3b4252;
-  --background-secondary: #2e3440;
-  --background-secondary-alt: #4c566a;
+  --background-primary-alt: #2e3440;
+  --background-secondary: #3b4252;
+  --background-secondary-alt: #3b4252;
+  --background-modifier-border: #4c566a;
 }
-.theme-light.color-scheme-palette1,
-.theme-dark.color-scheme-palette1 {
-  --color-red: #ff595e;
-  --color-orange: #ff924c;
-  --color-yellow: #ffca3a;
-  --color-green: #8ac926;
-  --color-blue: #1982c4;
-  --color-purple: #8b5bce;
-  --color-red-rgb: 255, 89, 94;
-  --color-orange-rgb: 255, 146, 76;
-  --color-yellow-rgb: 255, 202, 58;
-  --color-green-rgb: 138, 201, 38;
-  --color-blue-rgb: 25, 130, 196;
-  --color-purple-rgb: 139, 91, 206;
+
+/** Catppuccin Mocha & Latte comes from https://catppuccin.com/palette/ */
+.color-scheme-catppuccin {
+  --accent-h: 231;
+  --accent-s: 97%;
+  --accent-l: 72%;
+}
+.color-scheme-catppuccin.theme-light {
+  --color-red-rgb: 210, 15, 57;
+  --color-orange-rgb: 254, 100, 11;
+  --color-yellow-rgb: 223, 142, 29;
+  --color-green-rgb: 64, 160, 43;
+  --color-cyan-rgb: 4, 165, 229;
+  --color-blue-rgb: 30, 102, 245;
+  --color-purple-rgb: 136, 57, 239;
+  --color-pink-rgb: 234, 118, 203;
+  --color-red: #d20f39;
+  --color-orange: #fe640b;
+  --color-yellow: #df8e1d;
+  --color-green: #40a02b;
+  --color-cyan: #04a5e5;
+  --color-blue: #1e66f5;
+  --color-purple: #8839ef;
+  --color-pink: #ea76cb;
+  --background-primary: #eff1f5;
+  --background-primary-alt: #ccd0da;
+  --background-secondary: #e6e9ef;
+  --background-secondary-alt: #bcc0cc;
+  --background-modifier-border: #acb0be;
+}
+.color-scheme-catppuccin.theme-dark {
+  --color-red-rgb: 243, 139, 168;
+  --color-orange-rgb: 250, 179, 135;
+  --color-yellow-rgb: 249, 226, 175;
+  --color-green-rgb: 166, 227, 161;
+  --color-cyan-rgb: 137, 220, 235;
+  --color-blue-rgb: 137, 180, 250;
+  --color-purple-rgb: 203, 166, 247;
+  --color-pink-rgb: 245, 194, 231;
+  --color-red: #f38ba8;
+  --color-orange: #fab387;
+  --color-yellow: #f9e2af;
+  --color-green: #a6e3a1;
+  --color-cyan: #89dceb;
+  --color-blue: #89b4fa;
+  --color-purple: #cba6f7;
+  --color-pink: #f5c2e7;
+  --background-primary: #11111b;
+  --background-primary-alt: #313244;
+  --background-secondary: #1e1e2e;
+  --background-secondary-alt: #45475a;
+  --background-modifier-border: #11111b;
 }
 
 /* ========================================================================== */
@@ -727,12 +796,26 @@ settings:
   color: var(--text-accent);
 }
 
+.enable-active-hover-line-bg .cm-line:hover {
+  background-color: var(--march-bg-accent) !important;
+}
+.enable-active-hover-line-bg .cm-line.cm-active {
+  background-color: var(--march-bg-accent) !important;
+}
+
 .enable-custom-layout-style-01 {
   --titlebar-background-focused: var(--background-secondary);
+  --code-background: var(--background-primary);
 }
 .enable-custom-layout-style-01 .workspace-ribbon {
   --ribbon-background: var(--background-secondary);
   border-right: none;
+}
+.enable-custom-layout-style-01 .workspace-ribbon.mod-left:before {
+  border-bottom: none !important;
+}
+.enable-custom-layout-style-01 .workspace-ribbon.mod-left.is-collapsed {
+  background-color: none;
 }
 .enable-custom-layout-style-01 .workspace-ribbon .sidebar-toggle-button .clickable-icon {
   background-color: var(--background-primary);
@@ -781,11 +864,20 @@ settings:
 .enable-custom-layout-style-01 .workspace-leaf-content {
   background: var(--background-secondary);
 }
-.enable-custom-layout-style-01 .cm-line:hover {
-  background-color: var(--march-bg-accent);
+.enable-custom-layout-style-01 .cm-lineNumbers .cm-gutterElement.cm-active {
+  color: var(--text-accent);
+  font-weight: bold;
 }
-.enable-custom-layout-style-01 .cm-line.cm-active {
-  background-color: var(--march-bg-accent);
+.enable-custom-layout-style-01 .workspace-tab-header-container {
+  border: none;
+  background-color: var(--background-secondary);
+}
+.enable-custom-layout-style-01 .workspace-sidedock-vault-profile {
+  border: none !important;
+}
+.enable-custom-layout-style-01 .workspace-sidedock-vault-profile .workspace-drawer-vault-switcher {
+  color: var(--text-accent) !important;
+  background-color: var(--background-primary);
 }
 
 /* ========================================================================== */
@@ -828,12 +920,12 @@ settings:
   --tab-accent-hover: var(--text-accent);
   --tab-accent-bg: var(--background-primary);
   --tab-accent-bg-hover: var(--background-primary);
-  --tab-accent-border: var(--background-primary-alt);
+  --tab-accent-border: transparent;
   --tab-accent-active: var(--text-accent);
   --tab-accent-active-hover: var(--text-accent);
   --tab-accent-active-bg: var(--background-primary);
   --tab-accent-active-bg-hover: var(--background-primary);
-  --tab-accent-border-active: var(--background-primary-alt);
+  --tab-accent-border-active: var(--text-accent);
 }
 .enable-tab-style1 .mod-root .workspace-tab-header::before, .enable-tab-style1 .mod-root .workspace-tab-header::after,
 .enable-tab-style1 .mod-root .workspace-tab-header .workspace-tab-header-inner::after {
@@ -854,8 +946,8 @@ settings:
 }
 .enable-tab-style1 .mod-root .workspace-tab-header:not(.is-active) .workspace-tab-header-inner .workspace-tab-header-inner-icon,
 .enable-tab-style1 .mod-root .workspace-tab-header:not(.is-active) .workspace-tab-header-inner .workspace-tab-header-inner-close-button {
-  background-color: transparent;
   color: var(--tab-accent);
+  display: block;
 }
 .enable-tab-style1 .mod-root .workspace-tab-header:not(.is-active) .workspace-tab-header-inner {
   border-radius: 10px;
@@ -1281,7 +1373,10 @@ settings:
   content: "";
 }
 .enable-styled-blockquotes.enable-styled-blockquotes-add-icon .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote {
-  padding: calc(var(--blockquote-padding) * 2) var(--blockquote-padding) var(--blockquote-padding) 0;
+  padding: calc(var(--blockquote-padding) * 2) var(--blockquote-padding) 0 0;
+}
+.enable-styled-blockquotes.enable-styled-blockquotes-add-icon .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote + .HyperMD-quote {
+  padding: 0;
 }
 .enable-styled-blockquotes.enable-styled-blockquotes-add-icon .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote .cm-formatting.cm-formatting-quote.cm-quote:before {
   top: -0.05rem;
@@ -1350,7 +1445,6 @@ settings:
   padding-left: 3rem;
   position: relative;
 }
-
 .enable-codeblock-line-numbers .HyperMD-codeblock.cm-line:not(.HyperMD-codeblock-begin):not(.HyperMD-codeblock-end)::before {
   align-items: flex-end;
   border-right: 1px solid var(--background-modifier-border);
@@ -1379,6 +1473,17 @@ settings:
 
 .enable-codeblock-line-numbers .HyperMD-codeblock .cm-foldPlaceholder::before {
   display: none;
+}
+
+/** Dot Background is adapted from https://forum.obsidian.md/t/style-grid-background-and-dotted-background/90681 */
+.enable-codeblock-bg .HyperMD-codeblock.cm-line {
+  --codeblock-dot-color: var(--background-secondary);
+  background-image: radial-gradient(circle, var(--codeblock-dot-color) 1px, var(--background-primary) 1px);
+  background-size: 6px 6px;
+  background-position: center center;
+}
+.enable-codeblock-bg .HyperMD-codeblock.cm-line:hover {
+  border: 2px solid var(--text-accent);
 }
 
 /* ========================================================================== */
@@ -2432,18 +2537,12 @@ settings:
   /** styled-headings-indicator is inspired from @deathau/obsidian-snippets (https://github.com/deathau/obsidian-snippets/blob/main/clutter-free-headings.css) */
 }
 .enable-styled-headings.styled-headings-rainbow {
-  --h1-color-rgb: var(-color-red-rgb);
-  --h2-color-rgb: var(-color-orange-rgb);
-  --h3-color-rgb: var(-color-green-rgb);
-  --h4-color-rgb: var(-color-cyan-rgb);
-  --h5-color-rgb: var(-color-blue-rgb);
-  --h6-color-rgb: var(-color-purple-rgb);
-  --h1-color: rgb(var(--h1-color-rgb));
-  --h2-color: rgb(var(--h2-color-rgb));
-  --h3-color: rgb(var(--h3-color-rgb));
-  --h4-color: rgb(var(--h4-color-rgb));
-  --h5-color: rgb(var(--h5-color-rgb));
-  --h6-color: rgb(var(--h6-color-rgb));
+  --h1-color: var(--color-red);
+  --h2-color: var(--color-orange);
+  --h3-color: var(--color-green);
+  --h4-color: var(--color-cyan);
+  --h5-color: var(--color-blue);
+  --h6-color: var(--color-purple);
 }
 .enable-styled-headings.styled-headings-bg :is(.markdown-source-view, .markdown-preview-view, .metadata-content) h1,
 .enable-styled-headings.styled-headings-bg :is(.markdown-source-view, .markdown-preview-view, .metadata-content) h2,
@@ -2880,10 +2979,6 @@ settings:
 .enable-styled-file-explorer.styled-file-explorer-rainbow.styled-file-explorer-rainbow-subfolders [data-type=bookmarks] .tree-item .tree-item {
   --rainbow-folder-color: inherit;
 }
-.enable-styled-file-explorer.styled-file-explorer-rainbow .nav-files-container {
-  background: var(--background-primary);
-  border-radius: 10px;
-}
 .enable-styled-file-explorer.styled-file-explorer-rainbow.styled-file-explorer-rainbow-folder-name-icon .nav-folder .nav-folder-title,
 .enable-styled-file-explorer.styled-file-explorer-rainbow.styled-file-explorer-rainbow-folder-name-icon [data-type=bookmarks] .tree-item .tree-item-inner {
   transition: color 0.2s;
@@ -3049,7 +3144,7 @@ settings:
   --color-text-weeknum: var(--text-normal);
   --calendar-color-workday-text: var(--text-normal);
   --calendar-color-workday-bg: transparent;
-  --calendar-color-holiday-text: rgb(var(--color-red-rgb));
+  --calendar-color-holiday-text: var(--color-red);
   --calendar-color-holiday-bg: hsla(var(--interactive-accent-hsl), 0.1);
   --calendar-color-accent-text: var(--text-accent);
   --calendar-color-hover-text: var(--text-normal);
@@ -3131,4 +3226,20 @@ settings:
 }
 .enable-custom-calendar-plugin.calendar-plugin-enable-emoji-tag #calendar-container [data-emoji-tag]:is(.active):after {
   color: var(--color-text-day);
+}
+
+.enable-style-setting-surface-style .style-settings-heading[data-level="0"] {
+  border: 2px double var(--text-accent);
+  border-radius: 0.5rem;
+  padding: 0.3125rem;
+  margin-bottom: 0.5rem;
+}
+.enable-style-setting-surface-style .style-settings-heading:not([data-level="0"]) {
+  border-bottom: 1px dashed var(--text-accent);
+  margin-left: 1rem;
+}
+.enable-style-setting-surface-style :is(.style-settings-heading[data-level="0"] + .style-settings-container, .style-settings-container) {
+  padding-left: var(--size-2-1);
+  margin-left: var(--size-4-4);
+  margin-top: 0;
 }

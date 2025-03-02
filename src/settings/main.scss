@@ -31,7 +31,7 @@ settings:
                 value: enable-custom-layout-style-01
     -
         id: enable-inline-title
-        title: Choose an Style
+        title: Choose an Style for Inline Title
         description: Toggle a custom style.
         type: class-select
         allowEmpty: false
@@ -43,6 +43,20 @@ settings:
             - 
                 label: Center
                 value: enable-inline-title-center
+    -
+        id: enable-active-hover-line
+        title: Choose an Active (Hover) Line Style
+        description: Toggle a custom style.
+        type: class-select
+        allowEmpty: false
+        default: none
+        options:
+            - 
+                label: Default
+                value: none
+            - 
+                label: Colored Background
+                value: enable-active-hover-line-bg
     - 
         id: heading-color-scheme
         title: Color Scheme
@@ -55,7 +69,7 @@ settings:
         description: Toggle a custom style.
         type: class-select
         allowEmpty: false
-        default: color-scheme-nord
+        default: color-scheme-catppuccin
         options:
             - 
                 label: Default
@@ -64,8 +78,8 @@ settings:
                 label: Nord
                 value: color-scheme-nord
             - 
-                label: Palette1
-                value: color-scheme-palette1
+                label: Catppuccin Latte & Mocha
+                value: color-scheme-catppuccin
     - 
         id: heading-status-bar
         title: Status Bar
@@ -299,6 +313,12 @@ settings:
     -
         id: enable-codeblock-line-numbers 
         title: Enable Line Numbers (Editing Mode)
+        description: Toggle to turn on/off function, and this only works in Editing Mode.
+        type: class-toggle
+        default: true
+    -
+        id: enable-codeblock-bg
+        title: Enable Dot Background (Editing Mode)
         description: Toggle to turn on/off function, and this only works in Editing Mode.
         type: class-toggle
         default: true
@@ -636,6 +656,18 @@ settings:
         id: calendar-plugin-enable-emoji-tag
         title: Enable Appearence of emoji tag
         description: Toggle to turn on/off function. If daily notes's properties include tags starts with emoji, an emoji icon will appear on calendar (If you have more than one emoji tags, only the first one works). The emoji need to be at the start of the tag.
+        type: class-toggle
+        default: true
+    - 
+        id: heading-style-settings
+        title: Style Settings
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: enable-style-setting-surface-style
+        title: Enable Style for Style Settings
+        description: Toggle to turn on/off function.
         type: class-toggle
         default: true
 */

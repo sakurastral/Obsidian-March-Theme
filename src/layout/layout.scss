@@ -11,11 +11,33 @@
     color: var(--text-accent);
   }
 }
+.enable-active-hover-line-bg {
+  .cm-line {
+    &:hover {
+      background-color: var(--march-bg-accent) !important;
+    }
+    &.cm-active {
+      background-color: var(--march-bg-accent) !important;
+    }
+  }
+}
 .enable-custom-layout-style-01 {
   --titlebar-background-focused: var(--background-secondary);
+  --code-background: var(--background-primary);
+
   .workspace-ribbon {
     --ribbon-background: var(--background-secondary);
     border-right: none;
+
+    &.mod-left {
+      &:before {
+        border-bottom: none !important;
+      }
+      &.is-collapsed {
+        background-color: none;
+      }
+    }
+
     & .sidebar-toggle-button {
       & .clickable-icon {
         background-color: var(--background-primary);
@@ -74,13 +96,24 @@
   .workspace-leaf-content {
     background: var(--background-secondary);
   }
-  // Hover & Active Line
-  .cm-line {
-    &:hover {
-      background-color: var(--march-bg-accent);
+
+  .cm-lineNumbers {
+    & .cm-gutterElement.cm-active {
+      color: var(--text-accent);
+      font-weight: bold;
     }
-    &.cm-active {
-      background-color: var(--march-bg-accent);
+  }
+
+  .workspace-tab-header-container {
+    border: none;
+    background-color: var(--background-secondary);
+  }
+
+  .workspace-sidedock-vault-profile {
+    border: none !important;
+    & .workspace-drawer-vault-switcher {
+      color: var(--text-accent) !important;
+      background-color: var(--background-primary);
     }
   }
 }

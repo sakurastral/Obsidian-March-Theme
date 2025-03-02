@@ -43,8 +43,9 @@
 
     .markdown-source-view.mod-cm6.is-live-preview {
       .HyperMD-quote {
-        padding: calc(var(--blockquote-padding) * 2) var(--blockquote-padding) var(--blockquote-padding) 0;
+        padding: calc(var(--blockquote-padding) * 2) var(--blockquote-padding) 0 0;
         + .HyperMD-quote {
+          padding: 0;
           .cm-formatting.cm-formatting-quote.cm-quote {
             &:before {
               @extend %blockquotes-no-icon-nested;

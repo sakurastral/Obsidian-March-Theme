@@ -20,7 +20,7 @@
 
     --calendar-color-workday-text: var(--text-normal);
     --calendar-color-workday-bg: transparent;
-    --calendar-color-holiday-text: rgb(var(--color-red-rgb));
+    --calendar-color-holiday-text: var(--color-red);
     --calendar-color-holiday-bg: hsla(var(--interactive-accent-hsl), 0.1);
     --calendar-color-accent-text: var(--text-accent);
     --calendar-color-hover-text: var(--text-normal);
