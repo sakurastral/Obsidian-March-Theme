@@ -5,12 +5,12 @@
   --tab-accent: var(--text-muted);
   --tab-accent-hover: var(--text-accent);
   --tab-accent-bg: var(--background-primary);
-  --tab-accent-bg-hover: var(--background-secondary);
+  --tab-accent-bg-hover: var(--background-primary);
   --tab-accent-border: var(--background-primary-alt);
   --tab-accent-active: var(--text-accent);
   --tab-accent-active-hover: var(--text-accent);
   --tab-accent-active-bg: var(--background-primary);
-  --tab-accent-active-bg-hover: var(--background-secondary);
+  --tab-accent-active-bg-hover: var(--background-primary);
   --tab-accent-border-active: var(--background-primary-alt);
   .mod-root .workspace-tab-header {
     &::before,
@@ -82,7 +82,7 @@
 
 /** enable-tab-shrink-pinned-tab is inspired from https://forum.obsidian.md/t/shrink-the-size-of-pinned-tabs/71914 */
 .enable-tab-shrink-pinned-tab .workspace-tab-header:has(.mod-pinned) {
-  max-width: 45px !important;
+  max-width: 3.125rem !important;
 
   --tab-accent: var(--tab-accent-active);
 
