@@ -43,12 +43,16 @@
 /** Dot Background is adapted from https://forum.obsidian.md/t/style-grid-background-and-dotted-background/90681 */
 .enable-codeblock-bg {
   & .HyperMD-codeblock.cm-line {
-    --codeblock-dot-color: var(--background-secondary);
+    --codeblock-dot-color: var(--background-primary-alt);
     background-image: radial-gradient(circle, var(--codeblock-dot-color) 1px, var(--background-primary) 1px);
-    background-size: 6px 6px;
+    background-size: 10px 10px;
     background-position: center center;
     &:hover {
-      border: 2px solid var(--text-accent);
+      border: 1px solid var(--text-accent);
+      --codeblock-dot-color: transparent;
+    }
+    .code-block-flair {
+      top: 0;
     }
   }
 }
