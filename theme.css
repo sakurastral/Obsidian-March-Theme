@@ -815,7 +815,7 @@ settings:
   border-bottom: none !important;
 }
 .enable-custom-layout-style-01 .workspace-ribbon.mod-left.is-collapsed {
-  background-color: none;
+  background-color: var(--background-secondary);
 }
 .enable-custom-layout-style-01 .workspace-ribbon .sidebar-toggle-button .clickable-icon {
   background-color: var(--background-primary);
@@ -878,6 +878,13 @@ settings:
 .enable-custom-layout-style-01 .workspace-sidedock-vault-profile .workspace-drawer-vault-switcher {
   color: var(--text-accent) !important;
   background-color: var(--background-primary);
+}
+.enable-custom-layout-style-01 .workspace-split {
+  padding: 0 0.5rem 1.5rem 0.5rem;
+  background: var(--background-secondary);
+}
+.enable-custom-layout-style-01 .workspace-split .view-content {
+  border-radius: 0 0 10px 10px;
 }
 
 /* ========================================================================== */

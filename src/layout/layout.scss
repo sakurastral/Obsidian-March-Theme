@@ -34,7 +34,7 @@
         border-bottom: none !important;
       }
       &.is-collapsed {
-        background-color: none;
+        background-color: var(--background-secondary);
       }
     }
 
@@ -114,6 +114,13 @@
     & .workspace-drawer-vault-switcher {
       color: var(--text-accent) !important;
       background-color: var(--background-primary);
+    }
+  }
+  .workspace-split {
+    padding: 0 0.5rem 1.5rem 0.5rem;
+    background: var(--background-secondary);
+    .view-content {
+      border-radius: 0 0 10px 10px;
     }
   }
 }
