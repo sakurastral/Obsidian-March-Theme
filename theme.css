@@ -267,7 +267,7 @@ settings:
         title: Enable Styled Icon
         description: Toggle to turn on/off function.
         type: class-toggle
-        default: true
+        default: false
 
     - 
         id: heading-tags
@@ -2273,7 +2273,7 @@ settings:
 /** Styled links is inspired from @subframe7536/obsidian-theme-maple (https://github.com/subframe7536/obsidian-theme-maple) and @kepano/obsidian-minimal(https://github.com/kepano/obsidian-minimal) */
 .enable-styled-links {
   --link-decoration: underline;
-  --link-decoration-thickness: 1px;
+  --link-decoration-thickness: 2px;
   --link-internal-color: var(--link-color);
   --link-internal-color-hover-bg: transparent;
   --link-footnote-color: rgb(var(--color-purple-rgb));
@@ -2303,7 +2303,7 @@ settings:
 .enable-styled-links.styled-link-external-style :is(.markdown-source-view, .markdown-preview-view, .metadata-content) :is(.cm-link:not(.cm-hmd-footnote, .cm-escape), .cm-url) > .cm-underline:hover:not(.cm-escape + .cm-link .cm-underline) {
   color: var(--link-external-color);
   text-decoration: var(--link-decoration) var(--link-decoration-thickness) var(--link-external-decoration) var(--link-external-color);
-  text-underline-offset: var(--size-2-1);
+  text-underline-offset: 0.4rem;
 }
 .enable-styled-links.styled-link-add-external-icon :is(.markdown-source-view, .markdown-preview-view, .metadata-content) a.external-link:not(.cm-escape + .cm-link .cm-underline),
 .enable-styled-links.styled-link-add-external-icon :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .external-link:not(.cm-escape + .cm-link .cm-underline),
@@ -2346,7 +2346,7 @@ settings:
 .enable-styled-links.styled-link-internal-style :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .cm-hmd-internal-link > .cm-underline:hover {
   color: var(--link-internal-color);
   text-decoration: var(--link-decoration) var(--link-decoration-thickness) var(--link-internal-decoration) var(--link-internal-color);
-  text-underline-offset: var(--size-2-1);
+  text-underline-offset: 0.4rem;
 }
 .enable-styled-links.styled-link-add-internal-icon .markdown-source-view .internal-link::before,
 .enable-styled-links.styled-link-add-internal-icon .markdown-source-view a.internal-link:not(.is-unresolved)::before,
@@ -3251,4 +3251,9 @@ settings:
   padding-left: var(--size-2-1);
   margin-left: var(--size-4-4);
   margin-top: 0;
+}
+
+.kanban-plugin__item-title-wrapper {
+  border: 1px double var(--march-accent);
+  border-radius: 10px;
 }
