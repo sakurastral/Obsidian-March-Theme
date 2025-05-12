@@ -6,7 +6,7 @@
   $links-icon-size: calc(var(--font-text-size) - var(--size-2-1));
   $link-hover-opacity: 0.07;
   --link-decoration: underline; // Resolved link text decoration
-  --link-decoration-thickness: 1px; // Resolved link text decoration thickness
+  --link-decoration-thickness: 2px; // Resolved link text decoration thickness
 
   $link-unresolved-bg-color: var(--march-light-accent);
   --link-internal-color: var(--link-color);
@@ -36,7 +36,7 @@
     &:hover {
       color: var(--link-external-color);
       text-decoration: var(--link-decoration) var(--link-decoration-thickness) var(--link-external-decoration) var(--link-external-color);
-      text-underline-offset: var(--size-2-1);
+      text-underline-offset: 0.4rem;
     }
   }
   %link-icon-external {
@@ -98,7 +98,7 @@
     &:hover {
       color: var(--link-internal-color);
       text-decoration: var(--link-decoration) var(--link-decoration-thickness) var(--link-internal-decoration) var(--link-internal-color);
-      text-underline-offset: var(--size-2-1);
+      text-underline-offset: 0.4rem;
     }
   }
   %link-icon-internal {
