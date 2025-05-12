@@ -2792,19 +2792,17 @@ settings:
 /* ========================================================================== */
 .enable-styled-table {
   --table-background: var(--march-bg-accent);
-  --table-column-alt-background: transparent;
-  --table-border-color: --table-column-alt-background;
+  --table-column-alt-background: var(--march-bg-accent);
+  --table-border-color: var(--march-accent);
   --table-header-background: var(--march-bg-accent);
   --table-header-background-hover: var(--march-bg-accent);
   --table-header-color: var(--march-accent);
 }
 .enable-styled-table .markdown-rendered th,
 .enable-styled-table .markdown-rendered td {
-  border: var(--table-border-width) solid var(--background-primary);
-}
-.enable-styled-table .markdown-rendered th:hover,
-.enable-styled-table .markdown-rendered td:hover {
-  background-color: var(--background-primary);
+  border-bottom: var(--table-border-width) solid var(--table-border-color);
+  border-left: none;
+  border-right: none;
 }
 
 /** Rounded Corner is inspired from FireIsGood (https://discord.com/channels/686053708261228577/702656734631821413/1112164539975340032) */

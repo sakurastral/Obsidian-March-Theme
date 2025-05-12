@@ -4,18 +4,17 @@
 @use '../variables/colors.scss';
 .enable-styled-table {
   --table-background: var(--march-bg-accent);
-  --table-column-alt-background: transparent;
-  --table-border-color: --table-column-alt-background;
+  --table-column-alt-background: var(--march-bg-accent);
+  --table-border-color: var(--march-accent);
   --table-header-background: var(--march-bg-accent);
   --table-header-background-hover: var(--march-bg-accent);
   --table-header-color: var(--march-accent);
   .markdown-rendered {
     th,
     td {
-      border: var(--table-border-width) solid var(--background-primary);
-      &:hover {
-        background-color: var(--background-primary);
-      }
+      border-bottom: var(--table-border-width) solid var(--table-border-color);
+      border-left: none;
+      border-right: none;
     }
   }
 }
