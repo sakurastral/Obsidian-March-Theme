@@ -1000,14 +1000,13 @@ settings:
   --tab-accent: var(--tab-accent-active);
 }
 .enable-tab-shrink-pinned-tab .workspace-tab-header:has(.mod-pinned) .workspace-tab-header-inner-title {
-  display: none;
+  max-width: 3rem;
 }
 .enable-tab-shrink-pinned-tab .workspace-tab-header:has(.mod-pinned) .mod-pinned {
-  display: none;
+  opacity: 60%;
 }
 .enable-tab-shrink-pinned-tab .workspace-tab-header:has(.mod-pinned):hover .mod-pinned {
-  display: flex;
-  flex-direction: column;
+  opacity: 100%;
 }
 
 .enable-tab-hover-show-full-title {
@@ -2544,6 +2543,15 @@ settings:
 /* ========================================================================== */
 /*                              Editor - Headings                             */
 /* ========================================================================== */
+body {
+  --h1-size: 2.4rem;
+  --h2-size: 2rem;
+  --h3-size: 1.6rem;
+  --h4-size: 1.4rem;
+  --h5-size: 1.2rem;
+  --h6-size: 1rem;
+}
+
 .enable-styled-headings {
   /** styled-headings-indicator is inspired from @deathau/obsidian-snippets (https://github.com/deathau/obsidian-snippets/blob/main/clutter-free-headings.css) */
 }

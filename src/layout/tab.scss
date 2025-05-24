@@ -85,17 +85,15 @@
   max-width: 3.125rem !important;
 
   --tab-accent: var(--tab-accent-active);
-
   & .workspace-tab-header-inner-title {
-    display: none;
+    max-width: 3rem;
   }
   & .mod-pinned {
-    display: none;
+    opacity: 60%;
   }
   &:hover {
     & .mod-pinned {
-      display: flex;
-      flex-direction: column;
+      opacity: 100%;
     }
   }
 }
