@@ -1,35 +1,10 @@
 /* ========================================================================== */
 /*                               Editor - Table                               */
 /* ========================================================================== */
-@use '../variables/colors.scss';
-.enable-styled-table {
-  --table-background: var(--march-bg-accent);
-  --table-column-alt-background: var(--march-bg-accent);
-  --table-border-color: var(--march-accent);
+
+body {
   --table-header-background: var(--march-bg-accent);
-  --table-header-background-hover: var(--march-bg-accent);
+  --table-header-background-hover: var(--table-header-background);
   --table-header-color: var(--march-accent);
-  .markdown-rendered {
-    th,
-    td {
-      border-bottom: var(--table-border-width) solid var(--table-border-color);
-      border-left: none;
-      border-right: none;
-    }
-  }
-}
-/** Rounded Corner is inspired from FireIsGood (https://discord.com/channels/686053708261228577/702656734631821413/1112164539975340032) */
-.styled-table-rounded {
-  .markdown-rendered th:first-of-type {
-    border-top-left-radius: 8px;
-  }
-  .markdown-rendered th:last-of-type {
-    border-top-right-radius: 8px;
-  }
-  .markdown-rendered tr:last-of-type td:first-of-type {
-    border-bottom-left-radius: 8px;
-  }
-  .markdown-rendered tr:last-of-type td:last-of-type {
-    border-bottom-right-radius: 8px;
-  }
+  --table-border-color: var(--march-50-accent);
 }

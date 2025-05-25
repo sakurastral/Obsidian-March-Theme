@@ -1,6 +1,5 @@
 @use 'settings/main.scss';
 
-@use 'variables/icons.scss';
 @use 'variables/colors.scss';
 
 @use 'layout/color-scheme.scss';
@@ -17,7 +16,6 @@
 @use 'editor/checkbox.scss';
 @use 'editor/links.scss';
 @use 'editor/heading.scss';
-@use 'editor/tag.scss';
 @use 'editor/table.scss';
 
 @use 'plugins/file-explorer.scss';

@@ -2,119 +2,75 @@
 /*                              Editor - Headings                             */
 /* ========================================================================== */
 body {
-  --h1-size: 2.4rem;
-  --h2-size: 2rem;
-  --h3-size: 1.6rem;
-  --h4-size: 1.4rem;
-  --h5-size: 1.2rem;
-  --h6-size: 1rem;
+  --h1-size: calc(var(--font-text-size) * 2.4);
+  --h2-size: calc(var(--font-text-size) * 2);
+  --h3-size: calc(var(--font-text-size) * 1.6);
+  --h4-size: calc(var(--font-text-size) * 1.4);
+  --h5-size: calc(var(--font-text-size) * 1.2);
+  --h6-size: calc(var(--font-text-size) * 1);
+
+  --h1-color: var(--color-red);
+  --h2-color: var(--color-orange);
+  --h3-color: var(--color-green);
+  --h4-color: var(--color-cyan);
+  --h5-color: var(--color-blue);
+  --h6-color: var(--color-purple);
+
+  --march-h1-indicator-color: var(--text-faint);
+  --march-h2-indicator-color: var(--text-faint);
+  --march-h3-indicator-color: var(--text-faint);
+  --march-h4-indicator-color: var(--text-faint);
+  --march-h5-indicator-color: var(--text-faint);
+  --march-h6-indicator-color: var(--text-faint);
+
+  --march-h1-indicator-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heading1-icon lucide-heading-1"><path d="M4 12h8"/><path d="M4 18V6"/><path d="M12 18V6"/><path d="m17 12 3-2v8"/></svg>');
+  --march-h2-indicator-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heading2-icon lucide-heading-2"><path d="M4 12h8"/><path d="M4 18V6"/><path d="M12 18V6"/><path d="M21 18h-4c0-4 4-3 4-6 0-1.5-2-2.5-4-1"/></svg>');
+  --march-h3-indicator-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heading3-icon lucide-heading-3"><path d="M4 12h8"/><path d="M4 18V6"/><path d="M12 18V6"/><path d="M17.5 10.5c1.7-1 3.5 0 3.5 1.5a2 2 0 0 1-2 2"/><path d="M17 17.5c2 1.5 4 .3 4-1.5a2 2 0 0 0-2-2"/></svg>');
+  --march-h4-indicator-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heading4-icon lucide-heading-4"><path d="M12 18V6"/><path d="M17 10v3a1 1 0 0 0 1 1h3"/><path d="M21 10v8"/><path d="M4 12h8"/><path d="M4 18V6"/></svg>');
+  --march-h5-indicator-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heading5-icon lucide-heading-5"><path d="M4 12h8"/><path d="M4 18V6"/><path d="M12 18V6"/><path d="M17 13v-3h4"/><path d="M17 17.7c.4.2.8.3 1.3.3 1.5 0 2.7-1.1 2.7-2.5S19.8 13 18.3 13H17"/></svg>');
+  --march-h6-indicator-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heading6-icon lucide-heading-6"><path d="M4 12h8"/><path d="M4 18V6"/><path d="M12 18V6"/><circle cx="19" cy="16" r="2"/><path d="M20 10c-2 2-3 3.5-3 6"/></svg>');
 }
-.enable-styled-headings {
-  &.styled-headings-rainbow {
-    --h1-color: var(--color-red);
-    --h2-color: var(--color-orange);
-    --h3-color: var(--color-green);
-    --h4-color: var(--color-cyan);
-    --h5-color: var(--color-blue);
-    --h6-color: var(--color-purple);
+
+body {
+  .cm-s-obsidian .cm-line.HyperMD-header + .cm-line:not(.HyperMD-header):has(> br:only-child) + .cm-line.HyperMD-header {
+    padding-top: var(--p-spacing);
   }
-  &.styled-headings-bg {
-    :is(.markdown-source-view, .markdown-preview-view, .metadata-content) {
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6,
-      .HyperMD-header {
-        background-color: color-mix(in srgb, currentColor 10%, transparent);
-      }
-    }
-    .cm-s-obsidian .cm-line.HyperMD-header {
-      padding-top: 0;
-    }
-  }
-  &.styled-headings-rounded {
-    :is(.markdown-source-view, .markdown-preview-view, .metadata-content) {
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6,
-      .HyperMD-header {
-        border-radius: var(--radius-m);
-      }
-    }
-  }
-  &.styled-headings-underline {
-    :is(.markdown-source-view, .markdown-preview-view, .metadata-content) {
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6,
-      .HyperMD-header {
-        border-bottom: 2px solid currentColor;
-      }
-    }
-  }
-  /** styled-headings-indicator is inspired from @deathau/obsidian-snippets (https://github.com/deathau/obsidian-snippets/blob/main/clutter-free-headings.css) */
-  %styled-headings-indicator-size {
-    $heading-indicator-font-size: 0.6rem;
-    display: inline-block;
-    white-space: nowrap;
-    word-wrap: none;
-    width: 0;
-    overflow: visible;
-    font-size: $heading-indicator-font-size;
-    color: currentColor;
-    padding-right: $heading-indicator-font-size * 1.7;
-  }
-  &.styled-headings-indicator {
-    .HyperMD-header:not(.cm-active) span.cm-header {
-      & ~ span.cm-header,
-      &.cm-link,
-      &.cm-hmd-internal-link {
-        &::before {
-          padding-right: 0;
-        }
-      }
+  $list: (1, 2, 3, 4, 5, 6);
+  @each $item in $list {
+    .HyperMD-header-#{$item},
+    h-#{$item} {
       &::before {
-        @extend %styled-headings-indicator-size;
+        content: 'H0';
+        -webkit-mask-image: var(--march-h#{$item}-indicator-icon);
+        mask-image: var(--march-h#{$item}-indicator-icon);
+        -webkit-mask-size: 95%;
+        mask-size: 95%;
+        -webkit-mask-repeat-x: no-repeat;
+        -webkit-mask-repeat-y: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position-x: 52%;
+        -webkit-mask-position-y: 52%;
+        mask-position: 52%;
+        background-color: var(--march-h#{$item}-indicator-color);
+        color: var(--march-h#{$item}-indicator-color);
+        position: absolute;
+        top: 50% !important;
+        left: -20px;
+        font-size: var(--font-ui-smaller);
+        margin-right: 0.5rem;
       }
-    }
-    .HyperMD-header:not(.cm-active):not(.cm-link) {
-      $list: (1, 2, 3, 4, 5, 6);
-      @each $item in $list {
-        span.cm-header-#{$item} {
-          ~ span.cm-header-#{$item},
-          &.cm-link,
-          &.cm-hmd-internal-link {
-            &::before {
-              content: '';
-              margin-left: 0px;
-            }
-          }
-          &::before {
-            content: 'H#{$item}';
-            margin-left: 5px;
-          }
+      &:has(.is-collapsed) {
+        --march-h#{$item}-indicator-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>');
+      }
+      &:hover {
+        --march-h#{$item}-indicator-color: var(--h#{$item}-color);
+        --march-h#{$item}-indicator-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down-icon lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>');
+        &:has(.is-collapsed) {
+          --march-h#{$item}-indicator-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>');
         }
       }
-    }
-    $list: (1, 2, 3, 4, 5, 6);
-    @each $item in $list {
-      .markdown-source-view,
-      .markdown-preview-view {
-        h#{$item} {
-          &::before {
-            content: 'H#{$item}';
-            margin-left: 5px;
-            @extend %styled-headings-indicator-size;
-          }
-        }
+      & .collapse-icon {
+        opacity: 0 !important;
       }
     }
   }

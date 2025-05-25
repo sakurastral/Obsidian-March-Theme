@@ -1,161 +1,31 @@
 /* ========================================================================== */
 /*                              Editor - Callout                              */
 /* ========================================================================== */
-.enable-styled-callout {
-  --styled-callout-border-width: 0.125rem;
-  --styled-callout-radius: 0.625rem;
-  --styled-callout-border-opacity: 0.5;
-  --styled-callout-background-color: transparent;
-  --styled-callout-padding: 0.3125rem;
-  --styled-callout-margin: 1rem;
-  --callout-blend-mode: normal;
-  // @param var(--callout-color)
-  // @param var(--callout-border-width)
-  // @param var(--callout-radius)
-  // @param var(--callout-border-opacity)
-}
 
-/** callout-style-001 (Outline Filled) is inspired from @spacewitches/Obsidian (https://github.com/spacewitches/Obsidian/blob/e6733131f09c7ae3f37d6e11498f7ad7c00bb8d5/Minimal%20Theme/calloutsOutline.css) and AnuPpuccin Theme (https://github.com/AnubisNekhet/AnuPpuccin) (https://www.buymeacoffee.com/anubisnekhet) */
+/** 
+ * This is inspired from 
+ * @spacewitches/Obsidian (https://github.com/spacewitches/Obsidian/blob/e6733131f09c7ae3f37d6e11498f7ad7c00bb8d5/Minimal%20Theme/calloutsOutline.css) 
+ * and AnuPpuccin Theme (https://github.com/AnubisNekhet/AnuPpuccin) (https://www.buymeacoffee.com/anubisnekhet).
+ */
 
-.enable-styled-callout.callout-style-001 .callout {
-  --callout-border-width: var(--styled-callout-border-width);
-  --callout-radius: var(--styled-callout-radius);
-  --callout-border-opacity: var(--styled-callout-border-opacity);
-  background-color: var(--styled-callout-background-color);
-  padding-right: var(--styled-callout-padding);
-  margin: var(--styled-callout-margin) 0;
+body {
+  --callout-border-width: 0.125rem;
+  --callout-border-opacity: 0.5;
+  --march-callout-border-style: dashed;
+  --callout-radius: 0.625rem;
 
-  // hide white space in collapsed callouts
-  &.is-collapsible.is-collapsed {
-    padding-bottom: 0;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    border-bottom: none;
-  }
+  --callout-padding: 0rem;
+  --callout-title-padding: 0.8rem;
+  --callout-content-padding: 0.8rem;
 
-  // style callout title
-  .callout-title {
-    background-color: rgba(var(--callout-color), 0.1);
-    margin-top: -14px;
-    margin-left: -26px;
-    margin-right: -5px;
-    width: inherit;
-    border-bottom: 1px dashed rgb(var(--callout-color));
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    padding: 0.2rem 0.5em;
-    letter-spacing: 0.05em;
-  }
-
-  // center nested callout
-  .callout-content {
-    padding-right: 15px;
-    margin-left: -5px;
-  }
-}
-
-.enable-styled-callout.callout-style-002 .callout {
-  $callout-002-border: 2px solid rgba(var(--callout-color), var(--styled-callout-border-opacity));
-
-  --styled-callout-background-color: rgba(var(--callout-color), 0.1);
-  --callout-border-width: var(--styled-callout-border-width);
-  --callout-radius: var(--styled-callout-radius);
-  --callout-border-opacity: var(--styled-callout-border-opacity);
-  background-color: var(--styled-callout-background-color);
-  padding-right: var(--styled-callout-padding);
-  margin: var(--styled-callout-margin) 0;
-  padding-bottom: 0;
-
-  // Nested Callouts
-  &.callout:has(.callout-content):not(.is-collapsed) {
-    .callout-title {
-      border-bottom: $callout-002-border;
-    }
-  }
-
-  // Collapsed callouts
-  &.is-collapsible {
-    padding-bottom: 0px;
-
-    .callout-title {
-      border-bottom-style: $callout-002-border;
-    }
-
-    &.is-collapsed {
+  .callout:has(.callout-content) {
+    .is-collapsed {
       border-bottom: none;
-      border-bottom-left-radius: 0px;
-      border-bottom-right-radius: 0px;
     }
-  }
-
-  // Callout title
-  .callout-title {
-    margin-top: -14px;
-    margin-left: -26px;
-    margin-right: -5px;
-    width: inherit;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    padding: 0.2rem 0.5em;
-    letter-spacing: 0.05em;
-  }
-
-  // center nested callout
-  .callout-content {
-    padding-right: 15px;
-    margin-left: -5px;
-  }
-}
-
-.enable-styled-callout.callout-style-003 .callout {
-  $callout-003-border: 2px solid rgba(var(--callout-color), var(--styled-callout-border-opacity));
-
-  --callout-border-width: var(--styled-callout-border-width);
-  --callout-radius: var(--styled-callout-radius);
-  --callout-border-opacity: var(--styled-callout-border-opacity);
-  background-color: var(--styled-callout-background-color);
-  padding-right: var(--styled-callout-padding);
-  margin: var(--styled-callout-margin) 0;
-  padding-bottom: 0px;
-
-  // Nested Callouts
-  &.callout:has(.callout-content):not(.is-collapsed) {
-    .callout-title {
-      border-bottom: $callout-003-border;
+    &:not(.is-collapsed) {
+      .callout-title {
+        border-bottom: var(--callout-border-width) var(--march-callout-border-style) rgb(var(--callout-color), var(--callout-border-opacity));
+      }
     }
-  }
-
-  // Collapsed callouts
-  &.is-collapsible {
-    padding-bottom: 0px;
-
-    .callout-title {
-      border-bottom: $callout-003-border;
-    }
-
-    &.is-collapsed {
-      border-bottom: none;
-      border-bottom-left-radius: 0px;
-      border-bottom-right-radius: 0px;
-    }
-  }
-
-  // Callout title
-  .callout-title {
-    margin-top: -14px;
-    margin-left: -26px;
-    margin-right: -5px;
-    width: inherit;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    padding: 0.2rem 0.5em;
-    letter-spacing: 0.05em;
-    background-color: rgba(var(--callout-color), 0.1);
-  }
-
-  // center nested callout
-  .callout-content {
-    padding-right: 15px;
-    margin-left: -5px;
   }
 }

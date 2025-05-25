@@ -1,58 +1,59 @@
 /* ========================================================================== */
 /*                             Editor - Codeblock                             */
 /* ========================================================================== */
-/** Adding line numbers in code blocks is inspired from @AnubisNekhet/AnuPpuccin (https://github.com/AnubisNekhet/AnuPpuccin) (https://www.buymeacoffee.com/anubisnekhet) */
-.enable-codeblock-line-numbers .HyperMD-codeblock-begin {
-  counter-reset: line-numbers;
-}
 
-.enable-codeblock-line-numbers .HyperMD-codeblock.cm-line:not(.HyperMD-codeblock-begin):not(.HyperMD-codeblock-end) {
-  padding-left: 3rem;
-  position: relative;
-  &::before {
-    align-items: flex-end;
-    border-right: 1px solid var(--background-modifier-border);
-    color: var(--text-faint);
-    content: counter(line-numbers);
-    counter-increment: line-numbers;
-    display: table-caption;
-    font-size: 0.8em;
-    height: 100%;
-    justify-content: flex-end;
-    left: 0;
-    padding-right: 0.5em;
-    padding-top: 1px;
-    position: absolute;
-    text-align: right;
-    width: 3em;
+// Adding line numbers in code blocks is adapted from @AnubisNekhet/AnuPpuccin (https://github.com/AnubisNekhet/AnuPpuccin) (https://www.buymeacoffee.com/anubisnekhet).
+// Dot Background is inspired from https://forum.obsidian.md/t/style-grid-background-and-dotted-background/90681.
+
+body {
+  --march-codeblock-line-number-color: var(--text-faint);
+
+  .HyperMD-codeblock-begin {
+    counter-reset: line-numbers;
+  }
+  .HyperMD-codeblock {
+    .cm-foldPlaceholder::before {
+      display: none;
+    }
+    &.cm-line:not(.HyperMD-codeblock-begin):not(.HyperMD-codeblock-end) {
+      padding-left: 3rem;
+      position: relative;
+      &::before {
+        align-items: flex-end;
+        color: var(--march-codeblock-line-number-color);
+        content: counter(line-numbers);
+        counter-increment: line-numbers;
+        display: table-caption;
+        font-size: 0.8em;
+        height: 100%;
+        justify-content: flex-end;
+        left: 0;
+        padding-right: 0.5em;
+        padding-top: 1px;
+        position: absolute;
+        text-align: right;
+        width: 3em;
+      }
+    }
+  }
+  .codeblock-hide-indent-lines .markdown-source-view.mod-cm6 .HyperMD-codeblock .cm-indent::before {
+    border-right: none;
+  }
+  .HyperMD-codeblock.cm-line.cm-active:not(.HyperMD-codeblock-begin):not(.HyperMD-codeblock-end)::before {
+    color: var(--march-accent);
   }
 }
 
-.enable-codeblock-line-numbers.codeblock-hide-indent-lines .markdown-source-view.mod-cm6 .HyperMD-codeblock .cm-indent::before {
-  border-right: none;
-}
-
-.enable-codeblock-line-numbers .HyperMD-codeblock.cm-line.cm-active:not(.HyperMD-codeblock-begin):not(.HyperMD-codeblock-end)::before {
-  color: var(--march-accent);
-}
-
-.enable-codeblock-line-numbers .HyperMD-codeblock .cm-foldPlaceholder::before {
-  display: none;
-}
-
-/** Dot Background is adapted from https://forum.obsidian.md/t/style-grid-background-and-dotted-background/90681 */
-.enable-codeblock-bg {
-  & .HyperMD-codeblock.cm-line {
-    --codeblock-dot-color: var(--background-primary-alt);
-    background-image: radial-gradient(circle, var(--codeblock-dot-color) 1px, var(--background-primary) 1px);
-    background-size: 10px 10px;
-    background-position: center center;
-    &:hover {
-      border: 1px solid var(--text-accent);
-      --codeblock-dot-color: transparent;
-    }
+body {
+  .cm-inline-code {
+    --code-background: var(--background-primary-alt);
+  }
+  .HyperMD-codeblock.cm-line {
+    --code-background: var(--background-primary-alt);
     .code-block-flair {
       top: 0;
+      right: 0;
+      border-radius: 0 0 0 var(--code-radius); //px
     }
   }
 }

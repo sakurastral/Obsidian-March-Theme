@@ -1,60 +1,29 @@
 /* ========================================================================== */
 /*                               Editor - Links                               */
 /* ========================================================================== */
-/** Styled links is inspired from @subframe7536/obsidian-theme-maple (https://github.com/subframe7536/obsidian-theme-maple) and @kepano/obsidian-minimal(https://github.com/kepano/obsidian-minimal) */
-.enable-styled-links {
-  $links-icon-size: calc(var(--font-text-size) - var(--size-2-1));
-  $link-hover-opacity: 0.07;
-  --link-decoration: underline; // Resolved link text decoration
-  --link-decoration-thickness: 2px; // Resolved link text decoration thickness
 
-  $link-unresolved-bg-color: var(--march-light-accent);
-  --link-internal-color: var(--link-color);
-  --link-internal-color-hover-bg: transparent;
+/** 
+ * Styled links is inspired from @subframe7536/obsidian-theme-maple (https://github.com/subframe7536/obsidian-theme-maple) and @kepano/obsidian-minimal(https://github.com/kepano/obsidian-minimal)
+ */
 
-  &.styled-link-internal-style {
-    --link-internal-decoration: dashed;
-    --link-internal-color: var(--march-accent);
-    --link-internal-color-hover-bg: var(--march-light-accent);
-    --link-unresolved-opacity: 0.3; // Unresolved link opacity
-    --link-unresolved-decoration-style: dashed; // Unresolved link text decoration style
-  }
+body {
+  --march-link-icon-size: calc(var(--font-text-size) - 2px);
 
-  &.styled-link-external-style {
-    --link-external-color: var(--march-accent); // External link text color
-    --link-external-color-hover: var(--march-light-accent); // External link text color (hover)
-    --link-external-decoration: dashed; // External link text decoration
-  }
+  --march-link-border-radius: 0.625rem;
 
-  --link-footnote-color: rgb(var(--color-purple-rgb));
+  --march-internal-link-decoration-style: dashed;
+  --march-external-link-decoration-style: dashed;
 
-  /* ============================ Style - External ============================ */
-  %link-style-external {
-    color: var(--link-external-color);
-    border-radius: var(--radius-s);
-    text-decoration: none;
-    &:hover {
-      color: var(--link-external-color);
-      text-decoration: var(--link-decoration) var(--link-decoration-thickness) var(--link-external-decoration) var(--link-external-color);
-      text-underline-offset: 0.4rem;
-    }
-  }
-  %link-icon-external {
-    background-image: none;
-    &::before {
-      content: '';
-      display: inline-block;
-      width: $links-icon-size;
-      height: $links-icon-size;
-      margin-left: var(--size-2-1);
-      margin-right: var(--size-2-1);
-      background-color: var(--link-external-color);
-      background-image: none;
-      -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>');
-      mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>');
-    }
-  }
-  // Remove defualt hover style
+  --march-internal-link-icon-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-text-icon lucide-file-text"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>');
+  --march-external-link-icon-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>');
+
+  --link-color: rgb(var(--color-pink-rgb), 1);
+  --march-internal-link-background-color: rgb(var(--color-pink-rgb), 0.2);
+  --link-external-color: rgb(var(--color-yellow-rgb), 1);
+  --march-external-link-background-color: rgb(var(--color-yellow-rgb), 0.2);
+}
+
+body {
   span.cm-link,
   .cm-url:not(.cm-string) {
     &:hover {
@@ -68,114 +37,106 @@
   span.external-link {
     display: none;
   }
-  &.styled-link-add-external-icon {
-    :is(.markdown-source-view, .markdown-preview-view, .metadata-content) {
-      a.external-link,
-      .external-link,
-      :is(.cm-link:not(.cm-hmd-footnote, .cm-escape), .cm-url) > .cm-underline {
-        &:not(.cm-escape + .cm-link .cm-underline) {
-          @extend %link-icon-external;
-        }
-      }
-    }
-  }
-  &.styled-link-external-style {
-    :is(.markdown-source-view, .markdown-preview-view, .metadata-content) {
-      a.external-link,
-      .external-link,
-      :is(.cm-link:not(.cm-hmd-footnote, .cm-escape), .cm-url) > .cm-underline {
-        &:not(.cm-escape + .cm-link .cm-underline) {
-          @extend %link-style-external;
-        }
-      }
-    }
-  }
-  /* ============================ Style - Internal ============================ */
-  %link-style-internal {
-    color: var(--link-internal-color);
-    border-radius: var(--radius-s);
-    text-decoration: none;
-    &:hover {
-      color: var(--link-internal-color);
-      text-decoration: var(--link-decoration) var(--link-decoration-thickness) var(--link-internal-decoration) var(--link-internal-color);
-      text-underline-offset: 0.4rem;
-    }
-  }
-  %link-icon-internal {
-    &::before {
-      content: '';
-      display: inline-block;
-      width: $links-icon-size;
-      height: $links-icon-size;
-      margin-left: var(--size-2-1);
-      margin-right: var(--size-2-1);
-      background-color: var(--link-internal-color);
-      -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scroll-text"><path d="M15 12h-5"/><path d="M15 8h-5"/><path d="M19 17V5a2 2 0 0 0-2-2H4"/><path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3"/></svg>');
-      mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scroll-text"><path d="M15 12h-5"/><path d="M15 8h-5"/><path d="M19 17V5a2 2 0 0 0-2-2H4"/><path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3"/></svg>');
-    }
-  }
-  &.styled-link-internal-style {
-    .markdown-source-view.mod-cm6 .is-unresolved {
-      color: var(--link-unresolved-color);
-      opacity: var(--link-unresolved-opacity);
-      &:hover {
-        text-decoration: var(--link-decoration) var(--link-decoration-thickness) var(--link-internal-decoration) var(--link-internal-color);
-        text-underline-offset: var(--size-2-1);
-      }
-    }
-    :is(.markdown-source-view, .markdown-preview-view, .metadata-content) {
-      .internal-link,
-      a.internal-link:not(.is-unresolved),
-      .cm-hmd-internal-link > .cm-underline {
-        @extend %link-style-internal;
-      }
-    }
+}
 
-    span.cm-hmd-internal-link {
+body {
+  --link-decoration: none;
+  --link-decoration-hover: none;
+
+  :is(.markdown-source-view, .markdown-preview-view, .metadata-content) {
+    .internal-link,
+    a.internal-link:not(.is-unresolved),
+    .cm-hmd-internal-link > .cm-underline {
+      background-color: var(--march-internal-link-background-color);
+      border-radius: var(--march-link-border-radius);
+      padding: 0 4.8px 0 3.2px;
       &:hover {
-        text-decoration: none;
+        color: var(--link-color);
+        text-decoration-line: underline !important;
+        text-decoration-thickness: var(--link-decoration-thickness);
+        text-decoration-style: var(--march-internal-link-decoration-style);
+        text-decoration-color: var(--link-color);
+      }
+      &::before {
+        content: '';
+        display: inline-block;
+        width: var(--march-link-icon-size);
+        height: var(--march-link-icon-size);
+        margin-left: var(--size-2-1);
+        margin-right: var(--size-2-1);
+        background-color: var(--link-color);
+        background-image: none;
+        -webkit-mask-image: var(--march-internal-link-icon-image);
+        mask-image: var(--march-internal-link-icon-image);
+        -webkit-mask-size: 100%;
+        mask-size: 100%;
+        -webkit-mask-repeat-x: no-repeat;
+        -webkit-mask-repeat-y: no-repeat;
+        mask-repeat: no-repeat;
       }
     }
   }
-  &.styled-link-add-internal-icon {
-    .markdown-source-view,
-    .markdown-preview-view,
-    .metadata-content {
-      .internal-link,
-      a.internal-link:not(.is-unresolved),
-      .cm-hmd-internal-link > .cm-underline {
-        @extend %link-icon-internal;
-      }
-    }
-  }
-  &.disable-styled-links-in-headings {
-    $list: (1, 2, 3, 4, 5, 6);
-    @each $item in $list {
-      .markdown-source-view,
-      .markdown-preview-view {
-        span.cm-header-#{$item} {
-          --link-internal-color: var(--h#{$item}-color);
-          --link-external-color: var(--h#{$item}-color);
-          --link-internal-color-rgb: (255, 255, 255);
-          --link-external-color-rgb: (255, 255, 255);
-          &.cm-hmd-internal-link > .cm-underline,
-          &:is(.cm-link:not(.cm-hmd-footnote, .cm-escape), .cm-url) > .cm-underline:not(.cm-escape + .cm-link .cm-underline) {
-            &::before {
-              display: none;
-            }
-          }
+}
+
+body {
+  --link-external-decoration: none;
+  --link-external-decoration-hover: none;
+
+  :is(.markdown-source-view, .markdown-preview-view, .metadata-content) {
+    a.external-link,
+    .external-link,
+    :is(.cm-link:not(.cm-hmd-footnote, .cm-escape), .cm-url) > .cm-underline {
+      &:not(.cm-escape + .cm-link .cm-underline) {
+        background-color: var(--march-external-link-background-color);
+        border-radius: var(--march-link-border-radius);
+        padding: 0 4.8px 0 3.2px;
+        &:hover {
+          color: var(--link-external-color);
+          text-decoration-line: underline;
+          text-decoration-thickness: var(--link-decoration-thickness);
+          text-decoration-style: var(--march-external-link-decoration-style);
+          text-decoration-color: var(--link-external-color);
         }
-        h#{$item} {
-          --link-internal-color: var(--h#{$item}-color);
-          --link-external-color: var(--h#{$item}-color);
-          --link-internal-color-rgb: (255, 255, 255);
-          --link-external-color-rgb: (255, 255, 255);
-          a.internal-link:not(.is-unresolved),
-          a.internal-link.is-unresolved,
-          a.external-link:not(.cm-escape + .cm-link .cm-underline) {
-            &::before {
-              display: none;
-            }
+        &::before {
+          content: '';
+          display: inline-block;
+          width: var(--march-link-icon-size);
+          height: var(--march-link-icon-size);
+          margin-left: var(--size-2-1);
+          margin-right: var(--size-2-1);
+          background-color: var(--link-external-color);
+          background-image: none;
+          -webkit-mask-image: var(--march-external-link-icon-image);
+          mask-image: var(--march-external-link-icon-image);
+          -webkit-mask-size: 100%;
+          mask-size: 100%;
+          -webkit-mask-repeat-x: no-repeat;
+          -webkit-mask-repeat-y: no-repeat;
+          mask-repeat: no-repeat;
+        }
+      }
+    }
+  }
+}
+
+.disable-styled-links-in-headings {
+  $list: (1, 2, 3, 4, 5, 6);
+  @each $item in $list {
+    .markdown-source-view,
+    .markdown-preview-view {
+      span.cm-header-#{$item},
+      h#{$item} {
+        --link-color: var(--h#{$item}-color);
+        --link-external-color: var(--h#{$item}-color);
+        --march-internal-link-background-color: transparent;
+        --march-external-link-background-color: transparent;
+        &.cm-hmd-internal-link > .cm-underline,
+        &:is(.cm-link:not(.cm-hmd-footnote, .cm-escape), .cm-url) > .cm-underline:not(.cm-escape + .cm-link .cm-underline),
+        a.internal-link:not(.is-unresolved),
+        a.internal-link.is-unresolved,
+        a.external-link:not(.cm-escape + .cm-link .cm-underline) {
+          &::before {
+            display: none;
           }
         }
       }

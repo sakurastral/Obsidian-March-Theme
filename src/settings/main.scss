@@ -166,126 +166,152 @@ settings:
         level: 2
         collapsed: true
     -
-        id: enable-styled-headings
-        title: Enable Styled Headings
-        description: Toggle to turn on/off function.
-        type: class-toggle
-        default: true
-    - 
-        id: heading-headings
-        title: Headings Feature
-        type: heading
-        level: 3
-        collapsed: true
+        id: h1-size
+        title: Headings 1 Font Size
+        type: variable-number
+        default: 2.4
+        format: rem
     -
-        id: styled-headings-rainbow
-        title: Enable Rainbow Colors
-        description: Toggle to turn on/off function.
-        type: class-toggle
-        default: true
+        id: h1-color
+        title: Headings 1 Font Color
+        type: variable-color
+        default: var(--color-red)
+        format: hex
     -
-        id: styled-headings-bg
-        title: Enable Background
-        description: Toggle to turn on/off function.
-        type: class-toggle
-        default: true
+        id: h1-indicator-color
+        title: Headings 1 indicator's Icon Color
+        type: variable-color
+        default: var(--text-faint)
+        format: hex
     -
-        id: styled-headings-rounded
-        title: Enable Rounded Corners
-        description: Toggle to turn on/off function.
-        type: class-toggle
-        default: true
+        id: h2-size
+        title: Headings 2 Font Size
+        type: variable-number
+        default: 2
+        format: rem
     -
-        id: styled-headings-underline
-        title: Enable Underline
-        description: Toggle to turn on/off function.
-        type: class-toggle
-        default: false
+        id: h2-color
+        title: Headings 2 Font Color
+        type: variable-color
+        default: var(--color-orange)
+        format: hex
     -
-        id: styled-headings-indicator
-        title: Enable H1 Indicators on Unactive Lines
-        description: Toggle to turn on/off function.
-        type: class-toggle
-        default: true
-    - 
+        id: h2-indicator-color
+        title: Headings 2 indicator's Icon Color
+        type: variable-color
+        default: var(--text-faint)
+        format: hex
+    -
+        id: h3-size
+        title: Headings 3 Font Size
+        type: variable-number
+        default: 1.6
+        format: rem
+    -
+        id: h3-color
+        title: Headings 3 Font Color
+        type: variable-color
+        default: var(--color-green)
+        format: hex
+    -
+        id: h3-indicator-color
+        title: Headings 3 indicator's Icon Color
+        type: variable-color
+        default: var(--text-faint)
+        format: hex
+    -
+        id: h4-size
+        title: Headings 4 Font Size
+        type: variable-number
+        default: 1.4
+        format: rem
+    -
+        id: h4-color
+        title: Headings 4 Font Color
+        type: variable-color
+        default: var(--color-cyan)
+        format: hex
+    -
+        id: h4-indicator-color
+        title: Headings 4 indicator's Icon Color
+        type: variable-color
+        default: var(--text-faint)
+        format: hex
+    -
+        id: h5-size
+        title: Headings 5 Font Size
+        type: variable-number
+        default: 1.2
+        format: rem
+    -
+        id: h5-color
+        title: Headings 5 Font Color
+        type: variable-color
+        default: var(--color-blue)
+        format: hex
+    -
+        id: h5-indicator-color
+        title: Headings 5 indicator's Icon Color
+        type: variable-color
+        default: var(--text-faint)
+        format: hex
+    -
+        id: h6-size
+        title: Headings 6 Font Size
+        type: variable-number
+        default: 1
+        format: rem
+    -
+        id: h6-color
+        title: Headings 6 Font Color
+        type: variable-color
+        default: var(--color-purple)
+        format: hex
+    -
+        id: h6-indicator-color
+        title: Headings 6 indicator's Icon Color
+        type: variable-color
+        default: var(--text-faint)
+        format: hex
+    -
         id: heading-links
         title: Links
         type: heading
         level: 2
         collapsed: true
     -
-        id: enable-styled-links
-        title: Enable Styled Links
-        description: Toggle to turn on/off function.
-        type: class-toggle
-        default: true
-    - 
-        id: heading-links-feature
-        title: Feature
-        type: heading
-        level: 3
-        collapsed: true
-    -
         id: disable-styled-links-in-headings
         title: Disable Link Style in Headings
-        description: Toggle to turn on/off function.
-        type: class-toggle
-        default: true
-    - 
-        id: heading-links-external
-        title: External Link
-        type: heading
-        level: 3
-        collapsed: true
-    -
-        id: styled-link-external-style
-        title: Enable Color Style
-        description: Toggle to turn on/off function.
-        type: class-toggle
-        default: true
-    -
-        id: styled-link-add-external-icon
-        title: Enable Styled Icon
-        description: Toggle to turn on/off function.
-        type: class-toggle
-        default: true
-    - 
-        id: heading-links-internal
-        title: Internal Link
-        type: heading
-        level: 3
-        collapsed: true
-    -
-        id: styled-link-internal-style
-        title: Enable Color Style
-        description: Toggle to turn on/off function.
-        type: class-toggle
-        default: true
-    -
-        id: styled-link-add-internal-icon
-        title: Enable Styled Icon
-        description: Toggle to turn on/off function.
         type: class-toggle
         default: false
-    
-    - 
-        id: heading-tags
-        title: Tags
-        type: heading
-        level: 2
-        collapsed: true
     -
-        id: enable-tag-click-to-edit
-        title: Enable Directly Click Tag to Edit
-        description: Toggle to turn on/off function. Click hash icon can do the default action (search tag).
-        type: class-toggle
-        default: true
+        id: link-color
+        title: Internal Link's Font Color
+        type: variable-color
+        default: rgb(var(--color-pink-rgb), 1)
+        format: rgb
+        opacity: true
     -
-        id: enable-tag-rainbow-color
-        title: Enable Rainbow Color
-        description: Toggle to turn on/off function. 
-        type: class-toggle
-        default: true
+        id: march-internal-link-background-color
+        title: Internal Link's Background Color
+        type: variable-color
+        default: rgb(var(--color-pink-rgb), 0.2)
+        format: rgb
+        opacity: true
+    -
+        id: link-external-color
+        title: External Link's Font Color
+        type: variable-color
+        default: rgb(var(--color-yellow-rgb), 1)
+        format: rgb
+        opacity: true
+    -
+        id: march-external-link-background-color
+        title: External Link's Background Color
+        type: variable-color
+        default: rgb(var(--color-yellow-rgb), 0.2)
+        format: rgb
+        opacity: true
     - 
         id: heading-checkbox
         title: Checkbox
@@ -293,15 +319,26 @@ settings:
         level: 2
         collapsed: true
     -
-        id: enable-styled-checkbox-rounded 
-        title: Enable Rounded Checkbox
-        description: Toggle to turn on/off function.
-        type: class-toggle
-        default: true
+        id: checkbox-radius
+        title: Checkbox's Radius
+        type: variable-text
+        default: 50%
     -
-        id: enable-styled-checkbox-custom 
-        title: Enable Additional Custom Status
-        description: Toggle to turn on/off function.
+        id: checklist-done-color
+        title: Checkbox's Done Status Color
+        type: variable-color
+        default: var(--march-50-accent)
+        format: hsl
+        opacity: true
+    -
+        id: march-checklist-cancel-color
+        title: Checkbox's Cancel Status Color
+        type: variable-color
+        default: var(--text-faint)
+        format: hex
+    -
+        id: march-enable-custom-icons
+        title: Enable Planned and Review's Checkbox Icon
         type: class-toggle
         default: true
     - 
@@ -311,23 +348,11 @@ settings:
         level: 2
         collapsed: true
     -
-        id: enable-codeblock-line-numbers 
-        title: Enable Line Numbers (Editing Mode)
-        description: Toggle to turn on/off function, and this only works in Editing Mode.
-        type: class-toggle
-        default: true
-    -
-        id: enable-codeblock-bg
-        title: Enable Dot Background (Editing Mode)
-        description: Toggle to turn on/off function, and this only works in Editing Mode.
-        type: class-toggle
-        default: true
-    -
-        id: codeblock-hide-indent-lines 
-        title: Hide Indent Lines (Editing Mode)
-        description: Toggle to turn on/off function, and this only works in Editing Mode.
-        type: class-toggle
-        default: true
+        id: march-codeblock-line-number-color
+        title: Codeblock's Line Number Font Color
+        type: variable-color
+        default: var(--text-faint)
+        format: hex
     - 
         id: heading-blockquotes
         title: Blockquotes
@@ -335,98 +360,30 @@ settings:
         level: 2
         collapsed: true
     -
-        id: enable-styled-blockquotes
-        title: Enable Style
-        description: Toggle to turn on/off function.
-        type: class-toggle
-        default: true
+        id: blockquote-background-color
+        title: Blockquote's Background Color
+        type: variable-color
+        default: var(--march-bg-accent)
+        format: hsl
+        opacity: true
     -
-        id: enable-styled-blockquotes-add-icon
-        title: Add a Quotation Mark
-        description: Toggle to turn on/off function.
-        type: class-toggle
-        default: true
+        id: blockquote-border-color
+        title: Blockquote's Left Border Color
+        type: variable-color
+        default: var(--march-accent)
+        format: hsl
     -
-        id: enable-styled-blockquotes-rounded-corner
-        title: Enable Rounded Corner
-        description: Toggle to turn on/off function.
-        type: class-toggle
-        default: false
-
+        id: blockquote-border-thickness
+        title: Blockquote's Left Border Thickness
+        type: variable-number
+        default: 3
+        format: px
     -
-        id: enable-styled-blockquotes-transparent-bg
-        title: Disable Accent Background
-        description: Toggle to turn on/off function.
-        type: class-toggle
-        default: false
-    -
-        id: enable-styled-blockquotes-show-left-border
-        title: Show Left Border
-        description: Toggle to turn on/off function.
-        type: class-toggle
-        default: true
-    - 
-        id: heading-embed
-        title: Embed
-        type: heading
-        level: 2
-        collapsed: true
-    -
-        id: enable-styled-embed
-        title: Choose an Embed Style
-        description: Toggle a custom style.
-        type: class-select
-        allowEmpty: false
-        default: enable-styled-embed-pure-border
-        options:
-            - 
-                label: Default
-                value: none
-            - 
-                label: Border
-                value: enable-styled-embed-border
-            - 
-                label: Filled
-                value: enable-styled-embed-filled
-            - 
-                label: Transparent
-                value: enable-styled-embed-transparent
-            - 
-                label: Pure
-                value: enable-styled-embed-pure
-            - 
-                label: Pure (Border)
-                value: enable-styled-embed-pure-border
-    - 
-        id: heading-horizontal-rules
-        title: Horizontal-Rules
-        type: heading
-        level: 2
-        collapsed: true
-    -
-        id: enable-styled-horizontal-rules
-        title: Enable Style
-        description: Toggle to turn on/off function.
-        type: class-toggle
-        default: true
-    - 
-        id: heading-table
-        title: Table
-        type: heading
-        level: 2
-        collapsed: true
-    -
-        id: enable-styled-table
-        title: Enable Style
-        description: Toggle to turn on/off function.
-        type: class-toggle
-        default: true
-    -
-        id: styled-table-rounded
-        title: Enable Rounded Corners
-        description: Toggle to turn on/off function. Only works if the above option "Enable Style" is enabled.
-        type: class-toggle
-        default: true
+        id: blockquote-color
+        title: Blockquote's Font Color
+        type: variable-color
+        default: var(--march-accent)
+        format: hsl
     - 
         id: heading-callout
         title: Callout
@@ -434,31 +391,119 @@ settings:
         level: 2
         collapsed: true
     -
-        id: enable-styled-callout
-        title: Enable Style
-        description: Toggle to turn on/off function.
-        type: class-toggle
-        default: true
+        id: callout-border-width
+        title: Callout's Border Width
+        type: variable-number
+        default: 0.125
+        format: rem
     -
-        id: enable-styled-callouts
-        title: Choose a Callout style
-        description: Toggle a custom style.
-        type: class-select
-        allowEmpty: false
-        default: callout-style-001
+        id: callout-border-opacity
+        title: Callout's Border Opacity
+        type: variable-number
+        default: 0.5
+    -
+        id: callout-radius
+        title: Callout's Border Radius
+        type: variable-number
+        default: 0.625
+        format: rem
+    -
+        id: march-callout-border-style
+        title: Callout Title's Bottom Border Style
+        type: variable-select
+        default: dashed
         options:
             - 
-                label: Default
+                label: Solid
+                value: solid
+            - 
+                label: Dashed
+                value: dashed
+            - 
+                label: Dotted
+                value: dotted
+            - 
+                label: None
                 value: none
-            - 
-                label: Rounded Dashed Outline
-                value: callout-style-001
-            - 
-                label: Rounded Outline (Filled Bg)
-                value: callout-style-002
-            - 
-                label: Rounded Outline (White Bg)
-                value: callout-style-003
+    -
+        id: callout-padding
+        title: Callout's Padding
+        type: variable-number
+        default: 0
+        format: rem
+    -
+        id: callout-title-padding
+        title: Callout Title's Padding
+        type: variable-number
+        default: 0.8
+        format: rem
+    -
+        id: callout-content-padding
+        title: Callout Content's Padding
+        type: variable-number
+        default: 0.8
+        format: rem
+    - 
+        id: heading-embed
+        title: Embed
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: march-embed-border-color
+        title: Embed's Border Color
+        type: variable-color
+        default: var(--march-50-accent)
+        format: hsl
+        opacity: true
+    -
+        id: march-embed-border-width
+        title: Embed's Border Width
+        type: variable-number
+        default: 2
+        format: px
+    -
+        id: march-embed-border-style
+        title: Embed's Border Style
+        type: variable-text
+        default: solid
+    -
+        id: march-embed-border-radius
+        title: Embed's Border Radius
+        type: variable-number
+        default: 10
+        format: px
+    -
+        id: march-embed-title-bottom-border-style
+        title: Embed Title's Bottom Border Style
+        type: variable-text
+        default: dashed
+    -
+        id: march-embed-title-background-color
+        title: Embed Title's Background Color
+        type: variable-color
+        default: var(--march-bg-accent)
+        format: hsl
+        opacity: true
+    -
+        id: march-embed-title-font-color
+        title: Embed Title's Font Color
+        type: variable-color
+        default: var(--march-accent)
+        format: hsl
+    - 
+        id: heading-horizontal-rules
+        title: Horizontal-Rules
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: hr-color
+        title: Horizontal Rules' Color
+        type: variable-color
+        default: var(--march-50-accent)
+        format: hsl
+        opacity: true
     - 
         id: heading-Plugin
         title: Plugins
