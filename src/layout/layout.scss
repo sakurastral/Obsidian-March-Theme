@@ -1,26 +1,7 @@
 /* ========================================================================== */
 /*                           Layout - Colorful Frame                          */
 /* ========================================================================== */
-.enable-inline-title-center {
-  & .inline-title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 10px;
-    color: var(--text-accent);
-  }
-}
-.enable-active-hover-line-bg {
-  .cm-line {
-    &:hover {
-      background-color: var(--march-bg-accent) !important;
-    }
-    &.cm-active {
-      background-color: var(--march-bg-accent) !important;
-    }
-  }
-}
+
 .enable-custom-layout-style-01 {
   --titlebar-background-focused: var(--background-secondary);
   --code-background: var(--background-primary);

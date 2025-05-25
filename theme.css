@@ -30,34 +30,6 @@ settings:
             - 
                 label: Round 01
                 value: enable-custom-layout-style-01
-    -
-        id: enable-inline-title
-        title: Choose an Style for Inline Title
-        description: Toggle a custom style.
-        type: class-select
-        allowEmpty: false
-        default: enable-inline-title-center
-        options:
-            - 
-                label: Default
-                value: none
-            - 
-                label: Center
-                value: enable-inline-title-center
-    -
-        id: enable-active-hover-line
-        title: Choose an Active (Hover) Line Style
-        description: Toggle a custom style.
-        type: class-select
-        allowEmpty: false
-        default: none
-        options:
-            - 
-                label: Default
-                value: none
-            - 
-                label: Colored Background
-                value: enable-active-hover-line-bg
     - 
         id: heading-color-scheme
         title: Color Scheme
@@ -66,21 +38,17 @@ settings:
         collapsed: true
     -
         id: enable-color-scheme
-        title: Choose an Style
-        description: Toggle a custom style.
+        title: Color Scheme
         type: class-select
         allowEmpty: false
-        default: color-scheme-catppuccin
+        default: none
         options:
             - 
-                label: Default
+                label: Default (Catppuccin Latte & Mocha)
                 value: none
             - 
                 label: Nord
                 value: color-scheme-nord
-            - 
-                label: Catppuccin Latte & Mocha
-                value: color-scheme-catppuccin
     - 
         id: heading-status-bar
         title: Status Bar
@@ -728,6 +696,59 @@ settings:
 /* ========================================================================== */
 /*                            Layout - Color Scheme                           */
 /* ========================================================================== */
+/** Catppuccin Mocha & Latte are from https://catppuccin.com/palette/ */
+body {
+  --accent-h: 231;
+  --accent-s: 97%;
+  --accent-l: 72%;
+}
+body.theme-light {
+  --color-red-rgb: 210, 15, 57;
+  --color-orange-rgb: 254, 100, 11;
+  --color-yellow-rgb: 223, 142, 29;
+  --color-green-rgb: 64, 160, 43;
+  --color-cyan-rgb: 4, 165, 229;
+  --color-blue-rgb: 30, 102, 245;
+  --color-purple-rgb: 136, 57, 239;
+  --color-pink-rgb: 234, 118, 203;
+  --color-red: #d20f39;
+  --color-orange: #fe640b;
+  --color-yellow: #df8e1d;
+  --color-green: #40a02b;
+  --color-cyan: #04a5e5;
+  --color-blue: #1e66f5;
+  --color-purple: #8839ef;
+  --color-pink: #ea76cb;
+  --background-primary: #eff1f5;
+  --background-primary-alt: #ccd0da;
+  --background-secondary: #e6e9ef;
+  --background-secondary-alt: #bcc0cc;
+  --background-modifier-border: #acb0be;
+}
+body.theme-dark {
+  --color-red-rgb: 243, 139, 168;
+  --color-orange-rgb: 250, 179, 135;
+  --color-yellow-rgb: 249, 226, 175;
+  --color-green-rgb: 166, 227, 161;
+  --color-cyan-rgb: 137, 220, 235;
+  --color-blue-rgb: 137, 180, 250;
+  --color-purple-rgb: 203, 166, 247;
+  --color-pink-rgb: 245, 194, 231;
+  --color-red: #f38ba8;
+  --color-orange: #fab387;
+  --color-yellow: #f9e2af;
+  --color-green: #a6e3a1;
+  --color-cyan: #89dceb;
+  --color-blue: #89b4fa;
+  --color-purple: #cba6f7;
+  --color-pink: #f5c2e7;
+  --background-primary: #11111b;
+  --background-primary-alt: #313244;
+  --background-secondary: #1e1e2e;
+  --background-secondary-alt: #45475a;
+  --background-modifier-border: #11111b;
+}
+
 /** Nord comes from https://www.nordtheme.com/docs/colors-and-palettes */
 .color-scheme-nord {
   --accent-h: 210;
@@ -765,78 +786,9 @@ settings:
   --background-modifier-border: #4c566a;
 }
 
-/** Catppuccin Mocha & Latte comes from https://catppuccin.com/palette/ */
-.color-scheme-catppuccin {
-  --accent-h: 231;
-  --accent-s: 97%;
-  --accent-l: 72%;
-}
-.color-scheme-catppuccin.theme-light {
-  --color-red-rgb: 210, 15, 57;
-  --color-orange-rgb: 254, 100, 11;
-  --color-yellow-rgb: 223, 142, 29;
-  --color-green-rgb: 64, 160, 43;
-  --color-cyan-rgb: 4, 165, 229;
-  --color-blue-rgb: 30, 102, 245;
-  --color-purple-rgb: 136, 57, 239;
-  --color-pink-rgb: 234, 118, 203;
-  --color-red: #d20f39;
-  --color-orange: #fe640b;
-  --color-yellow: #df8e1d;
-  --color-green: #40a02b;
-  --color-cyan: #04a5e5;
-  --color-blue: #1e66f5;
-  --color-purple: #8839ef;
-  --color-pink: #ea76cb;
-  --background-primary: #eff1f5;
-  --background-primary-alt: #ccd0da;
-  --background-secondary: #e6e9ef;
-  --background-secondary-alt: #bcc0cc;
-  --background-modifier-border: #acb0be;
-}
-.color-scheme-catppuccin.theme-dark {
-  --color-red-rgb: 243, 139, 168;
-  --color-orange-rgb: 250, 179, 135;
-  --color-yellow-rgb: 249, 226, 175;
-  --color-green-rgb: 166, 227, 161;
-  --color-cyan-rgb: 137, 220, 235;
-  --color-blue-rgb: 137, 180, 250;
-  --color-purple-rgb: 203, 166, 247;
-  --color-pink-rgb: 245, 194, 231;
-  --color-red: #f38ba8;
-  --color-orange: #fab387;
-  --color-yellow: #f9e2af;
-  --color-green: #a6e3a1;
-  --color-cyan: #89dceb;
-  --color-blue: #89b4fa;
-  --color-purple: #cba6f7;
-  --color-pink: #f5c2e7;
-  --background-primary: #11111b;
-  --background-primary-alt: #313244;
-  --background-secondary: #1e1e2e;
-  --background-secondary-alt: #45475a;
-  --background-modifier-border: #11111b;
-}
-
 /* ========================================================================== */
 /*                           Layout - Colorful Frame                          */
 /* ========================================================================== */
-.enable-inline-title-center .inline-title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  gap: 10px;
-  color: var(--text-accent);
-}
-
-.enable-active-hover-line-bg .cm-line:hover {
-  background-color: var(--march-bg-accent) !important;
-}
-.enable-active-hover-line-bg .cm-line.cm-active {
-  background-color: var(--march-bg-accent) !important;
-}
-
 .enable-custom-layout-style-01 {
   --titlebar-background-focused: var(--background-secondary);
   --code-background: var(--background-primary);
@@ -1073,6 +1025,19 @@ settings:
   margin-inline-start: var(--size-tab-space-new-tab);
 }
 
+body .cm-line.cm-active {
+  background-color: var(--march-bg-accent) !important;
+}
+
+.inline-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  color: var(--text-accent);
+}
+
 /* ========================================================================== */
 /*                              Editor - Callout                              */
 /* ========================================================================== */
@@ -1186,6 +1151,9 @@ body .HyperMD-codeblock.cm-line:not(.HyperMD-codeblock-begin):not(.HyperMD-codeb
   position: absolute;
   text-align: right;
   width: 3em;
+}
+body .HyperMD-codeblock.cm-line:not(.HyperMD-codeblock-begin):not(.HyperMD-codeblock-end):hover {
+  --march-codeblock-line-number-color: var(--march-accent);
 }
 body .codeblock-hide-indent-lines .markdown-source-view.mod-cm6 .HyperMD-codeblock .cm-indent::before {
   border-right: none;

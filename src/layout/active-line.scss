@@ -1,0 +1,7 @@
+body {
+  .cm-line {
+    &.cm-active {
+      background-color: var(--march-bg-accent) !important;
+    }
+  }
+}
