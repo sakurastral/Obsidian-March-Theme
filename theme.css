@@ -1203,6 +1203,7 @@ body li[data-task=X] > p > input:checked {
   mask-size: 0%;
   border: none;
   background-color: transparent;
+  --checkbox-color-hover: transparent;
 }
 body input[data-task=x]:checked:hover,
 body li[data-task=x] > input:checked:hover,
@@ -1229,6 +1230,7 @@ body li[data-task=X] > p > input:checked:after {
   -webkit-mask-position-x: 52%;
   -webkit-mask-position-y: 52%;
   background-color: var(--checklist-done-color);
+  color: var(--checklist-done-color);
 }
 body .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task]:is([data-task=x]) .cm-link,
 body .markdown-preview-view ul li[data-task=x].task-list-item.is-checked .cm-link,
@@ -1246,6 +1248,7 @@ body li[data-task="-"] > p > input:checked {
   mask-size: 0%;
   border: none;
   background-color: transparent;
+  --checkbox-color-hover: transparent;
 }
 body input[data-task="-"]:checked:hover,
 body li[data-task="-"] > input:checked:hover,
@@ -1266,6 +1269,7 @@ body li[data-task="-"] > p > input:checked:after {
   -webkit-mask-position-x: 52%;
   -webkit-mask-position-y: 52%;
   background-color: var(--march-checklist-cancel-color);
+  color: var(--march-checklist-cancel-color);
 }
 body .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task]:is([data-task="-"]),
 body .markdown-preview-view ul li[data-task="-"].task-list-item.is-checked,
@@ -1286,6 +1290,7 @@ body li[data-task="/"] > p > input:checked {
   mask-size: 0%;
   border: none;
   background-color: transparent;
+  --checkbox-color-hover: transparent;
 }
 body input[data-task="/"]:checked:hover,
 body li[data-task="/"] > input:checked:hover,
@@ -1306,6 +1311,7 @@ body li[data-task="/"] > p > input:checked:after {
   -webkit-mask-position-x: 52%;
   -webkit-mask-position-y: 52%;
   background-color: var(--color-yellow);
+  color: var(--color-yellow);
 }
 
 .march-enable-custom-icons {
@@ -1320,6 +1326,7 @@ body li[data-task="/"] > p > input:checked:after {
   mask-size: 0%;
   border: none;
   background-color: transparent;
+  --checkbox-color-hover: transparent;
 }
 .march-enable-custom-icons input[data-task=p]:checked:hover,
 .march-enable-custom-icons li[data-task=p] > input:checked:hover,
@@ -1340,6 +1347,7 @@ body li[data-task="/"] > p > input:checked:after {
   -webkit-mask-position-x: 52%;
   -webkit-mask-position-y: 52%;
   background-color: var(--color-cyan);
+  color: var(--color-cyan);
 }
 .march-enable-custom-icons input[data-task=r]:checked,
 .march-enable-custom-icons li[data-task=r] > input:checked,
@@ -1349,6 +1357,7 @@ body li[data-task="/"] > p > input:checked:after {
   mask-size: 0%;
   border: none;
   background-color: transparent;
+  --checkbox-color-hover: transparent;
 }
 .march-enable-custom-icons input[data-task=r]:checked:hover,
 .march-enable-custom-icons li[data-task=r] > input:checked:hover,
@@ -1369,6 +1378,7 @@ body li[data-task="/"] > p > input:checked:after {
   -webkit-mask-position-x: 52%;
   -webkit-mask-position-y: 52%;
   background-color: var(--color-purple);
+  color: var(--color-purple);
 }
 
 /* ========================================================================== */
@@ -2365,7 +2375,66 @@ body {
   margin-top: 0;
 }
 
-.kanban-plugin__item-title-wrapper {
-  border: 1px double var(--march-accent);
-  border-radius: 10px;
+.kanban-plugin__lane-items > div {
+  margin-block-start: 10px;
+}
+
+.kanban-plugin__lane,
+.kanban-plugin__lane-items.kanban-plugin__scroll-container,
+.kanban-plugin__item-button-wrapper,
+.kanban-plugin__item-metadata-wrapper {
+  background-color: var(--background-primary) !important;
+  color: var(--color-yellow);
+}
+
+button.kanban-plugin__new-item-button {
+  background-color: var(--color-cyan);
+  color: var(--background-primary);
+  box-shadow: none;
+}
+
+.kanban-plugin__table-cell-wrapper .kanban-plugin__lane-menu,
+.kanban-plugin__table-cell-wrapper .kanban-plugin__item-prefix-button,
+.kanban-plugin__item .kanban-plugin__item-prefix-button,
+.kanban-plugin__item .kanban-plugin__item-postfix-button,
+.kanban-plugin__lane .kanban-plugin__lane-settings-button,
+.kanban-plugin__table-cell-wrapper .kanban-plugin__lane-menu.is-enabled,
+.kanban-plugin__table-cell-wrapper .kanban-plugin__item-prefix-button.is-enabled,
+.kanban-plugin__item .kanban-plugin__item-prefix-button.is-enabled,
+.kanban-plugin__item .kanban-plugin__item-postfix-button.is-enabled,
+.kanban-plugin__lane .kanban-plugin__lane-settings-button.is-enabled {
+  background-color: var(--color-green);
+  color: var(--background-primary);
+}
+.kanban-plugin__table-cell-wrapper .kanban-plugin__lane-menu:hover,
+.kanban-plugin__table-cell-wrapper .kanban-plugin__item-prefix-button:hover,
+.kanban-plugin__item .kanban-plugin__item-prefix-button:hover,
+.kanban-plugin__item .kanban-plugin__item-postfix-button:hover,
+.kanban-plugin__lane .kanban-plugin__lane-settings-button:hover,
+.kanban-plugin__table-cell-wrapper .kanban-plugin__lane-menu.is-enabled:hover,
+.kanban-plugin__table-cell-wrapper .kanban-plugin__item-prefix-button.is-enabled:hover,
+.kanban-plugin__item .kanban-plugin__item-prefix-button.is-enabled:hover,
+.kanban-plugin__item .kanban-plugin__item-postfix-button.is-enabled:hover,
+.kanban-plugin__lane .kanban-plugin__lane-settings-button.is-enabled:hover {
+  background-color: var(--background-primary);
+  color: var(--color-green);
+}
+
+div.kanban-plugin__lane-title-count {
+  color: var(--color-yellow);
+  background-color: var(--background-primary);
+}
+
+.kanban-plugin__item-title-wrapper,
+p.kanban-plugin__markdown-preview-view * {
+  background-color: var(--color-yellow) !important;
+  color: var(--background-primary);
+}
+
+.kanban-plugin__item-input-wrapper {
+  background-color: var(--background-primary) !important;
+  color: var(--color-yellow);
+  padding: 5px;
+  border-radius: 5px;
+  margin-right: 3px;
 }
