@@ -13,7 +13,7 @@
     mask-size: 0%;
     border: none;
     background-color: $icon-bg;
-
+    --checkbox-color-hover: transparent;
     &:hover {
       opacity: 50%;
     }
@@ -29,6 +29,7 @@
       -webkit-mask-position-x: 52%;
       -webkit-mask-position-y: 52%;
       background-color: $icon-color;
+      color: $icon-color;
     }
   }
 }
