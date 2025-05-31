@@ -30,25 +30,6 @@ settings:
                 label: Round 01
                 value: enable-custom-layout-style-01
     - 
-        id: heading-color-scheme
-        title: Color Scheme
-        type: heading
-        level: 2
-        collapsed: true
-    -
-        id: enable-color-scheme
-        title: Color Scheme
-        type: class-select
-        allowEmpty: false
-        default: none
-        options:
-            - 
-                label: Default (Catppuccin Latte & Mocha)
-                value: none
-            - 
-                label: Nord
-                value: color-scheme-nord
-    - 
         id: heading-status-bar
         title: Status Bar
         type: heading

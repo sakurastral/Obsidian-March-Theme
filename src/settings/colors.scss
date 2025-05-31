@@ -1,0 +1,222 @@
+/* @settings
+
+name: March Theme - Color Scheme 
+id: march-theme-plugin
+settings:
+    - 
+        id: heading-color-scheme
+        title: Color Scheme
+        type: heading
+        level: 1
+        collapsed: false
+    - 
+        id: select-light-color-scheme
+        title: Choose a Light Color Scheme
+        type: class-select
+        allowEmpty: false
+        default: march-color-scheme-catppuccin-latte
+        options:
+            - 
+                label: Default
+                value: none
+            - 
+                label: Catppuccin Latte
+                value: march-color-scheme-catppuccin-latte
+            - 
+                label: Nord
+                value: march-color-scheme-nord-light
+    - 
+        id: select-dark-color-scheme
+        title: Choose a Dark Color Scheme
+        type: class-select
+        allowEmpty: false
+        default: march-color-scheme-catppuccin-mocha
+        options:
+            - 
+                label: Default
+                value: none
+            - 
+                label: Catppuccin Mocha
+                value: march-color-scheme-catppuccin-mocha
+            - 
+                label: Nord
+                value: march-color-scheme-nord-dark
+    - 
+        id: heading-override-color-palette
+        title: Override Color Palette
+        type: heading
+        level: 1
+        collapsed: true
+    - 
+        id: color-red
+        title: Override Color Red
+        type: variable-themed-color
+        format: hex
+        alt-format:
+            -
+                id: color-red
+                format: rgb-split
+        opacity: false
+        default-light: '#e93147'
+        default-dark: '#fb464c'
+    - 
+        id: color-orange
+        title: Override Color Orange
+        type: variable-themed-color
+        format: hex
+        alt-format:
+            -
+                id: color-orange
+                format: rgb-split
+        opacity: false
+        default-light: '#ec7500'
+        default-dark: '#e9973f'
+    -
+        id: color-yellow
+        title: Override Color Yellow
+        type: variable-themed-color
+        format: hex
+        alt-format:
+            -
+                id: color-yellow
+                format: rgb-split
+        opacity: false
+        default-light: '#e0ac00'
+        default-dark: '#e0de71'
+    -
+        id: color-green
+        title: Override Color Green
+        type: variable-themed-color
+        format: hex
+        alt-format:
+            -
+                id: color-green
+                format: rgb-split
+        opacity: false
+        default-light: '#08b94e'
+        default-dark: '#44cf6e'
+    -
+        id: color-cyan
+        title: Override Color Cyan
+        type: variable-themed-color
+        format: hex
+        alt-format:
+            -
+                id: color-cyan
+                format: rgb-split
+        opacity: false
+        default-light: '#00bfbc'
+        default-dark: '#53dfdd'
+    -
+        id: color-blue
+        title: Override Color Blue
+        type: variable-themed-color
+        format: hex
+        alt-format:
+            -
+                id: color-blue
+                format: rgb-split
+        opacity: false
+        default-light: '#086ddd'
+        default-dark: '#027aff'
+    -
+        id: color-purple
+        title: Override Color Purple
+        type: variable-themed-color
+        format: hex
+        alt-format:
+            -
+                id: color-purple
+                format: rgb-split
+        opacity: false
+        default-light: '#7852ee'
+        default-dark: '#a882ff'
+    -
+        id: color-pink
+        title: Override Color Pink
+        type: variable-themed-color
+        format: hex
+        alt-format:
+            -
+                id: color-pink
+                format: rgb-split
+        opacity: false
+        default-light: '#d53984'
+        default-dark: '#fa99cd'
+    - 
+        id: heading-override-background-colors
+        title: Override Background Colors
+        type: heading
+        level: 1
+        collapsed: true
+    -
+        id: background-primary
+        title: Primary Background
+        type: variable-themed-color
+        format: hex
+        opacity: false
+        default-light: '#ffffff'
+        default-dark: '#1e1e1e'
+    -
+        id: background-primary-alt
+        title: Background for surfaces on top of primary background
+        type: variable-themed-color
+        format: hex
+        opacity: false
+        default-light: '#fafafa'
+        default-dark: '#242424'
+    -
+        id: background-secondary
+        title: Secondary Background
+        type: variable-themed-color
+        format: hex
+        opacity: false
+        default-light: '#f6f6f6'
+        default-dark: '#262626'
+    -
+        id: background-secondary-alt
+        title: Background for surfaces on top of secondary background
+        type: variable-themed-color
+        format: hex
+        opacity: false
+        default-light: '#e0e0e0'
+        default-dark: '#363636'
+    -
+        id: background-modifier-border
+        title: Border color
+        type: variable-themed-color
+        format: hex
+        opacity: false
+        default-light: '#e0e0e0'
+        default-dark: '#363636'
+    - 
+        id: heading-override-font-colors
+        title: Override Font Colors
+        type: heading
+        level: 1
+        collapsed: true
+    -
+        id: text-normal
+        title: Normal Text Color
+        type: variable-themed-color
+        format: hex
+        opacity: false
+        default-light: '#222222'
+        default-dark: '#dadada'
+    -
+        id: text-muted
+        title: Muted Text Color
+        type: variable-themed-color
+        format: hex
+        opacity: false
+        default-light: '#5a5a5a'
+        default-dark: '#bababa'
+    -
+        id: text-faint
+        title: Faint Text Color
+        type: variable-themed-color
+        format: hex
+        opacity: false
+        default-light: '#ababab'
+        default-dark: '#666666'
+*/

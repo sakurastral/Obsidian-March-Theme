@@ -31,25 +31,6 @@ settings:
                 label: Round 01
                 value: enable-custom-layout-style-01
     - 
-        id: heading-color-scheme
-        title: Color Scheme
-        type: heading
-        level: 2
-        collapsed: true
-    -
-        id: enable-color-scheme
-        title: Color Scheme
-        type: class-select
-        allowEmpty: false
-        default: none
-        options:
-            - 
-                label: Default (Catppuccin Latte & Mocha)
-                value: none
-            - 
-                label: Nord
-                value: color-scheme-nord
-    - 
         id: heading-status-bar
         title: Status Bar
         type: heading
@@ -654,105 +635,597 @@ settings:
         format: rgb
         opacity: true
 */
+/* @settings
+
+name: March Theme - Color Scheme 
+id: march-theme-plugin
+settings:
+    - 
+        id: heading-color-scheme
+        title: Color Scheme
+        type: heading
+        level: 1
+        collapsed: false
+    - 
+        id: select-light-color-scheme
+        title: Choose a Light Color Scheme
+        type: class-select
+        allowEmpty: false
+        default: march-color-scheme-catppuccin-latte
+        options:
+            - 
+                label: Default
+                value: none
+            - 
+                label: Catppuccin Latte
+                value: march-color-scheme-catppuccin-latte
+            - 
+                label: Nord
+                value: march-color-scheme-nord-light
+    - 
+        id: select-dark-color-scheme
+        title: Choose a Dark Color Scheme
+        type: class-select
+        allowEmpty: false
+        default: march-color-scheme-catppuccin-mocha
+        options:
+            - 
+                label: Default
+                value: none
+            - 
+                label: Catppuccin Mocha
+                value: march-color-scheme-catppuccin-mocha
+            - 
+                label: Nord
+                value: march-color-scheme-nord-dark
+    - 
+        id: heading-override-color-palette
+        title: Override Color Palette
+        type: heading
+        level: 1
+        collapsed: true
+    - 
+        id: color-red
+        title: Override Color Red
+        type: variable-themed-color
+        format: hex
+        alt-format:
+            -
+                id: color-red
+                format: rgb-split
+        opacity: false
+        default-light: '#e93147'
+        default-dark: '#fb464c'
+    - 
+        id: color-orange
+        title: Override Color Orange
+        type: variable-themed-color
+        format: hex
+        alt-format:
+            -
+                id: color-orange
+                format: rgb-split
+        opacity: false
+        default-light: '#ec7500'
+        default-dark: '#e9973f'
+    -
+        id: color-yellow
+        title: Override Color Yellow
+        type: variable-themed-color
+        format: hex
+        alt-format:
+            -
+                id: color-yellow
+                format: rgb-split
+        opacity: false
+        default-light: '#e0ac00'
+        default-dark: '#e0de71'
+    -
+        id: color-green
+        title: Override Color Green
+        type: variable-themed-color
+        format: hex
+        alt-format:
+            -
+                id: color-green
+                format: rgb-split
+        opacity: false
+        default-light: '#08b94e'
+        default-dark: '#44cf6e'
+    -
+        id: color-cyan
+        title: Override Color Cyan
+        type: variable-themed-color
+        format: hex
+        alt-format:
+            -
+                id: color-cyan
+                format: rgb-split
+        opacity: false
+        default-light: '#00bfbc'
+        default-dark: '#53dfdd'
+    -
+        id: color-blue
+        title: Override Color Blue
+        type: variable-themed-color
+        format: hex
+        alt-format:
+            -
+                id: color-blue
+                format: rgb-split
+        opacity: false
+        default-light: '#086ddd'
+        default-dark: '#027aff'
+    -
+        id: color-purple
+        title: Override Color Purple
+        type: variable-themed-color
+        format: hex
+        alt-format:
+            -
+                id: color-purple
+                format: rgb-split
+        opacity: false
+        default-light: '#7852ee'
+        default-dark: '#a882ff'
+    -
+        id: color-pink
+        title: Override Color Pink
+        type: variable-themed-color
+        format: hex
+        alt-format:
+            -
+                id: color-pink
+                format: rgb-split
+        opacity: false
+        default-light: '#d53984'
+        default-dark: '#fa99cd'
+    - 
+        id: heading-override-background-colors
+        title: Override Background Colors
+        type: heading
+        level: 1
+        collapsed: true
+    -
+        id: background-primary
+        title: Primary Background
+        type: variable-themed-color
+        format: hex
+        opacity: false
+        default-light: '#ffffff'
+        default-dark: '#1e1e1e'
+    -
+        id: background-primary-alt
+        title: Background for surfaces on top of primary background
+        type: variable-themed-color
+        format: hex
+        opacity: false
+        default-light: '#fafafa'
+        default-dark: '#242424'
+    -
+        id: background-secondary
+        title: Secondary Background
+        type: variable-themed-color
+        format: hex
+        opacity: false
+        default-light: '#f6f6f6'
+        default-dark: '#262626'
+    -
+        id: background-secondary-alt
+        title: Background for surfaces on top of secondary background
+        type: variable-themed-color
+        format: hex
+        opacity: false
+        default-light: '#e0e0e0'
+        default-dark: '#363636'
+    -
+        id: background-modifier-border
+        title: Border color
+        type: variable-themed-color
+        format: hex
+        opacity: false
+        default-light: '#e0e0e0'
+        default-dark: '#363636'
+    - 
+        id: heading-override-font-colors
+        title: Override Font Colors
+        type: heading
+        level: 1
+        collapsed: true
+    -
+        id: text-normal
+        title: Normal Text Color
+        type: variable-themed-color
+        format: hex
+        opacity: false
+        default-light: '#222222'
+        default-dark: '#dadada'
+    -
+        id: text-muted
+        title: Muted Text Color
+        type: variable-themed-color
+        format: hex
+        opacity: false
+        default-light: '#5a5a5a'
+        default-dark: '#bababa'
+    -
+        id: text-faint
+        title: Faint Text Color
+        type: variable-themed-color
+        format: hex
+        opacity: false
+        default-light: '#ababab'
+        default-dark: '#666666'
+*/
+body.theme-light {
+  --accent-h: 183;
+  --accent-s: 74%;
+  --accent-l: 35%;
+}
+
+body.theme-dark {
+  --accent-h: 170;
+  --accent-s: 57%;
+  --accent-l: 73%;
+  --text-on-accent: black;
+}
+
 .theme-light,
 .theme-dark {
   --march-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
   --march-bg-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
   --march-50-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.5);
-  --march-light-accent: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 30%));
 }
 
-/* ========================================================================== */
-/*                            Layout - Color Scheme                           */
-/* ========================================================================== */
-/** Catppuccin Mocha & Latte are from https://catppuccin.com/palette/ */
-body {
-  --accent-h: 231;
-  --accent-s: 97%;
-  --accent-l: 72%;
-}
-body.theme-light {
-  --color-red-rgb: 210, 15, 57;
-  --color-orange-rgb: 254, 100, 11;
-  --color-yellow-rgb: 223, 142, 29;
-  --color-green-rgb: 64, 160, 43;
-  --color-cyan-rgb: 4, 165, 229;
-  --color-blue-rgb: 30, 102, 245;
-  --color-purple-rgb: 136, 57, 239;
-  --color-pink-rgb: 234, 118, 203;
-  --color-red: #d20f39;
-  --color-orange: #fe640b;
-  --color-yellow: #df8e1d;
-  --color-green: #40a02b;
-  --color-cyan: #04a5e5;
-  --color-blue: #1e66f5;
-  --color-purple: #8839ef;
-  --color-pink: #ea76cb;
-  --background-primary: #eff1f5;
-  --background-primary-alt: #ccd0da;
-  --background-secondary: #e6e9ef;
-  --background-secondary-alt: #bcc0cc;
-  --background-modifier-border: #acb0be;
-}
-body.theme-dark {
-  --color-red-rgb: 243, 139, 168;
-  --color-orange-rgb: 250, 179, 135;
-  --color-yellow-rgb: 249, 226, 175;
-  --color-green-rgb: 166, 227, 161;
-  --color-cyan-rgb: 137, 220, 235;
-  --color-blue-rgb: 137, 180, 250;
-  --color-purple-rgb: 203, 166, 247;
-  --color-pink-rgb: 245, 194, 231;
-  --color-red: #f38ba8;
-  --color-orange: #fab387;
-  --color-yellow: #f9e2af;
-  --color-green: #a6e3a1;
-  --color-cyan: #89dceb;
-  --color-blue: #89b4fa;
-  --color-purple: #cba6f7;
-  --color-pink: #f5c2e7;
-  --background-primary: #11111b;
-  --background-primary-alt: #313244;
-  --background-secondary: #1e1e2e;
-  --background-secondary-alt: #45475a;
-  --background-modifier-border: #11111b;
+/** Catppuccin Latte: from https://catppuccin.com/palette/ */
+:is(.march-color-scheme-catppuccin-latte).theme-light {
+  --color-red-r: 210;
+  --color-red-g: 15;
+  --color-red-b: 57;
+  --color-red-rgb: var(--color-red-r), var(--color-red-g), var(--color-red-b);
+  --color-red-h: 347;
+  --color-red-s: 87%;
+  --color-red-l: 44%;
+  --color-red: hsl(var(--color-red-h), var(--color-red-s), var(--color-red-l));
+  --color-orange-r: 254;
+  --color-orange-g: 108;
+  --color-orange-b: 11;
+  --color-orange-rgb: var(--color-orange-r), var(--color-orange-g), var(--color-orange-b);
+  --color-orange-h: 22;
+  --color-orange-s: 99%;
+  --color-orange-l: 52%;
+  --color-orange: hsl(var(--color-orange-h), var(--color-orange-s), var(--color-orange-l));
+  --color-yellow-r: 223;
+  --color-yellow-g: 142;
+  --color-yellow-b: 29;
+  --color-yellow-rgb: var(--color-yellow-r), var(--color-yellow-g), var(--color-yellow-b);
+  --color-yellow-h: 35;
+  --color-yellow-s: 77%;
+  --color-yellow-l: 49%;
+  --color-yellow: hsl(var(--color-yellow-h), var(--color-yellow-s), var(--color-yellow-l));
+  --color-green-r: 64;
+  --color-green-g: 160;
+  --color-green-b: 43;
+  --color-green-rgb: var(--color-green-r), var(--color-green-g), var(--color-green-b);
+  --color-green-h: 109;
+  --color-green-s: 58%;
+  --color-green-l: 40%;
+  --color-green: hsl(var(--color-green-h), var(--color-green-s), var(--color-green-l));
+  --color-cyan-r: 4;
+  --color-cyan-g: 165;
+  --color-cyan-b: 229;
+  --color-cyan-rgb: var(--color-cyan-r), var(--color-cyan-g), var(--color-cyan-b);
+  --color-cyan-h: 197;
+  --color-cyan-s: 97%;
+  --color-cyan-l: 46%;
+  --color-cyan: hsl(var(--color-cyan-h), var(--color-cyan-s), var(--color-cyan-l));
+  --color-blue-r: 30;
+  --color-blue-g: 102;
+  --color-blue-b: 245;
+  --color-blue-rgb: var(--color-blue-r), var(--color-blue-g), var(--color-blue-b);
+  --color-blue-h: 220;
+  --color-blue-s: 91%;
+  --color-blue-l: 54%;
+  --color-blue: hsl(var(--color-blue-h), var(--color-blue-s), var(--color-blue-l));
+  --color-purple-r: 136;
+  --color-purple-g: 57;
+  --color-purple-b: 239;
+  --color-purple-rgb: var(--color-purple-r), var(--color-purple-g), var(--color-purple-b);
+  --color-purple-h: 266;
+  --color-purple-s: 85%;
+  --color-purple-l: 58%;
+  --color-purple: hsl(var(--color-purple-h), var(--color-purple-s), var(--color-purple-l));
+  --color-pink-r: 234;
+  --color-pink-g: 118;
+  --color-pink-b: 203;
+  --color-pink-rgb: var(--color-pink-r), var(--color-pink-g), var(--color-pink-b);
+  --color-pink-h: 316;
+  --color-pink-s: 73%;
+  --color-pink-l: 69%;
+  --color-pink: hsl(var(--color-pink-h), var(--color-pink-s), var(--color-pink-l));
+  --background-primary-h: 220;
+  --background-primary-s: 23%;
+  --background-primary-l: 95%;
+  --background-primary: hsl(var(--background-primary-h), var(--background-primary-s), var(--background-primary-l));
+  --background-primary-alt-h: 220;
+  --background-primary-alt-s: 16%;
+  --background-primary-alt-l: 82%;
+  --background-primary-alt: hsl(var(--background-primary-alt-h), var(--background-primary-alt-s), var(--background-primary-alt-l));
+  --background-secondary-h: 225;
+  --background-secondary-s: 23%;
+  --background-secondary-l: 91%;
+  --background-secondary: hsl(var(--background-secondary-h), var(--background-secondary-s), var(--background-secondary-l));
+  --background-secondary-alt-h: 220;
+  --background-secondary-alt-s: 14%;
+  --background-secondary-alt-l: 77%;
+  --background-secondary-alt: hsl(var(--background-secondary-alt-h), var(--background-secondary-alt-s), var(--background-secondary-alt-l));
+  --background-modifier-border-h: 220;
+  --background-modifier-border-s: 13%;
+  --background-modifier-border-l: 72%;
+  --background-modifier-border: hsl(var(--background-modifier-border-h), var(--background-modifier-border-s), var(--background-modifier-border-l));
 }
 
-/** Nord comes from https://www.nordtheme.com/docs/colors-and-palettes */
-.color-scheme-nord {
-  --accent-h: 210;
-  --accent-s: 34%;
-  --accent-l: 63%;
-  --color-red-rgb: 191, 97, 106;
-  --color-orange-rgb: 208, 135, 112;
-  --color-yellow-rgb: 235, 203, 139;
-  --color-green-rgb: 163, 190, 140;
-  --color-cyan-rgb: 136, 192, 208;
-  --color-blue-rgb: 94, 129, 172;
-  --color-purple-rgb: 180, 142, 173;
-  --color-pink-rgb: 191, 97, 106;
-  --color-red: #bf616a;
-  --color-orange: #d08770;
-  --color-yellow: #ebcb8b;
-  --color-green: #a3be8c;
-  --color-cyan: #88c0d0;
-  --color-blue: #5e81ac;
-  --color-purple: #b48ead;
-  --color-pink: #bf616a;
+/** Catppuccin Mocha: from https://catppuccin.com/palette/ */
+:is(.march-color-scheme-catppuccin-mocha).theme-dark {
+  --color-red-r: 243;
+  --color-red-g: 139;
+  --color-red-b: 168;
+  --color-red-rgb: var(--color-red-r), var(--color-red-g), var(--color-red-b);
+  --color-red-h: 343;
+  --color-red-s: 81%;
+  --color-red-l: 75%;
+  --color-red: hsl(var(--color-red-h), var(--color-red-s), var(--color-red-l));
+  --color-orange-r: 250;
+  --color-orange-g: 179;
+  --color-orange-b: 135;
+  --color-orange-rgb: var(--color-orange-r), var(--color-orange-g), var(--color-orange-b);
+  --color-orange-h: 23;
+  --color-orange-s: 92%;
+  --color-orange-l: 75%;
+  --color-orange: hsl(var(--color-orange-h), var(--color-orange-s), var(--color-orange-l));
+  --color-yellow-r: 249;
+  --color-yellow-g: 226;
+  --color-yellow-b: 175;
+  --color-yellow-rgb: var(--color-yellow-r), var(--color-yellow-g), var(--color-yellow-b);
+  --color-yellow-h: 41;
+  --color-yellow-s: 86%;
+  --color-yellow-l: 83%;
+  --color-yellow: hsl(var(--color-yellow-h), var(--color-yellow-s), var(--color-yellow-l));
+  --color-green-r: 166;
+  --color-green-g: 227;
+  --color-green-b: 161;
+  --color-green-rgb: var(--color-green-r), var(--color-green-g), var(--color-green-b);
+  --color-green-h: 115;
+  --color-green-s: 54%;
+  --color-green-l: 76%;
+  --color-green: hsl(var(--color-green-h), var(--color-green-s), var(--color-green-l));
+  --color-cyan-r: 137;
+  --color-cyan-g: 220;
+  --color-cyan-b: 235;
+  --color-cyan-rgb: var(--color-cyan-r), var(--color-cyan-g), var(--color-cyan-b);
+  --color-cyan-h: 189;
+  --color-cyan-s: 71%;
+  --color-cyan-l: 73%;
+  --color-cyan: hsl(var(--color-cyan-h), var(--color-cyan-s), var(--color-cyan-l));
+  --color-blue-r: 137;
+  --color-blue-g: 180;
+  --color-blue-b: 250;
+  --color-blue-rgb: var(--color-blue-r), var(--color-blue-g), var(--color-blue-b);
+  --color-blue-h: 217;
+  --color-blue-s: 92%;
+  --color-blue-l: 76%;
+  --color-blue: hsl(var(--color-blue-h), var(--color-blue-s), var(--color-blue-l));
+  --color-purple-r: 203;
+  --color-purple-g: 166;
+  --color-purple-b: 247;
+  --color-purple-rgb: var(--color-purple-r), var(--color-purple-g), var(--color-purple-b);
+  --color-purple-h: 267;
+  --color-purple-s: 84%;
+  --color-purple-l: 81%;
+  --color-purple: hsl(var(--color-purple-h), var(--color-purple-s), var(--color-purple-l));
+  --color-pink-r: 245;
+  --color-pink-g: 194;
+  --color-pink-b: 231;
+  --color-pink-rgb: var(--color-pink-r), var(--color-pink-g), var(--color-pink-b);
+  --color-pink-h: 316;
+  --color-pink-s: 72%;
+  --color-pink-l: 86%;
+  --color-pink: hsl(var(--color-pink-h), var(--color-pink-s), var(--color-pink-l));
+  --background-primary-h: 240;
+  --background-primary-s: 21%;
+  --background-primary-l: 15%;
+  --background-primary: hsl(var(--background-primary-h), var(--background-primary-s), var(--background-primary-l));
+  --background-primary-alt-h: 237;
+  --background-primary-alt-s: 16%;
+  --background-primary-alt-l: 23%;
+  --background-primary-alt: hsl(var(--background-primary-alt-h), var(--background-primary-alt-s), var(--background-primary-alt-l));
+  --background-secondary-h: 240;
+  --background-secondary-s: 23%;
+  --background-secondary-l: 9%;
+  --background-secondary: hsl(var(--background-secondary-h), var(--background-secondary-s), var(--background-secondary-l));
+  --background-secondary-alt-h: 234;
+  --background-secondary-alt-s: 13%;
+  --background-secondary-alt-l: 31%;
+  --background-secondary-alt: hsl(var(--background-secondary-alt-h), var(--background-secondary-alt-s), var(--background-secondary-alt-l));
+  --background-modifier-border-h: 230;
+  --background-modifier-border-s: 13%;
+  --background-modifier-border-l: 55%;
+  --background-modifier-border: hsl(var(--background-modifier-border-h), var(--background-modifier-border-s), var(--background-modifier-border-l));
 }
-.color-scheme-nord.theme-light {
-  --background-primary: rgb(255, 255, 255);
-  --background-primary-alt: #eceff4;
-  --background-secondary: #eceff4;
-  --background-secondary-alt: #e5e9f0;
-  --background-modifier-border: #d8dee9;
+
+/** Nord: from https://www.nordtheme.com/docs/colors-and-palettes and from Gemini */
+:is(.march-color-scheme-nord-light).theme-light {
+  --color-red-r: 191;
+  --color-red-g: 97;
+  --color-red-b: 91;
+  --color-red-rgb: var(--color-red-r), var(--color-red-g), var(--color-red-b);
+  --color-red-h: 4;
+  --color-red-s: 48%;
+  --color-red-l: 55%;
+  --color-red: hsl(var(--color-red-h), var(--color-red-s), var(--color-red-l));
+  --color-orange-r: 235;
+  --color-orange-g: 164;
+  --color-orange-b: 104;
+  --color-orange-rgb: var(--color-orange-r), var(--color-orange-g), var(--color-orange-b);
+  --color-orange-h: 29;
+  --color-orange-s: 78%;
+  --color-orange-l: 66%;
+  --color-orange: hsl(var(--color-orange-h), var(--color-orange-s), var(--color-orange-l));
+  --color-yellow-r: 236;
+  --color-yellow-g: 205;
+  --color-yellow-b: 122;
+  --color-yellow-rgb: var(--color-yellow-r), var(--color-yellow-g), var(--color-yellow-b);
+  --color-yellow-h: 46;
+  --color-yellow-s: 70%;
+  --color-yellow-l: 70%;
+  --color-yellow: hsl(var(--color-yellow-h), var(--color-yellow-s), var(--color-yellow-l));
+  --color-green-r: 163;
+  --color-green-g: 190;
+  --color-green-b: 140;
+  --color-green-rgb: var(--color-green-r), var(--color-green-g), var(--color-green-b);
+  --color-green-h: 93;
+  --color-green-s: 26%;
+  --color-green-l: 69%;
+  --color-green: hsl(var(--color-green-h), var(--color-green-s), var(--color-green-l));
+  --color-cyan-r: 142;
+  --color-cyan-g: 183;
+  --color-cyan-b: 185;
+  --color-cyan-rgb: var(--color-cyan-r), var(--color-cyan-g), var(--color-cyan-b);
+  --color-cyan-h: 183;
+  --color-cyan-s: 18%;
+  --color-cyan-l: 64%;
+  --color-cyan: hsl(var(--color-cyan-h), var(--color-cyan-s), var(--color-cyan-l));
+  --color-blue-r: 129;
+  --color-blue-g: 161;
+  --color-blue-b: 193;
+  --color-blue-rgb: var(--color-blue-r), var(--color-blue-g), var(--color-blue-b);
+  --color-blue-h: 209;
+  --color-blue-s: 28%;
+  --color-blue-l: 63%;
+  --color-blue: hsl(var(--color-blue-h), var(--color-blue-s), var(--color-blue-l));
+  --color-purple-r: 180;
+  --color-purple-g: 141;
+  --color-purple-b: 175;
+  --color-purple-rgb: var(--color-purple-r), var(--color-purple-g), var(--color-purple-b);
+  --color-purple-h: 307;
+  --color-purple-s: 19%;
+  --color-purple-l: 63%;
+  --color-purple: hsl(var(--color-purple-h), var(--color-purple-s), var(--color-purple-l));
+  --color-pink-r: 220;
+  --color-pink-g: 151;
+  --color-pink-b: 171;
+  --color-pink-rgb: var(--color-pink-r), var(--color-pink-g), var(--color-pink-b);
+  --color-pink-h: 330;
+  --color-pink-s: 33%;
+  --color-pink-l: 73%;
+  --color-pink: hsl(var(--color-pink-h), var(--color-pink-s), var(--color-pink-l));
+  --background-primary-h: 220;
+  --background-primary-s: 23%;
+  --background-primary-l: 95%;
+  --background-primary: hsl(var(--background-primary-h), var(--background-primary-s), var(--background-primary-l));
+  --background-primary-alt-h: 220;
+  --background-primary-alt-s: 23%;
+  --background-primary-alt-l: 92%;
+  --background-primary-alt: hsl(var(--background-primary-alt-h), var(--background-primary-alt-s), var(--background-primary-alt-l));
+  --background-secondary-h: 220;
+  --background-secondary-s: 23%;
+  --background-secondary-l: 89%;
+  --background-secondary: hsl(var(--background-secondary-h), var(--background-secondary-s), var(--background-secondary-l));
+  --background-secondary-alt-h: 220;
+  --background-secondary-alt-s: 23%;
+  --background-secondary-alt-l: 85%;
+  --background-secondary-alt: hsl(var(--background-secondary-alt-h), var(--background-secondary-alt-s), var(--background-secondary-alt-l));
+  --background-modifier-border-h: 220;
+  --background-modifier-border-s: 23%;
+  --background-modifier-border-l: 75%;
+  --background-modifier-border: hsl(var(--background-modifier-border-h), var(--background-modifier-border-s), var(--background-modifier-border-l));
 }
-.color-scheme-nord.theme-dark {
-  --background-primary: #2e3440;
-  --background-primary-alt: #2e3440;
-  --background-secondary: #3b4252;
-  --background-secondary-alt: #3b4252;
-  --background-modifier-border: #4c566a;
+
+:is(.march-color-scheme-nord-dark).theme-dark {
+  --color-red-r: 191;
+  --color-red-g: 97;
+  --color-red-b: 91;
+  --color-red-rgb: var(--color-red-r), var(--color-red-g), var(--color-red-b);
+  --color-red-h: 4;
+  --color-red-s: 48%;
+  --color-red-l: 55%;
+  --color-red: hsl(var(--color-red-h), var(--color-red-s), var(--color-red-l));
+  --color-orange-r: 235;
+  --color-orange-g: 164;
+  --color-orange-b: 104;
+  --color-orange-rgb: var(--color-orange-r), var(--color-orange-g), var(--color-orange-b);
+  --color-orange-h: 29;
+  --color-orange-s: 78%;
+  --color-orange-l: 66%;
+  --color-orange: hsl(var(--color-orange-h), var(--color-orange-s), var(--color-orange-l));
+  --color-yellow-r: 236;
+  --color-yellow-g: 205;
+  --color-yellow-b: 122;
+  --color-yellow-rgb: var(--color-yellow-r), var(--color-yellow-g), var(--color-yellow-b);
+  --color-yellow-h: 46;
+  --color-yellow-s: 70%;
+  --color-yellow-l: 70%;
+  --color-yellow: hsl(var(--color-yellow-h), var(--color-yellow-s), var(--color-yellow-l));
+  --color-green-r: 163;
+  --color-green-g: 190;
+  --color-green-b: 140;
+  --color-green-rgb: var(--color-green-r), var(--color-green-g), var(--color-green-b);
+  --color-green-h: 93;
+  --color-green-s: 26%;
+  --color-green-l: 69%;
+  --color-green: hsl(var(--color-green-h), var(--color-green-s), var(--color-green-l));
+  --color-cyan-r: 142;
+  --color-cyan-g: 183;
+  --color-cyan-b: 185;
+  --color-cyan-rgb: var(--color-cyan-r), var(--color-cyan-g), var(--color-cyan-b);
+  --color-cyan-h: 183;
+  --color-cyan-s: 18%;
+  --color-cyan-l: 64%;
+  --color-cyan: hsl(var(--color-cyan-h), var(--color-cyan-s), var(--color-cyan-l));
+  --color-blue-r: 129;
+  --color-blue-g: 161;
+  --color-blue-b: 193;
+  --color-blue-rgb: var(--color-blue-r), var(--color-blue-g), var(--color-blue-b);
+  --color-blue-h: 209;
+  --color-blue-s: 28%;
+  --color-blue-l: 63%;
+  --color-blue: hsl(var(--color-blue-h), var(--color-blue-s), var(--color-blue-l));
+  --color-purple-r: 180;
+  --color-purple-g: 141;
+  --color-purple-b: 175;
+  --color-purple-rgb: var(--color-purple-r), var(--color-purple-g), var(--color-purple-b);
+  --color-purple-h: 307;
+  --color-purple-s: 19%;
+  --color-purple-l: 63%;
+  --color-purple: hsl(var(--color-purple-h), var(--color-purple-s), var(--color-purple-l));
+  --color-pink-r: 220;
+  --color-pink-g: 151;
+  --color-pink-b: 171;
+  --color-pink-rgb: var(--color-pink-r), var(--color-pink-g), var(--color-pink-b);
+  --color-pink-h: 330;
+  --color-pink-s: 33%;
+  --color-pink-l: 73%;
+  --color-pink: hsl(var(--color-pink-h), var(--color-pink-s), var(--color-pink-l));
+  --background-primary-h: 220;
+  --background-primary-s: 15%;
+  --background-primary-l: 15%;
+  --background-primary: hsl(var(--background-primary-h), var(--background-primary-s), var(--background-primary-l));
+  --background-primary-alt-h: 220;
+  --background-primary-alt-s: 16%;
+  --background-primary-alt-l: 17%;
+  --background-primary-alt: hsl(var(--background-primary-alt-h), var(--background-primary-alt-s), var(--background-primary-alt-l));
+  --background-secondary-h: 220;
+  --background-secondary-s: 16%;
+  --background-secondary-l: 20%;
+  --background-secondary: hsl(var(--background-secondary-h), var(--background-secondary-s), var(--background-secondary-l));
+  --background-secondary-alt-h: 220;
+  --background-secondary-alt-s: 16%;
+  --background-secondary-alt-l: 23%;
+  --background-secondary-alt: hsl(var(--background-secondary-alt-h), var(--background-secondary-alt-s), var(--background-secondary-alt-l));
+  --background-modifier-border-h: 220;
+  --background-modifier-border-s: 16%;
+  --background-modifier-border-l: 30%;
+  --background-modifier-border: hsl(var(--background-modifier-border-h), var(--background-modifier-border-s), var(--background-modifier-border-l));
 }
 
 /* ========================================================================== */

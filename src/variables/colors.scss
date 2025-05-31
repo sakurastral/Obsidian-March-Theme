@@ -1,7 +1,0 @@
-.theme-light,
-.theme-dark {
-  --march-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
-  --march-bg-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
-  --march-50-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.5);
-  --march-light-accent: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 30%));
-}
