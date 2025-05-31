@@ -8,7 +8,7 @@ settings:
         title: Canlendar
         type: heading
         level: 1
-        collapsed: false
+        collapsed: true
     -
         id: march-calendar-color-holiday-text
         title: Holiday's Font Color
@@ -51,4 +51,17 @@ settings:
         title: Display Week Number's Right Border
         type: variable-text
         default: none
+    - 
+        id: heading-kanban
+        title: Kanban
+        type: heading
+        level: 1
+        collapsed: true
+    -
+        id: march-kanban-border-color
+        title: Kanban's Border Color
+        type: variable-color
+        default: rgb(0, 0, 0, 0)
+        format: rgb
+        opacity: true
 */
