@@ -14,6 +14,7 @@
   mask-size: 100%;
   -webkit-mask-repeat-x: no-repeat;
   -webkit-mask-repeat-y: no-repeat;
+  mask-repeat: no-repeat;
   -webkit-mask-position-x: 52%;
   -webkit-mask-position-y: 52%;
   background-color: var(--nav-collapse-icon-color);
@@ -64,17 +65,20 @@
 
   --nav-item-color-highlighted: var(--text-accent);
 }
-.nav-files-container .nav-folder:has(.is-active) {
-  --nav-item-color: var(--march-accent);
-  --nav-collapse-icon-color: var(--march-accent);
-  --nav-collapse-icon-color-collapsed: var(--march-accent);
-  --nav-indentation-guide-color: var(--march-accent);
-  .tree-item-self:not(.is-active):hover {
-    --nav-collapse-icon-color: var(--nav-item-color-hover);
+.nav-files-container {
+  .nav-folder:has(.is-active) {
+    --nav-item-color: var(--march-accent);
+    --nav-collapse-icon-color: var(--march-accent);
+    --nav-collapse-icon-color-collapsed: var(--march-accent);
+    --nav-indentation-guide-color: var(--march-accent);
+    .tree-item-self:not(.is-active):hover {
+      --nav-collapse-icon-color: var(--nav-item-color-hover);
+    }
   }
   .is-active {
     text-decoration: underline;
     text-underline-offset: 0.2rem;
+    --nav-collapse-icon-color: var(--march-accent);
 
     --background-modifier-border-focus: var(--march-50-accent);
     &:hover {
