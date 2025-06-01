@@ -743,6 +743,13 @@ settings:
         default-light: '#ababab'
         default-dark: '#666666'
 */
+:is(body) {
+  --font-ui-smaller: 0.75rem;
+  --font-ui-small: 0.8125rem;
+  --font-ui-medium: 0.9375rem;
+  --font-ui-large: 1.25rem;
+}
+
 .theme-light,
 .theme-dark {
   --march-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
@@ -2279,6 +2286,7 @@ body {
   mask-size: 100%;
   -webkit-mask-repeat-x: no-repeat;
   -webkit-mask-repeat-y: no-repeat;
+  mask-repeat: no-repeat;
   -webkit-mask-position-x: 52%;
   -webkit-mask-position-y: 52%;
   background-color: var(--nav-collapse-icon-color);
@@ -2293,6 +2301,7 @@ body {
   mask-size: 100%;
   -webkit-mask-repeat-x: no-repeat;
   -webkit-mask-repeat-y: no-repeat;
+  mask-repeat: no-repeat;
   -webkit-mask-position-x: 52%;
   -webkit-mask-position-y: 52%;
   background-color: var(--nav-collapse-icon-color);
@@ -2305,6 +2314,7 @@ body {
   mask-size: 100%;
   -webkit-mask-repeat-x: no-repeat;
   -webkit-mask-repeat-y: no-repeat;
+  mask-repeat: no-repeat;
   -webkit-mask-position-x: 52%;
   -webkit-mask-position-y: 52%;
   background-color: var(--nav-collapse-icon-color);
@@ -2323,6 +2333,7 @@ body {
   mask-size: 100%;
   -webkit-mask-repeat-x: no-repeat;
   -webkit-mask-repeat-y: no-repeat;
+  mask-repeat: no-repeat;
   -webkit-mask-position-x: 52%;
   -webkit-mask-position-y: 52%;
   background-color: var(--nav-collapse-icon-color);
@@ -2334,6 +2345,7 @@ body {
   mask-size: 100%;
   -webkit-mask-repeat-x: no-repeat;
   -webkit-mask-repeat-y: no-repeat;
+  mask-repeat: no-repeat;
   -webkit-mask-position-x: 52%;
   -webkit-mask-position-y: 52%;
   background-color: var(--nav-collapse-icon-color);
@@ -2345,6 +2357,7 @@ body {
   mask-size: 100%;
   -webkit-mask-repeat-x: no-repeat;
   -webkit-mask-repeat-y: no-repeat;
+  mask-repeat: no-repeat;
   -webkit-mask-position-x: 52%;
   -webkit-mask-position-y: 52%;
   background-color: var(--nav-collapse-icon-color);
@@ -2370,22 +2383,24 @@ body {
 .nav-files-container .nav-folder:has(.is-active) .tree-item-self:not(.is-active):hover {
   --nav-collapse-icon-color: var(--nav-item-color-hover);
 }
-.nav-files-container .nav-folder:has(.is-active) .is-active {
+.nav-files-container .is-active {
   text-decoration: underline;
   text-underline-offset: 0.2rem;
+  --nav-collapse-icon-color: var(--march-accent);
   --background-modifier-border-focus: var(--march-50-accent);
 }
-.nav-files-container .nav-folder:has(.is-active) .is-active:hover {
+.nav-files-container .is-active:hover {
   --nav-item-background-active: var(--march-bg-accent);
   --nav-collapse-icon-color: var(--nav-item-color-active);
 }
-.nav-files-container .nav-folder:has(.is-active) .is-active ::after {
+.nav-files-container .is-active ::after {
   -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin-icon lucide-map-pin"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>');
   mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin-icon lucide-map-pin"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>');
   -webkit-mask-size: 100%;
   mask-size: 100%;
   -webkit-mask-repeat-x: no-repeat;
   -webkit-mask-repeat-y: no-repeat;
+  mask-repeat: no-repeat;
   -webkit-mask-position-x: 52%;
   -webkit-mask-position-y: 52%;
   background-color: var(--nav-collapse-icon-color);
