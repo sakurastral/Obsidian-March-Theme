@@ -15,6 +15,9 @@ body {
     .cm-foldPlaceholder::before {
       display: none;
     }
+    &.cm-line:is(.HyperMD-codeblock-begin) .cm-indent::before {
+      --indentation-guide-color: transparent;
+    }
     &.cm-line:not(.HyperMD-codeblock-begin):not(.HyperMD-codeblock-end) {
       padding-left: 3rem;
       position: relative;
