@@ -542,18 +542,6 @@ settings:
             - 
                 label: Solid
                 value: styled-file-explorer-rainbow-bg2
-    - 
-        id: heading-style-settings
-        title: Style Settings
-        type: heading
-        level: 2
-        collapsed: true
-    -
-        id: enable-style-setting-surface-style
-        title: Enable Style for Style Settings
-        description: Toggle to turn on/off function.
-        type: class-toggle
-        default: true
 */
 /* @settings
 
@@ -2605,20 +2593,32 @@ body {
   background-color: var(--march-calendar-color-today-bg);
 }
 
-.enable-style-setting-surface-style .style-settings-heading[data-level="0"] {
-  border: 2px double var(--text-accent);
-  border-radius: 0.5rem;
-  padding: 0.3125rem;
-  margin-bottom: 0.5rem;
+.style-settings-heading {
+  margin-bottom: 0px;
 }
-.enable-style-setting-surface-style .style-settings-heading:not([data-level="0"]) {
-  border-bottom: 1px dashed var(--text-accent);
+.style-settings-heading:not([data-level="0"]) {
+  margin-bottom: 0px;
+}
+.style-settings-heading [data-level="0"] {
+  margin-bottom: 0px;
+}
+
+.style-settings-container {
+  border-left: 1px solid var(--background-modifier-border);
   margin-left: 1rem;
 }
-.enable-style-setting-surface-style :is(.style-settings-heading[data-level="0"] + .style-settings-container, .style-settings-container) {
-  padding-left: var(--size-2-1);
-  margin-left: var(--size-4-4);
-  margin-top: 0;
+
+.style-settings-heading[data-level="0"] + .style-settings-container {
+  padding-left: 1rem;
+  margin-top: 1rem;
+}
+.style-settings-heading[data-level="0"] + .style-settings-container .style-settings-container {
+  padding-left: 1rem;
+  margin-top: 1rem;
+}
+
+.style-settings-collapse-indicator {
+  color: var(--text-normal);
 }
 
 :is(body) {
