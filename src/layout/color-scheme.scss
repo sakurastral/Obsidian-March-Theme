@@ -1,18 +1,3 @@
-body.theme-light {
-  // Catppuccin-Latte-Teal
-  --accent-h: 183;
-  --accent-s: 74%;
-  --accent-l: 35%;
-}
-
-body.theme-dark {
-  // Catppuccin-Mocha-Teal
-  --accent-h: 170;
-  --accent-s: 57%;
-  --accent-l: 73%;
-  --text-on-accent: black;
-}
-
 .theme-light,
 .theme-dark {
   --march-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
