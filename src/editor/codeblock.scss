@@ -3,7 +3,6 @@
 /* ========================================================================== */
 
 // Adding line numbers in code blocks is adapted from @AnubisNekhet/AnuPpuccin (https://github.com/AnubisNekhet/AnuPpuccin) (https://www.buymeacoffee.com/anubisnekhet).
-// Dot Background is inspired from https://forum.obsidian.md/t/style-grid-background-and-dotted-background/90681.
 
 body {
   --march-codeblock-line-number-color: var(--text-faint);
@@ -19,7 +18,9 @@ body {
       --indentation-guide-color: transparent;
     }
     &.cm-line:not(.HyperMD-codeblock-begin):not(.HyperMD-codeblock-end) {
-      padding-left: 3rem;
+      &.HyperMD-codeblock:not(.HyperMD-list-line) {
+        padding-left: 3rem;
+      }
       position: relative;
       &::before {
         align-items: flex-end;
@@ -28,14 +29,15 @@ body {
         counter-increment: line-numbers;
         display: table-caption;
         font-size: 0.8em;
+        line-height: 1.3rem;
         height: 100%;
         justify-content: flex-end;
         left: 0;
-        padding-right: 0.5em;
+        padding-right: 0.5rem;
         padding-top: 1px;
         position: absolute;
         text-align: right;
-        width: 3em;
+        width: 1.5rem;
       }
       &:hover {
         --march-codeblock-line-number-color: var(--march-accent);
@@ -51,11 +53,12 @@ body {
 }
 
 body {
+  --march-code-background: var(--background-secondary);
   .cm-inline-code {
-    --code-background: var(--background-primary-alt);
+    --code-background: var(--march-code-background);
   }
   .HyperMD-codeblock.cm-line {
-    --code-background: var(--background-primary-alt);
+    --code-background: var(--march-code-background);
     .code-block-flair {
       top: 0;
       right: 0;

@@ -302,6 +302,12 @@ settings:
         type: variable-color
         default: var(--text-faint)
         format: hex
+    -
+        id: march-code-background
+        title: Codeblock's Background Color
+        type: variable-color
+        default: var(--background-secondary)
+        format: hex
     - 
         id: heading-blockquotes
         title: Blockquotes
@@ -1458,8 +1464,10 @@ body .HyperMD-codeblock.cm-line:is(.HyperMD-codeblock-begin) .cm-indent::before 
   --indentation-guide-color: transparent;
 }
 body .HyperMD-codeblock.cm-line:not(.HyperMD-codeblock-begin):not(.HyperMD-codeblock-end) {
-  padding-left: 3rem;
   position: relative;
+}
+body .HyperMD-codeblock.cm-line:not(.HyperMD-codeblock-begin):not(.HyperMD-codeblock-end).HyperMD-codeblock:not(.HyperMD-list-line) {
+  padding-left: 3rem;
 }
 body .HyperMD-codeblock.cm-line:not(.HyperMD-codeblock-begin):not(.HyperMD-codeblock-end)::before {
   align-items: flex-end;
@@ -1468,14 +1476,15 @@ body .HyperMD-codeblock.cm-line:not(.HyperMD-codeblock-begin):not(.HyperMD-codeb
   counter-increment: line-numbers;
   display: table-caption;
   font-size: 0.8em;
+  line-height: 1.3rem;
   height: 100%;
   justify-content: flex-end;
   left: 0;
-  padding-right: 0.5em;
+  padding-right: 0.5rem;
   padding-top: 1px;
   position: absolute;
   text-align: right;
-  width: 3em;
+  width: 1.5rem;
 }
 body .HyperMD-codeblock.cm-line:not(.HyperMD-codeblock-begin):not(.HyperMD-codeblock-end):hover {
   --march-codeblock-line-number-color: var(--march-accent);
@@ -1487,11 +1496,14 @@ body .HyperMD-codeblock.cm-line.cm-active:not(.HyperMD-codeblock-begin):not(.Hyp
   color: var(--march-accent);
 }
 
+body {
+  --march-code-background: var(--background-secondary);
+}
 body .cm-inline-code {
-  --code-background: var(--background-primary-alt);
+  --code-background: var(--march-code-background);
 }
 body .HyperMD-codeblock.cm-line {
-  --code-background: var(--background-primary-alt);
+  --code-background: var(--march-code-background);
 }
 body .HyperMD-codeblock.cm-line .code-block-flair {
   top: 0;
