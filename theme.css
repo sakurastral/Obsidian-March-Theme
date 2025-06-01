@@ -1,7 +1,6 @@
-@charset "UTF-8";
 /* @settings
 
-name: ⭐️ March Theme ⭐️
+name: March Theme - Editor & Layout
 id: march-theme-editor
 settings:
     - 
@@ -570,7 +569,7 @@ settings:
 */
 /* @settings
 
-name: ⭐️ March Theme - Plugins ⭐️
+name: March Theme - Plugins
 id: march-theme-plugin
 settings:
     - 
@@ -857,19 +856,6 @@ settings:
         default-light: '#ababab'
         default-dark: '#666666'
 */
-body.theme-light {
-  --accent-h: 183;
-  --accent-s: 74%;
-  --accent-l: 35%;
-}
-
-body.theme-dark {
-  --accent-h: 170;
-  --accent-s: 57%;
-  --accent-l: 73%;
-  --text-on-accent: black;
-}
-
 .theme-light,
 .theme-dark {
   --march-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
@@ -2837,4 +2823,50 @@ p.kanban-plugin__markdown-preview-view * {
 }
 .kanban-plugin__item-input .cm-line.cm-active {
   background-color: var(--background-primary) !important;
+}
+
+/* from: https://forum.obsidian.md/t/inline-property-style/46902/2 */
+span.dataview.inline-field {
+  white-space: nowrap;
+  font-size: var(--font-smallest);
+}
+
+span.dataview.inline-field-key {
+  border: 1px solid transparent;
+  border-right: none;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+  color: var(--text-on-accent);
+}
+
+span.dataview.inline-field-value {
+  border: 1px solid transparent;
+  border-left: none;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background: var(--background-secondary);
+  color: var(--text-normal);
+}
+
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task]:is([data-task=x]) span.dataview.inline-field-key,
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task]:is([data-task=x]) span.dataview.inline-field-value,
+.markdown-preview-view ul li[data-task=x].task-list-item.is-checked span.dataview.inline-field-key,
+.markdown-preview-view ul li[data-task=x].task-list-item.is-checked span.dataview.inline-field-value,
+li[data-task=x].task-list-item.is-checked span.dataview.inline-field-key,
+li[data-task=x].task-list-item.is-checked span.dataview.inline-field-value,
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task]:is([data-task=X]) span.dataview.inline-field-key,
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task]:is([data-task=X]) span.dataview.inline-field-value,
+.markdown-preview-view ul li[data-task=X].task-list-item.is-checked span.dataview.inline-field-key,
+.markdown-preview-view ul li[data-task=X].task-list-item.is-checked span.dataview.inline-field-value,
+li[data-task=X].task-list-item.is-checked span.dataview.inline-field-key,
+li[data-task=X].task-list-item.is-checked span.dataview.inline-field-value,
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task]:is([data-task="-"]) span.dataview.inline-field-key,
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task]:is([data-task="-"]) span.dataview.inline-field-value,
+.markdown-preview-view ul li[data-task="-"].task-list-item.is-checked span.dataview.inline-field-key,
+.markdown-preview-view ul li[data-task="-"].task-list-item.is-checked span.dataview.inline-field-value,
+li[data-task="-"].task-list-item.is-checked span.dataview.inline-field-key,
+li[data-task="-"].task-list-item.is-checked span.dataview.inline-field-value {
+  background: transparent;
+  color: var(--text-faint);
 }
