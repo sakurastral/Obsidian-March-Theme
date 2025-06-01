@@ -1,107 +1,47 @@
-/* ========================================================================== */
-/*                           Layout - Colorful Frame                          */
-/* ========================================================================== */
+body {
+  --titlebar-background: var(--march-accent);
+  --titlebar-background-focused: var(--titlebar-background);
+  --titlebar-text-color: var(--text-on-accent);
+  --titlebar-text-color-focused: var(--titlebar-text-color);
+  --divider-color: var(--background-modifier-border);
+  --modal-border-color: var(--divider-color);
 
-.enable-custom-layout-style-01 {
-  --titlebar-background-focused: var(--background-secondary);
-  --code-background: var(--background-primary);
+  --tab-divider-color: var(--text-on-accent);
+  --tab-text-color: var(--text-on-accent);
+  --tab-text-color-active: var(--text-normal);
+  --tab-text-color-focused: var(--tab-text-color);
+  --tab-text-color-focused-active: var(--tab-text-color-active);
+  --tab-text-color-focused-highlighted: var(--text-accent);
+  --tab-text-color-focused-active-current: var(--text-accent);
 
-  .workspace-ribbon {
-    --ribbon-background: var(--background-secondary);
-    border-right: none;
-
-    &.mod-left {
-      &:before {
-        border-bottom: none !important;
-      }
-      &.is-collapsed {
-        background-color: var(--background-secondary);
-      }
+  .modal-bg {
+    backdrop-filter: blur(0.5rem);
+  }
+  & .workspace-split .workspace-tabs.mod-top .workspace-tab-header-container {
+    --icon-color: var(--text-on-accent);
+    --icon-color-focused: var(--text-on-accent);
+    --icon-color-hover: var(--text-on-accent);
+    .workspace-tab-header.is-active {
+      background-color: var(--tab-background-active);
+      --icon-color: var(--march-accent);
+      --icon-color-focused: var(--march-accent);
     }
-
-    & .sidebar-toggle-button {
-      & .clickable-icon {
-        background-color: var(--background-primary);
-        border-radius: 5px;
-        padding: 10px 5px;
-      }
-    }
-    & .side-dock-actions {
-      background: var(--background-primary);
-      padding: 5px 0;
-      border-radius: 5px;
-      width: fit-content;
-      margin: 0 0 0 5px;
-      & .clickable-icon {
-        &:hover {
-          background-color: var(--background-secondary);
-        }
-      }
+    .workspace-tab-header-status-icon {
+      color: var(--text-on-accent);
     }
   }
-  .workspace-leaf-resize-handle {
-    --divider-color: transparent;
+  .sidebar-toggle-button {
+    --icon-color: var(--text-on-accent);
+    --icon-color-focused: var(--text-on-accent);
+    --icon-color-hover: var(--text-on-accent);
   }
-  .mod-sidedock .workspace-tab-header {
-    &:not(.is-active) {
-      .workspace-tab-header-inner {
-        &:hover {
-          background-color: var(--background-primary);
-        }
-      }
-    }
-    &.is-active {
-      background-color: var(--background-primary);
-      .workspace-tab-header-inner-icon {
-        color: var(--text-accent);
-      }
-      &.workspace-tab-header-inner:hover {
-        background-color: transparent;
-      }
-      &:hover {
-        background-color: var(--text-accent);
-        .workspace-tab-header-inner-icon {
-          color: var(--background-primary);
-        }
-      }
-    }
+  .status-bar {
+    --status-bar-background: var(--background-primary);
+    --status-bar-border-color: var(--divider-color);
+    border-radius: 0px;
+    width: 100%;
   }
-  .workspace-tabs.mod-top .workspace-leaf-content {
-    padding: 0 2.5px;
-  }
-  .view-header {
-    border-radius: 10px 10px 0 0;
-    border-bottom: 2px dashed var(--background-secondary);
-    margin-top: 5px;
-  }
-  .workspace-leaf-content {
-    background: var(--background-secondary);
-  }
-
-  .cm-lineNumbers {
-    & .cm-gutterElement.cm-active {
-      color: var(--text-accent);
-      font-weight: bold;
-    }
-  }
-
-  .workspace-tab-header-container {
-    border: none;
-    background-color: var(--background-secondary);
-  }
-
-  .workspace-sidedock-vault-profile {
-    border: none !important;
-    & .workspace-drawer-vault-switcher {
-      color: var(--text-accent) !important;
-      background-color: var(--background-primary);
-    }
-  }
-  .workspace-split {
-    padding: 0 0.5rem 1rem 0.5rem;
-    background: var(--background-secondary);
-    .view-content {
-      border-radius: 0 0 10px 10px;
-    }
+  .horizontal-main-container {
+    margin-bottom: calc(var(--status-bar-font-size) + var(--size-4-1) + var(--size-4-1) + 0.5rem);
   }
 }

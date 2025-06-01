@@ -1,0 +1,111 @@
+/* @settings
+
+name: March Theme - Layout
+id: march-theme-playout
+settings:
+    - 
+        id: heading-override-layout-colors
+        title: Override Colors
+        type: heading
+        level: 1
+        collapsed: false
+    -
+        id: background-primary
+        title: Primary Background
+        type: variable-themed-color
+        format: hex
+        opacity: false
+        default-light: '#ffffff'
+        default-dark: '#1e1e1e'
+    -
+        id: titlebar-background
+        title: Titlebar background color
+        type: variable-color
+        default: var(--march-accent)
+        format: hsl
+        opacity: false
+    -
+        id: titlebar-background-focused
+        title: Titlebar background color (focused window)
+        type: variable-color
+        default: var(--titlebar-background)
+        format: hsl
+        opacity: false
+    -
+        id: titlebar-text-color
+        title: Titlebar text color
+        type: variable-color
+        default: var(--text-on-accent)
+        format: hex
+        opacity: false
+    -
+        id: titlebar-text-color-focused
+        title: Titlebar text color (focused window)
+        type: variable-color
+        default: var(--titlebar-text-color)
+        format: hex
+        opacity: false
+    -
+        id: divider-color
+        title: Divider color
+        type: variable-color
+        default: var(--background-modifier-border)
+        format: hex
+        opacity: false
+    -
+        id: modal-border-color
+        title: Modal border color
+        type: variable-color
+        default: var(--divider-color)
+        format: hex
+        opacity: false
+    -
+        id: tab-divider-color
+        title: Tab divider color
+        type: variable-color
+        default: var(--text-on-accent)
+        format: hex
+        opacity: false
+    -
+        id: tab-text-color
+        title: Tab text color
+        type: variable-color
+        default: var(--text-on-accent)
+        format: hex
+        opacity: false
+    -
+        id: tab-text-color-active
+        title: Active tab text color
+        type: variable-color
+        default: var(--text-normal)
+        format: hex
+        opacity: false
+    -
+        id: tab-text-color-focused
+        title: Focused tab text color
+        type: variable-color
+        default: var(--tab-text-color)
+        format: hex
+        opacity: false
+    -
+        id: tab-text-color-focused-active
+        title: Focused active tab text color
+        type: variable-color
+        default: var(--tab-text-color-active)
+        format: hex
+        opacity: false
+    -
+        id: tab-text-color-focused-highlighted
+        title: Focused highlighted tab text color
+        type: variable-color
+        default: var(--text-accent)
+        format: hex
+        opacity: false
+    -
+        id: tab-text-color-focused-active-current
+        title: Focused active current tab text color
+        type: variable-color
+        default: var(--text-accent)
+        format: hex
+        opacity: false
+*/

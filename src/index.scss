@@ -1,11 +1,11 @@
 @use 'settings/main.scss';
 @use 'settings/plugins.scss';
 @use 'settings/colors.scss';
+@use 'settings/layouts.scss';
 
 @use 'layout/fonts.scss';
 @use 'layout/color-scheme.scss';
 @use 'layout/layout.scss';
-@use 'layout/status-bar.scss';
 @use 'layout/scrollbar.scss';
 @use 'layout/tab.scss';
 @use 'layout/active-line.scss';

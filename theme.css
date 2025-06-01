@@ -1,101 +1,8 @@
 /* @settings
 
-name: March Theme - Editor & Layout
+name: March Theme - Editor
 id: march-theme-editor
 settings:
-    - 
-        id: heading-layout
-        title: Layout
-        type: heading
-        level: 1
-        collapsed: true
-    - 
-        id: heading-custom-layout
-        title: Custom Layout
-        type: heading
-        level: 2
-        collapsed: true
-    -
-        id: enable-layout
-        title: Choose an Style
-        description: Toggle a custom style.
-        type: class-select
-        allowEmpty: false
-        default: enable-custom-layout-style-01
-        options:
-            - 
-                label: Default
-                value: none
-            - 
-                label: Round 01
-                value: enable-custom-layout-style-01
-    - 
-        id: heading-status-bar
-        title: Status Bar
-        type: heading
-        level: 2
-        collapsed: true
-    -
-        id: enable-styled-status-bar
-        title: Enable Style
-        description: Toggle to turn on/off function.
-        type: class-toggle
-        default: true
-    -
-        id: styled-status-bar-show-hover
-        title: Enable Status Bar Only Show on Hover
-        description: Toggle to turn on/off function.
-        type: class-toggle
-        default: true
-    - 
-        id: heading-tab
-        title: Tab
-        type: heading
-        level: 2
-        collapsed: true
-    -
-        id: enable-tab-style
-        title: Enable Styled Tab
-        description: Toggle to turn on/off function.
-        type: class-select
-        allowEmpty: false
-        default: enable-tab-style1
-        options:
-            - 
-                label: Default
-                value: none
-            - 
-                label: Style 01
-                value: enable-tab-style1
-    -
-        id: enable-tab-shrink-pinned-tab 
-        title: Shrink Pinned Tab
-        description: Shows the pin icon and note's icon if you set one from Iconize Plugin.
-        type: class-toggle
-        default: true
-    -
-        id: enable-tab-show-full-title
-        title: Show Full Title
-        description: Toggle to turn on/off function.
-        type: class-select
-        allowEmpty: false
-        default: enable-tab-always-show-full-title
-        options:
-            - 
-                label: None
-                value: none
-            - 
-                label: on Hover
-                value: enable-tab-hover-show-full-title
-            -
-                label: Always
-                value: enable-tab-always-show-full-title
-    - 
-        id: heading-Editor
-        title: Editor
-        type: heading
-        level: 1
-        collapsed: true
     - 
         id: heading-headings
         title: Headings
@@ -737,6 +644,117 @@ settings:
         default-light: '#ababab'
         default-dark: '#666666'
 */
+/* @settings
+
+name: March Theme - Layout
+id: march-theme-playout
+settings:
+    - 
+        id: heading-override-layout-colors
+        title: Override Colors
+        type: heading
+        level: 1
+        collapsed: false
+    -
+        id: background-primary
+        title: Primary Background
+        type: variable-themed-color
+        format: hex
+        opacity: false
+        default-light: '#ffffff'
+        default-dark: '#1e1e1e'
+    -
+        id: titlebar-background
+        title: Titlebar background color
+        type: variable-color
+        default: var(--march-accent)
+        format: hsl
+        opacity: false
+    -
+        id: titlebar-background-focused
+        title: Titlebar background color (focused window)
+        type: variable-color
+        default: var(--titlebar-background)
+        format: hsl
+        opacity: false
+    -
+        id: titlebar-text-color
+        title: Titlebar text color
+        type: variable-color
+        default: var(--text-on-accent)
+        format: hex
+        opacity: false
+    -
+        id: titlebar-text-color-focused
+        title: Titlebar text color (focused window)
+        type: variable-color
+        default: var(--titlebar-text-color)
+        format: hex
+        opacity: false
+    -
+        id: divider-color
+        title: Divider color
+        type: variable-color
+        default: var(--background-modifier-border)
+        format: hex
+        opacity: false
+    -
+        id: modal-border-color
+        title: Modal border color
+        type: variable-color
+        default: var(--divider-color)
+        format: hex
+        opacity: false
+    -
+        id: tab-divider-color
+        title: Tab divider color
+        type: variable-color
+        default: var(--text-on-accent)
+        format: hex
+        opacity: false
+    -
+        id: tab-text-color
+        title: Tab text color
+        type: variable-color
+        default: var(--text-on-accent)
+        format: hex
+        opacity: false
+    -
+        id: tab-text-color-active
+        title: Active tab text color
+        type: variable-color
+        default: var(--text-normal)
+        format: hex
+        opacity: false
+    -
+        id: tab-text-color-focused
+        title: Focused tab text color
+        type: variable-color
+        default: var(--tab-text-color)
+        format: hex
+        opacity: false
+    -
+        id: tab-text-color-focused-active
+        title: Focused active tab text color
+        type: variable-color
+        default: var(--tab-text-color-active)
+        format: hex
+        opacity: false
+    -
+        id: tab-text-color-focused-highlighted
+        title: Focused highlighted tab text color
+        type: variable-color
+        default: var(--text-accent)
+        format: hex
+        opacity: false
+    -
+        id: tab-text-color-focused-active-current
+        title: Focused active current tab text color
+        type: variable-color
+        default: var(--text-accent)
+        format: hex
+        opacity: false
+*/
 :is(body) {
   --font-ui-smaller: 0.75rem;
   --font-ui-small: 0.8125rem;
@@ -1102,116 +1120,50 @@ settings:
   --background-modifier-border: hsl(var(--background-modifier-border-h), var(--background-modifier-border-s), var(--background-modifier-border-l));
 }
 
-/* ========================================================================== */
-/*                           Layout - Colorful Frame                          */
-/* ========================================================================== */
-.enable-custom-layout-style-01 {
-  --titlebar-background-focused: var(--background-secondary);
-  --code-background: var(--background-primary);
+body {
+  --titlebar-background: var(--march-accent);
+  --titlebar-background-focused: var(--titlebar-background);
+  --titlebar-text-color: var(--text-on-accent);
+  --titlebar-text-color-focused: var(--titlebar-text-color);
+  --divider-color: var(--background-modifier-border);
+  --modal-border-color: var(--divider-color);
+  --tab-divider-color: var(--text-on-accent);
+  --tab-text-color: var(--text-on-accent);
+  --tab-text-color-active: var(--text-normal);
+  --tab-text-color-focused: var(--tab-text-color);
+  --tab-text-color-focused-active: var(--tab-text-color-active);
+  --tab-text-color-focused-highlighted: var(--text-accent);
+  --tab-text-color-focused-active-current: var(--text-accent);
 }
-.enable-custom-layout-style-01 .workspace-ribbon {
-  --ribbon-background: var(--background-secondary);
-  border-right: none;
+body .modal-bg {
+  backdrop-filter: blur(0.5rem);
 }
-.enable-custom-layout-style-01 .workspace-ribbon.mod-left:before {
-  border-bottom: none !important;
+body .workspace-split .workspace-tabs.mod-top .workspace-tab-header-container {
+  --icon-color: var(--text-on-accent);
+  --icon-color-focused: var(--text-on-accent);
+  --icon-color-hover: var(--text-on-accent);
 }
-.enable-custom-layout-style-01 .workspace-ribbon.mod-left.is-collapsed {
-  background-color: var(--background-secondary);
+body .workspace-split .workspace-tabs.mod-top .workspace-tab-header-container .workspace-tab-header.is-active {
+  background-color: var(--tab-background-active);
+  --icon-color: var(--march-accent);
+  --icon-color-focused: var(--march-accent);
 }
-.enable-custom-layout-style-01 .workspace-ribbon .sidebar-toggle-button .clickable-icon {
-  background-color: var(--background-primary);
-  border-radius: 5px;
-  padding: 10px 5px;
+body .workspace-split .workspace-tabs.mod-top .workspace-tab-header-container .workspace-tab-header-status-icon {
+  color: var(--text-on-accent);
 }
-.enable-custom-layout-style-01 .workspace-ribbon .side-dock-actions {
-  background: var(--background-primary);
-  padding: 5px 0;
-  border-radius: 5px;
-  width: fit-content;
-  margin: 0 0 0 5px;
+body .sidebar-toggle-button {
+  --icon-color: var(--text-on-accent);
+  --icon-color-focused: var(--text-on-accent);
+  --icon-color-hover: var(--text-on-accent);
 }
-.enable-custom-layout-style-01 .workspace-ribbon .side-dock-actions .clickable-icon:hover {
-  background-color: var(--background-secondary);
-}
-.enable-custom-layout-style-01 .workspace-leaf-resize-handle {
-  --divider-color: transparent;
-}
-.enable-custom-layout-style-01 .mod-sidedock .workspace-tab-header:not(.is-active) .workspace-tab-header-inner:hover {
-  background-color: var(--background-primary);
-}
-.enable-custom-layout-style-01 .mod-sidedock .workspace-tab-header.is-active {
-  background-color: var(--background-primary);
-}
-.enable-custom-layout-style-01 .mod-sidedock .workspace-tab-header.is-active .workspace-tab-header-inner-icon {
-  color: var(--text-accent);
-}
-.enable-custom-layout-style-01 .mod-sidedock .workspace-tab-header.is-active.workspace-tab-header-inner:hover {
-  background-color: transparent;
-}
-.enable-custom-layout-style-01 .mod-sidedock .workspace-tab-header.is-active:hover {
-  background-color: var(--text-accent);
-}
-.enable-custom-layout-style-01 .mod-sidedock .workspace-tab-header.is-active:hover .workspace-tab-header-inner-icon {
-  color: var(--background-primary);
-}
-.enable-custom-layout-style-01 .workspace-tabs.mod-top .workspace-leaf-content {
-  padding: 0 2.5px;
-}
-.enable-custom-layout-style-01 .view-header {
-  border-radius: 10px 10px 0 0;
-  border-bottom: 2px dashed var(--background-secondary);
-  margin-top: 5px;
-}
-.enable-custom-layout-style-01 .workspace-leaf-content {
-  background: var(--background-secondary);
-}
-.enable-custom-layout-style-01 .cm-lineNumbers .cm-gutterElement.cm-active {
-  color: var(--text-accent);
-  font-weight: bold;
-}
-.enable-custom-layout-style-01 .workspace-tab-header-container {
-  border: none;
-  background-color: var(--background-secondary);
-}
-.enable-custom-layout-style-01 .workspace-sidedock-vault-profile {
-  border: none !important;
-}
-.enable-custom-layout-style-01 .workspace-sidedock-vault-profile .workspace-drawer-vault-switcher {
-  color: var(--text-accent) !important;
-  background-color: var(--background-primary);
-}
-.enable-custom-layout-style-01 .workspace-split {
-  padding: 0 0.5rem 1rem 0.5rem;
-  background: var(--background-secondary);
-}
-.enable-custom-layout-style-01 .workspace-split .view-content {
-  border-radius: 0 0 10px 10px;
-}
-
-/* ========================================================================== */
-/*                             Layout - Status Bar                            */
-/* ========================================================================== */
-.enable-styled-status-bar {
-  /** status-bar-show-hover is inspired from @subframe7536/obsidian-theme-maple (https://github.com/subframe7536/obsidian-theme-maple). */
-}
-.enable-styled-status-bar .status-bar {
+body .status-bar {
   --status-bar-background: var(--background-primary);
-  --status-bar-border-color: var(--background-secondary);
-  bottom: 10px;
-  right: 10px;
-  border-radius: 10px;
-  font-weight: 600;
+  --status-bar-border-color: var(--divider-color);
+  border-radius: 0px;
+  width: 100%;
 }
-.enable-styled-status-bar.styled-status-bar-show-hover .status-bar {
-  padding-left: calc(var(--size-4-1) + var(--size-4-1));
-  transform: translateX(calc(100% - var(--size-4-1)));
-  transition-delay: var(--animation-delay);
-}
-.enable-styled-status-bar.styled-status-bar-show-hover .status-bar:hover {
-  transform: translateX(0);
-  transition-delay: 0s;
-  padding-left: var(--size-4-1);
+body .horizontal-main-container {
+  margin-bottom: calc(var(--status-bar-font-size) + var(--size-4-1) + var(--size-4-1) + 0.5rem);
 }
 
 body {
@@ -1234,124 +1186,14 @@ body :hover::-webkit-scrollbar-thumb {
   background-color: var(--scrollbar-thumb-bg) !important;
 }
 
-/* ========================================================================== */
-/*                                Layout - Tab                                */
-/* ========================================================================== */
-.enable-tab-style1 {
-  --tab-accent: var(--text-muted);
-  --tab-accent-hover: var(--text-accent);
-  --tab-accent-bg: var(--background-primary);
-  --tab-accent-bg-hover: var(--background-primary);
-  --tab-accent-border: transparent;
-  --tab-accent-active: var(--text-accent);
-  --tab-accent-active-hover: var(--text-accent);
-  --tab-accent-active-bg: var(--background-primary);
-  --tab-accent-active-bg-hover: var(--background-primary);
-  --tab-accent-border-active: var(--text-accent);
-}
-.enable-tab-style1 .mod-root .workspace-tab-header::before, .enable-tab-style1 .mod-root .workspace-tab-header::after,
-.enable-tab-style1 .mod-root .workspace-tab-header .workspace-tab-header-inner::after {
-  display: none;
-}
-.enable-tab-style1 .mod-root .workspace-tab-header:not(.is-active) .workspace-tab-header-inner {
-  background-color: var(--tab-accent-bg);
-  color: var(--tab-accent);
-}
-.enable-tab-style1 .mod-root .workspace-tab-header:not(.is-active) .workspace-tab-header-inner:hover {
-  background-color: transparent;
-  color: var(--tab-accent-hover);
-}
-.enable-tab-style1 .mod-root .workspace-tab-header:not(.is-active) .workspace-tab-header-inner:hover .workspace-tab-header-inner-icon,
-.enable-tab-style1 .mod-root .workspace-tab-header:not(.is-active) .workspace-tab-header-inner:hover .workspace-tab-header-inner-close-button {
-  background-color: var(--tab-accent-bg-hover);
-  color: var(--tab-accent-hover);
-}
-.enable-tab-style1 .mod-root .workspace-tab-header:not(.is-active) .workspace-tab-header-inner .workspace-tab-header-inner-icon,
-.enable-tab-style1 .mod-root .workspace-tab-header:not(.is-active) .workspace-tab-header-inner .workspace-tab-header-inner-close-button {
-  color: var(--tab-accent);
-  display: block;
-}
-.enable-tab-style1 .mod-root .workspace-tab-header:not(.is-active) .workspace-tab-header-inner {
-  border-radius: 10px;
-  border: 2px solid var(--tab-accent-border);
-}
-.enable-tab-style1 .mod-root .workspace-tab-header:not(.is-active) .workspace-tab-header-inner:hover {
-  background-color: var(--tab-accent-bg-hover);
-  border: 2px solid var(--tab-accent-border);
-}
-.enable-tab-style1 .mod-root .workspace-tab-header.is-active {
-  border: 2px solid var(--tab-accent-border-active);
-  border-radius: 10px;
-  margin-bottom: 3px;
-  box-shadow: none;
-  background-color: var(--tab-accent-active-bg);
-  color: var(--tab-accent-active);
-}
-.enable-tab-style1 .mod-root .workspace-tab-header.is-active .workspace-tab-header-inner-icon,
-.enable-tab-style1 .mod-root .workspace-tab-header.is-active .workspace-tab-header-inner-close-button {
-  background-color: transparent;
-  color: var(--tab-accent-active);
-}
-.enable-tab-style1 .mod-root .workspace-tab-header.is-active .workspace-tab-header-inner-title {
-  color: var(--tab-accent-active);
-}
-.enable-tab-style1 .mod-root .workspace-tab-header.is-active:hover {
-  background-color: var(--tab-accent-active-bg-hover);
-  color: var(--tab-accent-active-hover);
-  border: 2px solid var(--tab-accent-active);
-}
-.enable-tab-style1 .mod-root .workspace-tab-header.is-active:hover .workspace-tab-header-inner-icon,
-.enable-tab-style1 .mod-root .workspace-tab-header.is-active:hover .workspace-tab-header-inner-close-button {
-  background-color: transparent;
-  color: var(--tab-accent-active-hover);
-}
-.enable-tab-style1 .mod-root .workspace-tab-header.is-active:hover .workspace-tab-header-inner-title {
-  color: var(--tab-accent-active-hover);
-}
-
-/** enable-tab-shrink-pinned-tab is inspired from https://forum.obsidian.md/t/shrink-the-size-of-pinned-tabs/71914 */
-.enable-tab-shrink-pinned-tab .workspace-tab-header:has(.mod-pinned) {
+/** shrink-pinned-tab: from https://forum.obsidian.md/t/shrink-the-size-of-pinned-tabs/71914 */
+.workspace-tab-header:has(.mod-pinned) {
   max-width: 3.125rem !important;
-  --tab-accent: var(--tab-accent-active);
+  container-type: normal !important;
+  min-width: max-content !important;
 }
-.enable-tab-shrink-pinned-tab .workspace-tab-header:has(.mod-pinned) .workspace-tab-header-inner-title {
+.workspace-tab-header:has(.mod-pinned) .workspace-tab-header-inner-title {
   max-width: 3rem;
-}
-.enable-tab-shrink-pinned-tab .workspace-tab-header:has(.mod-pinned) .mod-pinned {
-  opacity: 60%;
-}
-.enable-tab-shrink-pinned-tab .workspace-tab-header:has(.mod-pinned):hover .mod-pinned {
-  opacity: 100%;
-}
-
-.enable-tab-hover-show-full-title {
-  --hover-show-title: max-content;
-  --size-tab-space-new-tab: 0.75rem;
-}
-.enable-tab-hover-show-full-title .workspace-tab-header:hover {
-  container-type: normal !important;
-  min-width: var(--hover-show-title) !important;
-}
-.enable-tab-hover-show-full-title .workspace-tab-header:hover .workspace-tab-header-inner-title {
-  display: flex;
-}
-.enable-tab-hover-show-full-title .workspace-tab-header-new-tab {
-  margin-inline-start: var(--size-tab-space-new-tab);
-}
-
-.enable-tab-always-show-full-title {
-  --hover-show-title: max-content;
-  --size-tab-space-new-tab: 0.75rem;
-}
-.enable-tab-always-show-full-title .workspace-tab-header {
-  container-type: normal !important;
-  min-width: var(--hover-show-title) !important;
-}
-.enable-tab-always-show-full-title .workspace-tab-header .workspace-tab-header-inner-title {
-  margin-right: 10px;
-}
-.enable-tab-always-show-full-title .workspace-tab-header-new-tab {
-  margin-inline-start: var(--size-tab-space-new-tab);
 }
 
 body .cm-line.cm-active {
