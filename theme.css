@@ -48,18 +48,6 @@ settings:
         type: class-toggle
         default: true
     - 
-        id: heading-scrollbar
-        title: Scroll Bar
-        type: heading
-        level: 2
-        collapsed: true
-    -
-        id: layout-scrollbar-hide
-        title: Hide Scroll Bar
-        description: Toggle to turn on/off function.
-        type: class-toggle
-        default: true
-    - 
         id: heading-tab
         title: Tab
         type: heading
@@ -1226,11 +1214,24 @@ settings:
   padding-left: var(--size-4-1);
 }
 
-/* ========================================================================== */
-/*                             Layout - Scrollbar                             */
-/* ========================================================================== */
-.layout-scrollbar-hide ::-webkit-scrollbar {
-  width: 0px;
+body {
+  --scrollbar-bg: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0);
+  --scrollbar-thumb-bg: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.3);
+}
+body ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: transparent;
+}
+body ::-webkit-scrollbar-thumb {
+  background-clip: padding-box;
+  border: 2px solid transparent;
+  border-width: 3px 3px 3px 2px;
+  -webkit-border-radius: var(--radius-l);
+  min-height: 45px;
+}
+body :hover::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb-bg) !important;
 }
 
 /* ========================================================================== */

@@ -1,9 +1,20 @@
-/* ========================================================================== */
-/*                             Layout - Scrollbar                             */
-/* ========================================================================== */
-
-.layout-scrollbar-hide {
+body {
+  --scrollbar-bg: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0);
+  --scrollbar-thumb-bg: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.3);
   ::-webkit-scrollbar {
-    width: 0px;
+    width: 8px;
+    height: 8px;
+    background-color: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-clip: padding-box;
+    border: 2px solid transparent;
+    border-width: 3px 3px 3px 2px;
+    -webkit-border-radius: var(--radius-l);
+    min-height: 45px;
+  }
+  // from: @Akifyss/obsidian-border (https://github.com/Akifyss/obsidian-border)
+  :hover::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb-bg) !important;
   }
 }
