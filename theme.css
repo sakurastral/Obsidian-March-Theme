@@ -1134,6 +1134,7 @@ body {
   --tab-text-color-focused-active: var(--tab-text-color-active);
   --tab-text-color-focused-highlighted: var(--text-accent);
   --tab-text-color-focused-active-current: var(--text-accent);
+  --march-status-bar-height: calc(var(--status-bar-font-size) + var(--size-4-1) + var(--size-4-1) + 0.5rem);
 }
 body .modal-bg {
   backdrop-filter: blur(0.5rem);
@@ -1149,7 +1150,8 @@ body .workspace-split .workspace-tabs.mod-top .workspace-tab-header-container .w
   --icon-color-focused: var(--march-accent);
 }
 body .workspace-split .workspace-tabs.mod-top .workspace-tab-header-container .workspace-tab-header-status-icon {
-  color: var(--text-on-accent);
+  color: var(--titlebar-text-color);
+  background: var(--titlebar-background);
 }
 body .sidebar-toggle-button {
   --icon-color: var(--text-on-accent);
@@ -1157,13 +1159,15 @@ body .sidebar-toggle-button {
   --icon-color-hover: var(--text-on-accent);
 }
 body .status-bar {
-  --status-bar-background: var(--background-primary);
+  --status-bar-background: var(--titlebar-background);
+  --status-bar-text-color: var(--titlebar-text-color);
   --status-bar-border-color: var(--divider-color);
   border-radius: 0px;
   width: 100%;
+  height: var(--march-status-bar-height);
 }
 body .horizontal-main-container {
-  margin-bottom: calc(var(--status-bar-font-size) + var(--size-4-1) + var(--size-4-1) + 0.5rem);
+  margin-bottom: var(--march-status-bar-height);
 }
 
 body {
