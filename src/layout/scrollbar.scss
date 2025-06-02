@@ -1,9 +1,11 @@
 body {
   --scrollbar-bg: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0);
   --scrollbar-thumb-bg: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.3);
+  --march-scrollbar-width: 8px;
+
   ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+    width: var(--march-scrollbar-width);
+    height: var(--march-scrollbar-width);
     background-color: transparent;
   }
   ::-webkit-scrollbar-thumb {

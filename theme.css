@@ -754,6 +754,21 @@ settings:
         default: var(--text-accent)
         format: hex
         opacity: false
+    - 
+        id: heading-scrollbar
+        title: Scrollbar
+        type: heading
+        level: 1
+        collapsed: false
+    - 
+        id: march-scrollbar-width
+        title: Scrollbar width
+        type: variable-number-slider
+        format: px
+        default: 8
+        min: 0
+        max: 20
+        step: 1
 */
 :is(body) {
   --font-ui-smaller: 0.75rem;
@@ -1173,10 +1188,11 @@ body .horizontal-main-container {
 body {
   --scrollbar-bg: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0);
   --scrollbar-thumb-bg: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.3);
+  --march-scrollbar-width: 8px;
 }
 body ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: var(--march-scrollbar-width);
+  height: var(--march-scrollbar-width);
   background-color: transparent;
 }
 body ::-webkit-scrollbar-thumb {
