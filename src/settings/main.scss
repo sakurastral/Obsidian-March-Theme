@@ -132,28 +132,28 @@ settings:
         id: link-color
         title: Internal Link's Font Color
         type: variable-color
-        default: rgb(var(--color-pink-rgb), 1)
+        default: var(--march-accent)
         format: rgb
         opacity: true
     -
         id: march-internal-link-background-color
         title: Internal Link's Background Color
         type: variable-color
-        default: rgb(var(--color-pink-rgb), 0.2)
+        default: var(--march-bg-accent)
         format: rgb
         opacity: true
     -
         id: link-external-color
         title: External Link's Font Color
         type: variable-color
-        default: rgb(var(--color-yellow-rgb), 1)
+        default: var(--march-accent)
         format: rgb
         opacity: true
     -
         id: march-external-link-background-color
         title: External Link's Background Color
         type: variable-color
-        default: rgb(var(--color-yellow-rgb), 0.2)
+        default: var(--march-bg-accent)
         format: rgb
         opacity: true
     - 

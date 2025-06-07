@@ -17,10 +17,10 @@ body {
   --march-internal-link-icon-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-text-icon lucide-file-text"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>');
   --march-external-link-icon-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>');
 
-  --link-color: rgb(var(--color-pink-rgb), 1);
-  --march-internal-link-background-color: rgb(var(--color-pink-rgb), 0.2);
-  --link-external-color: rgb(var(--color-yellow-rgb), 1);
-  --march-external-link-background-color: rgb(var(--color-yellow-rgb), 0.2);
+  --link-color: var(--march-accent);
+  --march-internal-link-background-color: var(--march-bg-accent);
+  --link-external-color: var(--march-accent);
+  --march-external-link-background-color: var(--march-bg-accent);
 }
 
 body {
