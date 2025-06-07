@@ -1135,6 +1135,13 @@ settings:
   --background-modifier-border: hsl(var(--background-modifier-border-h), var(--background-modifier-border-s), var(--background-modifier-border-l));
 }
 
+:is(body) {
+  --transition-default-property: all;
+  --transition-default-duration: 300ms;
+  --transition-file-explorer-property: all;
+  --transition-file-explorer-duration: 300ms;
+}
+
 body {
   --titlebar-background: var(--march-accent);
   --titlebar-background-focused: var(--titlebar-background);
@@ -2259,10 +2266,16 @@ body {
   --nav-collapse-icon-color: var(--nav-item-color-hover);
 }
 .nav-files-container .is-active {
-  text-decoration: underline;
-  text-underline-offset: 0.2rem;
   --nav-collapse-icon-color: var(--march-accent);
   --background-modifier-border-focus: var(--march-50-accent);
+}
+.nav-files-container .is-active .tree-item-inner {
+  background-color: var(--march-accent);
+  color: var(--text-on-accent);
+  padding: 0.1rem 0.3rem;
+  border-radius: 0.6rem;
+  transition: var(--transition-file-explorer-property);
+  transition-duration: var(--transition-file-explorer-duration);
 }
 .nav-files-container .is-active:hover {
   --nav-item-background-active: var(--march-bg-accent);

@@ -76,9 +76,15 @@
     }
   }
   .is-active {
-    text-decoration: underline;
-    text-underline-offset: 0.2rem;
     --nav-collapse-icon-color: var(--march-accent);
+    .tree-item-inner {
+      background-color: var(--march-accent);
+      color: var(--text-on-accent);
+      padding: 0.1rem 0.3rem;
+      border-radius: 0.6rem;
+      transition: var(--transition-file-explorer-property);
+      transition-duration: var(--transition-file-explorer-duration);
+    }
 
     --background-modifier-border-focus: var(--march-50-accent);
     &:hover {
