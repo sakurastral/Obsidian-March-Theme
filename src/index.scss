@@ -6,11 +6,13 @@
 @use 'layout/fonts.scss';
 @use 'layout/color-scheme.scss';
 @use 'layout/animation.scss';
+
 @use 'layout/layout.scss';
 @use 'layout/scrollbar.scss';
 @use 'layout/tab.scss';
 @use 'layout/active-line.scss';
 @use 'layout/inline-title.scss';
+@use 'layout/global-settings.scss';
 
 @use 'editor/callout.scss';
 @use 'editor/embed.scss';

@@ -16,9 +16,6 @@ body {
 
   --march-status-bar-height: calc(var(--status-bar-font-size) + var(--size-4-1) + var(--size-4-1) + 0.5rem);
 
-  .modal-bg {
-    backdrop-filter: blur(0.5rem);
-  }
   & .workspace-split .workspace-tabs.mod-top .workspace-tab-header-container {
     --icon-color: var(--text-on-accent);
     --icon-color-focused: var(--text-on-accent);

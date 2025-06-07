@@ -774,7 +774,7 @@ settings:
   --font-ui-smaller: 0.75rem;
   --font-ui-small: 0.8125rem;
   --font-ui-medium: 0.9375rem;
-  --font-ui-large: 1.25rem;
+  --font-ui-larger: 1.25rem;
 }
 
 .theme-light,
@@ -1140,6 +1140,8 @@ settings:
   --transition-default-duration: 300ms;
   --transition-file-explorer-property: all;
   --transition-file-explorer-duration: 300ms;
+  --transition-global-settings-property: all;
+  --transition-global-settings-duration: 200ms;
 }
 
 body {
@@ -1157,9 +1159,6 @@ body {
   --tab-text-color-focused-highlighted: var(--text-accent);
   --tab-text-color-focused-active-current: var(--text-accent);
   --march-status-bar-height: calc(var(--status-bar-font-size) + var(--size-4-1) + var(--size-4-1) + 0.5rem);
-}
-body .modal-bg {
-  backdrop-filter: blur(0.5rem);
 }
 body .workspace-split .workspace-tabs.mod-top .workspace-tab-header-container {
   --icon-color: var(--text-on-accent);
@@ -1234,6 +1233,38 @@ body .cm-line.cm-active {
   text-align: center;
   gap: 10px;
   color: var(--text-accent);
+}
+
+.modal-bg {
+  backdrop-filter: blur(0.5rem);
+}
+
+.modal.mod-settings {
+  --modal-border-color: var(--march-accent);
+}
+.modal.mod-settings .vertical-tab-header {
+  border-inline-end: 1px solid var(--modal-border-color);
+}
+.modal.mod-settings .vertical-tab-header .vertical-tab-header-group-title {
+  font-size: var(--font-ui-medium);
+  color: var(--march-accent);
+}
+.modal.mod-settings .vertical-tab-header .vertical-tab-header-group-items {
+  padding-left: 1rem;
+}
+.modal.mod-settings .vertical-tab-header .vertical-tab-header-group-items .vertical-tab-nav-item {
+  transition: var(--transition-global-settings-property);
+  transition-duration: var(--transition-global-settings-duration);
+}
+.modal.mod-settings .vertical-tab-header .vertical-tab-header-group-items .vertical-tab-nav-item:hover {
+  margin-left: 1rem;
+}
+.modal.mod-settings .vertical-tab-header .vertical-tab-header-group-items .vertical-tab-nav-item.is-active {
+  padding: 0.3rem 1rem;
+}
+.modal.mod-settings .vertical-tab-content .setting-item-heading .setting-item-info .setting-item-name {
+  color: var(--march-accent);
+  font-size: var(--font-ui-larger);
 }
 
 /* ========================================================================== */

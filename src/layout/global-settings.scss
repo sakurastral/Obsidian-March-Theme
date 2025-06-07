@@ -1,0 +1,30 @@
+.modal-bg {
+  backdrop-filter: blur(0.5rem);
+}
+.modal.mod-settings {
+  .vertical-tab-header {
+    .vertical-tab-header-group-title {
+      font-size: var(--font-ui-medium);
+      color: var(--march-accent);
+    }
+    .vertical-tab-header-group-items {
+      padding-left: 1rem;
+      .vertical-tab-nav-item {
+        transition: var(--transition-global-settings-property);
+        transition-duration: var(--transition-global-settings-duration);
+        &:hover {
+          margin-left: 1rem;
+        }
+        &.is-active {
+          padding: 0.3rem 1rem;
+        }
+      }
+    }
+  }
+  .vertical-tab-content {
+    .setting-item-heading .setting-item-info .setting-item-name {
+      color: var(--march-accent);
+      font-size: var(--font-ui-larger);
+    }
+  }
+}
