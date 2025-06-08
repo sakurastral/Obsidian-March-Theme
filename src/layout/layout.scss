@@ -16,6 +16,15 @@ body {
 
   --march-status-bar-height: calc(var(--status-bar-font-size) + var(--size-4-1) + var(--size-4-1) + 0.5rem);
 
+  .mod-root {
+    --metadata-background: var(--background-primary-alt);
+    --metadata-border-width: 1px;
+    --metadata-border-color: var(--background-modifier-border);
+    --metadata-border-radius: 1rem;
+    --metadata-padding: 0.5rem;
+    --metadata-divider-width: 1px;
+  }
+
   & .workspace-split .workspace-tabs.mod-top .workspace-tab-header-container {
     --icon-color: var(--text-on-accent);
     --icon-color-focused: var(--text-on-accent);
