@@ -1477,9 +1477,7 @@ body .cm-line.cm-active {
 /*                              Editor - Callout                              */
 /* ========================================================================== */
 /** 
- * This is inspired from 
- * @spacewitches/Obsidian (https://github.com/spacewitches/Obsidian/blob/e6733131f09c7ae3f37d6e11498f7ad7c00bb8d5/Minimal%20Theme/calloutsOutline.css) 
- * and AnuPpuccin Theme (https://github.com/AnubisNekhet/AnuPpuccin) (https://www.buymeacoffee.com/anubisnekhet).
+ * from @spacewitches/Obsidian (https://github.com/spacewitches/Obsidian/blob/e6733131f09c7ae3f37d6e11498f7ad7c00bb8d5/Minimal%20Theme/calloutsOutline.css).
  */
 body {
   --callout-border-width: 0.125rem;
