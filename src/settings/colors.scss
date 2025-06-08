@@ -219,4 +219,52 @@ settings:
         opacity: false
         default-light: '#ababab'
         default-dark: '#666666'
+    -
+        id: march-formatted-text-highlight-bg
+        title: Highlight Background Color
+        type: variable-themed-color
+        format: hsl
+        opacity: false
+        default-light: hsl(56, 100%, 50%)
+        default-dark: hsl(56, 100%, 50%)
+    -
+        id: march-formatted-text-highlight-fg
+        title: Highlight Font Color
+        type: variable-themed-color
+        format: hsl
+        opacity: false
+        default-light: hsl(0, 0%, 0%)
+        default-dark: hsl(0, 0%, 0%)
+    -
+        id: march-formatted-text-bold-bg
+        title: Bold Text Background Color
+        type: variable-themed-color
+        format: hsl
+        opacity: true
+        default-light: hsla(35, 100%, 47%, 0.18)
+        default-dark: hsla(35, 100%, 47%, 0.18)
+    -
+        id: bold-color
+        title: Bold Text Font Color
+        type: variable-themed-color
+        format: hsl
+        opacity: false
+        default-light: hsl(0, 0%, 0%)
+        default-dark: hsl(0, 0%, 0%)
+    -
+        id: march-formatted-text-italic-bg
+        title: Italic Text Background Color
+        type: variable-themed-color
+        format: hsl
+        opacity: true
+        default-light: hsla(78, 100%, 37%, 0.19)
+        default-dark: hsla(78, 100%, 37%, 0.19)
+    -
+        id: italic-color
+        title: Italic Text Font Color
+        type: variable-themed-color
+        format: hsl
+        opacity: false
+        default-light: hsl(0, 0%, 0%)
+        default-dark: hsl(0, 0%, 0%)
 */

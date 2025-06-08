@@ -1,0 +1,33 @@
+:is(body) {
+  --march-formatted-text-highlight-bg: hsl(56, 100%, 50%);
+  --march-formatted-text-highlight-fg: hsl(0, 0%, 0%);
+
+  // /** Flatwhite Syntax from Atom: https://github.com/biletskyy/flatwhite-syntax */
+  --march-formatted-text-bold-bg: hsla(35, 100%, 47%, 0.18);
+  // --bold-color: inherit;
+
+  // /** Flatwhite Syntax from Atom: https://github.com/biletskyy/flatwhite-syntax */
+  --march-formatted-text-italic-bg: hsla(78, 100%, 37%, 0.19);
+  // --italic-color: inherit;
+}
+
+.cm-highlight,
+mark,
+.search-result-file-matched-text {
+  background-color: var(--march-formatted-text-highlight-bg) !important;
+  color: var(--march-formatted-text-highlight-fg) !important;
+}
+
+b,
+strong,
+.cm-strong {
+  color: var(--bold-color);
+  background-color: var(--march-formatted-text-bold-bg) !important;
+}
+
+i,
+em,
+.cm-em {
+  color: var(--italic-color);
+  background-color: var(--march-formatted-text-italic-bg) !important;
+}
