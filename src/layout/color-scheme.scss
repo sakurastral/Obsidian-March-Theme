@@ -3,6 +3,187 @@
   --march-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
   --march-bg-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
   --march-50-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.5);
+
+  --background-modifier-border-hover: var(--background-modifier-border);
+  --background-modifier-border-focus: var(--background-modifier-border);
+}
+
+/** Default Color Palette */
+/** Flat Theme from Zed: https://github.com/bIaqat/flat-theme-zed and Flatwhite Syntax from Atom: https://github.com/biletskyy/flatwhite-syntax */
+.theme-light {
+  --color-red: rgb(250, 92, 110); //red
+  --color-red-r: 250;
+  --color-red-g: 92;
+  --color-red-b: 110;
+  --color-red-rgb: var(--color-red-r), var(--color-red-g), var(--color-red-b);
+  --color-red: rgb(var(--color-red-rgb));
+
+  --color-orange: rgb(252, 172, 74); //orange
+  --color-orange-r: 252;
+  --color-orange-g: 172;
+  --color-orange-b: 74;
+  --color-orange-rgb: var(--color-orange-r), var(--color-orange-g), var(--color-orange-b);
+  --color-orange: rgb(var(--color-orange-rgb));
+
+  --color-yellow: rgb(236, 190, 111); //yellow
+  --color-yellow-r: 236;
+  --color-yellow-g: 190;
+  --color-yellow-b: 111;
+  --color-yellow-rgb: var(--color-yellow-r), var(--color-yellow-g), var(--color-yellow-b);
+  --color-yellow: rgb(var(--color-yellow-rgb));
+
+  --color-green: rgb(142, 197, 114); //green
+  --color-green-r: 142;
+  --color-green-g: 197;
+  --color-green-b: 114;
+  --color-green-rgb: var(--color-green-r), var(--color-green-g), var(--color-green-b);
+  --color-green: rgb(var(--color-green-rgb));
+
+  --color-cyan: rgb(23, 185, 196); //cyan
+  --color-cyan-r: 23;
+  --color-cyan-g: 185;
+  --color-cyan-b: 196;
+  --color-cyan-rgb: var(--color-cyan-r), var(--color-cyan-g), var(--color-cyan-b);
+  --color-cyan: rgb(var(--color-cyan-rgb));
+
+  --color-blue: rgb(61, 177, 245); //blue
+  --color-blue-r: 61;
+  --color-blue-g: 177;
+  --color-blue-b: 245;
+  --color-blue-rgb: var(--color-blue-r), var(--color-blue-g), var(--color-blue-b);
+  --color-blue: rgb(var(--color-blue-rgb));
+
+  --color-purple: rgb(210, 114, 227); //purple
+  --color-purple-r: 210;
+  --color-purple-g: 114;
+  --color-purple-b: 227;
+  --color-purple-rgb: var(--color-purple-r), var(--color-purple-g), var(--color-purple-b);
+  --color-purple: rgb(var(--color-purple-rgb));
+
+  --color-pink: rgb(255, 148, 196); //pink
+  --color-pink-r: 255;
+  --color-pink-g: 148;
+  --color-pink-b: 196;
+  --color-pink-rgb: var(--color-pink-r), var(--color-pink-g), var(--color-pink-b);
+  --color-pink: rgb(var(--color-pink-rgb));
+
+  --background-primary: hsl(33, 36%, 95%);
+  --background-primary-h: 33;
+  --background-primary-s: 23%;
+  --background-primary-l: 95%;
+  --background-primary: hsl(var(--background-primary-h), var(--background-primary-s), var(--background-primary-l));
+
+  --background-primary-alt: hsl(37, 27%, 90%);
+  --background-primary-alt-h: 37;
+  --background-primary-alt-s: 27%;
+  --background-primary-alt-l: 90%;
+  --background-primary-alt: hsl(var(--background-primary-alt-h), var(--background-primary-alt-s), var(--background-primary-alt-l));
+
+  --background-secondary: hsl(37, 32%, 92%);
+  --background-secondary-h: 37;
+  --background-secondary-s: 32%;
+  --background-secondary-l: 92%;
+  --background-secondary: hsl(var(--background-secondary-h), var(--background-secondary-s), var(--background-secondary-l));
+
+  --background-secondary-alt: hsl(37, 25%, 86%);
+  --background-secondary-alt-h: 37;
+  --background-secondary-alt-s: 25%;
+  --background-secondary-alt-l: 86%;
+  --background-secondary-alt: hsl(var(--background-secondary-alt-h), var(--background-secondary-alt-s), var(--background-secondary-alt-l));
+
+  --background-modifier-border: hsl(35, 24%, 82%);
+  --background-modifier-border-h: 35;
+  --background-modifier-border-s: 24%;
+  --background-modifier-border-l: 82%;
+  --background-modifier-border: hsl(var(--background-modifier-border-h), var(--background-modifier-border-s), var(--background-modifier-border-l));
+}
+.theme-dark {
+  --color-red: rgb(250, 92, 110); //red
+  --color-red-r: 250;
+  --color-red-g: 92;
+  --color-red-b: 110;
+  --color-red-rgb: var(--color-red-r), var(--color-red-g), var(--color-red-b);
+  --color-red: rgb(var(--color-red-rgb));
+
+  --color-orange: rgb(252, 172, 74); //peach
+  --color-orange-r: 252;
+  --color-orange-g: 172;
+  --color-orange-b: 74;
+  --color-orange-rgb: var(--color-orange-r), var(--color-orange-g), var(--color-orange-b);
+  --color-orange: rgb(var(--color-orange-rgb));
+
+  --color-yellow: rgb(236, 190, 111); //yellow
+  --color-yellow-r: 236;
+  --color-yellow-g: 190;
+  --color-yellow-b: 111;
+  --color-yellow-rgb: var(--color-yellow-r), var(--color-yellow-g), var(--color-yellow-b);
+  --color-yellow: rgb(var(--color-yellow-rgb));
+
+  --color-green: rgb(142, 197, 114); //green
+  --color-green-r: 142;
+  --color-green-g: 197;
+  --color-green-b: 114;
+  --color-green-rgb: var(--color-green-r), var(--color-green-g), var(--color-green-b);
+  --color-green: rgb(var(--color-green-rgb));
+
+  --color-cyan: rgb(23, 185, 196); //cyan
+  --color-cyan-r: 23;
+  --color-cyan-g: 185;
+  --color-cyan-b: 196;
+  --color-cyan-rgb: var(--color-cyan-r), var(--color-cyan-g), var(--color-cyan-b);
+  --color-cyan: rgb(var(--color-cyan-rgb));
+
+  --color-blue: rgb(61, 177, 245); //blue
+  --color-blue-r: 61;
+  --color-blue-g: 177;
+  --color-blue-b: 245;
+  --color-blue-rgb: var(--color-blue-r), var(--color-blue-g), var(--color-blue-b);
+  --color-blue: rgb(var(--color-blue-rgb));
+
+  --color-purple: rgb(210, 114, 227); //purple
+  --color-purple-r: 210;
+  --color-purple-g: 114;
+  --color-purple-b: 227;
+  --color-purple-rgb: var(--color-purple-r), var(--color-purple-g), var(--color-purple-b);
+  --color-purple: rgb(var(--color-purple-rgb));
+
+  --color-pink: rgb(255, 148, 196); //pink
+  --color-pink-r: 255;
+  --color-pink-g: 148;
+  --color-pink-b: 196;
+  --color-pink-rgb: var(--color-pink-r), var(--color-pink-g), var(--color-pink-b);
+  --color-pink: rgb(var(--color-pink-rgb));
+
+  --background-primary-h: var(--accent-h);
+  --background-primary-s: 15%;
+  --background-primary-l: 5%;
+  --background-primary: hsl(var(--background-primary-h), var(--background-primary-s), var(--background-primary-l));
+
+  --background-primary-alt-h: var(--accent-h);
+  --background-primary-alt-s: 15%;
+  --background-primary-alt-l: 10%;
+  --background-primary-alt: hsl(var(--background-primary-alt-h), var(--background-primary-alt-s), var(--background-primary-alt-l));
+
+  --background-secondary-h: var(--accent-h);
+  --background-secondary-s: 15%;
+  --background-secondary-l: 15%;
+  --background-secondary: hsl(var(--background-secondary-h), var(--background-secondary-s), var(--background-secondary-l));
+
+  --background-secondary-alt-h: var(--accent-h);
+  --background-secondary-alt-s: 35%;
+  --background-secondary-alt-l: 25%;
+  --background-secondary-alt: hsl(var(--background-secondary-alt-h), var(--background-secondary-alt-s), var(--background-secondary-alt-l));
+
+  --background-modifier-border-h: var(--accent-h);
+  --background-modifier-border-s: 35%;
+  --background-modifier-border-l: 40%;
+  --background-modifier-border: hsl(var(--background-modifier-border-h), var(--background-modifier-border-s), var(--background-modifier-border-l));
+
+  --text-normal: hsl(var(--accent-h), 20%, 100%);
+  --text-muted: hsl(var(--accent-h), 20%, 70%);
+  --text-faint: hsl(var(--accent-h), 20%, 50%);
+  --interactive-normal: hsl(var(--accent-h), 20%, 30%);
+  --interactive-hover: hsl(var(--accent-h), 20%, 35%);
 }
 
 /** Catppuccin Latte: from https://catppuccin.com/palette/ */
