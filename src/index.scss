@@ -30,3 +30,8 @@
 @use 'plugins/style-settings.scss';
 @use 'plugins/kanban.scss';
 @use 'plugins/dataview.scss';
+
+// Temp Fix
+.cmdr-name-input-wrapper {
+  width: calc(100% - var(--search-clear-button-size) - var(--size-4-6));
+}

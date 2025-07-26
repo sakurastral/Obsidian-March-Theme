@@ -2768,3 +2768,7 @@ li[data-task="-"].task-list-item.is-checked span.dataview.inline-field-value {
   background: transparent;
   color: var(--text-faint);
 }
+
+.cmdr-name-input-wrapper {
+  width: calc(100% - var(--search-clear-button-size) - var(--size-4-6));
+}
