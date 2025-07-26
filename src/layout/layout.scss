@@ -25,20 +25,31 @@ body {
     --metadata-divider-width: 1px;
   }
 
-  & .workspace-split .workspace-tabs.mod-top .workspace-tab-header-container {
+  & .workspace-split .workspace-tabs {
+    &.mod-top {
+      .workspace-tab-header-container {
+        --icon-color: var(--text-on-accent);
+        --icon-color-focused: var(--text-on-accent);
+        --icon-color-hover: var(--text-on-accent);
+        .workspace-tab-header.is-active {
+          background-color: var(--tab-background-active);
+          --icon-color: var(--march-accent);
+          --icon-color-focused: var(--march-accent);
+        }
+        .workspace-tab-header-status-icon {
+          color: var(--titlebar-text-color);
+          background: var(--titlebar-background);
+        }
+      }
+    }
+  }
+  & .workspace-split.mod-horizontal:not(.mod-sidedock) .workspace-tab-header:not(.is-active) .workspace-tab-header-inner {
+    background: var(--march-accent);
     --icon-color: var(--text-on-accent);
     --icon-color-focused: var(--text-on-accent);
     --icon-color-hover: var(--text-on-accent);
-    .workspace-tab-header.is-active {
-      background-color: var(--tab-background-active);
-      --icon-color: var(--march-accent);
-      --icon-color-focused: var(--march-accent);
-    }
-    .workspace-tab-header-status-icon {
-      color: var(--titlebar-text-color);
-      background: var(--titlebar-background);
-    }
   }
+
   .sidebar-toggle-button {
     --icon-color: var(--text-on-accent);
     --icon-color-focused: var(--text-on-accent);

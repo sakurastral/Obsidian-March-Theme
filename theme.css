@@ -1386,6 +1386,12 @@ body .workspace-split .workspace-tabs.mod-top .workspace-tab-header-container .w
   color: var(--titlebar-text-color);
   background: var(--titlebar-background);
 }
+body .workspace-split.mod-horizontal:not(.mod-sidedock) .workspace-tab-header:not(.is-active) .workspace-tab-header-inner {
+  background: var(--march-accent);
+  --icon-color: var(--text-on-accent);
+  --icon-color-focused: var(--text-on-accent);
+  --icon-color-hover: var(--text-on-accent);
+}
 body .sidebar-toggle-button {
   --icon-color: var(--text-on-accent);
   --icon-color-focused: var(--text-on-accent);
