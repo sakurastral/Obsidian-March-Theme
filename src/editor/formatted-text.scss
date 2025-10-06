@@ -3,12 +3,12 @@
   --march-formatted-text-highlight-fg: hsl(0, 0%, 0%);
 
   // /** Flatwhite Syntax from Atom: https://github.com/biletskyy/flatwhite-syntax */
-  --march-formatted-text-bold-bg: hsla(35, 100%, 47%, 0.18);
-  // --bold-color: inherit;
+  --march-formatted-text-bold-bg: #f7e0c3;
+  --bold-color: hsl(35, 15%, 31%);
 
   // /** Flatwhite Syntax from Atom: https://github.com/biletskyy/flatwhite-syntax */
-  --march-formatted-text-italic-bg: hsla(78, 100%, 37%, 0.19);
-  // --italic-color: inherit;
+  --march-formatted-text-italic-bg: #d2ebe3;
+  --italic-color: hsl(161, 12%, 31%);
 }
 
 .cm-highlight,
@@ -16,6 +16,11 @@ mark,
 .search-result-file-matched-text {
   background-color: var(--march-formatted-text-highlight-bg) !important;
   color: var(--march-formatted-text-highlight-fg) !important;
+
+  --link-color: var(--text-on-accent);
+  --march-internal-link-background-color: var(--march-accent);
+  --link-external-color: var(--text-on-accent);
+  --march-external-link-background-color: var(--march-accent);
 }
 
 b,
@@ -23,6 +28,12 @@ strong,
 .cm-strong {
   color: var(--bold-color);
   background-color: var(--march-formatted-text-bold-bg) !important;
+  padding: 0 0.3rem;
+
+  --link-color: var(--text-on-accent);
+  --march-internal-link-background-color: var(--march-accent);
+  --link-external-color: var(--text-on-accent);
+  --march-external-link-background-color: var(--march-accent);
 }
 
 i,
@@ -30,4 +41,10 @@ em,
 .cm-em {
   color: var(--italic-color);
   background-color: var(--march-formatted-text-italic-bg) !important;
+  padding: 0 0.3rem;
+
+  --link-color: var(--text-on-accent);
+  --march-internal-link-background-color: var(--march-accent);
+  --link-external-color: var(--text-on-accent);
+  --march-external-link-background-color: var(--march-accent);
 }

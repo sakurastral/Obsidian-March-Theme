@@ -45,7 +45,10 @@ body {
 
   :is(.markdown-source-view, .markdown-preview-view, .metadata-content) {
     .internal-link,
+    .metadata-link,
+    .multi-select-container .internal-link,
     a.internal-link:not(.is-unresolved),
+    .cm-hmd-internal-link,
     .cm-hmd-internal-link > .cm-underline {
       background-color: var(--march-internal-link-background-color);
       border-radius: var(--march-link-border-radius);
@@ -57,7 +60,11 @@ body {
         text-decoration-style: var(--march-internal-link-decoration-style);
         text-decoration-color: var(--link-color);
       }
-      &::before {
+      & .multi-select-pill-content::before,
+      & .internal-link:not(.internal-link)::before,
+      & .metadata-link-inner.internal-link::before,
+      & .cm-underline::before,
+      & div[data-frontmatter-markdown-links-link-data]::before {
         content: '';
         display: inline-block;
         width: var(--march-link-icon-size);
