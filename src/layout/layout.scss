@@ -44,10 +44,23 @@ body {
     }
   }
   & .workspace-split.mod-horizontal:not(.mod-sidedock) .workspace-tab-header:not(.is-active) .workspace-tab-header-inner {
-    background: var(--march-accent);
     --icon-color: var(--text-on-accent);
     --icon-color-focused: var(--text-on-accent);
     --icon-color-hover: var(--text-on-accent);
+  }
+
+  & .workspace-split.mod-horizontal:not(.mod-sidedock) .workspace-tabs:not(.mod-top) {
+    .workspace-tab-header-container {
+      background: var(--march-accent);
+      --icon-color: var(--text-on-accent);
+      --icon-color-focused: var(--text-on-accent);
+      --icon-color-hover: var(--text-on-accent);
+    }
+    .workspace-tab-header:not(.is-active) .workspace-tab-header-inner {
+      --icon-color: var(--text-on-accent);
+      --icon-color-focused: var(--text-on-accent);
+      --icon-color-hover: var(--text-on-accent);
+    }
   }
 
   .sidebar-toggle-button {

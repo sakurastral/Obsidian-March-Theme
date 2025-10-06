@@ -971,7 +971,7 @@ settings:
   --background-primary-alt: hsl(var(--background-primary-alt-h), var(--background-primary-alt-s), var(--background-primary-alt-l));
   --background-secondary-h: var(--accent-h);
   --background-secondary-s: 15%;
-  --background-secondary-l: 15%;
+  --background-secondary-l: 5%;
   --background-secondary: hsl(var(--background-secondary-h), var(--background-secondary-s), var(--background-secondary-l));
   --background-secondary-alt-h: var(--accent-h);
   --background-secondary-alt-s: 35%;
@@ -1387,7 +1387,17 @@ body .workspace-split .workspace-tabs.mod-top .workspace-tab-header-container .w
   background: var(--titlebar-background);
 }
 body .workspace-split.mod-horizontal:not(.mod-sidedock) .workspace-tab-header:not(.is-active) .workspace-tab-header-inner {
+  --icon-color: var(--text-on-accent);
+  --icon-color-focused: var(--text-on-accent);
+  --icon-color-hover: var(--text-on-accent);
+}
+body .workspace-split.mod-horizontal:not(.mod-sidedock) .workspace-tabs:not(.mod-top) .workspace-tab-header-container {
   background: var(--march-accent);
+  --icon-color: var(--text-on-accent);
+  --icon-color-focused: var(--text-on-accent);
+  --icon-color-hover: var(--text-on-accent);
+}
+body .workspace-split.mod-horizontal:not(.mod-sidedock) .workspace-tabs:not(.mod-top) .workspace-tab-header:not(.is-active) .workspace-tab-header-inner {
   --icon-color: var(--text-on-accent);
   --icon-color-focused: var(--text-on-accent);
   --icon-color-hover: var(--text-on-accent);
@@ -1865,14 +1875,20 @@ body {
   --link-decoration-hover: none;
 }
 body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .internal-link,
+body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .metadata-link,
+body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .multi-select-container .internal-link,
 body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) a.internal-link:not(.is-unresolved),
+body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .cm-hmd-internal-link,
 body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .cm-hmd-internal-link > .cm-underline {
   background-color: var(--march-internal-link-background-color);
   border-radius: var(--march-link-border-radius);
   padding: 0 4.8px 0 3.2px;
 }
 body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .internal-link:hover,
+body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .metadata-link:hover,
+body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .multi-select-container .internal-link:hover,
 body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) a.internal-link:not(.is-unresolved):hover,
+body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .cm-hmd-internal-link:hover,
 body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .cm-hmd-internal-link > .cm-underline:hover {
   color: var(--link-color);
   text-decoration-line: underline !important;
@@ -1880,9 +1896,32 @@ body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .cm-h
   text-decoration-style: var(--march-internal-link-decoration-style);
   text-decoration-color: var(--link-color);
 }
-body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .internal-link::before,
-body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) a.internal-link:not(.is-unresolved)::before,
-body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .cm-hmd-internal-link > .cm-underline::before {
+body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .internal-link .multi-select-pill-content::before, body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .internal-link .internal-link:not(.internal-link)::before, body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .internal-link .metadata-link-inner.internal-link::before, body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .internal-link .cm-underline::before, body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .internal-link div[data-frontmatter-markdown-links-link-data]::before,
+body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .metadata-link .multi-select-pill-content::before,
+body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .metadata-link .internal-link:not(.internal-link)::before,
+body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .metadata-link .metadata-link-inner.internal-link::before,
+body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .metadata-link .cm-underline::before,
+body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .metadata-link div[data-frontmatter-markdown-links-link-data]::before,
+body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .multi-select-container .internal-link .multi-select-pill-content::before,
+body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .multi-select-container .internal-link .internal-link:not(.internal-link)::before,
+body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .multi-select-container .internal-link .metadata-link-inner.internal-link::before,
+body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .multi-select-container .internal-link .cm-underline::before,
+body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .multi-select-container .internal-link div[data-frontmatter-markdown-links-link-data]::before,
+body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) a.internal-link:not(.is-unresolved) .multi-select-pill-content::before,
+body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) a.internal-link:not(.is-unresolved) .internal-link:not(.internal-link)::before,
+body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) a.internal-link:not(.is-unresolved) .metadata-link-inner.internal-link::before,
+body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) a.internal-link:not(.is-unresolved) .cm-underline::before,
+body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) a.internal-link:not(.is-unresolved) div[data-frontmatter-markdown-links-link-data]::before,
+body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .cm-hmd-internal-link .multi-select-pill-content::before,
+body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .cm-hmd-internal-link .internal-link:not(.internal-link)::before,
+body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .cm-hmd-internal-link .metadata-link-inner.internal-link::before,
+body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .cm-hmd-internal-link .cm-underline::before,
+body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .cm-hmd-internal-link div[data-frontmatter-markdown-links-link-data]::before,
+body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .cm-hmd-internal-link > .cm-underline .multi-select-pill-content::before,
+body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .cm-hmd-internal-link > .cm-underline .internal-link:not(.internal-link)::before,
+body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .cm-hmd-internal-link > .cm-underline .metadata-link-inner.internal-link::before,
+body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .cm-hmd-internal-link > .cm-underline .cm-underline::before,
+body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .cm-hmd-internal-link > .cm-underline div[data-frontmatter-markdown-links-link-data]::before {
   content: "";
   display: inline-block;
   width: var(--march-link-icon-size);
@@ -2396,8 +2435,10 @@ body {
 :is(body) {
   --march-formatted-text-highlight-bg: hsl(56, 100%, 50%);
   --march-formatted-text-highlight-fg: hsl(0, 0%, 0%);
-  --march-formatted-text-bold-bg: hsla(35, 100%, 47%, 0.18);
-  --march-formatted-text-italic-bg: hsla(78, 100%, 37%, 0.19);
+  --march-formatted-text-bold-bg: #f7e0c3;
+  --bold-color: hsl(35, 15%, 31%);
+  --march-formatted-text-italic-bg: #d2ebe3;
+  --italic-color: hsl(161, 12%, 31%);
 }
 
 .cm-highlight,
@@ -2405,6 +2446,10 @@ mark,
 .search-result-file-matched-text {
   background-color: var(--march-formatted-text-highlight-bg) !important;
   color: var(--march-formatted-text-highlight-fg) !important;
+  --link-color: var(--text-on-accent);
+  --march-internal-link-background-color: var(--march-accent);
+  --link-external-color: var(--text-on-accent);
+  --march-external-link-background-color: var(--march-accent);
 }
 
 b,
@@ -2412,6 +2457,11 @@ strong,
 .cm-strong {
   color: var(--bold-color);
   background-color: var(--march-formatted-text-bold-bg) !important;
+  padding: 0 0.3rem;
+  --link-color: var(--text-on-accent);
+  --march-internal-link-background-color: var(--march-accent);
+  --link-external-color: var(--text-on-accent);
+  --march-external-link-background-color: var(--march-accent);
 }
 
 i,
@@ -2419,6 +2469,11 @@ em,
 .cm-em {
   color: var(--italic-color);
   background-color: var(--march-formatted-text-italic-bg) !important;
+  padding: 0 0.3rem;
+  --link-color: var(--text-on-accent);
+  --march-internal-link-background-color: var(--march-accent);
+  --link-external-color: var(--text-on-accent);
+  --march-external-link-background-color: var(--march-accent);
 }
 
 /* ========================================================================== */
