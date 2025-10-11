@@ -4,6 +4,7 @@ body {
   --titlebar-text-color: var(--text-on-accent);
   --titlebar-text-color-focused: var(--titlebar-text-color);
   --divider-color: var(--background-modifier-border);
+  --divider-color-hover: var(--march-50-accent);
   --modal-border-color: var(--divider-color);
 
   --tab-divider-color: var(--text-on-accent);
@@ -18,27 +19,36 @@ body {
 
   .mod-root {
     --metadata-background: var(--background-primary-alt);
-    --metadata-border-width: 1px;
+    --metadata-border-width: 0px;
     --metadata-border-color: var(--background-modifier-border);
-    --metadata-border-radius: 1rem;
+    --metadata-border-radius: 0.5rem;
     --metadata-padding: 0.5rem;
-    --metadata-divider-width: 1px;
+    --metadata-divider-width: 0px;
   }
 
   --ribbon-background: var(--background-primary);
   --tab-container-background: var(--background-primary);
 
   &:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
-    background-color: var(--background-primary);
+    background-color: var(--background-secondary);
+    border-radius: 10px;
+    border: 0 solid;
+    margin: 10px;
+    width: auto;
   }
 
   .workspace-tabs .workspace-leaf {
     background-color: var(--background-primary);
   }
+  .mod-root .workspace-tab-header-container .workspace-tab-header-container-inner {
+    margin: 5px 0;
+  }
 
   & .workspace-split .workspace-tabs {
     &.mod-top {
       .workspace-tab-header-container {
+        border-radius: 0px;
+        margin: 0;
         --icon-color: var(--text-on-accent);
         --icon-color-focused: var(--text-on-accent);
         --icon-color-hover: var(--text-on-accent);
@@ -46,12 +56,46 @@ body {
           background-color: var(--tab-background-active);
           --icon-color: var(--march-accent);
           --icon-color-focused: var(--march-accent);
+
+          --tab-curve: 0;
+          border-radius: var(--tab-radius);
         }
         .workspace-tab-header-status-icon {
           color: var(--titlebar-text-color);
           background: var(--titlebar-background);
         }
       }
+    }
+
+    & .workspace-tab-header-container {
+      background: var(--march-accent);
+      border-radius: 10px;
+      margin: 0 10px;
+      width: auto;
+
+      --icon-color: var(--text-on-accent);
+      --icon-color-focused: var(--text-on-accent);
+      --icon-color-hover: var(--text-on-accent);
+      .workspace-tab-header.is-active {
+        background-color: var(--tab-background-active);
+        --icon-color: var(--march-accent);
+        --icon-color-focused: var(--march-accent);
+      }
+      .workspace-tab-header-status-icon {
+        color: var(--titlebar-text-color);
+        background: var(--titlebar-background);
+      }
+    }
+  }
+
+  & .workspace-split.mod-horizontal:not(.mod-sidedock) .workspace-tab-header-container {
+    margin: 0px;
+    .workspace-tab-header-container-inner {
+      margin: 5px 0;
+    }
+    .workspace-tab-header.is-active {
+      --tab-curve: 0;
+      border-radius: var(--tab-radius);
     }
   }
   & .workspace-split.mod-horizontal:not(.mod-sidedock) .workspace-tab-header:not(.is-active) .workspace-tab-header-inner {
@@ -90,5 +134,23 @@ body {
   }
   .horizontal-main-container {
     margin-bottom: var(--march-status-bar-height);
+  }
+
+  .workspace-ribbon {
+    border-right: 0 solid var(--divider-color);
+  }
+
+  .workspace-leaf-resize-handle {
+    --divider-width: 10px;
+    --divider-color: var(--background-primary);
+  }
+
+  & .workspace-split.mod-vertical,
+  & .workspace-split.mod-horizontal:not(.mod-sidedock) {
+    .workspace-leaf-content {
+      border: 1px solid var(--march-50-accent);
+      border-radius: 10px;
+      margin: 10px 0;
+    }
   }
 }
