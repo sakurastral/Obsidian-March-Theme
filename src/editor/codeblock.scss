@@ -53,9 +53,13 @@ body {
 }
 
 body {
-  --march-code-background: var(--background-secondary);
+  --march-code-background: var(--background-primary-alt);
+  --code-border-width: 1px;
+
   .cm-inline-code {
     --code-background: var(--march-code-background);
+    --code-normal: var(--text-muted);
+    border: var(--code-border-width) solid var(--code-border-color);
   }
   .HyperMD-codeblock.cm-line {
     --code-background: var(--march-code-background);

@@ -25,6 +25,17 @@ body {
     --metadata-divider-width: 1px;
   }
 
+  --ribbon-background: var(--background-primary);
+  --tab-container-background: var(--background-primary);
+
+  &:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
+    background-color: var(--background-primary);
+  }
+
+  .workspace-tabs .workspace-leaf {
+    background-color: var(--background-primary);
+  }
+
   & .workspace-split .workspace-tabs {
     &.mod-top {
       .workspace-tab-header-container {

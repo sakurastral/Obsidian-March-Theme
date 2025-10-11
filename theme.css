@@ -971,7 +971,7 @@ settings:
   --background-primary-alt: hsl(var(--background-primary-alt-h), var(--background-primary-alt-s), var(--background-primary-alt-l));
   --background-secondary-h: var(--accent-h);
   --background-secondary-s: 15%;
-  --background-secondary-l: 5%;
+  --background-secondary-l: 15%;
   --background-secondary: hsl(var(--background-secondary-h), var(--background-secondary-s), var(--background-secondary-l));
   --background-secondary-alt-h: var(--accent-h);
   --background-secondary-alt-s: 35%;
@@ -1363,6 +1363,8 @@ body {
   --tab-text-color-focused-highlighted: var(--text-accent);
   --tab-text-color-focused-active-current: var(--text-accent);
   --march-status-bar-height: calc(var(--status-bar-font-size) + var(--size-4-1) + var(--size-4-1) + 0.5rem);
+  --ribbon-background: var(--background-primary);
+  --tab-container-background: var(--background-primary);
 }
 body .mod-root {
   --metadata-background: var(--background-primary-alt);
@@ -1371,6 +1373,12 @@ body .mod-root {
   --metadata-border-radius: 1rem;
   --metadata-padding: 0.5rem;
   --metadata-divider-width: 1px;
+}
+body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
+  background-color: var(--background-primary);
+}
+body .workspace-tabs .workspace-leaf {
+  background-color: var(--background-primary);
 }
 body .workspace-split .workspace-tabs.mod-top .workspace-tab-header-container {
   --icon-color: var(--text-on-accent);
@@ -1618,10 +1626,13 @@ body .HyperMD-codeblock.cm-line.cm-active:not(.HyperMD-codeblock-begin):not(.Hyp
 }
 
 body {
-  --march-code-background: var(--background-secondary);
+  --march-code-background: var(--background-primary-alt);
+  --code-border-width: 1px;
 }
 body .cm-inline-code {
   --code-background: var(--march-code-background);
+  --code-normal: var(--text-muted);
+  border: var(--code-border-width) solid var(--code-border-color);
 }
 body .HyperMD-codeblock.cm-line {
   --code-background: var(--march-code-background);
@@ -2436,9 +2447,17 @@ body {
   --march-formatted-text-highlight-bg: hsl(56, 100%, 50%);
   --march-formatted-text-highlight-fg: hsl(0, 0%, 0%);
   --march-formatted-text-bold-bg: #f7e0c3;
-  --bold-color: hsl(35, 15%, 31%);
   --march-formatted-text-italic-bg: #d2ebe3;
-  --italic-color: hsl(161, 12%, 31%);
+}
+
+.theme-light {
+  --march-formatted-text-bg-height: 0.6rem;
+}
+
+.theme-dark {
+  --march-formatted-text-bg-height: 0rem;
+  --bold-color: var(--march-formatted-text-bold-bg);
+  --italic-color: var(--march-formatted-text-italic-bg);
 }
 
 .cm-highlight,
@@ -2456,24 +2475,51 @@ b,
 strong,
 .cm-strong {
   color: var(--bold-color);
-  background-color: var(--march-formatted-text-bold-bg) !important;
-  padding: 0 0.3rem;
+  box-shadow: inset 0 calc(var(--march-formatted-text-bg-height) * -1) 0 0 var(--march-formatted-text-bold-bg);
   --link-color: var(--text-on-accent);
   --march-internal-link-background-color: var(--march-accent);
   --link-external-color: var(--text-on-accent);
   --march-external-link-background-color: var(--march-accent);
+}
+b i, b em, b.cm-em,
+strong i,
+strong em,
+strong.cm-em,
+.cm-strong i,
+.cm-strong em,
+.cm-strong.cm-em {
+  box-shadow: inset 0 calc(var(--march-formatted-text-bg-height) / 2 * -1) 0 0 var(--march-formatted-text-bold-bg), inset 0 calc(var(--march-formatted-text-bg-height) * -1) 0 0 var(--march-formatted-text-italic-bg);
+}
+b.cm-inline-code,
+strong.cm-inline-code,
+.cm-strong.cm-inline-code {
+  box-shadow: inset 0 0 0 0 var(--march-formatted-text-bold-bg);
 }
 
 i,
 em,
 .cm-em {
   color: var(--italic-color);
-  background-color: var(--march-formatted-text-italic-bg) !important;
-  padding: 0 0.3rem;
+  box-shadow: inset 0 calc(var(--march-formatted-text-bg-height) * -1) 0 0 var(--march-formatted-text-italic-bg);
+  padding-right: 0.2rem;
   --link-color: var(--text-on-accent);
   --march-internal-link-background-color: var(--march-accent);
   --link-external-color: var(--text-on-accent);
   --march-external-link-background-color: var(--march-accent);
+}
+i b, i strong, i.cm-strong,
+em b,
+em strong,
+em.cm-strong,
+.cm-em b,
+.cm-em strong,
+.cm-em.cm-strong {
+  box-shadow: inset 0 calc(var(--march-formatted-text-bg-height) / 2 * -1) 0 0 var(--march-formatted-text-bold-bg), inset 0 calc(var(--march-formatted-text-bg-height) * -1) 0 0 var(--march-formatted-text-italic-bg);
+}
+i.cm-inline-code,
+em.cm-inline-code,
+.cm-em.cm-inline-code {
+  box-shadow: inset 0 0 0 0 var(--march-formatted-text-bold-bg);
 }
 
 /* ========================================================================== */
