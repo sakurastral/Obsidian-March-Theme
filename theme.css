@@ -1955,14 +1955,16 @@ body {
   --link-external-decoration-hover: none;
 }
 body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) a.external-link:not(.cm-escape + .cm-link .cm-underline),
-body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .external-link:not(.cm-escape + .cm-link .cm-underline),
+body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .external-link:not(.multi-select-pill):not(.cm-escape + .cm-link .cm-underline),
+body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .external-link .multi-select-pill-content:not(.cm-escape + .cm-link .cm-underline),
 body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) :is(.cm-link:not(.cm-hmd-footnote, .cm-escape), .cm-url) > .cm-underline:not(.cm-escape + .cm-link .cm-underline) {
   background-color: var(--march-external-link-background-color);
   border-radius: var(--march-link-border-radius);
   padding: 0 4.8px 0 3.2px;
 }
 body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) a.external-link:not(.cm-escape + .cm-link .cm-underline):hover,
-body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .external-link:not(.cm-escape + .cm-link .cm-underline):hover,
+body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .external-link:not(.multi-select-pill):not(.cm-escape + .cm-link .cm-underline):hover,
+body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .external-link .multi-select-pill-content:not(.cm-escape + .cm-link .cm-underline):hover,
 body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) :is(.cm-link:not(.cm-hmd-footnote, .cm-escape), .cm-url) > .cm-underline:not(.cm-escape + .cm-link .cm-underline):hover {
   color: var(--link-external-color);
   text-decoration-line: underline;
@@ -1971,7 +1973,8 @@ body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) :is(.
   text-decoration-color: var(--link-external-color);
 }
 body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) a.external-link:not(.cm-escape + .cm-link .cm-underline)::before,
-body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .external-link:not(.cm-escape + .cm-link .cm-underline)::before,
+body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .external-link:not(.multi-select-pill):not(.cm-escape + .cm-link .cm-underline)::before,
+body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) .external-link .multi-select-pill-content:not(.cm-escape + .cm-link .cm-underline)::before,
 body :is(.markdown-source-view, .markdown-preview-view, .metadata-content) :is(.cm-link:not(.cm-hmd-footnote, .cm-escape), .cm-url) > .cm-underline:not(.cm-escape + .cm-link .cm-underline)::before {
   content: "";
   display: inline-block;

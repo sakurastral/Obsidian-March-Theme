@@ -91,7 +91,8 @@ body {
 
   :is(.markdown-source-view, .markdown-preview-view, .metadata-content) {
     a.external-link,
-    .external-link,
+    .external-link:not(.multi-select-pill),
+    .external-link .multi-select-pill-content,
     :is(.cm-link:not(.cm-hmd-footnote, .cm-escape), .cm-url) > .cm-underline {
       &:not(.cm-escape + .cm-link .cm-underline) {
         background-color: var(--march-external-link-background-color);
