@@ -1478,6 +1478,9 @@ body .workspace-split.mod-vertical .workspace-leaf-content, body .workspace-spli
   border-radius: 10px;
   margin: 10px 0;
 }
+body .search-input-container input {
+  width: 99%;
+}
 
 body {
   --scrollbar-bg: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0);
