@@ -156,4 +156,8 @@ body {
   .search-input-container input {
     width: 99%;
   }
+
+  .workspace:has(.workspace-split.mod-horizontal.mod-sidedock.mod-right-split.is-sidedock-collapsed) .workspace-split.mod-vertical.mod-root .workspace-tabs .workspace-tab-container {
+    padding-right: 10px;
+  }
 }

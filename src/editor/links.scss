@@ -43,7 +43,7 @@ body {
   --link-decoration: none;
   --link-decoration-hover: none;
 
-  :is(.markdown-source-view, .markdown-preview-view, .metadata-content) {
+  :is(.markdown-source-view, .markdown-preview-view, .metadata-content, .markdown-rendered) {
     .internal-link,
     .metadata-link,
     .multi-select-container .internal-link,
@@ -89,7 +89,7 @@ body {
   --link-external-decoration: none;
   --link-external-decoration-hover: none;
 
-  :is(.markdown-source-view, .markdown-preview-view, .metadata-content) {
+  :is(.markdown-source-view, .markdown-preview-view, .metadata-content, .markdown-rendered) {
     a.external-link,
     .external-link:not(.multi-select-pill),
     .external-link .multi-select-pill-content,
