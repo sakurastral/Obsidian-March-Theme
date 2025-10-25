@@ -19,9 +19,7 @@
 }
 
 .cm-highlight,
-mark,
-.suggestion-highlight,
-.search-result-file-matched-text {
+mark {
   background-color: var(--march-formatted-text-highlight-bg) !important;
   color: var(--march-formatted-text-highlight-fg) !important;
 
@@ -31,16 +29,37 @@ mark,
   --march-external-link-background-color: var(--march-accent);
 }
 
+.theme-dark {
+  .suggestion-highlight,
+  .search-result-file-matched-text {
+    --text-highlight-bg: transparent;
+    color: var(--march-formatted-text-highlight-bg) !important;
+    border-bottom: 2px solid var(--march-formatted-text-highlight-bg);
+  }
+}
+
+.theme-light {
+  .suggestion-highlight,
+  .search-result-file-matched-text {
+    --text-highlight-bg: transparent;
+    color: var(--march-formatted-text-highlight-fg) !important;
+    background-color: var(--march-formatted-text-highlight-bg) !important;
+    border-bottom: 2px solid var(--march-formatted-text-highlight-bg);
+  }
+}
+
 b,
 strong,
 .cm-strong {
   color: var(--bold-color);
   box-shadow: inset 0 calc(var(--march-formatted-text-bg-height) * -1) 0 0 var(--march-formatted-text-bold-bg);
 
-  --link-color: var(--text-on-accent);
-  --march-internal-link-background-color: var(--march-accent);
-  --link-external-color: var(--text-on-accent);
-  --march-external-link-background-color: var(--march-accent);
+  & .cm-link {
+    --link-color: var(--text-on-accent);
+    --march-internal-link-background-color: var(--march-accent);
+    --link-external-color: var(--text-on-accent);
+    --march-external-link-background-color: var(--march-accent);
+  }
 
   & i,
   & em,
@@ -62,10 +81,12 @@ em,
   box-shadow: inset 0 calc(var(--march-formatted-text-bg-height) * -1) 0 0 var(--march-formatted-text-italic-bg);
   padding-right: 0.2rem;
 
-  --link-color: var(--text-on-accent);
-  --march-internal-link-background-color: var(--march-accent);
-  --link-external-color: var(--text-on-accent);
-  --march-external-link-background-color: var(--march-accent);
+  & .cm-link {
+    --link-color: var(--text-on-accent);
+    --march-internal-link-background-color: var(--march-accent);
+    --link-external-color: var(--text-on-accent);
+    --march-external-link-background-color: var(--march-accent);
+  }
 
   & b,
   & strong,
