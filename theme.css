@@ -1687,7 +1687,8 @@ body {
   --march-code-background: var(--background-primary-alt);
   --code-border-width: 1px;
 }
-body .cm-inline-code {
+body .cm-inline-code,
+body code {
   --code-background: var(--march-code-background);
   --code-normal: var(--text-muted);
   border: var(--code-border-width) solid var(--code-border-color);

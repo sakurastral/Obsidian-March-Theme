@@ -56,7 +56,8 @@ body {
   --march-code-background: var(--background-primary-alt);
   --code-border-width: 1px;
 
-  .cm-inline-code {
+  .cm-inline-code,
+  code {
     --code-background: var(--march-code-background);
     --code-normal: var(--text-muted);
     border: var(--code-border-width) solid var(--code-border-color);
