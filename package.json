@@ -4,5 +4,8 @@
 	"scripts": {
 		"version": "node version-bump.mjs && git add manifest.json versions.json",
 		"watch": "sass --no-source-map --watch src/index.scss theme.css --style=expanded"
+	},
+	"dependencies": {
+		"sass": "^1.97.3"
 	}
 }
