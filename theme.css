@@ -3040,6 +3040,10 @@ li[data-task="-"].task-list-item.is-checked span.dataview.inline-field-value {
   color: var(--text-faint);
 }
 
+body {
+  --bases-embed-radius: 10px;
+}
+
 .cmdr-name-input-wrapper {
   width: calc(100% - var(--search-clear-button-size) - var(--size-4-6));
 }
