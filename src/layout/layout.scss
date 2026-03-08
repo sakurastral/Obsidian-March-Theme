@@ -17,6 +17,8 @@ body {
 
   --march-status-bar-height: calc(var(--status-bar-font-size) + var(--size-4-1) + var(--size-4-1) + 0.5rem);
 
+  --march-letter-spacing: 0.1em;
+
   .mod-root {
     --metadata-background: var(--background-primary-alt);
     --metadata-border-width: 0px;
@@ -123,6 +125,16 @@ body {
     --icon-color-focused: var(--text-on-accent);
     --icon-color-hover: var(--text-on-accent);
   }
+
+  .side-dock-actions {
+    .side-dock-ribbon-action {
+      &:hover {
+        background-color: var(--march-accent);
+        color: var(--text-on-accent);
+      }
+    }
+  }
+
   .status-bar {
     --status-bar-background: var(--titlebar-background);
     --status-bar-text-color: var(--titlebar-text-color);
@@ -159,5 +171,11 @@ body {
 
   .workspace:has(.workspace-split.mod-horizontal.mod-sidedock.mod-right-split.is-sidedock-collapsed) .workspace-split.mod-vertical.mod-root .workspace-tabs .workspace-tab-container {
     padding-right: 10px;
+  }
+
+  // Adapted from: https://github.com/sumruler/obsidian-theme-phycat
+  .markdown-preview-view,
+  .markdown-source-view {
+    letter-spacing: var(--march-letter-spacing);
   }
 }

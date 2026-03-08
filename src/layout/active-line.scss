@@ -1,7 +1,10 @@
+/* ========================================================================== */
+/*                            Layout - Active Line                            */
+/* ========================================================================== */
 body {
-  .cm-line {
+  .cm-gutterElement {
     &.cm-active {
-      background-color: var(--march-bg-accent) !important;
+      color: var(--march-accent) !important;
     }
   }
 }

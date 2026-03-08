@@ -22,11 +22,23 @@ settings:
         default: var(--color-red)
         format: hex
     -
-        id: h1-indicator-color
+        id: march-h1-indicator-color
         title: Headings 1 indicator's Icon Color
         type: variable-color
         default: var(--text-faint)
         format: hex
+    -
+        id: march-h1-align
+        title: Headings 1's Alignment
+        type: variable-select
+        default: left
+        options:
+            - 
+                label: Center
+                value: center
+            - 
+                label: Left
+                value: left
     -
         id: h2-size
         title: Headings 2 Font Size
@@ -40,11 +52,23 @@ settings:
         default: var(--color-orange)
         format: hex
     -
-        id: h2-indicator-color
+        id: march-h2-indicator-color
         title: Headings 2 indicator's Icon Color
         type: variable-color
         default: var(--text-faint)
         format: hex
+    -
+        id: march-h2-align
+        title: Headings 2's Alignment
+        type: variable-select
+        default: left
+        options:
+            - 
+                label: Center
+                value: center
+            - 
+                label: Left
+                value: left
     -
         id: h3-size
         title: Headings 3 Font Size
@@ -58,11 +82,23 @@ settings:
         default: var(--color-green)
         format: hex
     -
-        id: h3-indicator-color
+        id: march-h3-indicator-color
         title: Headings 3 indicator's Icon Color
         type: variable-color
         default: var(--text-faint)
         format: hex
+    -
+        id: march-h3-align
+        title: Headings 3's Alignment
+        type: variable-select
+        default: left
+        options:
+            - 
+                label: Center
+                value: center
+            - 
+                label: Left
+                value: left
     -
         id: h4-size
         title: Headings 4 Font Size
@@ -76,11 +112,23 @@ settings:
         default: var(--color-cyan)
         format: hex
     -
-        id: h4-indicator-color
+        id: march-h4-indicator-color
         title: Headings 4 indicator's Icon Color
         type: variable-color
         default: var(--text-faint)
         format: hex
+    -
+        id: march-h4-align
+        title: Headings 4's Alignment
+        type: variable-select
+        default: left
+        options:
+            - 
+                label: Center
+                value: center
+            - 
+                label: Left
+                value: left
     -
         id: h5-size
         title: Headings 5 Font Size
@@ -94,11 +142,23 @@ settings:
         default: var(--color-blue)
         format: hex
     -
-        id: h5-indicator-color
+        id: march-h5-indicator-color
         title: Headings 5 indicator's Icon Color
         type: variable-color
         default: var(--text-faint)
         format: hex
+    -
+        id: march-h5-align
+        title: Headings 5's Alignment
+        type: variable-select
+        default: left
+        options:
+            - 
+                label: Center
+                value: center
+            - 
+                label: Left
+                value: left
     -
         id: h6-size
         title: Headings 6 Font Size
@@ -112,22 +172,29 @@ settings:
         default: var(--color-purple)
         format: hex
     -
-        id: h6-indicator-color
+        id: march-h6-indicator-color
         title: Headings 6 indicator's Icon Color
         type: variable-color
         default: var(--text-faint)
         format: hex
+    -
+        id: march-h6-align
+        title: Headings 6's Alignment
+        type: variable-select
+        default: left
+        options:
+            - 
+                label: Center
+                value: center
+            - 
+                label: Left
+                value: left
     -
         id: heading-links
         title: Links
         type: heading
         level: 2
         collapsed: true
-    -
-        id: disable-styled-links-in-headings
-        title: Disable Link Style in Headings
-        type: class-toggle
-        default: false
     -
         id: link-color
         title: Internal Link's Font Color
@@ -136,24 +203,10 @@ settings:
         format: rgb
         opacity: true
     -
-        id: march-internal-link-background-color
-        title: Internal Link's Background Color
-        type: variable-color
-        default: var(--march-bg-accent)
-        format: rgb
-        opacity: true
-    -
         id: link-external-color
         title: External Link's Font Color
         type: variable-color
         default: var(--march-accent)
-        format: rgb
-        opacity: true
-    -
-        id: march-external-link-background-color
-        title: External Link's Background Color
-        type: variable-color
-        default: var(--march-bg-accent)
         format: rgb
         opacity: true
     - 

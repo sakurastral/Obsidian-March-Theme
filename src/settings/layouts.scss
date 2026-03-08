@@ -123,4 +123,19 @@ settings:
         min: 0
         max: 20
         step: 1
+    - 
+        id: heading-spacing
+        title: Spacing
+        type: heading
+        level: 1
+        collapsed: false
+    - 
+        id: march-letter-spacing
+        title: Letter Spacing
+        type: variable-number-slider
+        format: em
+        default: 0.1
+        min: 0
+        max: 0.15
+        step: 0.01
 */

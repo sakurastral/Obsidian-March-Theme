@@ -7,20 +7,35 @@
  */
 
 body {
-  --march-link-icon-size: calc(var(--font-text-size) - 2px);
-
-  --march-link-border-radius: 0.625rem;
+  --march-link-icon-size: calc(var(--font-text-size));
 
   --march-internal-link-decoration-style: dashed;
   --march-external-link-decoration-style: dashed;
 
-  --march-internal-link-icon-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-text-icon lucide-file-text"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>');
-  --march-external-link-icon-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>');
+  --march-internal-link-icon-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJpY29uIGljb24tdGFibGVyIGljb25zLXRhYmxlci1vdXRsaW5lIGljb24tdGFibGVyLW1hcmtkb3duIj48cGF0aCBzdHJva2U9Im5vbmUiIGQ9Ik0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNMyA3YTIgMiAwIDAgMSAyIC0yaDE0YTIgMiAwIDAgMSAyIDJ2MTBhMiAyIDAgMCAxIC0yIDJoLTE0YTIgMiAwIDAgMSAtMiAtMnYtMTAiIC8+PHBhdGggZD0iTTcgMTV2LTZsMiAybDIgLTJ2NiIgLz48cGF0aCBkPSJNMTQgMTNsMiAybDIgLTJtLTIgMnYtNiIgLz48L3N2Zz4=');
+  --march-external-link-icon-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXNxdWFyZS1hcnJvdy11cC1yaWdodC1pY29uIGx1Y2lkZS1zcXVhcmUtYXJyb3ctdXAtcmlnaHQiPjxyZWN0IHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgeD0iMyIgeT0iMyIgcng9IjIiLz48cGF0aCBkPSJNOCA4aDh2OCIvPjxwYXRoIGQ9Im04IDE2IDgtOCIvPjwvc3ZnPg==');
 
   --link-color: var(--march-accent);
-  --march-internal-link-background-color: var(--march-bg-accent);
   --link-external-color: var(--march-accent);
-  --march-external-link-background-color: var(--march-bg-accent);
+}
+
+// Adapted From : https://stackoverflow.com/questions/54616139/how-can-i-animate-underline-from-left-to-right
+@mixin link-underline-animation() {
+  display: inline-block;
+  padding-bottom: 2px;
+  background-image: linear-gradient(currentColor 0 0);
+  background-position: 0 100%;
+  background-size: 0% 2px;
+  background-repeat: no-repeat;
+  transition:
+    background-size 0.3s,
+    background-position 0s 0.3s;
+
+  &:hover {
+    background-position: 100% 100%; /*OR bottom right*/
+    background-size: 100% 2px;
+    text-decoration: none;
+  }
 }
 
 body {
@@ -39,39 +54,26 @@ body {
   }
 }
 
-body {
+:not(.multi-select-container) body {
   --link-decoration: none;
   --link-decoration-hover: none;
 
   :is(.markdown-source-view, .markdown-preview-view, .metadata-content, .markdown-rendered) {
-    .internal-link,
-    .metadata-link,
-    .multi-select-container .internal-link,
+    .internal-link:not(.multi-select-pill),
+    .multi-select-pill-content.internal-link,
     a.internal-link:not(.is-unresolved),
-    .cm-hmd-internal-link,
+    .is-unresolved:not(.multi-select-pill),
     .cm-hmd-internal-link > .cm-underline {
-      background-color: var(--march-internal-link-background-color);
-      border-radius: var(--march-link-border-radius);
-      padding: 0 4.8px 0 3.2px;
-      &:hover {
-        color: var(--link-color);
-        text-decoration-line: underline !important;
-        text-decoration-thickness: var(--link-decoration-thickness);
-        text-decoration-style: var(--march-internal-link-decoration-style);
-        text-decoration-color: var(--link-color);
-      }
-      & .multi-select-pill-content::before,
-      & .internal-link:not(.internal-link)::before,
-      & .metadata-link-inner.internal-link::before,
-      & .cm-underline::before,
-      & div[data-frontmatter-markdown-links-link-data]::before {
+      color: var(--link-color);
+      padding: 0 5px 0;
+      @include link-underline-animation();
+      &::after {
         content: '';
         display: inline-block;
         width: var(--march-link-icon-size);
         height: var(--march-link-icon-size);
         margin-left: var(--size-2-1);
-        margin-right: var(--size-2-1);
-        background-color: var(--link-color);
+        background-color: currentColor;
         background-image: none;
         -webkit-mask-image: var(--march-internal-link-icon-image);
         mask-image: var(--march-internal-link-icon-image);
@@ -80,39 +82,31 @@ body {
         -webkit-mask-repeat-x: no-repeat;
         -webkit-mask-repeat-y: no-repeat;
         mask-repeat: no-repeat;
+        transform: translateY(var(--size-2-1));
       }
     }
   }
 }
 
-body {
+:not(.multi-select-container) body {
   --link-external-decoration: none;
   --link-external-decoration-hover: none;
 
   :is(.markdown-source-view, .markdown-preview-view, .metadata-content, .markdown-rendered) {
     a.external-link,
-    .external-link:not(.multi-select-pill),
+    .external-link:not(.multi-select-pill, .cm-formatting),
     .external-link .multi-select-pill-content,
     :is(.cm-link:not(.cm-hmd-footnote, .cm-escape), .cm-url) > .cm-underline {
       &:not(.cm-escape + .cm-link .cm-underline) {
-        background-color: var(--march-external-link-background-color);
-        border-radius: var(--march-link-border-radius);
         padding: 0 4.8px 0 3.2px;
-        &:hover {
-          color: var(--link-external-color);
-          text-decoration-line: underline;
-          text-decoration-thickness: var(--link-decoration-thickness);
-          text-decoration-style: var(--march-external-link-decoration-style);
-          text-decoration-color: var(--link-external-color);
-        }
-        &::before {
+        @include link-underline-animation();
+        &::after {
           content: '';
           display: inline-block;
           width: var(--march-link-icon-size);
           height: var(--march-link-icon-size);
           margin-left: var(--size-2-1);
-          margin-right: var(--size-2-1);
-          background-color: var(--link-external-color);
+          background-color: currentColor;
           background-image: none;
           -webkit-mask-image: var(--march-external-link-icon-image);
           mask-image: var(--march-external-link-icon-image);
@@ -121,31 +115,37 @@ body {
           -webkit-mask-repeat-x: no-repeat;
           -webkit-mask-repeat-y: no-repeat;
           mask-repeat: no-repeat;
+          transform: translateY(var(--size-2-1));
         }
       }
     }
   }
 }
 
-.disable-styled-links-in-headings {
+// disable-styled-links-in-headings
+body {
   $list: (1, 2, 3, 4, 5, 6);
   @each $item in $list {
     .markdown-source-view,
     .markdown-preview-view {
       span.cm-header-#{$item},
       h#{$item} {
-        --link-color: var(--h#{$item}-color);
-        --link-external-color: var(--h#{$item}-color);
-        --march-internal-link-background-color: transparent;
-        --march-external-link-background-color: transparent;
+        &:not(.cm-highlight, :hover) {
+          --link-color: var(--h#{$item}-color);
+          --link-external-color: var(--h#{$item}-color);
+        }
+        &.cm-highlight:not(:hover) {
+          --link-color: currentColor;
+          --link-external-color: currentColor;
+        }
         &.cm-hmd-internal-link > .cm-underline,
         &:is(.cm-link:not(.cm-hmd-footnote, .cm-escape), .cm-url) > .cm-underline:not(.cm-escape + .cm-link .cm-underline),
         a.internal-link:not(.is-unresolved),
         a.internal-link.is-unresolved,
         a.external-link:not(.cm-escape + .cm-link .cm-underline) {
-          &::before {
-            display: none;
-          }
+          border-radius: 0;
+          padding: 0;
+          text-decoration-line: underline;
         }
       }
     }

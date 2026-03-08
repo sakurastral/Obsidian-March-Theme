@@ -1,3 +1,7 @@
+/* ========================================================================== */
+/*                           Editor - Formatted Text                          */
+/* ========================================================================== */
+
 :is(body) {
   --march-formatted-text-highlight-bg: hsl(56, 100%, 50%);
   --march-formatted-text-highlight-fg: hsl(0, 0%, 0%);
@@ -10,23 +14,45 @@
 }
 
 .theme-light {
-  --march-formatted-text-bg-height: 0.6rem;
+  --march-formatted-text-bg-height: calc(var(--font-text-size) / 2);
 }
 .theme-dark {
-  --march-formatted-text-bg-height: 0rem;
+  --march-formatted-text-bg-height: calc(var(--font-text-size) / 8);
   --bold-color: var(--march-formatted-text-bold-bg);
   --italic-color: var(--march-formatted-text-italic-bg);
 }
+
+/* ========================================================================== */
+/*                                  Highlight                                 */
+/* ========================================================================== */
 
 .cm-highlight,
 mark {
   background-color: var(--march-formatted-text-highlight-bg) !important;
   color: var(--march-formatted-text-highlight-fg) !important;
 
-  --link-color: var(--text-on-accent);
-  --march-internal-link-background-color: var(--march-accent);
-  --link-external-color: var(--text-on-accent);
-  --march-external-link-background-color: var(--march-accent);
+  :not(:hover) {
+    color: var(--march-formatted-text-highlight-fg) !important;
+  }
+}
+
+// Rounded Border
+// Adapted from: https://github.com/Akifyss/obsidian-border
+.cm-line .cm-highlight {
+  &:nth-child(1 of .cm-highlight) {
+    border-top-left-radius: var(--radius-m);
+    border-bottom-left-radius: var(--radius-m);
+    padding-left: 5px;
+  }
+  &:nth-last-child(1 of .cm-highlight) {
+    border-top-right-radius: var(--radius-m);
+    border-bottom-right-radius: var(--radius-m);
+    padding-right: 5px;
+  }
+}
+mark {
+  border-radius: var(--radius-m);
+  padding: 0 5px;
 }
 
 .theme-dark {
@@ -48,18 +74,18 @@ mark {
   }
 }
 
+/* ========================================================================== */
+/*                                    Bold                                    */
+/* ========================================================================== */
+
 b,
 strong,
 .cm-strong {
   color: var(--bold-color);
   box-shadow: inset 0 calc(var(--march-formatted-text-bg-height) * -1) 0 0 var(--march-formatted-text-bold-bg);
 
-  & .cm-link {
-    --link-color: var(--text-on-accent);
-    --march-internal-link-background-color: var(--march-accent);
-    --link-external-color: var(--text-on-accent);
-    --march-external-link-background-color: var(--march-accent);
-  }
+  --link-color: var(--bold-color) !important;
+  --link-external-color: var(--bold-color) !important;
 
   & i,
   & em,
@@ -68,11 +94,14 @@ strong,
       inset 0 calc(var(--march-formatted-text-bg-height) / 2 * -1) 0 0 var(--march-formatted-text-bold-bg),
       inset 0 calc(var(--march-formatted-text-bg-height) * -1) 0 0 var(--march-formatted-text-italic-bg);
   }
-
   &.cm-inline-code {
-    box-shadow: inset 0 0 0 0 var(--march-formatted-text-bold-bg);
+    border-radius: 0 !important;
   }
 }
+
+/* ========================================================================== */
+/*                                   Italic                                   */
+/* ========================================================================== */
 
 i,
 em,
@@ -81,12 +110,8 @@ em,
   box-shadow: inset 0 calc(var(--march-formatted-text-bg-height) * -1) 0 0 var(--march-formatted-text-italic-bg);
   padding-right: 0.2rem;
 
-  & .cm-link {
-    --link-color: var(--text-on-accent);
-    --march-internal-link-background-color: var(--march-accent);
-    --link-external-color: var(--text-on-accent);
-    --march-external-link-background-color: var(--march-accent);
-  }
+  --link-color: var(--italic-color);
+  --link-external-color: var(--italic-color);
 
   & b,
   & strong,
@@ -95,7 +120,17 @@ em,
       inset 0 calc(var(--march-formatted-text-bg-height) / 2 * -1) 0 0 var(--march-formatted-text-bold-bg),
       inset 0 calc(var(--march-formatted-text-bg-height) * -1) 0 0 var(--march-formatted-text-italic-bg);
   }
+
   &.cm-inline-code {
-    box-shadow: inset 0 0 0 0 var(--march-formatted-text-bold-bg);
+    border-radius: 0 !important;
   }
+}
+
+/* ========================================================================== */
+/*                               Strike through                               */
+/* ========================================================================== */
+
+.cm-strikethrough,
+del {
+  color: var(--text-faint);
 }
