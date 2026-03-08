@@ -43,6 +43,13 @@ body {
   --march-h4-align: left;
   --march-h5-align: left;
   --march-h6-align: left;
+
+  --march-h1-indicator-opacity: 1;
+  --march-h2-indicator-opacity: 1;
+  --march-h3-indicator-opacity: 1;
+  --march-h4-indicator-opacity: 1;
+  --march-h5-indicator-opacity: 1;
+  --march-h6-indicator-opacity: 1;
 }
 
 body {
@@ -77,6 +84,9 @@ body {
   @each $item in $list {
     .HyperMD-header-#{$item},
     h-#{$item} {
+      .collapse-indicator {
+        opacity: var(--march-h#{$item}-indicator-opacity) !important;
+      }
       & .collapse-indicator.collapse-icon svg {
         -webkit-mask-image: var(--march-h#{$item}-indicator-icon);
         mask-image: var(--march-h#{$item}-indicator-icon);

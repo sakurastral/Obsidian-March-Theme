@@ -28,6 +28,18 @@ settings:
         default: var(--text-faint)
         format: hex
     -
+        id: march-h1-indicator-opacity
+        title: Auto Hide Headings 1's Indicator
+        type: variable-select
+        default: '1'
+        options:
+            - 
+                label: Auto Hide
+                value: 0
+            - 
+                label: Fixed
+                value: 1
+    -
         id: march-h1-align
         title: Headings 1's Alignment
         type: variable-select
@@ -57,6 +69,18 @@ settings:
         type: variable-color
         default: var(--text-faint)
         format: hex
+    -
+        id: march-h2-indicator-opacity
+        title: Auto Hide Headings 2's Indicator
+        type: variable-select
+        default: '1'
+        options:
+            - 
+                label: Auto Hide
+                value: 0
+            - 
+                label: Fixed
+                value: 1
     -
         id: march-h2-align
         title: Headings 2's Alignment
@@ -88,6 +112,18 @@ settings:
         default: var(--text-faint)
         format: hex
     -
+        id: march-h3-indicator-opacity
+        title: Auto Hide Headings 3's Indicator
+        type: variable-select
+        default: '1'
+        options:
+            - 
+                label: Auto Hide
+                value: 0
+            - 
+                label: Fixed
+                value: 1
+    -
         id: march-h3-align
         title: Headings 3's Alignment
         type: variable-select
@@ -117,6 +153,18 @@ settings:
         type: variable-color
         default: var(--text-faint)
         format: hex
+    -
+        id: march-h4-indicator-opacity
+        title: Auto Hide Headings 4's Indicator
+        type: variable-select
+        default: '1'
+        options:
+            - 
+                label: Auto Hide
+                value: 0
+            - 
+                label: Fixed
+                value: 1
     -
         id: march-h4-align
         title: Headings 4's Alignment
@@ -148,6 +196,18 @@ settings:
         default: var(--text-faint)
         format: hex
     -
+        id: march-h5-indicator-opacity
+        title: Auto Hide Headings 5's Indicator
+        type: variable-select
+        default: '1'
+        options:
+            - 
+                label: Auto Hide
+                value: 0
+            - 
+                label: Fixed
+                value: 1
+    -
         id: march-h5-align
         title: Headings 5's Alignment
         type: variable-select
@@ -177,6 +237,18 @@ settings:
         type: variable-color
         default: var(--text-faint)
         format: hex
+    -
+        id: march-h6-indicator-opacity
+        title: Auto Hide Headings 6's Indicator
+        type: variable-select
+        default: '1'
+        options:
+            - 
+                label: Auto Hide
+                value: 0
+            - 
+                label: Fixed
+                value: 1
     -
         id: march-h6-align
         title: Headings 6's Alignment

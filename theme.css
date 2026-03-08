@@ -28,6 +28,18 @@ settings:
         default: var(--text-faint)
         format: hex
     -
+        id: march-h1-indicator-opacity
+        title: Auto Hide Headings 1's Indicator
+        type: variable-select
+        default: '1'
+        options:
+            - 
+                label: Auto Hide
+                value: 0
+            - 
+                label: Fixed
+                value: 1
+    -
         id: march-h1-align
         title: Headings 1's Alignment
         type: variable-select
@@ -57,6 +69,18 @@ settings:
         type: variable-color
         default: var(--text-faint)
         format: hex
+    -
+        id: march-h2-indicator-opacity
+        title: Auto Hide Headings 2's Indicator
+        type: variable-select
+        default: '1'
+        options:
+            - 
+                label: Auto Hide
+                value: 0
+            - 
+                label: Fixed
+                value: 1
     -
         id: march-h2-align
         title: Headings 2's Alignment
@@ -88,6 +112,18 @@ settings:
         default: var(--text-faint)
         format: hex
     -
+        id: march-h3-indicator-opacity
+        title: Auto Hide Headings 3's Indicator
+        type: variable-select
+        default: '1'
+        options:
+            - 
+                label: Auto Hide
+                value: 0
+            - 
+                label: Fixed
+                value: 1
+    -
         id: march-h3-align
         title: Headings 3's Alignment
         type: variable-select
@@ -117,6 +153,18 @@ settings:
         type: variable-color
         default: var(--text-faint)
         format: hex
+    -
+        id: march-h4-indicator-opacity
+        title: Auto Hide Headings 4's Indicator
+        type: variable-select
+        default: '1'
+        options:
+            - 
+                label: Auto Hide
+                value: 0
+            - 
+                label: Fixed
+                value: 1
     -
         id: march-h4-align
         title: Headings 4's Alignment
@@ -148,6 +196,18 @@ settings:
         default: var(--text-faint)
         format: hex
     -
+        id: march-h5-indicator-opacity
+        title: Auto Hide Headings 5's Indicator
+        type: variable-select
+        default: '1'
+        options:
+            - 
+                label: Auto Hide
+                value: 0
+            - 
+                label: Fixed
+                value: 1
+    -
         id: march-h5-align
         title: Headings 5's Alignment
         type: variable-select
@@ -177,6 +237,18 @@ settings:
         type: variable-color
         default: var(--text-faint)
         format: hex
+    -
+        id: march-h6-indicator-opacity
+        title: Auto Hide Headings 6's Indicator
+        type: variable-select
+        default: '1'
+        options:
+            - 
+                label: Auto Hide
+                value: 0
+            - 
+                label: Fixed
+                value: 1
     -
         id: march-h6-align
         title: Headings 6's Alignment
@@ -1433,8 +1505,6 @@ body {
   --tab-text-color-focused-active-current: var(--text-accent);
   --march-status-bar-height: calc(var(--status-bar-font-size) + var(--size-4-1) + var(--size-4-1) + 0.5rem);
   --march-letter-spacing: 0.1em;
-  --ribbon-background: var(--background-primary);
-  --tab-container-background: var(--background-primary);
 }
 body .mod-root {
   --metadata-background: var(--background-primary-alt);
@@ -1443,6 +1513,10 @@ body .mod-root {
   --metadata-border-radius: 0.5rem;
   --metadata-padding: 0.5rem;
   --metadata-divider-width: 0px;
+}
+body {
+  --ribbon-background: var(--background-primary);
+  --tab-container-background: var(--background-primary);
 }
 body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
   background-color: var(--background-secondary);
@@ -1730,11 +1804,11 @@ body .HyperMD-codeblock .cm-foldPlaceholder::before {
 body .HyperMD-codeblock.cm-line:is(.HyperMD-codeblock-begin) .cm-indent::before {
   --indentation-guide-color: transparent;
 }
-body .HyperMD-codeblock.cm-line:not(.HyperMD-codeblock-begin):not(.HyperMD-codeblock-end) {
-  position: relative;
-}
 body .HyperMD-codeblock.cm-line:not(.HyperMD-codeblock-begin):not(.HyperMD-codeblock-end).HyperMD-codeblock:not(.HyperMD-list-line) {
   padding-left: 3rem;
+}
+body .HyperMD-codeblock.cm-line:not(.HyperMD-codeblock-begin):not(.HyperMD-codeblock-end) {
+  position: relative;
 }
 body .HyperMD-codeblock.cm-line:not(.HyperMD-codeblock-begin):not(.HyperMD-codeblock-end)::before {
   align-items: flex-end;
@@ -1799,8 +1873,6 @@ body {
 
 body {
   /* [x] Done */
-  /* [-] Canceled */
-  /* [/] In Progress */
 }
 body input[data-task=x]:checked,
 body li[data-task=x] > input:checked,
@@ -1850,6 +1922,9 @@ body .markdown-preview-view ul li[data-task=X].task-list-item.is-checked .cm-lin
 body li[data-task=X].task-list-item.is-checked .cm-link {
   color: var(--checklist-done-color);
 }
+body {
+  /* [-] Canceled */
+}
 body input[data-task="-"]:checked,
 body li[data-task="-"] > input:checked,
 body li[data-task="-"] > p > input:checked {
@@ -1892,6 +1967,9 @@ body .markdown-preview-view ul li[data-task="-"].task-list-item.is-checked .cm-l
 body li[data-task="-"].task-list-item.is-checked .cm-link {
   color: var(--march-checklist-cancel-color);
 }
+body {
+  /* [/] In Progress */
+}
 body input[data-task="/"]:checked,
 body li[data-task="/"] > input:checked,
 body li[data-task="/"] > p > input:checked {
@@ -1926,7 +2004,6 @@ body li[data-task="/"] > p > input:checked:after {
 
 .march-enable-custom-icons {
   /* [p] Planned */
-  /* [r] Review */
 }
 .march-enable-custom-icons input[data-task=p]:checked,
 .march-enable-custom-icons li[data-task=p] > input:checked,
@@ -1958,6 +2035,9 @@ body li[data-task="/"] > p > input:checked:after {
   -webkit-mask-position-y: 52%;
   background-color: var(--color-cyan);
   color: var(--color-cyan);
+}
+.march-enable-custom-icons {
+  /* [r] Review */
 }
 .march-enable-custom-icons input[data-task=r]:checked,
 .march-enable-custom-icons li[data-task=r] > input:checked,
@@ -2001,8 +2081,8 @@ body {
   --march-link-icon-size: calc(var(--font-text-size));
   --march-internal-link-decoration-style: dashed;
   --march-external-link-decoration-style: dashed;
-  --march-internal-link-icon-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJpY29uIGljb24tdGFibGVyIGljb25zLXRhYmxlci1vdXRsaW5lIGljb24tdGFibGVyLW1hcmtkb3duIj48cGF0aCBzdHJva2U9Im5vbmUiIGQ9Ik0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNMyA3YTIgMiAwIDAgMSAyIC0yaDE0YTIgMiAwIDAgMSAyIDJ2MTBhMiAyIDAgMCAxIC0yIDJoLTE0YTIgMiAwIDAgMSAtMiAtMnYtMTAiIC8+PHBhdGggZD0iTTcgMTV2LTZsMiAybDIgLTJ2NiIgLz48cGF0aCBkPSJNMTQgMTNsMiAybDIgLTJtLTIgMnYtNiIgLz48L3N2Zz4=");
-  --march-external-link-icon-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXNxdWFyZS1hcnJvdy11cC1yaWdodC1pY29uIGx1Y2lkZS1zcXVhcmUtYXJyb3ctdXAtcmlnaHQiPjxyZWN0IHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgeD0iMyIgeT0iMyIgcng9IjIiLz48cGF0aCBkPSJNOCA4aDh2OCIvPjxwYXRoIGQ9Im04IDE2IDgtOCIvPjwvc3ZnPg==");
+  --march-internal-link-icon-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJpY29uIGljb24tdGFibGVyIGljb25zLXRhYmxlci1vdXRsaW5lIGljb24tdGFibGVyLW1hcmtkb3duIj48cGF0aCBzdHJva2U9Im5vbmUiIGQ9Ik0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNMyA3YTIgMiAwIDAgMSAyIC0yaDE0YTIgMiAwIDAgMSAyIDJ2MTBhMiAyIDAgMCAxIC0yIDJoLTE0YTIgMiAwIDAgMSAtMiAtMnYtMTAiIC8+PHBhdGggZD0iTTcgMTV2LTZsMiAybDIgLTJ2NiIgLz48cGF0aCBkPSJNMTQgMTNsMiAybDIgLTJtLTIgMnYtNiIgLz48L3N2Zz4=');
+  --march-external-link-icon-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXNxdWFyZS1hcnJvdy11cC1yaWdodC1pY29uIGx1Y2lkZS1zcXVhcmUtYXJyb3ctdXAtcmlnaHQiPjxyZWN0IHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgeD0iMyIgeT0iMyIgcng9IjIiLz48cGF0aCBkPSJNOCA4aDh2OCIvPjxwYXRoIGQ9Im04IDE2IDgtOCIvPjwvc3ZnPg==');
   --link-color: var(--march-accent);
   --link-external-color: var(--march-accent);
 }
@@ -2372,6 +2452,12 @@ body {
   --march-h4-align: left;
   --march-h5-align: left;
   --march-h6-align: left;
+  --march-h1-indicator-opacity: 1;
+  --march-h2-indicator-opacity: 1;
+  --march-h3-indicator-opacity: 1;
+  --march-h4-indicator-opacity: 1;
+  --march-h5-indicator-opacity: 1;
+  --march-h6-indicator-opacity: 1;
 }
 
 body .cm-s-obsidian .cm-gutters .cm-gutterElement {
@@ -2436,6 +2522,10 @@ body .HyperMD-header-6:hover .collapse-indicator,
 body h-6:hover .collapse-indicator {
   opacity: 1 !important;
 }
+body .HyperMD-header-1 .collapse-indicator,
+body h-1 .collapse-indicator {
+  opacity: var(--march-h1-indicator-opacity) !important;
+}
 body .HyperMD-header-1 .collapse-indicator.collapse-icon svg,
 body h-1 .collapse-indicator.collapse-icon svg {
   -webkit-mask-image: var(--march-h1-indicator-icon);
@@ -2455,6 +2545,10 @@ body h-1 .collapse-indicator.collapse-icon svg {
 body .HyperMD-header-1 .collapse-indicator.collapse-icon svg:hover,
 body h-1 .collapse-indicator.collapse-icon svg:hover {
   --march-h1-indicator-color: var(--h1-color);
+}
+body .HyperMD-header-2 .collapse-indicator,
+body h-2 .collapse-indicator {
+  opacity: var(--march-h2-indicator-opacity) !important;
 }
 body .HyperMD-header-2 .collapse-indicator.collapse-icon svg,
 body h-2 .collapse-indicator.collapse-icon svg {
@@ -2476,6 +2570,10 @@ body .HyperMD-header-2 .collapse-indicator.collapse-icon svg:hover,
 body h-2 .collapse-indicator.collapse-icon svg:hover {
   --march-h2-indicator-color: var(--h2-color);
 }
+body .HyperMD-header-3 .collapse-indicator,
+body h-3 .collapse-indicator {
+  opacity: var(--march-h3-indicator-opacity) !important;
+}
 body .HyperMD-header-3 .collapse-indicator.collapse-icon svg,
 body h-3 .collapse-indicator.collapse-icon svg {
   -webkit-mask-image: var(--march-h3-indicator-icon);
@@ -2495,6 +2593,10 @@ body h-3 .collapse-indicator.collapse-icon svg {
 body .HyperMD-header-3 .collapse-indicator.collapse-icon svg:hover,
 body h-3 .collapse-indicator.collapse-icon svg:hover {
   --march-h3-indicator-color: var(--h3-color);
+}
+body .HyperMD-header-4 .collapse-indicator,
+body h-4 .collapse-indicator {
+  opacity: var(--march-h4-indicator-opacity) !important;
 }
 body .HyperMD-header-4 .collapse-indicator.collapse-icon svg,
 body h-4 .collapse-indicator.collapse-icon svg {
@@ -2516,6 +2618,10 @@ body .HyperMD-header-4 .collapse-indicator.collapse-icon svg:hover,
 body h-4 .collapse-indicator.collapse-icon svg:hover {
   --march-h4-indicator-color: var(--h4-color);
 }
+body .HyperMD-header-5 .collapse-indicator,
+body h-5 .collapse-indicator {
+  opacity: var(--march-h5-indicator-opacity) !important;
+}
 body .HyperMD-header-5 .collapse-indicator.collapse-icon svg,
 body h-5 .collapse-indicator.collapse-icon svg {
   -webkit-mask-image: var(--march-h5-indicator-icon);
@@ -2535,6 +2641,10 @@ body h-5 .collapse-indicator.collapse-icon svg {
 body .HyperMD-header-5 .collapse-indicator.collapse-icon svg:hover,
 body h-5 .collapse-indicator.collapse-icon svg:hover {
   --march-h5-indicator-color: var(--h5-color);
+}
+body .HyperMD-header-6 .collapse-indicator,
+body h-6 .collapse-indicator {
+  opacity: var(--march-h6-indicator-opacity) !important;
 }
 body .HyperMD-header-6 .collapse-indicator.collapse-icon svg,
 body h-6 .collapse-indicator.collapse-icon svg {
@@ -2807,7 +2917,6 @@ del {
 }
 .nav-files-container .is-active {
   --nav-collapse-icon-color: var(--march-accent);
-  --background-modifier-border-focus: var(--march-50-accent);
 }
 .nav-files-container .is-active .tree-item-inner {
   background-color: var(--march-accent);
@@ -2816,6 +2925,9 @@ del {
   border-radius: 0.6rem;
   transition: var(--transition-file-explorer-property);
   transition-duration: var(--transition-file-explorer-duration);
+}
+.nav-files-container .is-active {
+  --background-modifier-border-focus: var(--march-50-accent);
 }
 .nav-files-container .is-active:hover {
   --nav-item-background-active: var(--march-bg-accent);
