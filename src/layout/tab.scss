@@ -1,12 +1,19 @@
 /** shrink-pinned-tab: from https://forum.obsidian.md/t/shrink-the-size-of-pinned-tabs/71914 */
-.workspace-tab-header {
-  &:has(.mod-pinned) {
-    max-width: 3.125rem !important;
-    container-type: normal !important;
-    min-width: max-content !important;
 
-    & .workspace-tab-header-inner-title {
-      max-width: 3rem;
+:is(body) {
+  --march-pinned-tab-width: 3rem;
+}
+
+.enable-shrink-pinned-tabs {
+  .workspace-tab-header {
+    &:has(.mod-pinned) {
+      max-width: calc(var(--march-pinned-tab-width) + 0.125rem) !important;
+      container-type: normal !important;
+      min-width: max-content !important;
+
+      & .workspace-tab-header-inner-title {
+        max-width: var(--march-pinned-tab-width);
+      }
     }
   }
 }
