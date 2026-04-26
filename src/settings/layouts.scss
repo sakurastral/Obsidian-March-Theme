@@ -4,6 +4,19 @@ name: March Theme - Layout
 id: march-theme-playout
 settings:
     - 
+        id: select-layout-style
+        title: Layout Style
+        type: class-select
+        allowEmpty: false
+        default: none
+        options:
+            - 
+                label: Default
+                value: none
+            - 
+                label: Colorful Frame
+                value: enable-colorful-frame-style-layout
+    - 
         id: heading-override-layout-colors
         title: Override Colors
         type: heading

@@ -1,19 +1,19 @@
 body {
-  --titlebar-background: var(--march-accent);
+  --titlebar-background: var(--background-primary);
   --titlebar-background-focused: var(--titlebar-background);
-  --titlebar-text-color: var(--text-on-accent);
+  --titlebar-text-color: var(--text-normal);
   --titlebar-text-color-focused: var(--titlebar-text-color);
   --divider-color: var(--background-modifier-border);
   --divider-color-hover: var(--march-50-accent);
   --modal-border-color: var(--divider-color);
 
-  --tab-divider-color: var(--text-on-accent);
-  --tab-text-color: var(--text-on-accent);
+  --tab-divider-color: transparent;
+  --tab-text-color: var(--text-muted);
   --tab-text-color-active: var(--text-normal);
   --tab-text-color-focused: var(--tab-text-color);
   --tab-text-color-focused-active: var(--tab-text-color-active);
   --tab-text-color-focused-highlighted: var(--text-accent);
-  --tab-text-color-focused-active-current: var(--text-accent);
+  --tab-text-color-focused-active-current: var(--tab-text-color-active);
 
   --march-status-bar-height: calc(var(--status-bar-font-size) + var(--size-4-1) + var(--size-4-1) + 0.5rem);
 
@@ -30,6 +30,7 @@ body {
 
   --ribbon-background: var(--background-primary);
   --tab-container-background: var(--background-primary);
+  --tab-background-active: var(--march-50-accent);
 
   &:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
     background-color: var(--background-secondary);
@@ -47,45 +48,40 @@ body {
   }
 
   & .workspace-split .workspace-tabs {
-    &.mod-top {
-      .workspace-tab-header-container {
-        border-radius: 0px;
-        margin: 0;
-        --icon-color: var(--text-on-accent);
-        --icon-color-focused: var(--text-on-accent);
-        --icon-color-hover: var(--text-on-accent);
-        .workspace-tab-header.is-active {
-          background-color: var(--tab-background-active);
-          --icon-color: var(--march-accent);
-          --icon-color-focused: var(--march-accent);
+    & .workspace-tab-header-container {
+      background: var(--background-primary);
+      border-radius: 10px;
+      margin: 0 0 0 5px;
+      width: auto;
+      border-bottom: none;
 
-          --tab-curve: 0;
-          border-radius: var(--tab-radius);
-        }
-        .workspace-tab-header-status-icon {
-          color: var(--titlebar-text-color);
-          background: var(--titlebar-background);
+      --icon-color: var(--text-normal);
+      --icon-color-focused: var(--text-normal);
+      --icon-color-hover: var(--text-normal);
+      .workspace-tab-header {
+        margin-right: 3px;
+        background: var(--background-primary-alt);
+        border-radius: var(--tab-radius);
+        --tab-curve: 0;
+
+        .workspace-tab-header-inner-icon {
+          color: var(--text-accent);
         }
       }
-    }
-
-    & .workspace-tab-header-container {
-      background: var(--march-accent);
-      border-radius: 10px;
-      margin: 0 10px;
-      width: auto;
-
-      --icon-color: var(--text-on-accent);
-      --icon-color-focused: var(--text-on-accent);
-      --icon-color-hover: var(--text-on-accent);
       .workspace-tab-header.is-active {
         background-color: var(--tab-background-active);
-        --icon-color: var(--march-accent);
-        --icon-color-focused: var(--march-accent);
+        color: var(--text-accent);
+        --icon-color: var(--text-on-accent);
+        --icon-color-focused: var(--text-on-accent);
+        box-shadow: none;
+
+        .workspace-tab-header-inner-close-button {
+          color: var(--text-accent);
+        }
       }
       .workspace-tab-header-status-icon {
         color: var(--titlebar-text-color);
-        background: var(--titlebar-background);
+        background: var(--tab-background-active);
       }
     }
   }
@@ -135,10 +131,14 @@ body {
     }
   }
 
+  .workspace-ribbon.mod-left:before {
+    border-bottom: none;
+  }
+
   .status-bar {
     --status-bar-background: var(--titlebar-background);
     --status-bar-text-color: var(--titlebar-text-color);
-    --status-bar-border-color: var(--divider-color);
+    --status-bar-border-color: var(--titlebar-background);
 
     border-radius: 0px;
     width: 100%;
@@ -160,7 +160,7 @@ body {
   & .workspace-split.mod-vertical,
   & .workspace-split.mod-horizontal:not(.mod-sidedock) {
     .workspace-leaf-content {
-      border: 1px solid var(--march-50-accent);
+      border: none;
       border-radius: 10px;
       margin: 10px 0;
     }
@@ -177,5 +177,235 @@ body {
   .markdown-preview-view,
   .markdown-source-view {
     letter-spacing: var(--march-letter-spacing);
+  }
+}
+
+body {
+  &.enable-colorful-frame-style-layout {
+    --titlebar-background: var(--march-accent);
+    --titlebar-background-focused: var(--titlebar-background);
+    --titlebar-text-color: var(--text-on-accent);
+    --titlebar-text-color-focused: var(--titlebar-text-color);
+    --divider-color: var(--background-modifier-border);
+    --divider-color-hover: var(--march-50-accent);
+    --modal-border-color: var(--divider-color);
+
+    --tab-divider-color: var(--text-on-accent);
+    --tab-text-color: var(--text-on-accent);
+    --tab-text-color-active: var(--text-normal);
+    --tab-text-color-focused: var(--tab-text-color);
+    --tab-text-color-focused-active: var(--tab-text-color-active);
+    --tab-text-color-focused-highlighted: var(--text-accent);
+    --tab-text-color-focused-active-current: var(--text-accent);
+
+    --march-status-bar-height: calc(var(--status-bar-font-size) + var(--size-4-1) + var(--size-4-1) + 0.5rem);
+
+    --march-letter-spacing: 0.1em;
+
+    .mod-root {
+      --metadata-background: var(--background-primary-alt);
+      --metadata-border-width: 0px;
+      --metadata-border-color: var(--background-modifier-border);
+      --metadata-border-radius: 0.5rem;
+      --metadata-padding: 0.5rem;
+      --metadata-divider-width: 0px;
+    }
+
+    .workspace-split.mod-root {
+      --file-header-background: var(--background-primary-alt);
+      .view-header,
+      .view-content {
+        background-color: var(--background-primary-alt);
+      }
+    }
+
+    --ribbon-background: var(--background-primary);
+    --tab-container-background: var(--background-primary);
+
+    &:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
+      background-color: var(--background-secondary);
+      border-radius: 10px;
+      border: 0 solid;
+      margin: 10px;
+      width: auto;
+    }
+
+    .workspace-tabs .workspace-leaf {
+      background-color: var(--background-primary);
+    }
+    .mod-root .workspace-tab-header-container .workspace-tab-header-container-inner {
+      margin: 5px 0;
+    }
+
+    & .workspace-split .workspace-tabs {
+      &.mod-top {
+        .workspace-tab-header-container {
+          border-radius: 0px;
+          margin: 0;
+          --icon-color: var(--text-on-accent);
+          --icon-color-focused: var(--text-on-accent);
+          --icon-color-hover: var(--text-on-accent);
+          .workspace-tab-header {
+            margin-right: 0px;
+            background: var(--titlebar-background);
+            border-radius: var(--tab-radius);
+          }
+          .workspace-tab-header {
+            background-color: var(--titlebar-background);
+            color: var(--text-on-accent);
+
+            .workspace-tab-header-inner-icon {
+              color: var(--text-on-accent);
+            }
+
+            &.is-active {
+              background-color: var(--text-on-accent);
+              color: var(--text-accent);
+              --icon-color: var(--march-accent);
+              --icon-color-focused: var(--march-accent);
+              --icon-color-hover: var(--text-accent);
+
+              --tab-curve: 0;
+              border-radius: var(--tab-radius);
+
+              .workspace-tab-header-inner-icon {
+                color: var(--text-accent);
+              }
+
+              .workspace-tab-header-inner-close-button {
+                color: var(--text-accent);
+              }
+            }
+          }
+          .workspace-tab-header-status-icon {
+            color: var(--titlebar-text-color);
+            background: var(--titlebar-background);
+          }
+        }
+      }
+
+      & .workspace-tab-header-container {
+        background: var(--march-accent);
+        border-radius: 10px;
+        margin: 0 10px;
+        width: auto;
+
+        --icon-color: var(--text-on-accent);
+        --icon-color-focused: var(--text-on-accent);
+        --icon-color-hover: var(--text-on-accent);
+        .workspace-tab-header {
+          background-color: var(--titlebar-background);
+          color: var(--text-on-accent);
+
+          .workspace-tab-header-inner-icon {
+            color: var(--text-0n-accent);
+          }
+
+          &.is-active {
+            background-color: var(--text-on-accent);
+            color: var(--text-accent);
+            --icon-color: var(--march-accent);
+            --icon-color-focused: var(--march-accent);
+            --icon-color-hover: var(--text-accent);
+
+            --tab-curve: 0;
+            border-radius: var(--tab-radius);
+
+            .workspace-tab-header-inner-close-button {
+              color: var(--text-accent);
+            }
+          }
+        }
+      }
+    }
+
+    & .workspace-split.mod-horizontal:not(.mod-sidedock) .workspace-tab-header-container {
+      margin: 0px;
+      .workspace-tab-header-container-inner {
+        margin: 5px 0;
+      }
+      .workspace-tab-header.is-active {
+        --tab-curve: 0;
+        border-radius: var(--tab-radius);
+      }
+    }
+    & .workspace-split.mod-horizontal:not(.mod-sidedock) .workspace-tab-header:not(.is-active) .workspace-tab-header-inner {
+      --icon-color: var(--text-on-accent);
+      --icon-color-focused: var(--text-on-accent);
+      --icon-color-hover: var(--text-on-accent);
+    }
+
+    & .workspace-split.mod-horizontal:not(.mod-sidedock) .workspace-tabs:not(.mod-top) {
+      .workspace-tab-header-container {
+        background: var(--march-accent);
+        --icon-color: var(--text-on-accent);
+        --icon-color-focused: var(--text-on-accent);
+        --icon-color-hover: var(--text-on-accent);
+      }
+      .workspace-tab-header:not(.is-active) .workspace-tab-header-inner {
+        --icon-color: var(--text-on-accent);
+        --icon-color-focused: var(--text-on-accent);
+        --icon-color-hover: var(--text-on-accent);
+      }
+    }
+
+    .sidebar-toggle-button {
+      --icon-color: var(--text-on-accent);
+      --icon-color-focused: var(--text-on-accent);
+      --icon-color-hover: var(--text-on-accent);
+    }
+
+    .side-dock-actions {
+      .side-dock-ribbon-action {
+        &:hover {
+          background-color: var(--march-accent);
+          color: var(--text-on-accent);
+        }
+      }
+    }
+
+    .status-bar {
+      --status-bar-background: var(--titlebar-background);
+      --status-bar-text-color: var(--titlebar-text-color);
+      --status-bar-border-color: var(--divider-color);
+
+      border-radius: 0px;
+      width: 100%;
+      height: var(--march-status-bar-height);
+    }
+    .horizontal-main-container {
+      margin-bottom: var(--march-status-bar-height);
+    }
+
+    .workspace-ribbon {
+      border-right: 0 solid var(--divider-color);
+    }
+
+    .workspace-leaf-resize-handle {
+      --divider-width: 10px;
+      --divider-color: var(--background-primary);
+    }
+
+    & .workspace-split.mod-vertical,
+    & .workspace-split.mod-horizontal:not(.mod-sidedock) {
+      .workspace-leaf-content {
+        // border: 1px solid var(--march-50-accent);
+        border-radius: 10px;
+        margin: 10px 0px;
+      }
+    }
+    .search-input-container input {
+      width: 99%;
+    }
+
+    .workspace:has(.workspace-split.mod-horizontal.mod-sidedock.mod-right-split.is-sidedock-collapsed) .workspace-split.mod-vertical.mod-root .workspace-tabs .workspace-tab-container {
+      padding-right: 10px;
+    }
+
+    // Adapted from: https://github.com/sumruler/obsidian-theme-phycat
+    .markdown-preview-view,
+    .markdown-source-view {
+      letter-spacing: var(--march-letter-spacing);
+    }
   }
 }

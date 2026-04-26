@@ -180,8 +180,8 @@
   --background-modifier-border: hsl(var(--background-modifier-border-h), var(--background-modifier-border-s), var(--background-modifier-border-l));
 
   --text-normal: hsl(var(--accent-h), 20%, 100%);
-  --text-muted: hsl(var(--accent-h), 20%, 70%);
-  --text-faint: hsl(var(--accent-h), 20%, 50%);
+  --text-muted: hsl(var(--accent-h), 20%, 50%);
+  --text-faint: hsl(var(--accent-h), 20%, 30%);
   --interactive-normal: hsl(var(--accent-h), 20%, 30%);
   --interactive-hover: hsl(var(--accent-h), 20%, 35%);
 }

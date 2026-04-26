@@ -1,3 +1,11 @@
 body {
   --bases-embed-radius: 10px;
 }
+
+:is(.bases-no-toolbar, .bases-embed[alt~='no-toolbar']) .bases-toolbar-item {
+  display: none;
+}
+
+:is(.bases-no-toolbar, .bases-embed[alt~='no-toolbar']) .bases-header {
+  display: none;
+}
