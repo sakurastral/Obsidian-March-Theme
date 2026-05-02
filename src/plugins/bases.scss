@@ -1,5 +1,5 @@
 body {
-  --bases-embed-radius: 10px;
+  --bases-embed-radius: 8px;
 }
 
 :is(.bases-no-toolbar, .bases-embed[alt~='no-toolbar']) .bases-toolbar-item {
@@ -8,4 +8,25 @@ body {
 
 :is(.bases-no-toolbar, .bases-embed[alt~='no-toolbar']) .bases-header {
   display: none;
+}
+
+.bases-cards-line {
+  --bases-cards-line-height: 30px;
+}
+
+.bases-cards-label,
+.bases-cards-line {
+  overflow-x: scroll;
+  --bases-cards-line-height: 30px;
+}
+
+.bases-rendered-value {
+  overflow-y: hidden;
+  overflow-x: scroll;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.bases-view {
+  scrollbar-gutter: auto;
 }

@@ -104,7 +104,7 @@ body {
 
   & .workspace-split.mod-horizontal:not(.mod-sidedock) .workspace-tabs:not(.mod-top) {
     .workspace-tab-header-container {
-      background: var(--march-accent);
+      background: var(--background-primary);
       --icon-color: var(--text-on-accent);
       --icon-color-focused: var(--text-on-accent);
       --icon-color-hover: var(--text-on-accent);

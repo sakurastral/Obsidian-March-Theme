@@ -62,17 +62,19 @@
     white-space: wrap;
     margin: 3px 8px !important;
     padding: 0 !important;
-    max-height: 30px !important;
+    max-height: auto !important;
+    font-size: var(--font-smallest) !important;
     overflow: auto;
-    font-size: var(--text-normal) !important;
+    --link-color: var(--text-on-accent);
+    --link-external-color: var(--text-on-accent);
 
     .bases-calendar-event-title,
     .bases-calendar-event-content {
       color: var(--text-on-accent) !important;
+      word-break: break-all;
     }
 
     &:hover {
-      max-height: 100px !important;
       z-index: 100 !important;
       /* Float above other events */
       position: relative;

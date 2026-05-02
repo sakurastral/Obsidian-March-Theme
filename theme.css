@@ -1614,7 +1614,7 @@ body .workspace-split.mod-horizontal:not(.mod-sidedock) .workspace-tab-header:no
   --icon-color-hover: var(--text-on-accent);
 }
 body .workspace-split.mod-horizontal:not(.mod-sidedock) .workspace-tabs:not(.mod-top) .workspace-tab-header-container {
-  background: var(--march-accent);
+  background: var(--background-primary);
   --icon-color: var(--text-on-accent);
   --icon-color-focused: var(--text-on-accent);
   --icon-color-hover: var(--text-on-accent);
@@ -3227,9 +3227,11 @@ del {
   white-space: wrap;
   margin: 3px 8px !important;
   padding: 0 !important;
-  max-height: 30px !important;
+  max-height: auto !important;
+  font-size: var(--font-smallest) !important;
   overflow: auto;
-  font-size: var(--text-normal) !important;
+  --link-color: var(--text-on-accent);
+  --link-external-color: var(--text-on-accent);
 }
 .bases-calendar-container .fc-day-mon .fc-event .bases-calendar-event-title,
 .bases-calendar-container .fc-day-mon .fc-event .bases-calendar-event-content,
@@ -3246,6 +3248,7 @@ del {
 .bases-calendar-container .fc-day-sun .fc-event .bases-calendar-event-title,
 .bases-calendar-container .fc-day-sun .fc-event .bases-calendar-event-content {
   color: var(--text-on-accent) !important;
+  word-break: break-all;
 }
 .bases-calendar-container .fc-day-mon .fc-event:hover,
 .bases-calendar-container .fc-day-tue .fc-event:hover,
@@ -3254,7 +3257,6 @@ del {
 .bases-calendar-container .fc-day-fri .fc-event:hover,
 .bases-calendar-container .fc-day-sat .fc-event:hover,
 .bases-calendar-container .fc-day-sun .fc-event:hover {
-  max-height: 100px !important;
   z-index: 100 !important;
   /* Float above other events */
   position: relative;
@@ -3480,7 +3482,7 @@ li[data-task="-"].task-list-item.is-checked span.dataview.inline-field-value {
 }
 
 body {
-  --bases-embed-radius: 10px;
+  --bases-embed-radius: 8px;
 }
 
 :is(.bases-no-toolbar, .bases-embed[alt~=no-toolbar]) .bases-toolbar-item {
@@ -3489,6 +3491,33 @@ body {
 
 :is(.bases-no-toolbar, .bases-embed[alt~=no-toolbar]) .bases-header {
   display: none;
+}
+
+.bases-cards-line {
+  --bases-cards-line-height: 30px;
+}
+
+.bases-cards-label,
+.bases-cards-line {
+  overflow-x: scroll;
+  --bases-cards-line-height: 30px;
+}
+
+.bases-rendered-value {
+  overflow-y: hidden;
+  overflow-x: scroll;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.bases-view {
+  scrollbar-gutter: auto;
+}
+
+.better-properties-select,
+.better-properties-select-option {
+  color: var(--text-on-accent);
+  background: var(--text-accent);
 }
 
 .cmdr-name-input-wrapper {
