@@ -17,7 +17,8 @@
   --march-formatted-text-bg-height: calc(var(--font-text-size) / 2);
 }
 .theme-dark {
-  --march-formatted-text-bg-height: calc(var(--font-text-size) / 8);
+  // --march-formatted-text-bg-height: calc(var(--font-text-size) / 8);
+  --march-formatted-text-bg-height: 0;
   --bold-color: var(--march-formatted-text-bold-bg);
   --italic-color: var(--march-formatted-text-italic-bg);
 }
