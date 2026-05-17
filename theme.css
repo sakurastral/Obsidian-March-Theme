@@ -3241,7 +3241,7 @@ del {
   background-color: var(--nav-collapse-icon-color);
   content: "";
   position: absolute;
-  right: -1.2%;
+  right: -0.9%;
   width: 1rem;
   height: 1rem;
 }
