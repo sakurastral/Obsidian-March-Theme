@@ -1,0 +1,8 @@
+:root {
+  --march-pretty-properties-initial-cover-border-radius: 50%;
+  --march-pretty-properties-initial-cover-aspect-ratio: 1;
+}
+.metadata-side-image.initial .pp-cover-image {
+  border-radius: var(--march-pretty-properties-initial-cover-border-radius);
+  aspect-ratio: var(--march-pretty-properties-initial-cover-aspect-ratio);
+}

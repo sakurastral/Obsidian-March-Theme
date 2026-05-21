@@ -24,6 +24,7 @@
 @use 'editor/heading.scss';
 @use 'editor/table.scss';
 @use 'editor/formatted-text.scss';
+@use 'editor/cssclasses.scss';
 
 @use 'plugins/file-explorer.scss';
 @use 'plugins/calendar-bases.scss';
@@ -33,7 +34,7 @@
 @use 'plugins/dataview.scss';
 @use 'plugins/bases.scss';
 @use 'plugins/better-properties.scss';
-@use 'plugins/floating-toc.scss';
+@use 'plugins/pretty-properties.scss';
 
 // Temp Fix
 .cmdr-name-input-wrapper {
