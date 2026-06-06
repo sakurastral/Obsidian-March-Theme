@@ -1,7 +1,7 @@
 /* @settings
 
 name: March Theme - Layout
-id: march-theme-playout
+id: march-theme-layout
 settings:
     - 
         id: select-layout-style
@@ -78,7 +78,7 @@ settings:
         type: variable-color
         default: var(--text-on-accent)
         format: hex
-        opacity: false
+        opacity: true
     -
         id: tab-text-color
         title: Tab text color
@@ -147,7 +147,7 @@ settings:
         title: Letter Spacing
         type: variable-number-slider
         format: em
-        default: 0.1
+        default: 0
         min: 0
         max: 0.15
         step: 0.01
@@ -171,4 +171,40 @@ settings:
         min: 0
         max: 10
         step: 0.5
+    -
+        id: body-ligatures-section
+        title: Body Text Settings
+        type: heading
+        level: 1
+    -
+        id: march-font-variant-ligatures-body
+        title: Body Font Ligatures
+        description: Enable or disable standard font ligatures for body text.
+        type: variable-text
+        default: normal
+    -
+        id: march-font-feature-settings-body
+        title: Body Font Feature Settings
+        description: Custom OpenType feature tags for body text.
+        type: variable-text
+        default: "'liga' on, 'calt' on"
+        quotes: false
+    -
+        id: code-ligatures-section
+        title: Code Text Settings
+        type: heading
+        level: 1
+    -
+        id: march-font-variant-ligatures-code
+        title: Code Font Ligatures
+        description: Enable or disable standard font ligatures for code blocks and inline code.
+        type: variable-text
+        default: normal
+    -
+        id: march-font-feature-settings-code
+        title: Code Font Feature Settings
+        description: Custom OpenType feature tags for code blocks.
+        type: variable-text
+        default: "'liga' on, 'calt' on"
+        quotes: false
 */

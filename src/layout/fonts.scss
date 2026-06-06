@@ -4,3 +4,22 @@
   --font-ui-medium: 0.9375rem;
   --font-ui-larger: 1.25rem;
 }
+
+:is(body) {
+  --march-font-variant-ligatures-body: normal;
+  --march-font-variant-ligatures-code: normal;
+  --march-font-feature-settings-body: 'liga' on, 'calt' on;
+  --march-font-feature-settings-code: 'liga' on, 'calt' on;
+}
+
+body {
+  font-variant-ligatures: var(--march-font-variant-ligatures-body);
+  font-feature-settings: var(--march-font-feature-settings-body);
+
+  & code,
+  & .cm-inline-code,
+  & .HyperMD-codeblock {
+    font-variant-ligatures: var(--march-font-variant-ligatures-code);
+    font-feature-settings: var(--march-font-feature-settings-code);
+  }
+}

@@ -7,7 +7,7 @@ body {
   --divider-color-hover: var(--march-50-accent);
   --modal-border-color: var(--divider-color);
 
-  --tab-divider-color: transparent;
+  --tab-divider-color: #00000000;
   --tab-text-color: var(--text-muted);
   --tab-text-color-active: var(--text-normal);
   --tab-text-color-focused: var(--tab-text-color);
@@ -16,8 +16,6 @@ body {
   --tab-text-color-focused-active-current: var(--tab-text-color-active);
 
   --march-status-bar-height: calc(var(--status-bar-font-size) + var(--size-4-1) + var(--size-4-1) + 0.5rem);
-
-  --march-letter-spacing: 0.1em;
 
   .mod-root {
     --metadata-background: var(--background-primary-alt);
@@ -172,12 +170,6 @@ body {
   .workspace:has(.workspace-split.mod-horizontal.mod-sidedock.mod-right-split.is-sidedock-collapsed) .workspace-split.mod-vertical.mod-root .workspace-tabs .workspace-tab-container {
     padding-right: 10px;
   }
-
-  // Adapted from: https://github.com/sumruler/obsidian-theme-phycat
-  .markdown-preview-view,
-  .markdown-source-view {
-    letter-spacing: var(--march-letter-spacing);
-  }
 }
 
 body {
@@ -199,8 +191,6 @@ body {
     --tab-text-color-focused-active-current: var(--text-accent);
 
     --march-status-bar-height: calc(var(--status-bar-font-size) + var(--size-4-1) + var(--size-4-1) + 0.5rem);
-
-    --march-letter-spacing: 0.1em;
 
     .mod-root {
       --metadata-background: var(--background-primary-alt);
@@ -400,12 +390,6 @@ body {
 
     .workspace:has(.workspace-split.mod-horizontal.mod-sidedock.mod-right-split.is-sidedock-collapsed) .workspace-split.mod-vertical.mod-root .workspace-tabs .workspace-tab-container {
       padding-right: 10px;
-    }
-
-    // Adapted from: https://github.com/sumruler/obsidian-theme-phycat
-    .markdown-preview-view,
-    .markdown-source-view {
-      letter-spacing: var(--march-letter-spacing);
     }
   }
 }
