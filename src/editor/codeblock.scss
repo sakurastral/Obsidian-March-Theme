@@ -73,3 +73,12 @@ body {
     }
   }
 }
+
+body {
+  --march-codeblock-comment-font-style: italic;
+
+  .token.comment,
+  .cm-comment {
+    font-style: var(--march-codeblock-comment-font-style);
+  }
+}

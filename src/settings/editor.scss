@@ -328,6 +328,18 @@ settings:
         type: variable-color
         default: var(--background-secondary)
         format: hex
+    -
+        id: march-codeblock-comment-font-style
+        title: Codeblock Comment Style
+        type: variable-select
+        default: italic
+        options:
+            - 
+                label: Normal
+                value: normal
+            - 
+                label: Italic
+                value: italic
     - 
         id: heading-blockquotes
         title: Blockquotes
