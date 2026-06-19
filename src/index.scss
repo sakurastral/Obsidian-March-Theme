@@ -35,6 +35,9 @@
 @use 'plugins/bases.scss';
 @use 'plugins/better-properties.scss';
 @use 'plugins/pretty-properties.scss';
+@use 'plugins/note-toolbar.scss';
+@use 'plugins/meta-bind.scss';
+@use 'plugins/virtual-content.scss';
 
 // Temp Fix
 .cmdr-name-input-wrapper {

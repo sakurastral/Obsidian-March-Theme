@@ -1,0 +1,21 @@
+.mb-card {
+  background-color: var(--background-secondary);
+  border-radius: var(--radius-l);
+  border: none;
+  padding: var(--font-text-size);
+}
+
+/*
+=== === === === === === === === === === === === === 
+
+Helper Class
+
+=== === === === === === === === === === === === === 
+*/
+
+.march-metabind-hide-list-input {
+  & .mb-list-input {
+    height: 0;
+    display: none;
+  }
+}

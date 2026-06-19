@@ -1,0 +1,15 @@
+body .callout[data-callout='note-toolbar'],
+body .workspace .callout[data-callout='note-toolbar'] {
+  &.march-notetoolbar-nowrap-on-desktop {
+    & .callout-content {
+      & ul {
+        display: flex;
+        flex-wrap: nowrap !important;
+      }
+      &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+      }
+    }
+  }
+}
