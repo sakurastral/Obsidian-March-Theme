@@ -644,3 +644,10 @@
     --background-modifier-border: hsl(var(--background-modifier-border-h), var(--background-modifier-border-s), var(--background-modifier-border-l));
   }
 }
+
+@media print {
+  body {
+    --accent-s: 80% !important;
+    --accent-l: 20% !important;
+  }
+}
