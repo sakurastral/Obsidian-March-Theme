@@ -5,6 +5,13 @@
   padding: var(--font-text-size);
 }
 
+.mb-input-block textArea {
+  background-color: var(--background-secondary);
+  border: none;
+  height: 1.3rem;
+  overflow: hidden;
+}
+
 /*
 === === === === === === === === === === === === === 
 
